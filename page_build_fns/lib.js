@@ -26,12 +26,12 @@ lib_fn.prototype = {
 	},
 	getPageData:function(data,key,isChild,cacheNameKey,resolve,reject,api){
 		var _this = this;
+		console.log('data '+data);
 		getContent(data,function(text){
 			var result = JSON.parse(text);
 			if(result.code == 200){
 				var updateCache = result.updateCache,
 					cacheName = result.cache;
-				console.log('updateCache '+updateCache)
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
