@@ -111,8 +111,10 @@
   </div>
 </div>
 <script>
-  var ips_json = '<%- JSON.stringify(ips)%>';
+  var ips_json = '<%- JSON.stringify(helpers.getIpsContent(ips))%>';
   var ips = JSON.parse(ips_json);
+  var ips_img_json = '<%- JSON.stringify(helpers.getIpsImg(ips))%>';
+  var ips_img = JSON.parse(ips_img_json);
   var pages_json = '<%- JSON.stringify(helpers.getCarToonPages(qtao))%>';
   var pages = JSON.parse(pages_json).split(',');
 </script>
