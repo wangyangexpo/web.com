@@ -39,7 +39,7 @@ router.get('/user/login',(req,res)=>{
 
 });
 router.get('/user/logout',(req,res)=>{
-	require('../page_build_fns/user_check')(req,res);
+	require('../page_build_fns/user_logout')(req,res);
 });
 
 
