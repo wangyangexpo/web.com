@@ -39,7 +39,7 @@ app.use(cookieparser());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(express.static('../pc/assets/'));
+app.use(express.static(configs.staticurl));
 //app.use(express.static(__dirname + 'assets/js'));
 //app.use(express.static(__dirname + 'assets/css'));
 //app.use(express.static(__dirname + 'assets/images'));
