@@ -24,7 +24,7 @@
         </span>
       <div class="desc_con">
         <h2><span id="ip_name"><%=ips[0].name%></span></h2>
-        <p id="ip_name_content"><%- ips[0].basic_content%></p>
+        <div id="ip_name_content"><%- ips[0].basic_content%></div>
       </div>
     </div>
   </div>
@@ -115,6 +115,8 @@
   var ips = ips_content.split('|*|');
   var ips_img_str = '<%= helpers.getIpsImg(ips)%>';
   var ips_img = ips_img_str.split(',');
+  var ips_name_str = '<%= helpers.getIpsName(ips)%>';
+  var ips_name = ips_img_str.split('|*|');
 //  var ips_img = JSON.parse(ips_img_json);
   var pages_json = '<%- helpers.getCarToonPages(qtao)%>';
   var pages = JSON.parse(pages_json).split(',');
