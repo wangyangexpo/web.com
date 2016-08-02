@@ -53,7 +53,7 @@ app.use(function(res,req,next){
 })
 
 app.use(router);
-var host = 'localhost',//localhost',//configs.redis.host,
+var host = '10.1.11.51',//localhost',//configs.redis.host,
 	port = 3000;//configs.redis.port;
 app.listen(port, host,(e)=>{
 	console.log('start now!!!')
