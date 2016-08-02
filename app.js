@@ -45,7 +45,8 @@ app.use(express.static(configs.staticurl));
 //app.use(express.static(__dirname + 'assets/images'));
 //app.use(express.static(__dirname + 'assets/fonts'));
 
-app.set('views', __dirname+'/views');
+console.log('__dirname'+__dirname);
+app.set('views', '/data/web/www.putao.com'+'/views');
 app.set('view engine','ejs');
 
 app.use(function(res,req,next){
