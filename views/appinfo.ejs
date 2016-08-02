@@ -1,6 +1,6 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="/css/swiper.min.css" />
-<link rel="stylesheet" href="/css/appinfo.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/swiper.min.css')%>" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/appinfo.css')%>" />
 <style>
   .content-wrapper{
     background-image: url('<%=helpers.drawImage(body_map.basic_image_2)%>');
@@ -65,7 +65,7 @@
 </div>
 
 <!--<a class="scroll-top-icon" id="scrollToTop"></a>-->
-<script src="/js/lib/jquery.old.js"></script>
-<script src="/js/lib/jquery.poptrox.min.js"></script>
-<script src="/js/appinfo.js"></script>
+<script src="<%=helpers.staticurl('/js/lib/jquery.old.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/jquery.poptrox.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/appinfo.js')%>"></script>
 <% include ./footer.ejs %>

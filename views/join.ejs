@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="../css/join.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/join.css')%>" />
 <div class="join-page">
 	<div class="currentLocation">
 		首页>关于葡萄>加入我们
@@ -61,7 +61,7 @@
 	
 </div>
 
-<script type="text/javascript" src="js/join.js"></script>
+<script type="text/javascript" src="<%=helpers.staticurl('js/join.js')%>"></script>
 </body>
 
 </html>

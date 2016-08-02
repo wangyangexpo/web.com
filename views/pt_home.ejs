@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="/css/pt_home.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/pt_home.css')%>" />
 <div class="pt_home_banner" style="background: url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat 50% 0"></div>
 <!-- 什么是葡萄之家 -->
 <div class="about">
@@ -126,5 +126,5 @@
 	<!-- /查看更多 -->
 </div>
 <!-- /葡粉故事 -->
-<script src="/js/pt_home.js"></script>
+<script src="<%=helpers.staticurl('/js/pt_home.js')%>"></script>
 <% include ./footer.ejs %>

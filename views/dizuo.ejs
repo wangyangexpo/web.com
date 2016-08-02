@@ -1,6 +1,6 @@
 
   	<% include ./header.ejs %>
-  	<link rel="stylesheet" href="../css/dizuo.css" />
+  	<link rel="stylesheet" href="<%=helpers.staticurl('/css/dizuo.css')%>" />
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
@@ -128,9 +128,9 @@
       <a href="/page_mofang"></a>
     </div>
     <!-- /相关科技产品 -->
-    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
-    <script type="text/javascript" src="js/lib/wow.min.js"></script>
-    <script type="text/javascript" src="js/dizuo.js"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/jquery.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/dizuo.js')%>"></script>
   </body>
 
 </html>

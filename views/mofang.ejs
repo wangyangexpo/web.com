@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-  	<link rel="stylesheet" href="../css/mofang.css" />
+  	<link rel="stylesheet" href="<%=helpers.staticurl('/css/mofang.css')%>" />
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
@@ -118,15 +118,15 @@
     
    <!-- 相关科技产品 -->
     <div class="relevant">
-      <a href="http://www.putao.com/page/hellobiancheng"></a>
-      <a href="http://www.putao.com/page/tutushijie"></a>
-      <a href="http://www.putao.com/page/maisisi"></a>
-      <a href="http://www.putao.com/page/tansuohao"></a>
+      <a href="/hellobiancheng"></a>
+      <a href="/tutushijie"></a>
+      <a href="/maisisi"></a>
+      <a href="/tansuohao"></a>
     </div>
     <!-- /相关科技产品 -->
     
-    <script type="text/javascript" src="js/lib/wow.min.js"></script>
-    <script type="text/javascript" src="js/mofang.js"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/mofang.js')%>"></script>
   </body>
 
 </html>

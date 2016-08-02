@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="../css/nationalStores.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/nationalStores.css')%>" />
 <div class="contact-page">
 	<div class="currentLocation">
 		首页>全国门店
@@ -43,7 +43,7 @@
 	</ul>
 </div>
 
-<script type="text/javascript" src="js/nationalStores.js"></script>
+<script type="text/javascript" src="<%=helpers.staticurl('js/nationalStores.js')%>"></script>
 </body>
 
 </html>

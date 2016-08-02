@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="../css/cooperation.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/cooperation.css')%>" />
 <div class="cooperation-page">
 	<div class="currentLocation">
 		首页>营销合作
@@ -54,7 +54,7 @@
 
 </div>
 
-<script type="text/javascript" src="js/cooperation.js"></script>
+<script type="text/javascript" src="<%=helpers.staticurl('js/cooperation.js')%>"></script>
 </body>
 
 </html>

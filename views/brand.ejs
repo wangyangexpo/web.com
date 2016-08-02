@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="/css/brand.css">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/brand.css')%>">
 <div class="bd_header" style="background: url('<%=helpers.drawImage(banner1[0].basic_image_1)%>') no-repeat 50% 0">
 </div>
 
@@ -70,8 +70,8 @@
   ]
 
 </script>
-<script src="/js/lib/jquery1.42.min.js"></script>
-<script src="/js/lib/jquery.movingboxes.js"></script>
+<script src="<%=helpers.staticurl('/js/lib/jquery1.42.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/jquery.movingboxes.js')%>"></script>
 <script>
   $(function(){
     $('#box').movingBoxes({

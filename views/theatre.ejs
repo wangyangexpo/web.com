@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="/css/theatre.css">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/theatre.css')%>">
 <div class="theater_bg theater_bg_one" style="background:url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat scroll 50% center;"></div>
 <div class="theater_bg theater_bg_two"></div>
 <div class="theater_bg theater_bg_three"></div>
@@ -119,5 +119,5 @@
   var pages_json = '<%- JSON.stringify(helpers.getCarToonPages(qtao))%>';
   var pages = JSON.parse(pages_json).split(',');
 </script>
-<script src="/js/theatre.js"></script>
+<script src="<%=helpers.staticurl('/js/theatre.js')%>"></script>
 <% include ./footer.ejs %>

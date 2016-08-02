@@ -1,7 +1,7 @@
 <div id="footer">
   <div class="footer-container clearfix">
     <div class="bottom-logo">
-      <img width="113" src="http://static.putaocdn.com/store/front/images/logo-bottom.png" alt="">
+      <img width="113" src="<%=helpers.staticurl('/images/logo-bottom.png')%>" alt="">
     </div>
     <% cms.forEach(function(item){ %>
       <ul>
@@ -16,7 +16,7 @@
     <ul>
       <li><h3>关注我们</h3></li>
       <li style="position: relative"><a href="javascript:;" id="pt_code">葡萄纬度</a>
-        <img id="qcode" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="http://static.putaocdn.com/store/front/images/img_wechat_qrcode@2x.png" alt="">
+        <img id="qcode" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="<%=helpers.staticurl('images/img_wechat_qrcode@2x.png')%>" alt="">
       </li>
     </ul>
     <script>
@@ -30,7 +30,7 @@
     <div class="online">
       <div style="text-align: right">
         <a href="javascript:;">
-          <img width="110" style="CURSOR: pointer" onclick="javascript:window.open('http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODAzMTAxN18zMjgzOTFfNDAwNjUxNjE2MV8yXw');" border="0" src="http://static.putaocdn.com/store/front/images/btn_consult_qq@2x.png" alt="点击这里给我发消息">
+          <img width="110" style="CURSOR: pointer" onclick="javascript:window.open('http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODAzMTAxN18zMjgzOTFfNDAwNjUxNjE2MV8yXw');" border="0" src="<%=helpers.staticurl('/images/btn_consult_qq@2x.png')%>" alt="点击这里给我发消息">
           <!--                    <img width="110" src="" alt=""/>-->
         </a>
       </div>

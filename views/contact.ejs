@@ -1,5 +1,5 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="../css/contact.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/contact.css')%>" />
 <div class="contact-page">
 	<div class="currentLocation">
 	首页>联系我们
@@ -9,9 +9,9 @@
 </div>
 <div class="imagesSwitch" id="imagesSwitch">
 	<div class="imgBox">
-		<img src="images/contact/l1.jpg" />
-		<img src="images/contact/l2.jpg" />
-		<img src="images/contact/l3.jpg" />
+		<img src="<%=helpers.staticurl('images/contact/l1.jpg')%>" />
+		<img src="<%=helpers.staticurl('images/contact/l2.jpg')%>" />
+		<img src="<%=helpers.staticurl('images/contact/l3.jpg')%>" />
 	</div>
 	<div class="imgMenu">
 		<span class="on"></span>
@@ -31,7 +31,7 @@
 </div>
 </div>
 
-<script type="text/javascript" src="js/contact.js"></script>
+<script type="text/javascript" src="<%=helpers.staticurl('js/contact.js')%>"></script>
 </body>
 
 </html>

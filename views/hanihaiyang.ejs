@@ -1,7 +1,7 @@
 
   	<% include ./header.ejs %>
     <link rel="stylesheet" type="text/css" href="http://player.youku.com/h5player/play.css?ver=2016/06/21151259">
-    <link rel="stylesheet" href="css/hanihaiyang.css" />
+    <link rel="stylesheet" href="<%=helpers.staticurl('css/hanihaiyang.css')%>" />
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
@@ -30,7 +30,7 @@
       <div class="box">
         <div class="play_icon" id="play_icon"></div>
         <div id="youkuplayer" style="width: 800px;height: 450px;"></div>
-        <img id="video-fc" style="position: absolute;top:0" src="http://static.putaocdn.com/store/front/images/hellobc/player_bg.jpg">
+        <img id="video-fc" style="position: absolute;top:0" src="<%=helpers.staticurl('/images/hellobc/player_bg.jpg')%>">
       </div>
 
     </div>
@@ -137,9 +137,9 @@
       <a href="/page_mofang"></a>
     </div>
     <!-- /相关科技产品 -->
-    <script type="text/javascript" src="js/lib/wow.min.js"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
     <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
-    <script type="text/javascript" src="js/hanihaiyang.js"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('js/hanihaiyang.js')%>"></script>
   </body>
 
 </html>
