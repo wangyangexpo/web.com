@@ -1,0 +1,123 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="/css/theatre.css">
+<div class="theater_bg theater_bg_one" style="background:url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat scroll 50% center;"></div>
+<div class="theater_bg theater_bg_two"></div>
+<div class="theater_bg theater_bg_three"></div>
+<div class="theater_bg theater_bg_four"></div>
+<div class="theater_bg theater_bg_five"></div>
+<div class="theater_bg theater_bg_six"></div>
+<div class="theater_bg theater_bg_seven"></div>
+<div class="theater_bg theater_bg_eight"></div>
+<div class="theater_header">
+  <a href="javascript:;">进入官网</a>
+</div>
+<div class="theater_blank theater_head">
+  <div class="con_blank theater_con">
+    <div class="head_list">
+      <% ips.forEach(function(item,index){ %>
+        <a href="javascript:;" class="act" data-id="<%=index%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+      <% }) %>
+    </div>
+    <div class="head_desc">
+        <span class="p_big">
+          <img src="<%=helpers.drawImage(ips[0].basic_image_2)%>" alt="">
+        </span>
+      <div class="desc_con">
+        <h2><span id="ip_name"><%=ips[0].name%></span></h2>
+        <p id="ip_name_content"><%- ips[0].basic_content%></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="theater_blank theater_small_show">
+  <div class="con_blank smallshow_con">
+    <img src="<%=helpers.drawImage(qtao[0].basic_image_1)%>" alt="">
+      <span class="video_paly_btn">
+        <img src="/images/video_btn_icon.png" alt="">
+      </span>
+      <span class="xiaokaxiucode">
+        <img src="<%=helpers.drawImage(qtao[0].basic_image_2)%>" alt=""><br>
+        <i>关注"葡星大爆炸"<br>Q淘小咖秀抢先看</i>
+      </span>
+    <div class="anthology">
+      <h1 class="title_info"><span><%=qtao[0].name%></span></h1>
+      <p class="type_info"><%=qtao[0].title%></p>
+      <p class="staring_info"><%=qtao[0].sub_title%></p>
+      <p class="desc_info"><%=qtao[0].description%></p>
+      <div class="episode">
+      </div>
+      <p class="paging">
+        <a href="javascript:;" class="paging_prev">上一页</a>
+        <a href="javascript:;" class="paging_next">下一页</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="theater_blank theater_star_video">
+  <div class="con_blank star_video_con">
+    <p class="title_info"><span><%=hlpxr[0].name%></span></p>
+    <p class="type_info"><%=hlpxr[0].title%></p>
+    <p class="staring_info"><%=hlpxr[0].sub_title%></p>
+    <p class="desc_info">
+      <%=hlpxr[0].description%>
+    </p>
+    <p class="star_video">
+      <img class="hlpxr" src="<%=helpers.drawImage(hlpxr[0].basic_image_1)%>" alt="">
+      <a href="javascript:;" class="video_btn">
+        <img src="/images/video_btn_icon.png" alt="">
+      </a>
+    </p>
+  </div>
+</div>
+
+<div class="theater_blank product_wrap">
+  <div class="con_blank product_con">
+    <% comic_novel.forEach(function(item,index){ %>
+    <div class="product_list">
+      <img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
+      <p class="title_info"><span><%=item.name%></span></p>
+      <p class="type_info"><%=item.title%></p>
+      <p class="staring_info"><%=item.sub_title%></p>
+      <p class="desc_info">
+        <%=item.description%>
+      </p>
+      <a href="<%=item.basic_url%>">点击查看<%=item.name%>>></a>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<div class="theater_blank theater_star_video FourDVideo">
+  <div class="con_blank star_video_con">
+    <p class="title_info"><span><%=fdmovie[0].name%></span></p>
+    <p class="type_info"><%=fdmovie[0].title%></p>
+    <p class="staring_info"><%=fdmovie[0].sub_title%></p>
+    <p class="desc_info">
+      <%=fdmovie[0].description%>
+    </p>
+    <p class="star_video">
+      <img src="/images/FourDVideo.png" alt="">
+    </p>
+  </div>
+</div>
+<div class="mark"></div>
+<div class="video_pop animated">
+  <div class="title">
+    <span id="video_title">视频名称</span>
+    <a href="javascript:;" class="video_close_btn">x</a>
+  </div>
+  <div class="video_con">
+    <div id="youkuplayer" style="width:860px;height:524px;display: block">
+      <object type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf" width="100%" height="100%" id="youku-player"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="movie" value="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf"><param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=5c30db50b42ae8c4&amp;styleid=0"></object>
+    </div>
+  </div>
+</div>
+<script>
+  var ips_json = '<%- JSON.stringify(ips)%>';
+  var ips = JSON.parse(ips_json);
+  var pages_json = '<%- JSON.stringify(helpers.getCarToonPages(qtao))%>';
+  var pages = JSON.parse(pages_json).split(',');
+</script>
+<script src="/js/theatre.js"></script>
+<% include ./footer.ejs %>

@@ -1,0 +1,52 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="../css/help.css" />
+<div class="help-page">
+	<div class="currentLocation">
+		首页><%=curAddress%>
+	</div>
+	<div class="mn">
+		<div class="menu">
+			<dl>
+				<dt>订单中心</dt>
+				<% for(var i = 0,len = cms_order.length; i<len; i++){%>
+					<dd>
+						<a href="/help?parent_tag=<%=cms_order[i].parent_tag%>&id=<%=cms_order[i].id%>"><%=cms_order[i].name%></a>
+					</dd>
+				<%}%>
+			</dl>
+			<dl>
+				<dt>服务支持</dt>
+				<% for(var i = 0,len = cms_service.length; i<len; i++){%>
+					<dd>
+						<a href="/help?parent_tag=<%=cms_service[i].parent_tag%>&id=<%=cms_service[i].id%>"><%=cms_service[i].name%></a>
+					</dd>
+				<%}%>
+			</dl>
+			<dl>
+				<dt>商务合作</dt>
+				<% for(var i = 0,len = cms_bd.length; i<len; i++){%>
+					<dd>
+						<a href="/help?parent_tag=<%=cms_bd[i].parent_tag%>&id=<%=cms_bd[i].id%>"><%=cms_bd[i].name%></a>
+					</dd>
+				<%}%>
+			</dl>
+			<dl>
+				<dt>关于葡萄</dt>
+				<% for(var i = 0,len = cms_about.length; i<len; i++){%>
+					<dd>
+						<a href="/help?parent_tag=<%=cms_about[i].parent_tag%>&id=<%=cms_about[i].id%>"><%=cms_about[i].name%></a>
+					</dd>
+				<%}%>
+			</dl>
+		</div>
+		<div class="mnc">
+			<%-mainText%>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/help.js"></script>
+</body>
+
+</html>
+<% include ./footer.ejs %>

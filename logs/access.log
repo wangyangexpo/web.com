@@ -1,0 +1,2 @@
+[2016-08-01 19:31:47.902] [INFO] normal - 127.0.0.1 - - "GET /css/index.css HTTP/1.1" 200 25333 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+[2016-08-01 19:31:47.904] [INFO] normal - 127.0.0.1 - - "GET /js/index.js HTTP/1.1" 200 234374 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
