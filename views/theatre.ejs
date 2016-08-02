@@ -113,7 +113,7 @@
 <script>
   var ips = '<%- helpers.getIpsContent(ips)%>';
 //  var ips = JSON.parse(ips_json);
-  var ips_img = '<%- helpers.getIpsImg(ips)%>';
+  var ips_img = '<%= helpers.getIpsImg(ips)%>';
 //  var ips_img = JSON.parse(ips_img_json);
   var pages_json = '<%- helpers.getCarToonPages(qtao)%>';
   var pages = JSON.parse(pages_json).split(',');
