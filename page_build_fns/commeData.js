@@ -25,7 +25,7 @@ var commeData = function(req,lib_o,callback){
 				if(text) {
 					var result = JSON.parse(text);
 					if (result.status == 200) {
-						var num = result.data.count||0;
+						var num = result.data.count;
 						callback({num:num,sessid:sessid});
 					} else {
 						console.log('商城接口发生错误！', +error);
