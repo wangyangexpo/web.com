@@ -10,6 +10,10 @@ var pt_home = function(req,res){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
+		.then(function(){return lib_o.getData({tag:'82PXgE'},'show_banner')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
 		.then(function(){return lib_o.getData({tag:'pthome_hot'},'hot_acts')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);

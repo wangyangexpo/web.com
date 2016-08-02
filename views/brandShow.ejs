@@ -1,0 +1,23 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/contact.css')%>" />
+<!--<link rel="stylesheet" href="css/brandShow.css" />-->
+<div class="brandShow-page">
+	<div class="bg" style="background: url('<%=helpers.drawImage(banner)%>') no-repeat top center"">
+		
+	</div>
+	<div class="mn">
+		<div class="guide">
+			<%=name%> > <%=show[0].name%>
+		</div>
+		<h2><%=show[0].name%></h2>
+		<h3><%=show[0].created_at%></h3>
+		<div class="mnc">
+			<%-show[0].basic_content%>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
+<% include ./footer.ejs %>

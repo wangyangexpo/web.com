@@ -8,7 +8,11 @@
         <li><h3><%=item.name%></h3></li>
         <%if(item['children']){%>
           <% item['children'].forEach(function(item_li){ %>
-            <li><a rel="nofollow" href="/system/cms/show?id=2"><%=item_li.name%></a></li>
+          	<%if(item_li.basic_url){%>
+          		<li><a rel="nofollow" href="/<%=item_li.basic_url%>"><%=item_li.name%></a></li>
+          	<%}else{%>
+          		<li><a rel="nofollow" href="/help?parent_tag=<%=item_li.parent_tag%>&id=<%=item_li.id%>"><%=item_li.name%></a></li>	
+          	<%}%>
           <% }) %>
         <%}%>
       </ul>

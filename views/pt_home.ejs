@@ -1,5 +1,6 @@
 <% include ./header.ejs %>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/pt_home.css')%>" />
+<!--<link rel="stylesheet" href="css/pt_home.css" />-->
 <div class="pt_home_banner" style="background: url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat 50% 0"></div>
 <!-- 什么是葡萄之家 -->
 <div class="about">
@@ -12,38 +13,36 @@
 			<div>
 				<span></span>
 				<span></span>
-				<a href="">价植观<br />&目标</a>
+				<a href="javascript:;">价植观<br />&目标</a>
 			</div>
 			<div>
 				<span></span>
 				<span></span>
-				<a href="">加入<br />我们</a>
+				<a href="javascript:;">加入<br />我们</a>
 			</div>
 			<div>
 				<span></span>
 				<span></span>
-				<a href="">会员<br />权益</a>
+				<a href="javascript:;">会员<br />权益</a>
 			</div>
 		</div>
 		<div class="menu_t" id="menu_text">
 			<p>
-				葡萄之家是一个亲子社群<br />聚集独立思考的父母<br />
-培养善于创新的孩子<br />
-让孩子在“快乐中成才”<br />
+				葡萄之家是一个亲子社群<br />聚集独立思考的父母<br /> 培养善于创新的孩子
+				<br /> 让孩子在“快乐中成才”
+				<br />
 			</p>
 			<p>
-				如果你也认同我们的价值观<br />
-和我们有着一样的目标<br />
-请加入我们,实现你为孩子创造的梦想！
+				如果你也认同我们的价值观<br /> 和我们有着一样的目标
+				<br /> 请加入我们,实现你为孩子创造的梦想！
 			</p>
 			<p>
-				丰富的线上社群活动<br />
-有料的线下互动活动<br />
-加入会员，一卡共享
+				丰富的线上社群活动<br /> 有料的线下互动活动
+				<br /> 加入会员，一卡共享
 			</p>
 		</div>
 	</div>
-	<a href="#">我要加入葡萄之家></a>
+	<a href="/join">我要加入葡萄之家></a>
 </div>
 <!-- /什么是葡萄之家 -->
 
@@ -57,7 +56,9 @@
 		<li class="memberInterests_li">
 			<div>
 				<h3 class="mem_title"><%=item.title%></h3>
-				<p class="mem_sub_title"><%=item.sub_title%></p>
+				<p class="mem_sub_title">
+					<%=item.sub_title%>
+				</p>
 			</div>
 			<div>
 				<%-item.basic_content%>
@@ -73,25 +74,27 @@
 	<div class="hd">
 		<h2>热门活动</h2>
 	</div>
-	<div class="list">
+	<div class="list" id="activity_list">
 		<% hot_acts.forEach(function(item,index){ %>
 		<dl>
 			<dt>
-				<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
+				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
 				<p><%=item.name%></p>
 			</dt>
 			<dd>
 				<%-item.basic_content%>
-				<a href="<%=item.id%>">查看全文</a>
+				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
 			</dd>
 		</dl>
 		<% }) %>
 	</div>
+	<%if(hot_acts.length > 2){%>
 	<!-- 查看更多 -->
 	<div class="more">
-		<a href=""></a>
+		<a href="javascript:;" id="activity_btn"></a>
 	</div>
 	<!-- /查看更多 -->
+	<%}%>
 </div>
 <!-- /热门活动 -->
 
@@ -105,26 +108,53 @@
 			<br /> 他们是“蒲公英”，因为他们愿意分享传播自己积累的亲子方式
 		</p>
 	</div>
-	<ul>
+	<ul id="fans_list">
 		<% pf_stories.forEach(function(item,index){ %>
 		<li>
 			<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
 			<dl>
 				<dt><%=item.name%></dt>
-				<dd><%=item.title%></dd>
 				<dd>
-					<a href="<%=item.id%>">查看全文</a>
+					<%=item.title%>
+				</dd>
+				<dd>
+					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=葡粉故事&tag=<%=item.tag%>">查看全文</a>
 				</dd>
 			</dl>
 		</li>
 		<% }) %>
 	</ul>
+	<%if(pf_stories.length > 2){%>
 	<!-- 查看更多 -->
 	<div class="more">
-		<a href="#"></a>
+		<a href="javascript:;" id="fans_btn"></a>
 	</div>
 	<!-- /查看更多 -->
+	<%}%>
+
 </div>
 <!-- /葡粉故事 -->
 <script src="<%=helpers.staticurl('/js/pt_home.js')%>"></script>
+<script>
+	var activity_btn = document.querySelector('#activity_btn'),
+		activity_list = document.querySelector('#activity_list'),
+		fans_btn = document.querySelector('#fans_btn'),
+		fans_list = document.querySelector('#fans_list');
+	try {
+		activity_btn.addEventListener('click', function() {
+			activity_list.style.height = '2200px';
+			this.style.display = 'none';
+		})
+	} catch(e) {
+	
+	}
+	try {
+		fans_btn.addEventListener('click', function() {
+			fans_list.style.height = '950px';
+			this.style.display = 'none';
+		})
+	} catch(e) {
+	
+	}
+</script>
 <% include ./footer.ejs %>
