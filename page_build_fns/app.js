@@ -16,7 +16,7 @@ var app = function(req,res){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
-			commeData(lib_o,function(count){
+			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
 				res.render('app',content);
