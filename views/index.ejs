@@ -1,7 +1,7 @@
 
 <% include ./header.ejs %>
 
-<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
 <div class="wrapper">
   <div class="banner">
     <div class="swiper-container">
@@ -49,5 +49,5 @@
     </div>
   </div>
 </div>
-<script src="/js/index.js"></script>
+<script src="<%=helpers.staticurl('/js/index.js')%>"></script>
 <% include ./footer.ejs %>

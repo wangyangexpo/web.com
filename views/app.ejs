@@ -1,7 +1,7 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="/css/base.css" />
-<link rel="stylesheet" href="/css/app_download.css" />
-<link rel="stylesheet" href="/css/app_download_old.css" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/base.css')%>" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download.css')%>" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download_old.css')%>" />
 <div role="main" id="site-content">
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -93,5 +93,5 @@
     </div>
   </div>
 </div>
-<script src="/js/app_download.js"></script>
+<script src="<%=helpers.staticurl('/js/app_download.js')%>"></script>
 <% include ./footer.ejs %>
