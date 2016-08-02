@@ -30,9 +30,10 @@ router.get('/user/check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
 router.get('/user/login',(req,res)=>{
+	var url = global.currenturl;
 	var from = 'mall',
-		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+req.url);
-	res.redirect(configs.loginurl+'?from='+from+'&callback='+req.originalUrl);
+		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
 	next();
 },(req,res)=>{
 
