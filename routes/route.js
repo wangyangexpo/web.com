@@ -38,9 +38,6 @@ router.get('/user/login',(req,res)=>{
 },(req,res)=>{
 
 });
-router.get('/user/register',(req,res)=>{
-	require('../page_build_fns/user_check')(req,res);
-});
 router.get('/user/logout',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });

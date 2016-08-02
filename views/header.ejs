@@ -22,13 +22,17 @@
         <div class="header-account-wrapper">
           <div class="header-account-panel">
             <a href="/user/login" rel="nofollow">登录</a>
-            <a href="/user/register" rel="nofollow">注册</a>
+            <a href="" rel="nofollow">购物车</a>
           </div>
         </div>
         <%}else{%>
+        <a class="shop_mall">
+          <span class="shop_bag"><%=shopcart.num%></span>
+          <span class="shop_mall_text">商城</span>
+        </a>
         <div class="header-account-wrapper">
           <div class="header-account-panel">
-          <span class="user">
+            <span class="user">
               <a class="user-name" href="/user/myOrder">
                 <span class="name">樊坤乾</span>
                 <i class="iconfont">&#xe609</i>
@@ -38,16 +42,12 @@
                 <li><a href="/user/account/address" data-stat-id="281a83d86f7b24f9">收货地址</a>
                 </li>
                 <li>
-                </li><li><a href="https://account.putao.com" target="_blank" data-stat-id="281a83d86f7b24f9">账户资料</a></li>
-                <li><a href="/user/logout" data-stat-id="281a83d86f7b24f9">退出登录</a></li>
+                </li><li><a href="https://account.putao.com" target="_blank" data-stat-id="">账户资料</a></li>
+                <li><a href="/user/logout" data-stat-id="">退出登录</a></li>
               </ul>
-          </span>
+            </span>
+          </div>
         </div>
-        </div>
-        <a class="shop_mall">
-          <span class="shop_bag"><%=shopcart.num%></span>
-          <span class="shop_mall_text">商城</span>
-        </a>
         <%}%>
       </div>
     </div>
