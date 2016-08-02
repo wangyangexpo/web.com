@@ -31,7 +31,7 @@ router.get('/user/check',(req,res)=>{
 });
 router.get('/user/login',(req,res)=>{
 	var from = 'mall',
-		callback = encodeURIComponent(req.headers.host+req.url);
+		callback = encodeURIComponent(configs.localurl+'user/check?redirect='+configs.localurl+req.url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback)
 });
 router.get('/user/register',(req,res)=>{
@@ -84,7 +84,7 @@ router.get('/pt_home',(req,res)=>{
 
 // 编程
 router.get('/page_hellobc',(req,res)=>{
-	res.render('hellobc',{})
+	require('../page_build_fns/page_hellobc')(req,res);
 })
 // 魔方
 router.get('/page_mofang',(req,res)=>{
