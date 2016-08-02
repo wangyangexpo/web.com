@@ -32,7 +32,7 @@ router.get('/user/check',(req,res)=>{
 router.get('/user/login',(req,res)=>{
 	var from = 'mall',
 		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+req.url);
-	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
+	res.redirect(configs.loginurl+'?from='+from+'&callback='+req.originalUrl);
 	next();
 },(req,res)=>{
 
