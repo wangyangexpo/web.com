@@ -3,6 +3,7 @@
  * 葡星剧场
  */
 var lib = require('./lib');
+var commeData = require('./commeData');
 var help = function(req,res){
 	var lib_o = new lib();
 	var parent_tag = req.query.parent_tag;
