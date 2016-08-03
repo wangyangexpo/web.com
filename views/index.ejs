@@ -38,10 +38,30 @@
         </div>
         <div class="plate_items">
           <% item['children'].forEach(function(childItem,index){ %>
-          <div class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
+          <a href="<%=childItem.basic_url%>" class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
             <img class="bg" src="<%=helpers.drawImage(childItem.basic_image_1)%>">
             <img class="scale" src="<%=helpers.drawImage(childItem.basic_image_2)%>">
-          </div>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="choose_details" style="display: none;" data-flag="2">
+    <div class="choose_details_inner">
+      <% acc.forEach(function(item){ %>
+      <div class="plate">
+        <div class="plate_title">
+          <span><%=item.title%></span>
+          <span><%=item.sub_title%></span>
+        </div>
+        <div class="plate_items">
+          <% item['children'].forEach(function(childItem,index){ %>
+          <a href="<%=childItem.basic_url%>" class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
+            <img class="bg" src="<%=helpers.drawImage(childItem.basic_image_1)%>">
+            <img class="scale" src="<%=helpers.drawImage(childItem.basic_image_2)%>">
+          </a>
           <% }) %>
         </div>
       </div>

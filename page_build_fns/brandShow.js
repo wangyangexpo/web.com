@@ -24,9 +24,8 @@ var page_brandShow = function(req, res) {
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
 				var _date = new Date(Number(content.show[0].created_at)*1000);
-				//console.log("bbbbbbbbbbbbbbb"+content.show[0].created_at);
+				//console.log('bbbbbbbbbbbbbbbbbbbb');
 				content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth()+1) + '-' + _date.getDay() + ' ' + _date.getHours()+':'+_date.getMinutes();
-//				console.log(JSON.stringify(count))
 				content.name = name;
 				content.banner = banner;
 				res.render('brandShow', content);

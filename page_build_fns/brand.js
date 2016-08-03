@@ -11,6 +11,10 @@ var theatre = function(req,res){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
+		.then(function(){return lib_o.getData({tag:'SWWPrT'},'show_banner')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
 		.then(function(){return lib_o.getData({tag:'brand_news'},'new_story')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
