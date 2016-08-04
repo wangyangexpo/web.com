@@ -79,6 +79,7 @@ lib_fn.prototype = {
 		}
 	},
 	getAllContent:function(){
+		this.content.banner = this.content.banner || [{}];
 		return this.content;
 	}
 }

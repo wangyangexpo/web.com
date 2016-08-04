@@ -26,7 +26,6 @@ var pt_home = function(req,res){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
-				//console.log('dddd '+JSON.stringify(content));
 				res.render('pt_home',content);
 			})
 

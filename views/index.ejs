@@ -1,13 +1,14 @@
 
 <% include ./header.ejs %>
 
-<link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
+<!--<link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">-->
+<link rel="stylesheet" href="css/index.css">
 <div class="wrapper">
   <div class="banner">
     <div class="swiper-container">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" id="swiperwrapper">
         <% banner.forEach(function(item){ %>
-          <div class="swiper-slide" style="background:url('<%=helpers.drawImage(item.basic_image_1)%>') center center no-repeat; ">
+          <div data-description="<%=item.description%>" class="swiper-slide" style="background:url('<%=helpers.drawImage(item.basic_image_1)%>') center center no-repeat; ">
             <a target="_blank" href="<%=item.basic_url%>"></a>
           </div>
         <% }) %>
@@ -70,4 +71,5 @@
   </div>
 </div>
 <script src="<%=helpers.staticurl('/js/index.js')%>"></script>
+<!--<script src="js/index.js"></script>-->
 <% include ./footer.ejs %>

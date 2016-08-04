@@ -6,7 +6,7 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var theatre = function(req,res){
 	var lib_o = new lib();
-	lib_o.getData({tag:'brand_banner'},'banner1')
+	lib_o.getData({tag:'brand_banner'},'banner')
 		.then(function(){return lib_o.getData({tag:'brand_story'},'banner2')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);

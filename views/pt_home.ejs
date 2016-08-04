@@ -52,6 +52,7 @@
 		<h2>葡萄之家会员权益</h2>
 	</div>
 	<ul id="memberInterests">
+		<%if(member_ship){%>
 		<% member_ship.forEach(function(item,index){ %>
 		<li class="memberInterests_li">
 			<div>
@@ -65,6 +66,7 @@
 			</div>
 		</li>
 		<% }) %>
+		<%}%>
 	</ul>
 </div>
 <!-- /葡萄之家会员权益 -->
@@ -75,6 +77,8 @@
 		<h2>热门活动</h2>
 	</div>
 	<div class="list" id="activity_list">
+
+		<%if(hot_acts){%>
 		<% hot_acts.forEach(function(item,index){ %>
 		<dl>
 			<dt>
@@ -87,6 +91,8 @@
 			</dd>
 		</dl>
 		<% }) %>
+		<%}%>
+
 	</div>
 	<%if(hot_acts.length > 2){%>
 	<!-- 查看更多 -->
@@ -109,6 +115,7 @@
 		</p>
 	</div>
 	<ul id="fans_list">
+		<%if(pf_stories){%>
 		<% pf_stories.forEach(function(item,index){ %>
 		<li>
 			<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
@@ -123,6 +130,7 @@
 			</dl>
 		</li>
 		<% }) %>
+		<%}%>
 	</ul>
 	<%if(pf_stories.length > 2){%>
 	<!-- 查看更多 -->
@@ -146,7 +154,7 @@
 			this.style.display = 'none';
 		})
 	} catch(e) {
-	
+
 	}
 	try {
 		fans_btn.addEventListener('click', function() {
@@ -154,7 +162,7 @@
 			this.style.display = 'none';
 		})
 	} catch(e) {
-	
+
 	}
 </script>
 <% include ./footer.ejs %>

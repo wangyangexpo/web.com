@@ -8,6 +8,7 @@ var about = function(req,res){
 	var lib_o = new lib();
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
+		console.log(content.banner)
 		content.shopcart = count;
 		res.render('about',content);
 	})

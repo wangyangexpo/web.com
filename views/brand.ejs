@@ -37,7 +37,7 @@
 </style>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/brand.css')%>">
 <!--<link rel="stylesheet" href="/css/brand.css">-->
-<div class="bd_header" style="background: url('<%=helpers.drawImage(banner1[0].basic_image_1)%>') no-repeat 50% 0">
+<div class="bd_header" style="background: url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat 50% 0">
 </div>
 
 <div class="bd_brandstory" style="background: url('<%=helpers.drawImage(banner2[0].basic_image_1)%>') no-repeat 50% 0">
@@ -52,7 +52,8 @@
 </div>
 
 <div class="con_blank bd_story_progress">
-	<% new_story.forEach(function(item,index){ %>
+	<%if(new_story){%>
+		<% new_story.forEach(function(item,index){ %>
 	<div class="story_blank <%=index%2 ==0?'':'story_blank_right'%>">
 		<div class="bd">
 			<span></span>
@@ -71,18 +72,23 @@
 		</div>
 	</div>
 	<% }) %>
+	<%}%>
+	
 </div>
 
 <div class="bd_brand_coo">
 	<div class="con_blank">
 		<p class="title">品牌合作</p>
 		<div class="coo_logo" id="coo_logo">
-			<% brand_coo.forEach(function(item,index){ %>
+			<%if(brand_coo){%>
+				<% brand_coo.forEach(function(item,index){ %>
 			<a class="coo_logo_linka" href="javascript:;" data-index="index">
 				<img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
 				<img class="disable_coo_logo" style="display: <%=index==0?'none':'block'%>" src="<%=helpers.drawImage(item.basic_image_2)%>" alt="">
 			</a>
 			<% }) %>
+			<%}%>
+			
 		</div>
 		<div class="coo_desc" id="coo_desc">
 			<%-brand_coo[0].basic_content%>
@@ -95,7 +101,8 @@
 		<p class="title">新品发布</p>
 		<div class="bd_new_release">
 			<ul id="box">
-				<% news_publish.forEach(function(item,index){ %>
+				<%if(news_publish){%>
+					<% news_publish.forEach(function(item,index){ %>
 				<li>
 					<a href="javascript:;" target="_blank">
 						<img style="width: 100%;height: 100%;" src="<%=helpers.drawImage(item.basic_image_1)%>">
@@ -106,6 +113,8 @@
 					</a>
 				</li>
 				<% }) %>
+				<%}%>
+				
 			</ul>
 		</div>
 	</div>
