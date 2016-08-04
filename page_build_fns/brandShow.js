@@ -21,14 +21,18 @@ var page_brandShow = function(req, res) {
 		})
 		.then(function() {
 			commeData(req, lib_o, function(count) {
-				var content = lib_o.getAllContent();
-				content.shopcart = count;
-				var _date = new Date(Number(content.show[0].created_at)*1000);
-				//console.log('bbbbbbbbbbbbbbbbbbbb');
-				content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth()+1) + '-' + _date.getDay() + ' ' + _date.getHours()+':'+_date.getMinutes();
-				content.name = name;
-				content.banner = banner;
-				res.render('brandShow', content);
+					var content = lib_o.getAllContent();
+				try {
+					content.shopcart = count;
+					var _date = new Date(Number(content.show[0].created_at) * 1000);
+					//console.log('bbbbbbbbbbbbbbbbbbbb');
+					content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDay() + ' ' + _date.getHours() + ':' + _date.getMinutes();
+				}catch (e){
+
+				}
+					content.name = name;
+					content.banner = banner;
+					res.render('brandShow', content);
 			})
 		});
 }
