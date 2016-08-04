@@ -34,7 +34,6 @@ router.get('/user/login',(req,res)=>{
 	var from = 'mall',
 		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
-	next();
 },(req,res)=>{
 
 });
