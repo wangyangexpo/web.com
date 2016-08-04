@@ -21,7 +21,7 @@ var page_brandShow = function(req, res) {
 		})
 		.then(function() {
 			commeData(req, lib_o, function(count) {
-				try {
+				//try {
 					var content = lib_o.getAllContent();
 					content.shopcart = count;
 					var _date = new Date(Number(content.show[0].created_at) * 1000);
@@ -31,8 +31,8 @@ var page_brandShow = function(req, res) {
 					content.name = name;
 					content.banner = banner;
 					res.render('brandShow', content);
-				}catch (e){
-				}
+				//}catch (e){
+				//}
 			})
 		});
 }
