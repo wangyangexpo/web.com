@@ -110,7 +110,7 @@
   </div>
 </div>
 <script>
-  var ips_content = '<%- helpers.getIpsContent(ips)%>';
+  var ips_content = '<%- JSON.stringify(helpers.getIpsContent(ips))%>';
   var ips = ips_content.split('|*|');
   var ips_img_str = '<%= helpers.getIpsImg(ips)%>';
   var ips_img = ips_img_str.split(',');
