@@ -60,9 +60,9 @@
 			<span><em></em></span>
 		</div>
 		<div>
-			<img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
+			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
 			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>">
-				<%=item.name%>
+				<%=item.name%><br />
 				<%=item.title%>
 			</a>
 			<!--<b><%=item.sub_title%></b>-->

@@ -77,7 +77,7 @@
 		<h2>热门活动</h2>
 	</div>
 	<div class="list" id="activity_list">
-
+		<div>
 		<%if(hot_acts){%>
 		<% hot_acts.forEach(function(item,index){ %>
 		<dl>
@@ -92,7 +92,7 @@
 		</dl>
 		<% }) %>
 		<%}%>
-
+		</div>
 	</div>
 	<%if(hot_acts.length > 2){%>
 	<!-- 查看更多 -->
@@ -114,7 +114,9 @@
 			<br /> 他们是“蒲公英”，因为他们愿意分享传播自己积累的亲子方式
 		</p>
 	</div>
-	<ul id="fans_list">
+	<div id="fans_list">
+		<div>
+			<ul id="fans_list">
 		<%if(pf_stories){%>
 		<% pf_stories.forEach(function(item,index){ %>
 		<li>
@@ -132,6 +134,9 @@
 		<% }) %>
 		<%}%>
 	</ul>
+		</div>
+	</div>
+	
 	<%if(pf_stories.length > 2){%>
 	<!-- 查看更多 -->
 	<div class="more">
@@ -142,24 +147,24 @@
 
 </div>
 <!-- /葡粉故事 -->
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/pt_home.js')%>"></script>
+<!--<script src="/js/pt_home.js"></script>-->
 <script>
-	var activity_btn = document.querySelector('#activity_btn'),
-		activity_list = document.querySelector('#activity_list'),
-		fans_btn = document.querySelector('#fans_btn'),
-		fans_list = document.querySelector('#fans_list');
+	var $activity_list = $('#activity_list'),
+		$fans_list = $('#fans_list');
 	try {
-		activity_btn.addEventListener('click', function() {
-			activity_list.style.height = '2200px';
-			this.style.display = 'none';
+		$('#activity_btn').on('click', function() {
+			$activity_list.animate({height:$activity_list.find('div').eq(0).height()+20});
+			$(this).hide();
 		})
 	} catch(e) {
 
 	}
 	try {
-		fans_btn.addEventListener('click', function() {
-			fans_list.style.height = '950px';
-			this.style.display = 'none';
+		$('#fans_btn').on('click', function() {
+			$fans_list.animate({height:$fans_list.find('div').eq(0).height()+20});
+			$(this).hide();
 		})
 	} catch(e) {
 
