@@ -3,7 +3,19 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download.css')%>" />
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download_old.css')%>" />
 <div role="main" id="site-content">
+  <div class="swiper-container">
 
+    <div class="swiper-wrapper">
+      <%if(banner&&banner.length >0){%>
+        <% banner.forEach(function(item,index){ %>
+        <div class="swiper-slide" style="background: url('<%=helpers.drawImage(item.basic_image_1)%>');background-position: center center;width: 100%;height: 720px;background-repeat: no-repeat;">
+          <a href="http://www.putao.com/appinfo/<%=item.tag%>"></a>
+        </div>
+        <% }) %>
+      <%}%>
+
+    </div>
+    <div class="pagination"></div>
   </div>
   <div class="main-concept gameSection">
     <div class="title-header">
