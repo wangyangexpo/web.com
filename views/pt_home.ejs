@@ -53,19 +53,19 @@
 	</div>
 	<ul id="memberInterests">
 		<%if(member_ship){%>
-		<% member_ship.forEach(function(item,index){ %>
-		<li class="memberInterests_li">
-			<div>
-				<h3 class="mem_title"><%=item.title%></h3>
-				<p class="mem_sub_title">
-					<%=item.sub_title%>
-				</p>
-			</div>
-			<div>
-				<%-item.basic_content%>
-			</div>
-		</li>
-		<% }) %>
+			<% member_ship.forEach(function(item,index){ %>
+			<li class="memberInterests_li">
+				<div>
+					<h3 class="mem_title"><%=item.title%></h3>
+					<p class="mem_sub_title">
+						<%=item.sub_title%>
+					</p>
+				</div>
+				<div>
+					<%-item.basic_content%>
+				</div>
+			</li>
+			<% }) %>
 		<%}%>
 	</ul>
 </div>
@@ -79,18 +79,18 @@
 	<div class="list" id="activity_list">
 		<div>
 		<%if(hot_acts){%>
-		<% hot_acts.forEach(function(item,index){ %>
-		<dl>
-			<dt>
-				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
-				<p><%=item.name%></p>
-			</dt>
-			<dd>
-				<%-item.basic_content%>
-				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
-			</dd>
-		</dl>
-		<% }) %>
+			<% hot_acts.forEach(function(item,index){ %>
+			<dl>
+				<dt>
+					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
+					<p><%=item.name%></p>
+				</dt>
+				<dd>
+					<%-item.basic_content%>
+					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
+				</dd>
+			</dl>
+			<% }) %>
 		<%}%>
 		</div>
 	</div>
@@ -118,20 +118,20 @@
 		<div>
 			<ul id="fans_list">
 		<%if(pf_stories){%>
-		<% pf_stories.forEach(function(item,index){ %>
-		<li>
-			<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
-			<dl>
-				<dt><%=item.name%></dt>
-				<dd>
-					<%=item.title%>
-				</dd>
-				<dd>
-					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=葡粉故事&tag=<%=item.tag%>">查看全文</a>
-				</dd>
-			</dl>
-		</li>
-		<% }) %>
+			<% pf_stories.forEach(function(item,index){ %>
+			<li>
+				<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
+				<dl>
+					<dt><%=item.name%></dt>
+					<dd>
+						<%=item.title%>
+					</dd>
+					<dd>
+						<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=葡粉故事&tag=<%=item.tag%>">查看全文</a>
+					</dd>
+				</dl>
+			</li>
+			<% }) %>
 		<%}%>
 	</ul>
 		</div>

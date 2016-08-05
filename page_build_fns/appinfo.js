@@ -14,26 +14,30 @@ var app = function(req,res,tag){
 				var pic_map = [],
 					text_map = [],
 					body_map;
-				data.forEach(function(item){
-					var content_type = item.content_type;
-					switch (content_type){
-						case 'pic':
-							pic_map.push(item);
-							break;
-						case 'text':
-							text_map.push(item);
-							break;
-						case 'body':
-							body_map = item;
-							break
-					};
-				});
+				if(data&&data.length>0) {
+					data.forEach(function (item) {
+						var content_type = item.content_type;
+						switch (content_type) {
+							case 'pic':
+								pic_map.push(item);
+								break;
+							case 'text':
+								text_map.push(item);
+								break;
+							case 'body':
+								body_map = item;
+								break
+						}
+						;
+					});
+				}
 				var result = {
 					pic_map:pic_map,
 					text_map:text_map,
 					body_map:body_map,
 					cms:content.cms,
-					shopcart:count
+					shopcart:count,
+					banner: [{}]
 				}
 				res.render('appinfo',result);
 			})

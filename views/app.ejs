@@ -1,9 +1,10 @@
 <% include ./header.ejs %>
-<link rel="stylesheet" href="<%=helpers.staticurl('/css/base.css')%>" />
+<!--<link rel="stylesheet" href="<%=helpers.staticurl('/css/base.css')%>" />-->
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download.css')%>" />
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/app_download_old.css')%>" />
 <div role="main" id="site-content">
   <div class="swiper-container">
+
     <div class="swiper-wrapper">
       <%if(banner&&banner.length >0){%>
         <% banner.forEach(function(item,index){ %>
@@ -12,6 +13,7 @@
         </div>
         <% }) %>
       <%}%>
+
     </div>
     <div class="pagination"></div>
   </div>
@@ -99,4 +101,5 @@
   </div>
 </div>
 <script src="<%=helpers.staticurl('/js/app_download.js')%>"></script>
+<!--<script src="/js/app_download.js"></script>-->
 <% include ./footer.ejs %>

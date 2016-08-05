@@ -9,6 +9,7 @@ var page_qimiaodianlu = function(req,res){
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
+		content.banner = [{description:1}];
 		res.render('qimiaodianlu',content);
 	})
 }

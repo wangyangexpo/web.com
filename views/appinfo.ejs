@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/appinfo.css')%>" />
 <style>
   .content-wrapper{
-    background-image: url('<%=helpers.drawImage(body_map.basic_image_2)%>');
+    background-image: url('<%=helpers.drawImage(body_map.basic_image_2||'')%>');
     min-width: 1200px;
   }
 </style>
@@ -27,11 +27,12 @@
   </div>
   <div class="main">
     <div class="title-box">
-      <img src="<%=helpers.drawImage(body_map.basic_image_3)%>">
+      <img src="<%=helpers.drawImage(body_map.basic_image_3||'')%>">
     </div>
     <div class="screenshot-box">
       <div class="swiper-container">
         <div class="swiper-wrapper" id="gallery">
+          <%if(pic_map&&pic_map.length>0){%>
               <% pic_map.forEach(function(item,index){ %>
                 <div class="swiper-slide" >
                   <div class="shot">
@@ -39,6 +40,7 @@
                   </div>
                 </div>
               <% }) %>
+          <% } %>
           </div>
         <div class="swiper-scrollbar"></div>
         </div>
@@ -48,17 +50,19 @@
         <!--                如果数量是奇数,给第一个dd加上class="single_ft"-->
         <!--                如果数量是奇数,并且当前数量是第偶数个,给dd加上style="clear:left;-->
         <!--                如果数量是偶数,并且当前数量是第奇数个,给dd加上style="clear:left;-->
-        <% text_map.forEach(function(item,index){ %>
-          <dd  class="<%=(text_map.length%2!=0&&index==0)?'single_ft':''%>" style="<%=(text_map.length%2!=0&&index%2==0)||(text_map.length%2==0&&index%2!=0)?'single_ft':''%>">
-          <div class="ft">
-            <img src="<%=helpers.drawImage(item.basic_image_1)%>">
-          </div>
-          <div class="txt">
-            <h3><%=item.title%></h3>
-            <p><%=item.sub_title%></p>
-          </div>
-        </dd>
-        <% }) %>
+        <%if(text_map&&text_map.length>0){%>
+          <% text_map.forEach(function(item,index){ %>
+            <dd  class="<%=(text_map.length%2!=0&&index==0)?'single_ft':''%>" style="<%=(text_map.length%2!=0&&index%2==0)||(text_map.length%2==0&&index%2!=0)?'single_ft':''%>">
+            <div class="ft">
+              <img src="<%=helpers.drawImage(item.basic_image_1)%>">
+            </div>
+            <div class="txt">
+              <h3><%=item.title%></h3>
+              <p><%=item.sub_title%></p>
+            </div>
+          </dd>
+          <% }) %>
+        <% } %>
       </dl>
     </div>
   </div>

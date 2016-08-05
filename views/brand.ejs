@@ -7,15 +7,18 @@
 		margin-left: 550px;
 		overflow: hidden;
 	}
+	
 	.bd span {
 		display: block;
 	}
+	
 	.bd span:first-child {
 		width: 2px;
 		height: 95%;
 		margin-left: 9px;
 		background: #995acc;
 	}
+	
 	.bd span:last-child {
 		position: absolute;
 		bottom: 0;
@@ -26,12 +29,13 @@
 		text-align: center;
 		overflow: hidden;
 	}
+	
 	.bd em {
 		display: inline-block;
 		width: 14px;
 		height: 14px;
 		margin-top: 2.5px;
-		border-radius:50%;
+		border-radius: 50%;
 		background: #FFF;
 	}
 </style>
@@ -52,8 +56,8 @@
 </div>
 
 <div class="con_blank bd_story_progress">
-	<%if(new_story){%>
-		<% new_story.forEach(function(item,index){ %>
+	<%if(new_story&&new_story.length>0){%>
+	<% new_story.forEach(function(item,index){ %>
 	<div class="story_blank <%=index%2 ==0?'':'story_blank_right'%>">
 		<div class="bd">
 			<span></span>
@@ -73,25 +77,38 @@
 	</div>
 	<% }) %>
 	<%}%>
-	
+
 </div>
 
 <div class="bd_brand_coo">
 	<div class="con_blank">
 		<p class="title">品牌合作</p>
 		<div class="coo_logo" id="coo_logo">
-			<%if(brand_coo){%>
-				<% brand_coo.forEach(function(item,index){ %>
-			<a class="coo_logo_linka" href="javascript:;" data-index="index">
-				<img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
-				<img class="disable_coo_logo" style="display: <%=index==0?'none':'block'%>" src="<%=helpers.drawImage(item.basic_image_2)%>" alt="">
+			<%if(brand_coo && brand_coo.length > 0){%>
+			<% brand_coo.forEach(function(item,index){ %>
+			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
+				<img src="<%=helpers.drawImage(item.basic_image_2)%>">
+				<img class="disable_coo_logo" style="display: none" src="<%=helpers.drawImage(item.basic_image_1)%>">
 			</a>
 			<% }) %>
 			<%}%>
-			
+
 		</div>
 		<div class="coo_desc" id="coo_desc">
-			<%-brand_coo[0].basic_content%>
+			<%if(brand_coo){%>
+			<%for(var i = 0,len = brand_coo.length; i < len; i++){%>
+				<%if(!i){%>
+					<div style="display: block;">
+				<%-brand_coo[i].basic_content%>
+			</div>
+				<%}else{%>
+					<div style="display: none;">
+				<%-brand_coo[i].basic_content%>
+			</div>
+				<%}%>
+			
+			<%}%>
+			<%}%>
 		</div>
 	</div>
 </div>
@@ -101,7 +118,7 @@
 		<p class="title">新品发布</p>
 		<div class="bd_new_release">
 			<ul id="box">
-				<%if(news_publish){%>
+				<%if(news_publish && news_publish.length > 0){%>
 					<% news_publish.forEach(function(item,index){ %>
 				<li>
 					<a href="javascript:;" target="_blank">
@@ -114,19 +131,12 @@
 				</li>
 				<% }) %>
 				<%}%>
-				
+
 			</ul>
 		</div>
 	</div>
 </div>
 
-<script>
-	var coo = [
-		<% brand_coo.forEach(function(item,index){ %>
-		<%- JSON.stringify(item.basic_content)%>
-		<% }) %>
-	]
-</script>
 <script src="<%=helpers.staticurl('/js/lib/jquery1.42.min.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/lib/jquery.movingboxes.js')%>"></script>
 <script>
@@ -141,6 +151,6 @@
 		});
 	})
 </script>
-<script src="<%=helpers.staticurl('/js/brand.js')%>"></script>
-<!--<script src="/js/brand.js"></script>-->
+<!--<script src="<%=helpers.staticurl('/js/brand.js')%>"></script>-->
+<script src="/js/brand.js"></script>
 <% include ./footer.ejs %>

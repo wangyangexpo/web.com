@@ -1,55 +1,69 @@
 <div id="footer">
-  <div class="footer-container clearfix">
-    <div class="bottom-logo">
-      <img width="113" src="<%=helpers.staticurl('/images/logo-bottom.png')%>" alt="">
-    </div>
-    <% cms.forEach(function(item){ %>
-      <ul>
-        <li><h3><%=item.name%></h3></li>
-        <%if(item['children']){%>
-          <% item['children'].forEach(function(item_li){ %>
-          	<%if(item_li.basic_url){%>
-          		<li><a rel="nofollow" href="/<%=item_li.basic_url%>"><%=item_li.name%></a></li>
-          	<%}else{%>
-          		<li><a rel="nofollow" href="/help?parent_tag=<%=item_li.parent_tag%>&id=<%=item_li.id%>"><%=item_li.name%></a></li>	
-          	<%}%>
-          <% }) %>
-        <%}%>
-      </ul>
-    <% }) %>
-    <ul>
-      <li><h3>关注我们</h3></li>
-      <li style="position: relative"><a href="javascript:;" id="pt_code">葡萄纬度</a>
-        <img id="qcode" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="<%=helpers.staticurl('images/img_wechat_qrcode@2x.png')%>" alt="">
-      </li>
-    </ul>
-    <script>
-      document.getElementById('pt_code').onmouseenter= function () {
-        document.getElementById('qcode').style.display='block';
-      }
-      document.getElementById('pt_code').onmouseleave= function () {
-        document.getElementById('qcode').style.display='none';
-      }
-    </script>
-    <div class="online">
-      <div style="text-align: right">
-        <a href="javascript:;">
-          <img width="110" style="CURSOR: pointer" onclick="javascript:window.open('http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODAzMTAxN18zMjgzOTFfNDAwNjUxNjE2MV8yXw');" border="0" src="<%=helpers.staticurl('/images/btn_consult_qq@2x.png')%>" alt="点击这里给我发消息">
-          <!--                    <img width="110" src="" alt=""/>-->
-        </a>
-      </div>
-      <p class="tel">400-651-6161</p>
-    </div>
-  </div>
+	<div class="footer-container clearfix">
+		<div class="bottom-logo">
+			<img width="113" src="<%=helpers.staticurl('/images/logo-bottom.png')%>" alt="">
+		</div>
+		<% if(cms) { %>
+			<% cms.forEach(function(item){ %>
+			<ul>
+				<li>
+					<h3><%=item.name%></h3></li>
+				<%if(item['children']){%>
+					<% item['children'].forEach(function(item_li){ %>
+						<%if(item_li.basic_url){%>
+						<li>
+							<a rel="nofollow" href="/<%=item_li.basic_url%>">
+								<%=item_li.name%>
+							</a>
+						</li>
+						<%}else{%>
+						<li>
+							<a rel="nofollow" href="/help?parent_tag=<%=item_li.parent_tag%>&id=<%=item_li.id%>">
+								<%=item_li.name%>
+							</a>
+						</li>
+						<%}%>
+					<% }) %>
+				<%}%>
+			</ul>
+			<% }) %>
+		<% } %>
+		<ul>
+			<li>
+				<h3>关注我们</h3></li>
+			<li style="position: relative">
+				<a href="javascript:;" id="pt_code">葡萄纬度</a>
+				<img id="qcode" style="position: absolute;top:-80px;display: none;left: 60px" width="160" src="<%=helpers.staticurl('images/img_wechat_qrcode@2x.png')%>" alt="">
+			</li>
+		</ul>
+		<script>
+			document.getElementById('pt_code').onmouseenter = function() {
+				document.getElementById('qcode').style.display = 'block';
+			}
+			document.getElementById('pt_code').onmouseleave = function() {
+				document.getElementById('qcode').style.display = 'none';
+			}
+		</script>
+		<div class="online">
+			<div style="text-align: right">
+				<a href="javascript:;">
+					<img width="110" style="CURSOR: pointer" onclick="javascript:window.open('http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODAzMTAxN18zMjgzOTFfNDAwNjUxNjE2MV8yXw');" border="0" src="<%=helpers.staticurl('/images/btn_consult_qq@2x.png')%>" alt="点击这里给我发消息">
+					<!--                    <img width="110" src="" alt=""/>-->
+				</a>
+			</div>
+			<p class="tel">400-651-6161</p>
+		</div>
+	</div>
 </div>
 <div class="copyright">
-  <div class="copyright-inner">
-    <h2>Copyright © 2016, Shanghai Putao Technology Co., Ltd. All Rights Reserved.</h2>
-    <h3>上海葡萄纬度科技有限公司</h3><br>
-    <h4>
+	<div class="copyright-inner">
+		<h2>Copyright © 2016, Shanghai Putao Technology Co., Ltd. All Rights Reserved.</h2>
+		<h3>上海葡萄纬度科技有限公司</h3><br>
+		<h4>
       <a href="http://www.miibeian.gov.cn/">沪ICP备15015904号-3</a>
     </h4>
-  </div>
+	</div>
 </div>
 </body>
+
 </html>

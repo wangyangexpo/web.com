@@ -33,20 +33,24 @@ var help = function(req,res){
 				} else {
 					var _arr = content[parent_tag];
 					var _address = '';
-					_arr.forEach(function (v) {
-						if (v.id === id) {
-							content.mainText = v.basic_content;
-							_address = v.name;
+					if(_arr&&_arr.length) {
+						_arr.forEach(function (v) {
+							if (v.id === id) {
+								content.mainText = v.basic_content;
+								_address = v.name;
+								return false;
+							}
+						})
+					}
+				}
+				if(content.dl) {
+					content.dl.forEach(function (v) {
+						if (v.tag === parent_tag) {
+							_address = v.name + '>' + _address
 							return false;
 						}
 					})
 				}
-				content.dl.forEach(function (v) {
-					if (v.tag === parent_tag) {
-						_address = v.name + '>' + _address
-						return false;
-					}
-				})
 				content.curAddress = _address;
 				content.shopcart = count;
 				res.render('help', content);

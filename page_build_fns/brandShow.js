@@ -25,9 +25,13 @@ var page_brandShow = function(req, res) {
 					var content = lib_o.getAllContent();
 					content.shopcart = count;
 				if(content.show&&content.show[0]) {
-					var _date = new Date(Number(content.show[0].created_at) * 1000);
-					//console.log('bbbbbbbbbbbbbbbbbbbb');
-					content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDay() + ' ' + _date.getHours() + ':' + _date.getMinutes();
+					try {
+						var _date = new Date(Number(content.show[0].created_at) * 1000);
+						//console.log('bbbbbbbbbbbbbbbbbbbb');
+						content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDay() + ' ' + _date.getHours() + ':' + _date.getMinutes();
+					}catch (e){
+						throw new Error('line 33 发生错误！',+ error);
+					}
 				}
 					content.name = name;
 					content.banner = banner;
