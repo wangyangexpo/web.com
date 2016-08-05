@@ -86,7 +86,9 @@
 					<p><%=item.name%></p>
 				</dt>
 				<dd>
-					<%-item.basic_content%>
+					<div>
+						<%-item.basic_content%>
+					</div>
 					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
 				</dd>
 			</dl>
@@ -143,6 +145,8 @@
 		<a href="javascript:;" id="fans_btn"></a>
 	</div>
 	<!-- /查看更多 -->
+	<%}else{%>
+		<div style="height: 50px;"></div>
 	<%}%>
 
 </div>

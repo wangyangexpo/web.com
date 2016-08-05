@@ -66,10 +66,12 @@
 		<div>
 			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
 			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>">
-				<%=item.name%><br />
-				<%=item.title%>
+				<span class="f14">
+					<%=item.sub_title%><br />
+				<%=item.title%><br />
+				</span>
+				<%=item.name%>
 			</a>
-			<!--<b><%=item.sub_title%></b>-->
 			<div class="t">
 				<%-item.basic_content%>
 			</div>
@@ -86,10 +88,18 @@
 		<div class="coo_logo" id="coo_logo">
 			<%if(brand_coo && brand_coo.length > 0){%>
 			<% brand_coo.forEach(function(item,index){ %>
-			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
+				<%if(!index){%>
+					<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
+				<img src="<%=helpers.drawImage(item.basic_image_2)%>" style="display: none;">
+				<img class="disable_coo_logo" style="display: block" src="<%=helpers.drawImage(item.basic_image_1)%>">
+			</a>
+				<%}else{%>
+					<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
 				<img src="<%=helpers.drawImage(item.basic_image_2)%>">
 				<img class="disable_coo_logo" style="display: none" src="<%=helpers.drawImage(item.basic_image_1)%>">
 			</a>
+				<%}%>
+			
 			<% }) %>
 			<%}%>
 

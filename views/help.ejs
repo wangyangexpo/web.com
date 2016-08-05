@@ -1,5 +1,6 @@
 <% include ./header.ejs %>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/help.css')%>" />
+<!--<link rel="stylesheet" href="/css/help.css" />-->
 <div class="help-page">
 	<div class="currentLocation">
 		首页><%=curAddress%>
@@ -38,7 +39,7 @@
 			</dl>
 			<dl>
 				<dt>关于葡萄</dt>
-				<% if() { %>
+				<% if(cms_about) { %>
 					<% for(var i = 0,len = cms_about.length; i<len; i++){%>
 						<dd>
 							<a href="/help?parent_tag=<%=cms_about[i].parent_tag%>&id=<%=cms_about[i].id%>"><%=cms_about[i].name%></a>

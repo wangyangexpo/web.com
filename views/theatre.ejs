@@ -14,9 +14,9 @@
 	<div class="con_blank theater_con">
 		<div class="head_list">
 			<% if(ips) { %>
-				<% ips.forEach(function(item,index){ %>
-				<a href="javascript:;" class="act" data-id="<%=index%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
-				<% }) %>
+			<% ips.forEach(function(item,index){ %>
+			<a href="javascript:;" class="act" data-id="<%=index%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+			<% }) %>
 			<% } %>
 		</div>
 		<div class="head_desc">
@@ -51,7 +51,7 @@
 			<p class="desc_info">
 				<%=qtao[0].description%>
 			</p>
-			<div class="episode">
+			<div class="episode" id="show_film">
 			</div>
 			<p class="paging">
 				<a href="javascript:;" class="paging_prev">上一页</a>
@@ -85,23 +85,23 @@
 <div class="theater_blank product_wrap">
 	<div class="con_blank product_con">
 		<% if(comic_novel) { %>
-			<% comic_novel.forEach(function(item,index){ %>
-			<div class="product_list">
-				<img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
-				<p class="title_info"><span><%=item.name%></span></p>
-				<p class="type_info">
-					<%=item.title%>
-				</p>
-				<p class="staring_info">
-					<%=item.sub_title%>
-				</p>
-				<p class="desc_info">
-					<%=item.description%>
-				</p>
-				<a href="<%=item.basic_url%>">点击查看
-					<%=item.name%>>></a>
-			</div>
-			<% }) %>
+		<% comic_novel.forEach(function(item,index){ %>
+		<div class="product_list">
+			<img src="<%=helpers.drawImage(item.basic_image_1)%>" alt="">
+			<p class="title_info"><span><%=item.name%></span></p>
+			<p class="type_info">
+				<%=item.title%>
+			</p>
+			<p class="staring_info">
+				<%=item.sub_title%>
+			</p>
+			<p class="desc_info">
+				<%=item.description%>
+			</p>
+			<!--<a href="<%=item.basic_url%>">点击查看
+				<%=item.name%>>></a>-->
+		</div>
+		<% }) %>
 		<% } %>
 	</div>
 </div>
@@ -123,7 +123,7 @@
 	</div>
 </div>
 <div class="mark"></div>
-<div class="video_pop animated">
+<div class="video_pop animated" id="video_pop">
 	<div class="title">
 		<span id="video_title">视频名称</span>
 		<a href="javascript:;" class="video_close_btn">x</a>
@@ -131,6 +131,17 @@
 	<div class="video_con">
 		<div id="youkuplayer" style="width:860px;height:524px;display: block">
 			<object type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf" width="100%" height="100%" id="youku-player"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="movie" value="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf"><param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=5c30db50b42ae8c4&amp;styleid=0"></object>
+		</div>
+	</div>
+</div>
+<div class="video_pop animated" id="video_pop1">
+	<div class="title">
+		<span id="video_title">视频名称</span>
+		<a href="javascript:;" class="video_close_btn">x</a>
+	</div>
+	<div class="video_con">
+		<div class="mn" style="width:860px;height:524px;display: block">
+			<iframe src='http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=06b1fb8a5817f6ffe3974889cabed1bc&tvId=516512200&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%' frameborder='0' width='100%' height='100%' allowfullscreen='true'></iframe>
 		</div>
 	</div>
 </div>
@@ -145,6 +156,6 @@
 	var pages_json = '<%= helpers.getCarToonPages(qtao)%>';
 	var pages = pages_json.split(',');
 </script>
-<script src="<%=helpers.staticurl('/js/theatre.js')%>"></script>
-<!--<script src="/js/theatre.js"></script>-->
+<!--<script src="<%=helpers.staticurl('/js/theatre.js')%>"></script>-->
+<script src="/js/theatre.js"></script>
 <% include ./footer.ejs %>
