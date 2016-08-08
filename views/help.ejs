@@ -31,9 +31,16 @@
 				<dt>商务合作</dt>
 				<% if(cms_bd) { %>
 					<% for(var i = 0,len = cms_bd.length; i<len; i++){%>
+						<%if(cms_bd[i].basic_url){%>
+						<dd>
+							<a href="/<%=cms_bd[i].basic_url%>"><%=cms_bd[i].name%></a>
+						</dd>
+						<%}else{%>
 						<dd>
 							<a href="/help?parent_tag=<%=cms_bd[i].parent_tag%>&id=<%=cms_bd[i].id%>"><%=cms_bd[i].name%></a>
 						</dd>
+						<%}%>
+						
 					<%}%>
 				<% } %>
 			</dl>
@@ -41,9 +48,15 @@
 				<dt>关于葡萄</dt>
 				<% if(cms_about) { %>
 					<% for(var i = 0,len = cms_about.length; i<len; i++){%>
+						<%if(cms_about[i].basic_url){%>
+						<dd>
+							<a href="/<%=cms_about[i].basic_url%>"><%=cms_about[i].name%></a>
+						</dd>
+						<%}else{%>
 						<dd>
 							<a href="/help?parent_tag=<%=cms_about[i].parent_tag%>&id=<%=cms_about[i].id%>"><%=cms_about[i].name%></a>
 						</dd>
+						<%}%>
 					<%}%>
 				<% } %>
 			</dl>
