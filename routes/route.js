@@ -81,10 +81,8 @@ router.get('/help',(req,res)=>{
 	require('../page_build_fns/help')(req,res);
 });
 
-router.get('/appinfo/:tag',(req,res)=>{
-	console.log(req);
-	var tag = req.params.tag;
-	require('../page_build_fns/appinfo')(req,res,tag);
+router.get('/appinfo',(req,res)=>{
+	require('../page_build_fns/appinfo')(req,res);
 })
 router.get('/pt_home',(req,res)=>{
 	require('../page_build_fns/pt_home')(req,res);

@@ -25,6 +25,7 @@ var pt_home = function(req,res){
 		.then(function(){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
+				content.title = '葡萄之家 - ' + content.title;
 				content.shopcart = count;
 				res.render('pt_home',content);
 			})

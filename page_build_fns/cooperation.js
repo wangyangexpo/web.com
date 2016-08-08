@@ -9,6 +9,7 @@ var cooperation = function(req,res){
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
+		content.title = '商务合作 - ' + content.title;
 		res.render('cooperation',content);
 	})
 }

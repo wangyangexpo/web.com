@@ -81,6 +81,7 @@ lib_fn.prototype = {
 	},
 	getAllContent:function(){
 		this.content.banner = this.content.banner || [{}];
+		this.content.title = '葡萄科技官网 - 科技陪伴成长';
 		return this.content;
 	}
 }

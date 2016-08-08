@@ -33,6 +33,7 @@ var help = function(req,res){
 				} else {
 					var _arr = content[parent_tag];
 					var _address = '';
+					var _address1 = '';
 					if(_arr&&_arr.length) {
 						_arr.forEach(function (v) {
 							if (v.id === id) {
@@ -46,13 +47,16 @@ var help = function(req,res){
 				if(content.dl) {
 					content.dl.forEach(function (v) {
 						if (v.tag === parent_tag) {
-							_address = v.name + '>' + _address
+							_address1 = v.name + ' - ' + _address + ' - ';
+							_address = v.name + '>' + _address;
+							
 							return false;
 						}
 					})
 				}
 				content.curAddress = _address;
 				content.shopcart = count;
+				content.title = _address1 + content.title;
 				res.render('help', content);
 			})
 		})

@@ -31,6 +31,7 @@ var theatre = function(req,res){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
+				content.title = '品牌动态 - ' + content.title;
 				//console.log('dddd '+JSON.stringify(content));
 				res.render('brand',content);
 			})

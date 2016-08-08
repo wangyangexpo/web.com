@@ -6,7 +6,8 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var app = function(req,res,tag){
 	var lib_o = new lib();
-	lib_o.getData({tag:tag},'data',false,'/detail')
+	var _name = req.query.name;
+	lib_o.getData({tag:req.query.tag},'data',false,'/detail')
 		.then(function(){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent(),
@@ -36,6 +37,7 @@ var app = function(req,res,tag){
 					text_map:text_map,
 					body_map:body_map,
 					cms:content.cms,
+					title: _name + ' - ' + '应用下载 - ' + content.title,
 					shopcart:count,
 					banner: [{}]
 				}

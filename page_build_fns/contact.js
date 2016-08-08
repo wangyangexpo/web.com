@@ -9,6 +9,7 @@ var contact = function(req,res){
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
+		content.title = '联系我们 - ' + content.title;
 		res.render('contact',content);
 	})
 }

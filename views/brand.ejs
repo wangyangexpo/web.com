@@ -88,18 +88,18 @@
 		<div class="coo_logo" id="coo_logo">
 			<%if(brand_coo && brand_coo.length > 0){%>
 			<% brand_coo.forEach(function(item,index){ %>
-				<%if(!index){%>
-					<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
+			<%if(!index){%>
+			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
 				<img src="<%=helpers.drawImage(item.basic_image_2)%>" style="display: none;">
 				<img class="disable_coo_logo" style="display: block" src="<%=helpers.drawImage(item.basic_image_1)%>">
 			</a>
-				<%}else{%>
-					<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
+			<%}else{%>
+			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
 				<img src="<%=helpers.drawImage(item.basic_image_2)%>">
 				<img class="disable_coo_logo" style="display: none" src="<%=helpers.drawImage(item.basic_image_1)%>">
 			</a>
-				<%}%>
-			
+			<%}%>
+
 			<% }) %>
 			<%}%>
 
@@ -107,16 +107,16 @@
 		<div class="coo_desc" id="coo_desc">
 			<%if(brand_coo){%>
 			<%for(var i = 0,len = brand_coo.length; i < len; i++){%>
-				<%if(!i){%>
-					<div style="display: block;">
+			<%if(!i){%>
+			<div style="display: block;">
 				<%-brand_coo[i].basic_content%>
 			</div>
-				<%}else{%>
-					<div style="display: none;">
+			<%}else{%>
+			<div style="display: none;">
 				<%-brand_coo[i].basic_content%>
 			</div>
-				<%}%>
-			
+			<%}%>
+
 			<%}%>
 			<%}%>
 		</div>
@@ -126,40 +126,48 @@
 <div class="bd_brand_coo">
 	<div class="con_blank">
 		<p class="title">新品发布</p>
-		<div class="bd_new_release">
-			<ul id="box">
-				<%if(news_publish && news_publish.length > 0){%>
+		<div class="imagesSwitch" id="imagesSwitch">
+			<a href="javascript:;" class="btn">
+				<span></span>
+			</a>
+			<div class="imgBox">
+				<ul>
+					<%if(news_publish && news_publish.length > 0){%>
 					<% news_publish.forEach(function(item,index){ %>
-				<li>
-					<a href="javascript:;" target="_blank">
-						<img style="width: 100%;height: 100%;" src="<%=helpers.drawImage(item.basic_image_1)%>">
-						<span>
+					<li>
+						<a href="javascript:;" target="_blank">
+							<img style="width: 100%;height: 100%;" src="<%=helpers.drawImage(item.basic_image_1)%>">
+							<span>
               <i><%=item.title%></i>
               <b><%=item.name%></b>
             </span>
-					</a>
-				</li>
-				<% }) %>
-				<%}%>
-
-			</ul>
+						</a>
+					</li>
+					<% }) %>
+					<%}%>
+				</ul>
+			</div>
+			<a href="javascript:;" class="btn btn_r">
+				<span></span>
+			</a>
 		</div>
+
 	</div>
 </div>
 
-<script src="<%=helpers.staticurl('/js/lib/jquery1.42.min.js')%>"></script>
-<script src="<%=helpers.staticurl('/js/lib/jquery.movingboxes.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<!--<script src="<%=helpers.staticurl('/js/lib/jquery.movingboxes.js')%>"></script>-->
 <script>
-	$(function() {
-		$('#box').movingBoxes({
-			startPanel: 1, // start with this panel
-			reducedSize: .5, // non-current panel size: 80% of panel size
-			wrap: true, // if true, the panel will "wrap" (it really rewinds/fast forwards) at the ends
-			navFormatter: function() {
-					return "&#9679;";
-				} // function which returns the navigation text for each panel
-		});
-	})
+	//	$(function() {
+	//		$('#box').movingBoxes({
+	//			startPanel: 1,
+	//			reducedSize: .5,
+	//			wrap: true,
+	//			navFormatter: function() {
+	//					return "&#9679;";
+	//				}
+	//		});
+	//	})
 </script>
 <script src="<%=helpers.staticurl('/js/brand.js')%>"></script>
 <!--<script src="/js/brand.js"></script>-->
