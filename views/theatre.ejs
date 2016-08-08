@@ -130,7 +130,6 @@
 	</div>
 	<div class="video_con">
 		<div id="youkuplayer" style="width:860px;height:524px;display: block">
-			<object type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf" width="100%" height="100%" id="youku-player"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="movie" value="http://player.youku.com/player.php/sid/XMTQ1MzIzODgxNg==/isAutoPlay/false/isShowRelatedVideo/false/partnerid/5c30db50b42ae8c4/v.swf"><param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=5c30db50b42ae8c4&amp;styleid=0"></object>
 		</div>
 	</div>
 </div>
@@ -156,6 +155,7 @@
 	var pages_json = '<%= helpers.getCarToonPages(qtao)%>';
 	var pages = pages_json.split(',');
 </script>
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
 <script src="<%=helpers.staticurl('/js/theatre.js')%>"></script>
 <!--<script src="/js/theatre.js"></script>-->
 <% include ./footer.ejs %>
