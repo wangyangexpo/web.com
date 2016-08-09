@@ -1,0 +1,76 @@
+<% include ./header %>
+    <div class="container">
+        <% if(mobile_banner) { %>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <% mobile_banner.forEach(function(item) { %>
+                        <div class="swiper-slide">
+                            <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        <% } %>
+        <div class="content">
+            <% if(mobile_menu) { %>
+                <% mobile_menu.forEach(function(item, $index) { %>
+                    <% if(item.basic_url.substr(item.basic_url.indexOf('#')+1) != ''  && item.basic_url.indexOf('all') == -1) { %>
+                    		<section>
+                    			<div class="banner" id="<%= item.basic_url.substr(item.basic_url.indexOf('#')+1) %>"><p><%= item.name %></p></div>
+	                        <% if(item['children']) { %>
+	                            <div class="cells">
+	                                <% item['children'].forEach(function(citem) { %>
+	                                    <div class="cell-item">
+	                                        <a href="<%= citem.basic_url %>">
+	                                            <div class="cell-left">
+	                                                <img src="<%=helpers.drawImage(citem.basic_image_1)%>">
+	                                            </div>
+	                                            <div class="cell-right">
+	                                                <div class="item">
+	                                                    <div class="title"><%= citem.name %></div>
+	                                                    <div class="desc">
+	                                                        <p><%= citem.description %></p>
+	                                                    </div>
+	                                                    <div class="price"> ￥<%= parseFloat(citem.sub_title).toFixed(2) %></div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                    </div>
+	                                <% }) %>
+	                            </div>
+	                        <% } else { %>
+	                            <p class="iscoming">敬请期待</p>
+	                        <% } %>
+                    		</section>
+                    <% } else if(item.basic_url.indexOf('all') > -1) { %>
+                        <div class="banner" style="height: 1px;" id="<%= item.basic_url.slice(1) %>"></div>
+                        <div class="btn-area">
+                            <a href="/<%= item.basic_url.slice(1) %>" class="btn"><%= item.name %></a>
+                        </div>
+                    <% } %>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+    <script type="text/javascript">
+    		$(function() {
+    			$('.nav-list ul li a').on('click', function (e) {
+	        		var uri = $(e.target).data('href');
+	            location.href = uri;
+	            if (uri.substr(uri.indexOf('#') + 1) != '' && uri.indexOf('all') == -1 && (uri.indexOf('#') > -1)) {
+	                var tag = uri.substr(uri.indexOf('#'));
+	                if(window.scrollY == parseInt($(tag).offset().top)) {
+						window.scrollBy(0, -$(tag).height());
+	                }
+	            }
+	            $('.nav-list').addClass('hide');
+	        });
+	        
+	        var uri = window.location.href;
+	        if(uri.indexOf('act') > -1) {
+	        		var tag = uri.substr(uri.indexOf('#'), uri.indexOf('?') - uri.indexOf('#'));
+	        		window.scrollBy(0, $(tag).offset().top-$(tag).height());
+	        }
+    		})
+    </script>
+<% include ./footer %>

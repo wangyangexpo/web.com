@@ -125,4 +125,13 @@ router.get('/page_dizuo',(req,res)=>{
 	require('../page_build_fns/dizuo')(req,res);
 })
 
+// 手机端
+router.get('/m_index',(req,res)=>{
+	require('../page_build_fns/m_index')(req,res);
+});
+// 手机端详情
+router.get('/m_detail/:name', (req, res) => {
+	require('../page_build_fns/m_detail')(req,res);
+})
+
 module .exports = router;

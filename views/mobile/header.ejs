@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>手机端</title>
+    <link rel="stylesheet" href="/css/index_v3.0.css">
+	<script src="/js/lib/view-port.js"></script>
+    <script src="/js/lib/zepto.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav"><i class="iconfont icon-menu"></i></div>
+        <% if(mobile_menu) { %>
+            <div class="navbar nav-list hide">
+                <ul>
+                    <% mobile_menu.forEach(function(item) { %>
+                        <li>
+                            <a data-href="<%= item.basic_url %>"><%= item.name %><i class="iconfont icon-right"></i></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% } %>
+        <div class="logo"></div>
+        <div class="user"><i class="iconfont icon-user"></i></div>
+        <% if(shopcart) { %>
+            <div class="userbar nav-list hide">
+                <ul>
+                    <li>
+                        <a href="http://m.putao.com/user/info">个人中心<i class="iconfont icon-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="/user/logout">退出<i class="iconfont icon-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="cart"><i class="iconfont icon-cart"></i></div>
+            <b class="tag"><%= shopcart ? shopcart.num : 0 %></b>-->
+        <% } else {%>
+	        	<div class="userbar nav-list hide">
+	            <ul>
+	                <li>
+	                    <a href="/user/login">登录<i class="iconfont icon-right"></i></a>
+	                </li>
+	                <li>
+	                    <a href="http://m.putao.com/user/user/register">注册<i class="iconfont icon-right"></i></a>
+	                </li>
+	            </ul>
+            </div>
+        <% } %>
+    </header>

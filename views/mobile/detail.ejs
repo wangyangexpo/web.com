@@ -1,0 +1,17 @@
+<% include ./header %>
+<%- include(detail) %>
+<script type="text/javascript">
+	$(function() {
+		$('.nav-list ul li a').on('click', function (e) {
+        		var uri = $(e.target).data('href');
+        		if(uri.substr(uri.length-1) != '#') {
+        			location.href = uri + '?act=other';	
+        		}
+        		else {
+        			location.href = uri;
+        		}
+            $('.nav-list').addClass('hide');
+        });
+	})
+</script>
+<% include ./footer %>
