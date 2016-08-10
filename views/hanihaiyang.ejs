@@ -2,6 +2,10 @@
   	<% include ./header.ejs %>
     <link rel="stylesheet" type="text/css" href="http://player.youku.com/h5player/play.css?ver=2016/06/21151259">
     <link rel="stylesheet" href="<%=helpers.staticurl('/css/hanihaiyang.css')%>" />
+    
+    <div class="page_hanihaiyang">
+    	
+    	
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
@@ -30,7 +34,7 @@
       <div class="box">
         <div class="play_icon" id="play_icon"></div>
         <div id="youkuplayer" style="width: 800px;height: 450px;"></div>
-        <img id="video-fc" style="position: absolute;top:0" src="<%=helpers.staticurl('/images/player_bg.jpg')%>">
+        <img id="video-fc" style="position: absolute;top:0;width: 800px;height: 450px;" src="<%=helpers.staticurl('/images/hnhy_video_bg.jpg')%>">
       </div>
 
     </div>
@@ -91,7 +95,7 @@
     <!-- 时间管理 -->
     <div class="timeManagement pr">
       <div class="btn"></div>
-      <a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>
+      <!--<a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>-->
     </div>
     <!-- /时间管理 -->
     
@@ -137,6 +141,8 @@
       <a href="/page_mofang"></a>
     </div>
     <!-- /相关科技产品 -->
+    
+    </div>
     <script type="text/javascript" src="<%=helpers.staticurl('/js/lib/wow.min.js')%>"></script>
     <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
     <script type="text/javascript" src="<%=helpers.staticurl('/js/hanihaiyang.js')%>"></script>
