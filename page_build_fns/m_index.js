@@ -49,7 +49,7 @@ var m_index = function(req, res) {
 		commeData(req,lib_o,function(count){
 			var content = lib_o.getAllContent();
 			content.shopcart = count;
-			console.log('mobile: '  + JSON.stringify(content));
+//			console.log('mobile: '  + JSON.stringify(content));
 			res.render('mobile/index', content);
 		})
 	})

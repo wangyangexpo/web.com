@@ -15,7 +15,7 @@ var m_detail = function(req, res) {
 			var content = lib_o.getAllContent();
 			content.shopcart = count;
 			content.detail = './' + link;
-			console.log('mobile: '  + JSON.stringify(content));
+//			console.log('mobile: '  + JSON.stringify(content));
 			res.render('mobile/detail', content);
 		})
 	})
