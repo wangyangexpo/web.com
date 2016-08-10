@@ -31,7 +31,7 @@
 	                                                    <div class="desc">
 	                                                        <p><%= citem.description %></p>
 	                                                    </div>
-	                                                    <div class="price"> ￥<%= parseFloat(citem.sub_title).toFixed(2) %></div>
+	                                                    <div class="price"> ￥<%= citem.sub_title ? parseFloat(citem.sub_title).toFixed(2) : '0.00' %></div>
 	                                                </div>
 	                                            </div>
 	                                        </a>
@@ -54,7 +54,10 @@
     </div>
     <script type="text/javascript">
     		$(function() {
-    			$('.nav-list ul li a').on('click', function (e) {
+    			if(getLen($('.desc p').text()) > 72) {
+	        		$('.desc p').text(cutString($('.desc p').text(), 72));
+	        }
+    			$('.navbar ul li a').on('click', function (e) {
 	        		var uri = $(e.target).data('href');
 	            location.href = uri;
 	            if (uri.substr(uri.indexOf('#') + 1) != '' && uri.indexOf('all') == -1 && (uri.indexOf('#') > -1)) {
@@ -63,7 +66,7 @@
 						window.scrollBy(0, -$(tag).height());
 	                }
 	            }
-	            $('.nav-list').addClass('hide');
+	            $('.navbar').addClass('hide');
 	        });
 	        
 	        var uri = window.location.href;
@@ -71,6 +74,38 @@
 	        		var tag = uri.substr(uri.indexOf('#'), uri.indexOf('?') - uri.indexOf('#'));
 	        		window.scrollBy(0, $(tag).offset().top-$(tag).height());
 	        }
+    			function getLen(str) {
+		    		var realLength = 0, len = str.length, charCode = -1;
+		        for (var i = 0; i < len; i++) {
+		            charCode = str.charCodeAt(i);
+		            if (charCode >= 0 && charCode <= 128) realLength += 1;
+		            else realLength += 2;
+		        }
+		        return realLength;
+		    }
+		    function cutString(str, len) {
+		    		var str_length = 0;
+		        var str_len = 0;
+		        str_cut = new String();
+		        str_len = str.length;
+		        for (var i = 0; i < str_len; i++) {
+		            a = str.charAt(i);
+		            str_length++;
+		            if (escape(a).length > 4) {
+		                //中文字符的长度经编码之后大于4  
+		                str_length++;
+		            }
+		            str_cut = str_cut.concat(a);
+		            if (str_length >= len) {
+		                str_cut = str_cut.concat("……");
+		                return str_cut;
+		            }
+		        }
+		        //如果给定字符串小于指定长度，则返回源字符串；  
+		        if (str_length < len) {
+		            return str;
+		        }
+		    }
     		})
     </script>
 <% include ./footer %>
