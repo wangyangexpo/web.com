@@ -1,15 +1,25 @@
 <% include ./header %>
     <div class="container">
         <% if(mobile_banner) { %>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <% mobile_banner.forEach(function(item) { %>
-                        <div class="swiper-slide">
+        		<% if(mobile_banner.length > 1) { %>
+        			<div class="swiper">
+	                <div class="swiper-wrapper">
+	                    <% mobile_banner.forEach(function(item) { %>
+	                        <div class="swiper-slide">
+	                            <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+	                        </div>
+	                    <% }) %>
+	                </div>
+	            </div>
+        		<% } else { %>
+        			<div class="single-banner">
+        				<% mobile_banner.forEach(function(item) { %>
+                        <div class="slide">
                             <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
                         </div>
                     <% }) %>
-                </div>
-            </div>
+        			</div>
+        		<% } %>
         <% } %>
         <div class="content">
             <% if(mobile_menu) { %>
@@ -54,9 +64,14 @@
     </div>
     <script type="text/javascript">
     		$(function() {
-    			if(getLen($('.desc p').text()) > 72) {
-	        		$('.desc p').text(cutString($('.desc p').text(), 72));
-	        }
+    			$('.desc p').on('each', function() {
+    				if($(this).text() > 72) {
+    					$(this).text(cutString($(this).text(), 72));
+    				}
+    			})
+//  			if(getLen($('.desc p').text()) > 72) {
+//	        		$('.desc p').text(cutString($('.desc p').text(), 72));
+//	        }
     			$('.navbar ul li a').on('click', function (e) {
 	        		var uri = $(this).data('href');
 	            location.href = uri;

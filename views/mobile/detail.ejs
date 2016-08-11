@@ -3,9 +3,14 @@
 <script type="text/javascript">
 	$(function() {
 		$('.navbar ul li a').on('click', function (e) {
-        		var uri = $(e.target).data('href');
+        		var uri = $(this).data('href');
         		if(uri.substr(uri.length-1) != '#') {
-        			location.href = uri + '?act=other';	
+        			if(uri.indexOf('all') > -1) {
+        				location.href = 'http://m.web-store-test.ptdev.cn/product/product/list';
+        			}
+        			else {
+        				location.href = uri + '?act=other';	
+        			}	
         		}
         		else {
         			location.href = uri;
