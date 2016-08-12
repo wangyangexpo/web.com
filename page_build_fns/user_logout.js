@@ -11,7 +11,7 @@ var user_logout = function(req,res){
 	//res.cookie('token','0',{domain:configs.passport_domain});
 	var url = global.currenturl;
 	//res.redirect(url);
-	res.redirect('http://account'+configs.passport_domain + '/logout?callback='+url);
+	res.redirect('http://account'+configs.passport_domain + '/logout');
 }
 
 module .exports = user_logout;
