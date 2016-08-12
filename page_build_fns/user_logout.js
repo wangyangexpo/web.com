@@ -8,7 +8,7 @@ var user_logout = function(req,res){
 	//res.clearCookie('uid');
 	//res.clearCookie('token');
 	res.cookie('uid','0',{domain:configs.passport_domain});
-	res.cookie('token','0',{domain:configs.passport_domain});
+	//res.cookie('token','0',{domain:configs.passport_domain});
 	var url = global.currenturl;
 	res.redirect(url);
 	//res.redirect('http://account'+configs.passport_domain + '/logout');
