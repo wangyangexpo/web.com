@@ -9,7 +9,8 @@ var user_logout = function(req,res){
 	//res.clearCookie('token');
 	res.cookie('uid','0',{domain:configs.passport_domain});
 	//res.cookie('token','0',{domain:configs.passport_domain});
-	var url = global.currenturl;
+	//var url = global.currenturl;
+	var url = 'http://m.putao.com';
 	res.redirect(url);
 	//res.redirect('http://account'+configs.passport_domain + '/logout');
 }
