@@ -27,12 +27,12 @@ router.get('/user/check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
 router.get('/user/login',(req,res)=>{
-	var url = global.currenturl;
+	//var url = global.currenturl;
+	var url = 'http://m.putao.com';
 	var from = 'mall',
-		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+		//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+		callback = encodeURIComponent(url+'/user/check?redirect='+url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
-},(req,res)=>{
-
 });
 router.get('/user/logout',(req,res)=>{
 	require('../page_build_fns/user_logout')(req,res);
