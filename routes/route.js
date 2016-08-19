@@ -128,7 +128,7 @@ router.get('/m_index',(req,res)=>{
 	require('../page_build_fns/m_index')(req,res);
 });
 // 手机端详情
-router.get('/m_detail/:name', (req, res) => {
+router.get('/page/:name', (req, res) => {
 	require('../page_build_fns/m_detail')(req,res);
 })
 
