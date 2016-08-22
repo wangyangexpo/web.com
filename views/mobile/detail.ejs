@@ -6,7 +6,7 @@
         		var uri = $(this).data('href');
         		if(uri.substr(uri.length-1) != '#') {
         			if(uri.indexOf('all') > -1) {
-        				location.href = '<%=helpers.devurl_m('/product/prod/list')%>';
+        				location.href = '<%=helpers.devurl_m('/product/product/list')%>';
         			}
         			else {
         				location.href = uri + '?act=other';	
