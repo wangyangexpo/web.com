@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/brandShow.css')%>" />
 <!--<link rel="stylesheet" href="css/brandShow.css" />-->
 <div class="brandShow-page">
-	<div class="bg" style="background: url('<%=helpers.drawImage(banner)%>') no-repeat top center">
+	<div class="bg" style="background: url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat top center">
 		
 	</div>
 	<div class="mn">
-		<%if(show[0]){%>
+		<%if(show&&show[0]){%>
 		<div class="guide">
 			<%=name%> > <%=show[0].name%>
 		</div>

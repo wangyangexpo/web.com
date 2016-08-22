@@ -7,8 +7,8 @@ var cookieParser = require('cookie-parser')
 var configs = require('../lib/configs')
 
 router.get('/',(req,res)=>{
-	//require('../page_build_fns/index')(req,res);
-	require('../page_build_fns/m_index')(req,res);
+	require('../page_build_fns/index')(req,res);
+	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
 	//	req.redirect('https://account.ptdev.cn/login?from=mall&callbacl=')
 	//}
@@ -18,6 +18,12 @@ router.get('/theatre',(req,res)=>{
 });
 router.get('/brand',(req,res)=>{
 	require('../page_build_fns/brand')(req,res);
+});
+router.get('/brandList',(req,res)=>{
+	require('../page_build_fns/brandList')(req,res);
+});
+router.get('/brandListMore',(req,res)=>{
+	require('../page_build_fns/brandListMore')(req,res);
 });
 router.get('/app',(req,res)=>{
 	require('../page_build_fns/app')(req,res);
