@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser')
 var configs = require('../lib/configs')
 
 router.get('/',(req,res)=>{
-	require('../page_build_fns/index')(req,res);
+	require('../page_build_fns/index')(req,res)
 	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
 	//	req.redirect('https://account.ptdev.cn/login?from=mall&callbacl=')
