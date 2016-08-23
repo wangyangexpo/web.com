@@ -1,160 +1,221 @@
 <% include ./header.ejs %>
-<style>
-	.bd {
-		position: relative;
-		height: 100px;
-		width: 20px;
-		margin-left: 550px;
-		overflow: hidden;
-	}
-	
-	.bd span {
-		display: block;
-	}
-	
-	.bd span:first-child {
-		width: 2px;
-		height: 95%;
-		margin-left: 9px;
-		background: #995acc;
-	}
-	
-	.bd span:last-child {
-		position: absolute;
-		bottom: 0;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: #995acc;
-		text-align: center;
-		overflow: hidden;
-	}
-	
-	.bd em {
-		display: inline-block;
-		width: 14px;
-		height: 14px;
-		margin-top: 2.5px;
-		border-radius: 50%;
-		background: #FFF;
-	}
-</style>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/brand.css')%>">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
+<!--<link rel="stylesheet" href="/css/idangerous.swiper.css" />-->
 <!--<link rel="stylesheet" href="/css/brand.css">-->
-<div class="bd_header" style="background: url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat 50% 0">
-</div>
 
-<div class="bd_brandstory" style="background: url('<%=helpers.drawImage(banner2[0].basic_image_1)%>') no-repeat 50% 0">
-	<div class="con_blank">
-		<div class="story_con">
-			<p>
-				<%=banner2[0].name%>
-			</p>
-			<span><%-banner2[0].basic_content%></span>
-		</div>
-	</div>
-</div>
+<div class="brand-page">
 
-<div class="con_blank bd_story_progress">
-	<%if(new_story&&new_story.length>0){%>
-	<% new_story.forEach(function(item,index){ %>
-	<div class="story_blank <%=index%2 ==0?'':'story_blank_right'%>">
-		<div class="bd">
-			<span></span>
-			<span><em></em></span>
-		</div>
-		<div>
-			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
-			<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=品牌动态&tag=<%=item.tag%>">
-				<span class="f14">
-					<%=item.sub_title%><br />
-				<%=item.title%><br />
-				</span>
-				<span style="display: inline-block;margin-top: 8px;">
-					<%=item.name%>
-				</span>
-			</a>
-			<div class="t">
-				<%-item.basic_content%>
+	<!-- banner -->
+	<div class="swiper-box">
+		<div class="swiper-container js-swiper-container">
+			<div class="swiper-wrapper" id="swiperwrapper">
+				<%if(banner&&banner.length > 0){%>
+				<%banner.forEach(function(v){%>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></div>
+				<%})%>
+				<%}%>
 			</div>
 		</div>
+		<div class="pagination js-pagination"></div>
 	</div>
-	<% }) %>
+	<!-- /banner -->
+
+	<div class="pic_list">
+		<%if(banners_down_imgs&&banners_down_imgs.length>0){%>
+		<%banners_down_imgs.forEach(function(v){%>
+		<a href="brandShow?name=品牌动态&tag=<%=v.tag%>">
+			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
+		</a>
+		<%})%>
+		<%}%>
+	</div>
+
+	<div class="title">
+		品牌事件
+	</div>
+
+	<%if(brand_ppsj_top){%>
+	<%if(brand_ppsj_top[0]){%>
+	<a href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[0].tag%>" class="event" style="background: url(<%=helpers.drawImage(brand_ppsj_top[0].basic_image_3)%>);">
+		<dl>
+			<dt>
+			<%=brand_ppsj_top[0].name%>
+		</dt>
+			<dd class="time">
+				<%=brand_ppsj_top[0].extension_1%>
+			</dd>
+			<dd class="cont">
+				<%-brand_ppsj_top[0].basic_content%>
+			</dd>
+		</dl>
+	</a>
+	<%}%>
+	<div class="event1">
+		<%if(brand_ppsj_top[1]){%>
+		<a class="fl" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[1].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[1].basic_image_3)%>);">
+			<dl style="margin-left: 420px;">
+				<dt>
+			<%=brand_ppsj_top[1].name%>
+		</dt>
+				<dd class="time">
+					<%=brand_ppsj_top[1].extension_1%>
+				</dd>
+				<dd class="cont">
+					<%-brand_ppsj_top[1].basic_content%>
+				</dd>
+			</dl>
+		</a>
+		<%}%>
+		<%if(brand_ppsj_top[2]){%>
+		<a class="fr" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[2].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[2].basic_image_3)%>);">
+			<dl style="margin-left: 35px;margin-top: 240px;">
+				<dt class="c">
+			<%=brand_ppsj_top[2].name%>
+		</dt>
+				<dd class="cont c">
+					<%-brand_ppsj_top[2].basic_content%>
+				</dd>
+			</dl>
+		</a>
+		<%}%>
+	</div>
+	<div class="event1">
+		<%if(brand_ppsj_top[4]){%>
+		<a class="fr" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[4].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[4].basic_image_3)%>);">
+			<dl style="margin-left: 420px;">
+				<dt>
+			<%=brand_ppsj_top[4].name%>
+		</dt>
+				<dd class="time">
+					<%=brand_ppsj_top[4].extension_1%>
+				</dd>
+				<dd class="cont">
+					<%-brand_ppsj_top[4].basic_content%>
+				</dd>
+			</dl>
+		</a>
+		<%}%>
+		<%if(brand_ppsj_top[3]){%>
+		<a class="fl" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[3].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[3].basic_image_3)%>);">
+			<dl style="margin-left: 35px">
+				<dt>
+			<%=brand_ppsj_top[3].name%>
+		</dt>
+				<dd class="time">
+					<%-brand_ppsj_top[3].extension_1%>
+				</dd>
+				<dd class="cont">
+					<%-brand_ppsj_top[3].basic_content%>
+				</dd>
+			</dl>
+		</a>
+		<%}%>
+	</div>
 	<%}%>
 
-</div>
+	<div class="more">
+		<a href="brandList?tag=brand_ppsj_top&name=媒体事件">更多事件</a>
+	</div>
 
-<div class="bd_brand_coo">
-	<div class="con_blank">
-		<p class="title">品牌合作</p>
-		<div class="coo_logo" id="coo_logo">
-			<%if(brand_coo && brand_coo.length > 0){%>
-			<% brand_coo.forEach(function(item,index){ %>
-			<%if(!index){%>
-			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
-				<img src="<%=helpers.drawImage(item.basic_image_2)%>" style="display: none;">
-				<img class="disable_coo_logo" style="display: block" src="<%=helpers.drawImage(item.basic_image_1)%>">
-			</a>
-			<%}else{%>
-			<a class="coo_logo_linka" href="javascript:;" data-index="<%=index%>">
-				<img src="<%=helpers.drawImage(item.basic_image_2)%>">
-				<img class="disable_coo_logo" style="display: none" src="<%=helpers.drawImage(item.basic_image_1)%>">
-			</a>
-			<%}%>
+	<%if(brand_banner1){%>
+	<a href="brandShow?name=品牌动态&tag=brand_banner1" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+	</a>
+	<%}%>
+	<div class="title">
+		媒体报道
+	</div>
+	<%if(brand_mediacoverage){%>
+	<div class="mediacoverageList">
+		<%brand_mediacoverage.slice(0,6).forEach(function(v){%>
+		<a href="brandShow?name=媒体报道&tag=<%=v.tag%>">
+			<p>
+				<span><%=v.extension_1%></span>
+				<span><%=v.sub_title%></span>
+			</p>
+			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
+			<dl>
+				<dt>
+					<%=v.name%>
+				</dt>
+				<dd>
+					<%=v.description%>
+				</dd>
+			</dl>
+		</a>
+		<%})%>
+	</div>
+	<%}%>
 
-			<% }) %>
-			<%}%>
+	<div class="more">
+		<a href="brandList?tag=brand_mediacoverage&name=媒体报道">更多报道</a>
+	</div>
 
-		</div>
-		<div class="coo_desc" id="coo_desc">
-			<%if(brand_coo){%>
-			<%for(var i = 0,len = brand_coo.length; i < len; i++){%>
+	<div class="title1">
+		<span></span>
+		<span>品牌合作</span>
+	</div>
+
+	<%if(brand_cooperation&&brand_cooperation.length>0){%>
+	<div class="brandCooperation" style="background: url(<%=helpers.drawImage(brand_cooperation[0].basic_image_1)%>) no-repeat center center;">
+
+	</div>
+	<%}%>
+
+	<div class="title1">
+		<span></span>
+		<span>内容合作商</span>
+	</div>
+
+	<%if(brand_contentCooperation&&brand_contentCooperation.length>0){%>
+	<div class="brandCooperation" style="background: url(<%=helpers.drawImage(brand_contentCooperation[0].basic_image_1)%>) no-repeat center center;">
+
+	</div>
+	<%}%>
+
+	<div class="title">
+		新品发布会
+	</div>
+
+	<%if(banners_newRelease&&banners_newRelease.length>0){%>
+	<div class="newReleaseMenu" id="newReleaseMenu">
+		<div></div>
+		<ul>
+			<%banners_newRelease.forEach(function(v,i){%>
 			<%if(!i){%>
-			<div style="display: block;">
-				<%-brand_coo[i].basic_content%>
-			</div>
+			<li class="on">
+				<span></span>
+				<p>
+					<%=v.name%>
+				</p>
+			</li>
 			<%}else{%>
-			<div style="display: none;">
-				<%-brand_coo[i].basic_content%>
-			</div>
-			<%}%>
-
-			<%}%>
-			<%}%>
-		</div>
-	</div>
-</div>
-
-<div class="bd_brand_coo" style="background: #FFF;">
-	<div class="con_blank">
-		<p class="title">新品发布</p>
-		<div class="imagesSwitch" id="imagesSwitch">
-			<a href="javascript:;" class="btn">
+			<li>
 				<span></span>
-			</a>
-			<div class="imgBox">
-				<ul>
-					<%if(news_publish && news_publish.length > 0){%>
-					<% news_publish.forEach(function(item,index){ %>
-					<li>
-						<a href="javascript:;" target="_blank">
-							<img style="width: 100%;height: 100%;" src="<%=helpers.drawImage(item.basic_image_1)%>">
-							<span>
-              <i><%=item.title%></i><br />
-              <b><%=item.name%></b>
-            </span>
-						</a>
-					</li>
-					<% }) %>
-					<%}%>
-				</ul>
-			</div>
-			<a href="javascript:;" class="btn btn_r">
-				<span></span>
-			</a>
-		</div>
+				<p>
+					<%=v.name%>
+				</p>
+			</li>
+			<%}%>
 
+			<%})%>
+		</ul>
 	</div>
+	<div style="margin-top: 40px;" class="newRelease" id="imagesSwitch">
+		<ul>
+			<%banners_newRelease.forEach(function(v){%>
+			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></li>
+			<%})%>
+		</ul>
+	</div>
+	<%}%>
+
+	<!-- 品牌故事 -->
+	<%if(brand_story&&brand_story.length>0){%>
+	<div class="brandStory" style="background: url(<%=helpers.drawImage(brand_story[0].basic_image_1)%>) no-repeat center center;">
+	</div>
+	<%}%>
+
 </div>
 
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
@@ -171,6 +232,7 @@
 	//		});
 	//	})
 </script>
-<!--<script src="<%=helpers.staticurl('/js/brand.js')%>"></script>-->
-<script src="/js/brand.js"></script>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/brand.js')%>"></script>
+<!--<script src="/js/brand.js"></script>-->
 <% include ./footer.ejs %>
