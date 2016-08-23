@@ -1,7 +1,6 @@
 <% include ./header.ejs %>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/brand.css')%>">
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
-<!--<link rel="stylesheet" href="/css/idangerous.swiper.css" />-->
 <!--<link rel="stylesheet" href="/css/brand.css">-->
 
 <div class="brand-page">
@@ -118,11 +117,11 @@
 		<a href="brandList?tag=brand_ppsj_top&name=媒体事件">更多事件</a>
 	</div>
 
-	<%if(brand_banner1){%>
+	<%if(brand_banner1&&brand_banner1.length > 0){%>
 	<a href="brandShow?name=品牌动态&tag=brand_banner1" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
 	</a>
 	<%}%>
-	<div class="title">
+	<div class="title" style="padding-bottom: 5px;">
 		媒体报道
 	</div>
 	<%if(brand_mediacoverage){%>
@@ -168,7 +167,7 @@
 	</div>
 
 	<%if(brand_contentCooperation&&brand_contentCooperation.length>0){%>
-	<div class="brandCooperation" style="background: url(<%=helpers.drawImage(brand_contentCooperation[0].basic_image_1)%>) no-repeat center center;">
+	<div class="brandCooperation brandCooperation1" style="background: url(<%=helpers.drawImage(brand_contentCooperation[0].basic_image_1)%>) no-repeat center center;">
 
 	</div>
 	<%}%>
@@ -184,14 +183,14 @@
 			<%banners_newRelease.forEach(function(v,i){%>
 			<%if(!i){%>
 			<li class="on">
-				<span></span>
+				<span><em></em></span>
 				<p>
 					<%=v.name%>
 				</p>
 			</li>
 			<%}else{%>
 			<li>
-				<span></span>
+				<span><em></em></span>
 				<p>
 					<%=v.name%>
 				</p>
