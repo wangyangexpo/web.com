@@ -10,6 +10,7 @@ var page_hellobc = function(req,res){
 		var content = lib_o.getAllContent();
 		content.banner = [{description:1}];
 		content.shopcart = count;
+		console.log(content);
 		res.render('hellobc',content);
 	})
 }

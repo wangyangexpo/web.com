@@ -27,17 +27,17 @@
       <div class="login_info">
         <%if(!shopcart){%>
         <div class="header-account-wrapper header-account-wrapper1">
-          <div class="header-account-panel">
+          <div class="header-account-panel header-accout-noWgb">
             <a href="/user/login" rel="nofollow"></a>
             <!--<a href="#" rel="nofollow"></a>-->
           </div>
         </div>
         <%}else{%>
-        <div class="header-account-wrapper">
+        <div class="header-account-wrapper header-account-wrapper1">
           <div class="header-account-panel">
             <span class="user">
               <a class="user-name" href="/user/myOrder">
-                <span class="name">樊坤乾</span>
+                <span class="name user-name-color">樊坤乾</span>
                 <i class="iconfont">&#xe609</i>
               </a>
               <ul class="user-menu" style="display: none; height: 0px; padding: 0px;">
@@ -53,7 +53,7 @@
         </div>
         <%}%>
         <!--<a href="http://web-store-test.ptdev.cn/page" class="shop_mall">-->
-        	<a href="javascript:;" class="shop_mall">
+        	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/')%>" class="shop_mall"></a>
           <!--<span class="shop_bag"><%=shopcart?shopcart.num:0%></span>
           <span class="shop_mall_text">商城</span>-->
         </a>

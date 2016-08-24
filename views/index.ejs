@@ -1,22 +1,24 @@
 <% include ./header.ejs %>
-
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
 <!--<link rel="stylesheet" href="css/index.css">-->
 <div class="wrapper">
-	<div class="banner">
-		<div class="swiper-container">
+	
+	<!-- banner -->
+	<div class="swiper-box">
+		<div class="swiper-container js-swiper-container">
 			<div class="swiper-wrapper" id="swiperwrapper">
-				<% if(banner) { %>
-					<% banner.forEach(function(item){ %>
-					<div data-description="<%=item.description%>" class="swiper-slide" style="background:url('<%=helpers.drawImage(item.basic_image_1)%>') center center no-repeat; ">
-						<a target="_blank" href="<%=item.basic_url%>"></a>
-					</div>
-					<% }) %>
-				<% } %>
+				<%if(banner&&banner.length > 0){%>
+				<%banner.forEach(function(v){%>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></div>
+				<%})%>
+				<%}%>
 			</div>
-			<div class="swiper-pagination"></div>
 		</div>
+		<div class="pagination js-pagination"></div>
 	</div>
+	<!-- /banner -->
+	
 	<div class="type_choose">
 		<table class="type_choose_inner" cellspacing="0" cellpadding="0" border="0">
 			<tr>
@@ -83,5 +85,5 @@
 </div>
 <script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/index.js')%>"></script>
-<!--<script src="js/index.js"></script>-->
+<!--<script src="/js/index.js"></script>-->
 <% include ./footer.ejs %>

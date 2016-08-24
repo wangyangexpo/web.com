@@ -118,7 +118,7 @@
 	</div>
 
 	<%if(brand_banner1&&brand_banner1.length > 0){%>
-	<a href="brandShow?name=品牌动态&tag=brand_banner1" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+	<a href="brandShow?name=品牌动态&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
 	</a>
 	<%}%>
 	<div class="title" style="padding-bottom: 5px;">
@@ -127,7 +127,11 @@
 	<%if(brand_mediacoverage){%>
 	<div class="mediacoverageList">
 		<%brand_mediacoverage.slice(0,6).forEach(function(v){%>
-		<a href="brandShow?name=媒体报道&tag=<%=v.tag%>">
+			<%if(v.basic_url){%>
+				<a target="_blank" href="<%=v.basic_url%>">
+			<%}else{%>
+				<a href="brandShow?name=媒体报道&tag=<%=v.tag%>">
+			<%}%>
 			<p>
 				<span><%=v.extension_1%></span>
 				<span><%=v.sub_title%></span>

@@ -1,5 +1,4 @@
 <% include ./header.ejs %>
-<!--<link rel="stylesheet" href="/css/idangerous.swiper.css" />-->
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/brandList.css')%>" />
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <!--<link rel="stylesheet" href="css/brandList.css" />-->
@@ -26,7 +25,11 @@
 	<%if(bannerList_list){%>
 	<div class="mediacoverageList" id="list">
 		<%bannerList_list.forEach(function(v){%>
-		<a href="brandShow?name=媒体报道&tag=<%=v.tag%>">
+			<%if(v.basic_url){%>
+				<a target="_blank" href="<%=v.basic_url%>">
+			<%}else{%>
+				<a href="brandShow?name=<%=sub_name%>&tag=<%=v.tag%>">
+			<%}%>
 			<img src="<%=helpers.drawImage(v.basic_image_3)%>" />
 			<dl>
 				<dt>
@@ -36,7 +39,15 @@
 					<span>
 						<%=v.extension_1%>
 					</span>
-					<img src="<%=helpers.drawImage(v.basic_image_2)%>" />
+					<%if(js_tag == 'brand_ppsj_top'){%>
+						<span>
+							<img src="<%=helpers.drawImage(v.basic_image_2)%>" />
+						</span>
+					<%}else{%>
+						<span class="t">
+							<%=v.basic_image_2%>
+						</span>
+					<%}%>
 				</dd>
 			</dl>
 		</a>
