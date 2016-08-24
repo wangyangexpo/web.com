@@ -145,6 +145,7 @@ router.get('/m_index',(req,res)=>{
 router.get('/page/:name', (req, res) => {
 	require('../page_build_fns/m_detail')(req,res);
 });
+// 手机端注册
 router.get('/user/register',(req,res)=>{
 	//var url = global.currenturl;
 	var url = 'http://m.putao.com';
