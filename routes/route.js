@@ -12,7 +12,7 @@ router.get('/',(req,res)=>{
 	if(agentID){
 		//指到手机、pad的网页
 		//require('../page_build_fns/m_index')(req,res);
-		if(req.host.indexOf('m.')){
+		if(req.host.indexOf('m-') != -1){
 			require('../page_build_fns/m_index')(req,res);
 		}else{
 			res.redirect('http://m-nodejs.ptdev.cn')
