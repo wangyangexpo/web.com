@@ -20,7 +20,11 @@ router.get('/',(req,res)=>{
 	}else{
 		//指到pc网页
 		//res.redirect('http://www-nodejs.ptdev.cn')
-		require('../page_build_fns/index')(req,res)
+		if(req.host.indexOf('m-') != -1){
+			res.redirect('http://www-nodejs.ptdev.cn')
+		}else{
+			require('../page_build_fns/index')(req,res)
+		}
 	}
 	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
