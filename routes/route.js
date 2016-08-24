@@ -7,7 +7,15 @@ var cookieParser = require('cookie-parser')
 var configs = require('../lib/configs')
 
 router.get('/',(req,res)=>{
-	require('../page_build_fns/index')(req,res)
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID){
+		//指到手机、pad的网页
+		require('../page_build_fns/m_index')(req,res);
+	}else{
+		//指到pc网页
+		require('../page_build_fns/index')(req,res)
+	}
 	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
 	//	req.redirect('https://account.ptdev.cn/login?from=mall&callbacl=')
