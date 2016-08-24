@@ -37,15 +37,15 @@
           <div class="header-account-panel">
             <span class="user">
               <a class="user-name" href="/user/myOrder">
-                <span class="name user-name-color">樊坤乾</span>
+                <span class="name user-name-color"><%=nickname%></span>
                 <i class="iconfont">&#xe609</i>
               </a>
               <ul class="user-menu" style="display: none; height: 0px; padding: 0px;">
-                <li><a href="/service/customer/list" data-stat-id="281a83d86f7b24f9">售后服务</a></li>
-                <li><a href="/user/account/address" data-stat-id="281a83d86f7b24f9">收货地址</a>
+                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/service/customer/list')%>" data-stat-id="281a83d86f7b24f9">售后服务</a></li>
+                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/user/account/address')%>" data-stat-id="281a83d86f7b24f9">收货地址</a>
                 </li>
                 <li>
-                </li><li><a href="https://account.putao.com" target="_blank" data-stat-id="">账户资料</a></li>
+                </li><li><a target="_blank" href="https://account.putao.com" target="_blank" data-stat-id="">账户资料</a></li>
                 <li><a href="/user/logout" data-stat-id="">退出登录</a></li>
               </ul>
             </span>
@@ -53,7 +53,7 @@
         </div>
         <%}%>
         <!--<a href="http://web-store-test.ptdev.cn/page" class="shop_mall">-->
-        	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/')%>" class="shop_mall"></a>
+        	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/page/')%>" class="shop_mall"></a>
           <!--<span class="shop_bag"><%=shopcart?shopcart.num:0%></span>
           <span class="shop_mall_text">商城</span>-->
         </a>
