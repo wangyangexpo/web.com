@@ -8,7 +8,6 @@ var page_hellobc = function(req,res){
 	var lib_o = new lib();
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
-		console.log('content: '+content);
 		content.banner = [{description:1}];
 		content.shopcart = count;
 		res.render('hellobc',content);

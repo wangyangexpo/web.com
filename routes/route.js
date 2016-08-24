@@ -3,8 +3,11 @@
  */
 var express = require('express');
 var router = express.Router();
-var cookieParser = require('cookie-parser');
-var configs = require('../lib/configs');
+var cookieParser = require('cookie-parser')
+var configs = require('../lib/configs')
+
+var app = express();
+app.use(cookieParser());
 
 router.get('/',(req,res)=>{
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -26,10 +29,6 @@ router.get('/',(req,res)=>{
 			require('../page_build_fns/index')(req,res)
 		}
 	}
-	//require('../page_build_fns/m_index')(req,res);
-	//if(!req.cookies){
-	//	req.redirect('https://account.ptdev.cn/login?from=mall&callbacl=')
-	//}
 });
 router.get('/theatre',(req,res)=>{
 	require('../page_build_fns/theatre')(req,res);
@@ -47,16 +46,17 @@ router.get('/app',(req,res)=>{
 	require('../page_build_fns/app')(req,res);
 });
 
+
 router.get('/user/check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
 router.get('/user/login',(req,res)=>{
-	//var url = global.currenturl;
-	var url = 'http://m.putao.com';
+	var url = global.currenturl;
 	var from = 'mall',
-		//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
-		callback = encodeURIComponent(url+'/user/check?redirect='+url);
+		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
+},(req,res)=>{
+
 });
 router.get('/user/logout',(req,res)=>{
 	require('../page_build_fns/user_logout')(req,res);
@@ -67,10 +67,9 @@ router.get('/user/logout',(req,res)=>{
 router.get('/brandShow',(req,res)=>{
 	require('../page_build_fns/brandShow')(req,res);
 });
-
 // 联系
 router.get('/contact',(req,res)=>{
-	res.render('contact',{})
+	require('../page_build_fns/contact')(req,res);
 });
 
 // 关于我们
@@ -80,22 +79,22 @@ router.get('/about',(req,res)=>{
 
 // 全国门店
 router.get('/nationalStores',(req,res)=>{
-	res.render('nationalStores',{})
+	require('../page_build_fns/nationalStores')(req,res);
 });
 
 // 合作
 router.get('/cooperation',(req,res)=>{
-	res.render('cooperation',{})
+	require('../page_build_fns/cooperation')(req,res);
 });
 
 // 加入我们
 router.get('/join',(req,res)=>{
-	res.render('join',{})
+	require('../page_build_fns/join')(req,res);
 });
 
 // 品牌招商
 router.get('/attractInvestment',(req,res)=>{
-	res.render('attractInvestment',{})
+	require('../page_build_fns/attractInvestment')(req,res);
 });
 
 // help
@@ -103,9 +102,8 @@ router.get('/help',(req,res)=>{
 	require('../page_build_fns/help')(req,res);
 });
 
-router.get('/appinfo/:tag',(req,res)=>{
-	var tag = req.params.tag;
-	require('../page_build_fns/appinfo')(req,res,tag);
+router.get('/appinfo',(req,res)=>{
+	require('../page_build_fns/appinfo')(req,res);
 })
 router.get('/pt_home',(req,res)=>{
 	require('../page_build_fns/pt_home')(req,res);
@@ -113,56 +111,39 @@ router.get('/pt_home',(req,res)=>{
 
 // 编程
 router.get('/page_hellobc',(req,res)=>{
-	res.render('hellobc',{})
+	require('../page_build_fns/page_hellobc')(req,res);
 })
 // 魔方
 router.get('/page_mofang',(req,res)=>{
-	res.render('mofang',{})
+	require('../page_build_fns/page_mofang')(req,res);
 })
 // 涂涂世界
 router.get('/page_tutushijie',(req,res)=>{
-	res.render('tutushijie',{})
+	require('../page_build_fns/page_tutushijie')(req,res);
 })
 // 麦斯丝
 router.get('/page_maisisi',(req,res)=>{
-	res.render('maisisi',{})
+	require('../page_build_fns/page_maisisi')(req,res);
 })
 // 淘淘向右走
 router.get('/page_taotaoxiangyouzou',(req,res)=>{
-	res.render('taotaoxiangyouzou',{})
+	require('../page_build_fns/page_taotaoxiangyouzou')(req,res);
 })
 // 奇妙发现
 router.get('/page_qimiaofaxian',(req,res)=>{
-	res.render('qimiaofaxian',{})
+	require('../page_build_fns/page_qimiaofaxian')(req,res);
 })
 // 奇妙电路
 router.get('/page_qimiaodianlu',(req,res)=>{
-	res.render('qimiaodianlu',{})
+	require('../page_build_fns/page_qimiaodianlu')(req,res);
 })
 // 哈泥海洋
 router.get('/page_hanihaiyang',(req,res)=>{
-	res.render('hanihaiyang',{})
+	require('../page_build_fns/page_hanihaiyang')(req,res);
 })
 // 底座
 router.get('/page_dizuo',(req,res)=>{
-	res.render('dizuo',{})
+	require('../page_build_fns/dizuo')(req,res);
 })
-// 手机端
-router.get('/m_index',(req,res)=>{
-	require('../page_build_fns/m_index')(req,res);
-});
-// 手机端详情
-router.get('/page/:name', (req, res) => {
-	require('../page_build_fns/m_detail')(req,res);
-});
-// 手机端注册
-router.get('/user/register',(req,res)=>{
-	//var url = global.currenturl;
-	var url = 'http://m.putao.com';
-	var from = 'mall',
-		//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
-		callback = encodeURIComponent(url+'/user/check?redirect='+url);
-	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
-});
 
 module .exports = router;
