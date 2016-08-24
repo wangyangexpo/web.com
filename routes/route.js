@@ -11,10 +11,12 @@ router.get('/',(req,res)=>{
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 	if(agentID){
 		//指到手机、pad的网页
-		require('../page_build_fns/m_index')(req,res);
+		//require('../page_build_fns/m_index')(req,res);
+		res.redirect('http://m-nodejs.ptdev.cn')
 	}else{
 		//指到pc网页
-		require('../page_build_fns/index')(req,res)
+		res.redirect('http://www-nodejs.ptdev.cn')
+		//require('../page_build_fns/index')(req,res)
 	}
 	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
