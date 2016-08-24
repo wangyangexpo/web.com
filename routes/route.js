@@ -3,8 +3,8 @@
  */
 var express = require('express');
 var router = express.Router();
-var cookieParser = require('cookie-parser')
-var configs = require('../lib/configs')
+var cookieParser = require('cookie-parser');
+var configs = require('../lib/configs');
 
 router.get('/',(req,res)=>{
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -12,11 +12,15 @@ router.get('/',(req,res)=>{
 	if(agentID){
 		//指到手机、pad的网页
 		//require('../page_build_fns/m_index')(req,res);
-		res.redirect('http://m-nodejs.ptdev.cn')
+		if(req.host.indexOf('m.')){
+			require('../page_build_fns/m_index')(req,res);
+		}else{
+			res.redirect('http://m-nodejs.ptdev.cn')
+		}
 	}else{
 		//指到pc网页
-		res.redirect('http://www-nodejs.ptdev.cn')
-		//require('../page_build_fns/index')(req,res)
+		//res.redirect('http://www-nodejs.ptdev.cn')
+		require('../page_build_fns/index')(req,res)
 	}
 	//require('../page_build_fns/m_index')(req,res);
 	//if(!req.cookies){
