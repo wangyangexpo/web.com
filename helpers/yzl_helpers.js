@@ -4,7 +4,7 @@
 var configs = require('./../lib/configs');
 var helpers = {
 	getShoppingMallUrl: function(v){
-		return configs.storeurl;
+		return configs.storeurl + v;
 	}
 }
 

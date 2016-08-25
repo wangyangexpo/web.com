@@ -146,4 +146,22 @@ router.get('/page_dizuo',(req,res)=>{
 	require('../page_build_fns/dizuo')(req,res);
 })
 
+// 手机端
+router.get('/m_index',(req,res)=>{
+	require('../page_build_fns/m_index')(req,res);
+});
+// 手机端详情
+router.get('/page/:name', (req, res) => {
+	require('../page_build_fns/m_detail')(req,res);
+});
+// 手机端注册
+router.get('/user/register',(req,res)=>{
+	//var url = global.currenturl;
+	var url = 'http://m.putao.com';
+	var from = 'mall',
+	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+		callback = encodeURIComponent(url+'/user/check?redirect='+url);
+	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
+});
+
 module .exports = router;
