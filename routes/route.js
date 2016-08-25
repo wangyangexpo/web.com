@@ -51,9 +51,18 @@ router.get('/user/check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
 router.get('/user/login',(req,res)=>{
-	var url = global.currenturl;
+	var url ='';
+	if(req.host.indexOf('m-') != -1){
+		//url = 'http://m.putao.com';
+		url = 'http://m-nodejs.ptdev.cn/';
+	}else{
+		//url = 'http://putao.com/';
+		url = 'http://www-nodejs.ptdev.cn/';
+	}
+	//var url = 'http://m.putao.com';
 	var from = 'mall',
-		callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+		callback = encodeURIComponent(url+'/user/check?redirect='+url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
 },(req,res)=>{
 
@@ -157,11 +166,19 @@ router.get('/page/:name', (req, res) => {
 // 手机端注册
 router.get('/user/register',(req,res)=>{
 	//var url = global.currenturl;
-	var url = 'http://m.putao.com';
+	var url ='';
+	if(req.host.indexOf('m-') != -1){
+		//url = 'http://m.putao.com';
+		url = 'http://m-nodejs.ptdev.cn/';
+	}else{
+		//url = 'http://putao.com/';
+		url = 'http://www-nodejs.ptdev.cn/';
+	}
+	//var url = 'http://m.putao.com';
 	var from = 'mall',
 	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
 		callback = encodeURIComponent(url+'/user/check?redirect='+url);
-	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
+	res.redirect(configs.regurl+'?from='+from+'&callback='+callback);
 });
 
 module .exports = router;
