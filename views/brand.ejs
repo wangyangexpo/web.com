@@ -207,7 +207,11 @@
 	<div style="margin-top: 40px;" class="newRelease" id="imagesSwitch">
 		<ul>
 			<%banners_newRelease.forEach(function(v){%>
-			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></li>
+			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+				<a href="brandShow?tag=<%=v.tag%>&name=<%=v.name%>">
+					
+				</a>
+			</li>
 			<%})%>
 		</ul>
 	</div>
