@@ -181,4 +181,15 @@ router.get('/user/register',(req,res)=>{
 	res.redirect(configs.regurl+'?from='+from+'&callback='+callback);
 });
 
+// 嘉年华
+router.get('/page_carnival',(req,res)=>{
+	require('../page_build_fns/carnival')(req,res);
+})
+
+// 隐私政策
+router.get('/system/cms/show',(req,res)=>{
+	res.redirect('/help?parent_tag=cms_service&id=653')
+})
+
+
 module .exports = router;

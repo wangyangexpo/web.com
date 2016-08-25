@@ -208,9 +208,12 @@
 		<ul>
 			<%banners_newRelease.forEach(function(v){%>
 			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
-				<a href="brandShow?tag=<%=v.tag%>&name=<%=v.name%>">
+				<%if(v.basic_url){%>
+					<a href="page_carnival?name=<%=v.basic_url%>&description=<%=v.description%>">
 					
 				</a>
+				<%}%>
+				
 			</li>
 			<%})%>
 		</ul>
