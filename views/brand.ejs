@@ -23,7 +23,7 @@
 	<div class="pic_list">
 		<%if(banners_down_imgs&&banners_down_imgs.length>0){%>
 		<%banners_down_imgs.forEach(function(v){%>
-		<a href="brandShow?name=品牌动态&tag=<%=v.tag%>">
+		<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=v.tag%>">
 			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 		</a>
 		<%})%>
@@ -36,7 +36,7 @@
 
 	<%if(brand_ppsj_top){%>
 	<%if(brand_ppsj_top[0]){%>
-	<a href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[0].tag%>" class="event" style="background: url(<%=helpers.drawImage(brand_ppsj_top[0].basic_image_1)%>);">
+	<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[0].tag%>" class="event" style="background: url(<%=helpers.drawImage(brand_ppsj_top[0].basic_image_1)%>);">
 		<dl>
 			<dt>
 			<%=brand_ppsj_top[0].name%>
@@ -52,7 +52,7 @@
 	<%}%>
 	<div class="event1">
 		<%if(brand_ppsj_top[1]){%>
-		<a class="fl" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[1].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[1].basic_image_1)%>);">
+		<a class="fl" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[1].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[1].basic_image_1)%>);">
 			<dl style="margin-left: 420px;">
 				<dt>
 			<%=brand_ppsj_top[1].name%>
@@ -67,7 +67,7 @@
 		</a>
 		<%}%>
 		<%if(brand_ppsj_top[2]){%>
-		<a class="fr" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[2].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[2].basic_image_1)%>);">
+		<a class="fr" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[2].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[2].basic_image_1)%>);">
 			<dl style="margin-left: 35px;margin-top: 220px;">
 				<dt class="c">
 			<%=brand_ppsj_top[2].name%>
@@ -81,7 +81,7 @@
 	</div>
 	<div class="event1">
 		<%if(brand_ppsj_top[4]){%>
-		<a class="fr" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[4].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[4].basic_image_1)%>);">
+		<a class="fr" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[4].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[4].basic_image_1)%>);">
 			<dl style="margin-left: 420px;">
 				<dt>
 			<%=brand_ppsj_top[4].name%>
@@ -96,7 +96,7 @@
 		</a>
 		<%}%>
 		<%if(brand_ppsj_top[3]){%>
-		<a class="fl" href="brandShow?name=品牌事件&tag=<%=brand_ppsj_top[3].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[3].basic_image_1)%>);">
+		<a class="fl" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[3].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[3].basic_image_1)%>);">
 			<dl style="margin-left: 35px">
 				<dt>
 			<%=brand_ppsj_top[3].name%>
@@ -114,11 +114,11 @@
 	<%}%>
 
 	<div class="more">
-		<a href="brandList?tag=brand_ppsj_top&name=品牌事件">更多事件</a>
+		<a href="brandList?tag=brand_ppsj_top&name=<%=helpers.encodeURIComponent('品牌事件')%>">更多事件</a>
 	</div>
 
 	<%if(brand_banner1&&brand_banner1.length > 0){%>
-	<a href="brandShow?name=品牌动态&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+	<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
 	</a>
 	<%}%>
 	<div class="title" style="padding-bottom: 5px;">
@@ -126,32 +126,43 @@
 	</div>
 	<%if(brand_mediacoverage){%>
 	<div class="mediacoverageList">
-		<%brand_mediacoverage.slice(0,6).forEach(function(v){%>
-			<%if(v.basic_url){%>
+		<ul>
+
+			<%brand_mediacoverage.slice(0,6).forEach(function(v){%>
+			<li>
+				<p>
+					<span><%=v.extension_1%></span>
+					<span><%=v.sub_title%></span>
+				</p>
+				<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
-			<%}else{%>
-				<a href="brandShow?name=媒体报道&tag=<%=v.tag%>">
-			<%}%>
-			<p>
-				<span><%=v.extension_1%></span>
-				<span><%=v.sub_title%></span>
-			</p>
-			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
-			<dl>
-				<dt>
+					<%}else{%>
+					<a href="brandShow?name=<%=helpers.encodeURIComponent('媒体报道')%>&tag=<%=v.tag%>">
+						<%}%>
+						<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
+					</a>
+					<dl>
+						<dt>
+							<%if(v.basic_url){%>
+				<a target="_blank" href="<%=v.basic_url%>">
+					<%}else{%>
+					<a href="brandShow?name=<%=helpers.encodeURIComponent('媒体报道')%>&tag=<%=v.tag%>">
+						<%}%>
 					<%=v.name%>
+					</a>
 				</dt>
-				<dd>
-					<%=v.description%>
-				</dd>
-			</dl>
-		</a>
-		<%})%>
+						<dd>
+							<%=v.description%>
+						</dd>
+					</dl>
+			</li>
+			<%})%>
+		</ul>
 	</div>
 	<%}%>
 
 	<div class="more">
-		<a href="brandList?tag=brand_mediacoverage&name=媒体报道">更多报道</a>
+		<a href="brandList?tag=brand_mediacoverage&name=<%=helpers.encodeURIComponent('媒体报道')%>">更多报道</a>
 	</div>
 
 	<div class="title1">
@@ -209,11 +220,11 @@
 			<%banners_newRelease.forEach(function(v){%>
 			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
 				<%if(v.basic_url){%>
-					<a href="page_carnival?name=<%=v.basic_url%>&description=<%=v.description%>">
-					
+				<a href="page_carnival?name=<%=v.basic_url%>&description=<%=v.description%>">
+
 				</a>
 				<%}%>
-				
+
 			</li>
 			<%})%>
 		</ul>

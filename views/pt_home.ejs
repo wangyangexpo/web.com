@@ -42,7 +42,7 @@
 			</p>
 		</div>
 	</div>
-	<a href="brandShow?tag=OiKrar&name=我要加入葡萄之家">我要加入葡萄之家></a>
+	<a href="brandShow?tag=OiKrar&name=<%=helpers.encodeURIComponent('我要加入葡萄之家')%>">我要加入葡萄之家></a>
 </div>
 <!-- /什么是葡萄之家 -->
 
@@ -82,14 +82,14 @@
 			<% hot_acts.forEach(function(item,index){ %>
 			<dl>
 				<dt>
-					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
+					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
 					<p><%=item.name%></p>
 				</dt>
 				<dd>
 					<div>
 						<%-item.basic_content%>
 					</div>
-					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
+					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>">查看全文</a>
 				</dd>
 			</dl>
 			<% }) %>
@@ -129,7 +129,7 @@
 						<%=item.title%>
 					</dd>
 					<dd>
-						<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=葡粉故事&tag=<%=item.tag%>">查看全文</a>
+						<a href="/brandShow?name=<%=helpers.encodeURIComponent('葡粉故事')%>&tag=<%=item.tag%>">查看全文</a>
 					</dd>
 				</dl>
 			</li>

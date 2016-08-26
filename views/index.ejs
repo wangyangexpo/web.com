@@ -10,7 +10,13 @@
 			<div class="swiper-wrapper" id="swiperwrapper">
 				<%if(banner&&banner.length > 0){%>
 				<%banner.forEach(function(v){%>
-				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></div>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+					<%if(v.description){%>
+						<a target="_blank" href="<%=v.basic_url%>">
+							
+						</a>
+					<%}%>
+				</div>
 				<%})%>
 				<%}%>
 			</div>

@@ -3,8 +3,14 @@
  */
 var configs = require('./../lib/configs');
 var helpers = {
+	// 返回商城的url
 	getShoppingMallUrl: function(v){
 		return configs.storeurl + v;
+	},
+	// 对汉字进行编码
+	// 原因：在IE中链接中存在汉字会乱码
+	encodeURIComponent: function(v){
+		return encodeURIComponent(v)
 	}
 }
 
