@@ -52,7 +52,7 @@
         <!--                如果数量是偶数,并且当前数量是第奇数个,给dd加上style="clear:left;-->
         <%if(text_map&&text_map.length>0){%>
           <% text_map.forEach(function(item,index){ %>
-            <dd  class="<%=(text_map.length%2!=0&&index==0)?'single_ft':''%>" style="<%=(text_map.length%2!=0&&index%2==0)||(text_map.length%2==0&&index%2!=0)?'single_ft':''%>">
+            <dd  class="<%=(text_map.length%2!=0&&index==0)?'single_ft':''%>" style="<%=(text_map.length%2!=0&&index%2==0)||(text_map.length%2==0&&index%2!=0)?'clear:left':''%>">
             <div class="ft">
               <img src="<%=helpers.drawImage(item.basic_image_1)%>">
             </div>
