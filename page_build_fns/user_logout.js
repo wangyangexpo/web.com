@@ -18,7 +18,8 @@ var user_logout = function(req,res){
 		//url = 'http://putao.com/';
 		url = configs.localurl;
 	};
-	global.nickname = null;
+	res.cookie('nickname','0',{domain:configs.passport_domain});
+	//global.nickname = null;
 	res.redirect(url);
 	//res.redirect('http://account'+configs.passport_domain + '/logout');
 }
