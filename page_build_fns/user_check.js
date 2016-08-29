@@ -7,7 +7,7 @@ var userCheck = function(req,res){
 	global.nickname = nickname;
 	var redirect = req.query.redirect;
 	console.log('nickname:'+nickname+'redirect:'+redirect);
-	res.redirect(redirect);
+	//res.redirect(redirect);
 }
 
 module .exports = userCheck
