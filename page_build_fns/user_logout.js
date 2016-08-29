@@ -10,7 +10,14 @@ var user_logout = function(req,res){
 	res.cookie('uid','0',{domain:configs.passport_domain});
 	//res.cookie('token','0',{domain:configs.passport_domain});
 	//var url = global.currenturl;
-	var url = 'http://m.putao.com';
+	var url ='';
+	if(req.host.indexOf(configs.m_host_key) != -1){
+		//url = 'http://m.putao.com';
+		url = configs.m_host;
+	}else{
+		//url = 'http://putao.com/';
+		url = configs.localurl;
+	}
 	res.redirect(url);
 	//res.redirect('http://account'+configs.passport_domain + '/logout');
 }
