@@ -47,7 +47,7 @@ router.get('/app',(req,res)=>{
 });
 
 
-router.get('/user/check',(req,res)=>{
+router.get('/logg_check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
 router.get('/user/login',(req,res)=>{
@@ -62,7 +62,7 @@ router.get('/user/login',(req,res)=>{
 	//var url = 'http://m.putao.com';
 	var from = 'mall',
 	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
-		callback = encodeURIComponent(url+'/user/check?redirect='+url);
+		callback = encodeURIComponent(url+'/logg_check?redirect='+url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
 },(req,res)=>{
 
@@ -177,7 +177,7 @@ router.get('/user/register',(req,res)=>{
 	//var url = 'http://m.putao.com';
 	var from = 'mall',
 	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
-		callback = encodeURIComponent(url+'/user/check?redirect='+url);
+		callback = encodeURIComponent(url+'/logg_check?redirect='+url);
 	res.redirect(configs.regurl+'?from='+from+'&callback='+callback);
 });
 
