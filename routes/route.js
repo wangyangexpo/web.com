@@ -46,7 +46,6 @@ router.get('/app',(req,res)=>{
 	require('../page_build_fns/app')(req,res);
 });
 
-
 router.get('/logg_check',(req,res)=>{
 	require('../page_build_fns/user_check')(req,res);
 });
@@ -57,12 +56,14 @@ router.get('/user/login',(req,res)=>{
 		url = configs.m_host;
 	}else{
 		//url = 'http://putao.com/';
-		url = configs.localurl;
+		//url = configs.localurl;
+		url = req.originalUrl;
 	}
 	//var url = 'http://m.putao.com';
 	var from = 'mall',
 	//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
 		callback = encodeURIComponent(url+'/logg_check?redirect='+url);
+	//	callback = encodeURIComponent(url);
 	res.redirect(configs.loginurl+'?from='+from+'&callback='+callback);
 },(req,res)=>{
 
