@@ -56,8 +56,8 @@ router.get('/user/login',(req,res)=>{
 		url = configs.m_host;
 	}else{
 		//url = 'http://putao.com/';
-		//url = configs.localurl;
-		url = req.originalUrl;
+		url = configs.localurl;
+		//url = req.originalUrl;
 	}
 	//var url = 'http://m.putao.com';
 	var from = 'mall',
