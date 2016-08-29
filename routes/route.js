@@ -15,7 +15,7 @@ router.get('/',(req,res)=>{
 	if(agentID){
 		//指到手机、pad的网页
 		//require('../page_build_fns/m_index')(req,res);
-		if(req.host.indexOf(configs.m_host_key) != -1){
+		if(req.hostname.indexOf(configs.m_host_key) != -1){
 			require('../page_build_fns/m_index')(req,res);
 		}else{
 			res.redirect(configs.m_host)
@@ -23,7 +23,7 @@ router.get('/',(req,res)=>{
 	}else{
 		//指到pc网页
 		//res.redirect('http://www-nodejs.ptdev.cn')
-		if(req.host.indexOf(configs.m_host_key) != -1){
+		if(req.hostname.indexOf(configs.m_host_key) != -1){
 			res.redirect(configs.localurl)
 		}else{
 			require('../page_build_fns/index')(req,res)
@@ -51,7 +51,7 @@ router.get('/logg_check',(req,res)=>{
 });
 router.get('/user/login',(req,res)=>{
 	var url ='';
-	if(req.host.indexOf(configs.m_host_key) != -1){
+	if(req.hostname.indexOf(configs.m_host_key) != -1){
 		//url = 'http://m.putao.com';
 		url = configs.m_host;
 	}else{
@@ -168,7 +168,7 @@ router.get('/page/:name', (req, res) => {
 router.get('/user/register',(req,res)=>{
 	//var url = global.currenturl;
 	var url ='';
-	if(req.host.indexOf(configs.m_host_key) != -1){
+	if(req.hostname.indexOf(configs.m_host_key) != -1){
 		//url = 'http://m.putao.com';
 		url = configs.m_host;
 	}else{
