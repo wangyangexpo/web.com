@@ -203,6 +203,4 @@ router.get('/system/cms/show',(req,res)=>{
 	res.redirect('/help?parent_tag=cms_service&id=653')
 })
 
-
->>>>>>> 9d5cdde96528c166f077f6a105fdd641bedc0a93
 module .exports = router;
