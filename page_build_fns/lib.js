@@ -48,13 +48,20 @@ lib_fn.prototype = {
 					});
 
 				}else{
-					_this.getCacheData(cacheName,key,isChild,_this);
+					cache.get(cacheName,function(err,cacheData){
+						console.log('get from cache!');
+						console.log(cacheData)
+						if(!err&&cacheData){
+							var content_data = JSON.parse(cacheData);
+							_this.content[key] = content_data;
+							_this.mixChildData(content_data,key,isChild,_this);
+							resolve();
+						}
+
+					});
 				}
-			}else if(result.code == 'timeout'){
-				var result = _this.getCacheData(cacheNameKey,key,isChild,_this);
-				if(result === false) {
-					reject(result.code);
-				};
+			}else{
+				reject(result.code)
 			}
 		},api)
 	},
@@ -78,21 +85,6 @@ lib_fn.prototype = {
 		}
 		this.content.title = '葡萄科技官网 - 科技陪伴成长';
 		return this.content;
-	},
-	getCacheData:function(cacheName,key,isChild,_this){
-		cache.get(cacheName,function(err,cacheData){
-			console.log('get from cache!');
-			console.log(cacheData)
-			if(!err&&cacheData){
-				var content_data = JSON.parse(cacheData);
-				_this.content[key] = content_data;
-				_this.mixChildData(content_data,key,isChild);
-				resolve();
-			}else{
-				return false;
-			}
-
-		});
 	}
 }
 

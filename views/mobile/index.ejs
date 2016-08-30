@@ -55,7 +55,7 @@
                     <% } else if(item.basic_url.indexOf('all') > -1) { %>
                         <div class="banner" style="height: 1px;" id="<%= item.basic_url.slice(1) %>"></div>
                         <div class="btn-area">
-                            <a href="<%=helpers.devurl_m('/page')%>" class="btn"><%= item.name %></a>
+                            <a href="<%=helpers.devurl_m('/product/product/list')%>" class="btn"><%= item.name %></a>
                         </div>
                     <% } %>
                 <% }) %>
