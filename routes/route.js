@@ -203,6 +203,12 @@ router.get('/system/cms/show',(req,res)=>{
 	res.redirect('/help?parent_tag=cms_service&id=653')
 })
 
+router.get('/toys/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/toys/'+req.params.id)
+})
 
->>>>>>> 9d5cdde96528c166f077f6a105fdd641bedc0a93
+router.get('/ad/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/ad/'+req.params.id)
+})
+
 module .exports = router;
