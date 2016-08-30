@@ -156,17 +156,6 @@ router.get('/page_dizuo',(req,res)=>{
 	require('../page_build_fns/dizuo')(req,res);
 })
 
-<<<<<<< HEAD
-// 商品时间管理二维码
-router.get('/toys/:id',(req,res)=>{
-	res.redirect('http://store.putao.com/toys/'+req.params.id)
-})
-
-router.get('/ad/:id',(req,res)=>{
-	res.redirect('http://store.putao.com/ad/'+req.params.id)
-})
-
-=======
 // 手机端
 router.get('/m_index',(req,res)=>{
 	require('../page_build_fns/m_index')(req,res);
@@ -201,6 +190,14 @@ router.get('/page_carnival',(req,res)=>{
 // 隐私政策
 router.get('/system/cms/show',(req,res)=>{
 	res.redirect('/help?parent_tag=cms_service&id=653')
+})
+
+router.get('/toys/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/toys/'+req.params.id)
+})
+
+router.get('/ad/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/ad/'+req.params.id)
 })
 
 module .exports = router;
