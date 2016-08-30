@@ -128,4 +128,13 @@ router.get('/page_dizuo',(req,res)=>{
 	require('../page_build_fns/dizuo')(req,res);
 })
 
+// 商品时间管理二维码
+router.get('/toys/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/toys/'+req.params.id)
+})
+
+router.get('/ad/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/ad/'+req.params.id)
+})
+
 module .exports = router;

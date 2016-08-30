@@ -1,0 +1,72 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/brandList.css')%>" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
+<!--<link rel="stylesheet" href="css/brandList.css" />-->
+<div class="brandList-page">
+	<!-- banner -->
+	<div class="swiper-box">
+		<div class="swiper-container">
+			<div class="swiper-wrapper" id="swiperwrapper">
+				<%if(banner&&banner.length > 0){%>
+				<%banner.forEach(function(v){%>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></div>
+				<%})%>
+				<%}%>
+			</div>
+		</div>
+		<div class="pagination"></div>
+	</div>
+	<!-- /banner -->
+
+	<div class="sub_name">
+		<%=sub_name%>
+	</div>
+
+	<%if(bannerList_list){%>
+	<div class="mediacoverageList" id="list">
+		<%bannerList_list.forEach(function(v){%>
+			<%if(v.basic_url){%>
+				<a target="_blank" href="<%=v.basic_url%>">
+			<%}else{%>
+				<a href="brandShow?name=<%=helpers.encodeURIComponent(sub_name)%>&tag=<%=v.tag%>">
+			<%}%>
+			<img src="<%=helpers.drawImage(v.basic_image_3)%>" />
+			<dl>
+				<dt>
+					<%=v.extension_2%>
+				</dt>
+				<dd>
+					<span>
+						<%=v.extension_1%>
+					</span>
+					<%if(js_tag == 'brand_ppsj_top'){%>
+						<span>
+							<img src="<%=helpers.drawImage(v.basic_image_2)%>" />
+						</span>
+					<%}else{%>
+						<span class="t">
+							<%=v.basic_image_2%>
+						</span>
+					<%}%>
+				</dd>
+			</dl>
+		</a>
+		<%})%>
+	</div>
+	<%}%>
+	<a id="more" class="more" href="javascript:;">
+		加载更多
+	</a>
+</div>
+<script>
+	var js_tag = "<%=js_tag%>";
+	var js_name = "<%=sub_name%>";
+</script>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/brandList.js')%>"></script>
+<!--<script src="/js/brandList.js"></script>-->
+</body>
+
+</html>
+<% include ./footer.ejs %>
