@@ -53,7 +53,7 @@ lib_fn.prototype = {
 			}else if(result.code == 'timeout'){
 				var result = _this.getCacheData(cacheNameKey,key,isChild,_this);
 				if(result === false) {
-					reject(result.code)
+					reject(result.code);
 				};
 			}
 		},api)
