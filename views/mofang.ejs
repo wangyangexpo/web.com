@@ -1,12 +1,16 @@
 <% include ./header.ejs %>
   	<link rel="stylesheet" href="<%=helpers.staticurl('/css/mofang.css')%>" />
+  	<!--<link rel="stylesheet" href="/css/mofang.css" />-->
+    
+    <div class="page_mofang">
+    	
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
       <div class="light1 wow bounceIn"></div>-->
       <div class="w pr h">
 
-        <div class="ipad wow bounceInUp">
+        <div class="yzl_ipad wow bounceInUp">
 
         </div>
 
@@ -87,7 +91,7 @@
     <!-- 时间管理 -->
     <div class="timeManagement pr">
       <div class="btn"></div>
-      <a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>
+      <!--<a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>-->
     </div>
     <!-- /时间管理 -->
 
@@ -109,8 +113,8 @@
     <!-- 产品所需配件 -->
     <div class="parts">
 		<div class="w h pr">
-			<a href=""></a>
-		  <a href=""></a>
+			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/mofang')%>"></a>
+		  <a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/tansuohaofeichuan')%>"></a>
 		</div>
     </div>
     <!-- /产品所需配件 -->
@@ -118,15 +122,15 @@
     
    <!-- 相关科技产品 -->
     <div class="relevant">
-      <a href="/hellobiancheng"></a>
-      <a href="/tutushijie"></a>
-      <a href="/maisisi"></a>
-      <a href="/tansuohao"></a>
+      <a href="/page_hellobc"></a>
+      <a href="/page_tutushijie"></a>
+      <a href="/page_maisisi"></a>
+      <a href="/page_tansuohao"></a>
     </div>
     <!-- /相关科技产品 -->
     
-    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
-    <script type="text/javascript" src="<%=helpers.staticurl('js/mofang.js')%>"></script>
-  </body>
-
-</html>
+    </div>
+    
+    <script type="text/javascript" src="<%=helpers.staticurl('/js/lib/wow.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('/js/mofang.js')%>"></script>
+<% include ./footer.ejs %>

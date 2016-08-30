@@ -3,6 +3,7 @@
  * 葡星剧场
  */
 var lib = require('./lib');
+var commeData = require('./commeData');
 var help = function(req,res){
 	var lib_o = new lib();
 	var parent_tag = req.query.parent_tag;
@@ -32,22 +33,30 @@ var help = function(req,res){
 				} else {
 					var _arr = content[parent_tag];
 					var _address = '';
-					_arr.forEach(function (v) {
-						if (v.id === id) {
-							content.mainText = v.basic_content;
-							_address = v.name;
+					var _address1 = '';
+					if(_arr&&_arr.length) {
+						_arr.forEach(function (v) {
+							if (v.id === id) {
+								content.mainText = v.basic_content;
+								_address = v.name;
+								return false;
+							}
+						})
+					}
+				}
+				if(content.dl) {
+					content.dl.forEach(function (v) {
+						if (v.tag === parent_tag) {
+							_address1 = v.name + ' - ' + _address + ' - ';
+							_address = v.name + '>' + _address;
+							
 							return false;
 						}
 					})
 				}
-				content.dl.forEach(function (v) {
-					if (v.tag === parent_tag) {
-						_address = v.name + '>' + _address
-						return false;
-					}
-				})
 				content.curAddress = _address;
 				content.shopcart = count;
+				content.title = _address1 + content.title;
 				res.render('help', content);
 			})
 		})

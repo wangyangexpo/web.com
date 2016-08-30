@@ -1,13 +1,16 @@
 <% include ./header.ejs %>
 <link rel="stylesheet" type="text/css" href="http://player.youku.com/h5player/play.css?ver=2016/06/21151259">
-<link rel="stylesheet" href="<%=helpers.staticurl('css/hellobc.css')%>" />
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/hellobc.css')%>" />
+
+<div class="page_hellobc">
+
 <!-- top -->
 <div class="top pr">
 	<div class="light wow bounceIn"></div>
 	<div class="light1 wow bounceIn"></div>
 	<div class="w pr" style="height: 750px;">
 
-		<div class="ipad wow fadeIn">
+		<div class="yzl_ipad wow fadeIn">
 
 		</div>
 
@@ -28,7 +31,7 @@
 	<div class="box">
 		<div class="play_icon" id="play_icon"></div>
 		<div id="youkuplayer" style="width: 800px;height: 450px;"></div>
-		<img id="video-fc" style="position: absolute;top:0" src="<%=helpers.staticurl('/images/hellobc/player_bg.jpg')%>">
+		<img id="video-fc" style="position: absolute;top:0" src="<%=helpers.staticurl('/images/player_bg.jpg')%>">
 	</div>
 
 </div>
@@ -99,7 +102,7 @@
 <!-- 时间管理 -->
 <div class="timeManagement pr">
 	<div class="btn"></div>
-	<a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>
+	<!--<a href="https://itunes.apple.com/us/app/pu-tao-wei-du/id1067487375?l=zh&ls=1&mt=8"></a>-->
 </div>
 <!-- /时间管理 -->
 
@@ -119,21 +122,22 @@
 <!-- /科技陪伴成长 -->
 
 <!-- 产品所需配件 -->
-<div class="parts">
-
+<div class="parts pr">
+	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/hellobiancheng')%>"></a>
+	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/tansuohaofeichuan')%>"></a>
 </div>
 <!-- /产品所需配件 -->
 
 <!-- 相关科技产品 -->
 <div class="relevant">
-	<a href="/page_hellobc"></a>
+	<a href="/page_hanihaiyang"></a>
 	<a href="/page_tutushijie"></a>
 	<a href="/page_maisisi"></a>
 	<a href="/page_taotaoxiangyouzou"></a>
 </div>
-<script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
-<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
-<script type="text/javascript" src="<%=helpers.staticurl('js/hellobc.js')%>"></script>
-</body>
 
-</html>
+</div>
+<script type="text/javascript" src="<%=helpers.staticurl('/js/lib/wow.min.js')%>"></script>
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+<script type="text/javascript" src="<%=helpers.staticurl('/js/hellobc.js')%>"></script>
+<% include ./footer.ejs %>

@@ -6,20 +6,40 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var theatre = function(req,res){
 	var lib_o = new lib();
-	lib_o.getData({tag:'brand_banner'},'banner1')
-		.then(function(){return lib_o.getData({tag:'brand_story'},'banner2')}).catch(function(error) {
+	lib_o.getData({tag:'brand_banners'},'banner')
+		.then(function(){return lib_o.getData({tag:'banners_down_imgs'},'banners_down_imgs')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
-		.then(function(){return lib_o.getData({tag:'brand_news'},'new_story')}).catch(function(error) {
+		.then(function(){return lib_o.getData({tag:'brandShow_banner'},'brandShow_banner')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
-		.then(function(){return lib_o.getData({tag:'brand_coo'},'brand_coo')}).catch(function(error) {
+		.then(function(){return lib_o.getData({tag:'brand_ppsj_top'},'brand_ppsj_top')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
-		.then(function(){return lib_o.getData({tag:'brand_pub'},'news_publish')}).catch(function(error) {
+		.then(function(){return lib_o.getData({tag:'brand_banner1'},'brand_banner1')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
+		.then(function(){return lib_o.getData({tag:'brand_mediacoverage'},'brand_mediacoverage')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
+		.then(function(){return lib_o.getData({tag:'brand_cooperation'},'brand_cooperation')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
+		.then(function(){return lib_o.getData({tag:'brand_contentCooperation'},'brand_contentCooperation')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
+		.then(function(){return lib_o.getData({tag:'brand_story'},'brand_story')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
+		.then(function(){return lib_o.getData({tag:'banners_newRelease'},'banners_newRelease')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
@@ -27,6 +47,7 @@ var theatre = function(req,res){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
+				content.title = '品牌动态 - ' + content.title;
 				//console.log('dddd '+JSON.stringify(content));
 				res.render('brand',content);
 			})

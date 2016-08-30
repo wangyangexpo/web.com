@@ -1,0 +1,624 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/carnival.css')%>">
+<!--<link rel="stylesheet" href="/css/carnival.css">-->
+<link rel="stylesheet" href="http://static.putaocdn.com/store/front/css/bootstrap.css"/>
+<link rel="stylesheet" href="http://static.putaocdn.com/store/front/css/conference.css" />
+<link rel="stylesheet" href="http://static.putaocdn.com/store/front/css/conference2016q1.css" />
+<style>
+a:hover{
+		text-decoration: none;
+	}
+	.modal-body {
+        padding: 0;
+    }
+
+    .modal-title {
+        border-bottom: 0;
+    }
+
+    .modal-lg {
+        width: 862px;
+    }
+
+    .modal.fade.in {
+        top: 50%
+    }
+
+    .modal.fade {
+        -webkit-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -moz-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -ms-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -o-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        top: 25%;
+
+    }
+
+    .modal-hide {
+        display: none;
+    }
+
+    .modal {
+        position: fixed !important;
+        top: 50%;
+        left: 50%;
+        z-index: 1050;
+        width: 660px;
+        margin-left: -330px;
+        margin-top: -300px;
+        background-color: #FFF;
+        outline: medium none;
+
+    }
+
+    .modal-video {
+        width: 862px;
+        height: 577px;
+        margin-top: -298px;
+        margin-left: -440px;
+        -webkit-box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+        -moz-box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+        box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+    }
+
+    .fade {
+        opacity: 0;
+        transition: opacity 0.15s linear 0s;
+    }
+
+    .modal-header, .modal-hd {
+        position: relative;
+        /*height: 32px;*/
+        padding: 14px 20px;
+        /*background-color: #F5F5F5;*/
+    }
+    .modal-video .modal-bd {
+        max-height: 536px;
+        padding: 0px;
+    }
+
+    .modal-video .modal-bd {
+        position: relative;
+    }
+
+    .modal-hd h3, .modal-hd .title {
+        margin: 0px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        color: #424242;
+    }
+
+    .modal .modal-title {
+        padding-bottom: 0;
+    }
+
+    .modal-open .modal {
+        overflow-y: hidden;
+    }
+
+    .modal .close {
+        position: absolute;
+        top: 14px;
+        right: 0px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        /*color: #757575;*/
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+        z-index: 10;
+        border-radius: 15px;
+    }
+</style>
+<div class="content-main">
+	<div class="main-banner">
+	</div>
+	<div class="anchor-nav">
+		<div class="anchor-nav-inner">
+			<div class="nav-item active">
+				<a href="#t1">
+					<span class="nav-item-txt">
+                        <div class="btn_play"></div>
+                        发布会视频
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t2">
+					<span class="nav-item-txt">
+                        <div class="icon_forchild"></div>
+                            为孩子创造
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t3">
+					<span class="nav-item-txt">
+                        <div class="icon_explore"></div>
+                        产品体验
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t4">
+					<span class="nav-item-txt">
+                        <div class="icon_news"></div>
+                        媒体报道
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t5">
+					<span class="nav-item-txt">
+                        <div class="icon_camera"></div>
+                        花絮内容
+                    </span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="co-cont">
+		<div class="co-cont-inner">
+			<div class="co-videos">
+				<div class="co-title">
+					<a name="t1"></a>
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_01.png">
+				</div>
+				<div class="video-cont">
+					<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_video_01.jpg">
+
+					<div class="icon_video_l" name="play_btn"></div>
+				</div>
+				<div class="timeline">
+					<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_timeline.png">
+				</div>
+			</div>
+			<div class="co-game">
+				<a name="t2"></a>
+
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_title_02.png">
+				</div>
+				<div class="co-subtitle">
+					<h3>一切从孩子出发 为孩子创造！</h3>
+
+					<p>1月23日，厚积薄发，一场视听盛宴在上海科技馆精彩呈现！</p>
+				</div>
+				<div class="game-cont">
+					<div class="n-b-btn-b" data-sw="1">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_back.jpg">
+					</div>
+					<div class="swiper-container" id="swiper1">
+						<div class="swiper-wrapper" style="width: 17408px; height: 600px;">
+							<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/01.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">1</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">哈泥海洋，大家一起玩泥巴</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/02.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">2</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">有了哈泥海洋，我也会捏鲨鱼啦</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/03.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">3</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">和爸爸一起动手回到童真时代</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/04.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">4</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">我要好好画，闯过这一关</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/05.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">5</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">拿奖啦，拿奖啦</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/06.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">6</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">体验区人山人海呀</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/07.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">7</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">大家的热情都很高</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/08.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">8</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">小丑先生也给我变一个小动物呗</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/09.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">9</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">福利时间到啦</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/10.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">10</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">我们都是小小足球运动员</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/11.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">11</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">看我一个假动作</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/12.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">12</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">“宝宝，你画的是什么呀？”</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/13.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">13</span> / <span name="game-ca">16</span>
+									</div>
+									<div class="txt">麦斯丝的世界，学习数学好简单</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/14.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span id="game-ci">14</span> / <span id="game-ca">16</span>
+									</div>
+									<div class="txt">Show Time！魔术时间</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/15.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span id="game-ci">15</span> / <span id="game-ca">16</span>
+									</div>
+									<div class="txt">抽奖！抽奖！转盘转起来</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/16.jpg">
+
+								<div class="game-txt">
+									<div class="game-num">
+										<span id="game-ci">16</span> / <span id="game-ca">16</span>
+									</div>
+									<div class="txt">小Q下一步该往哪儿走呢？</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="n-b-btn-n" data-sw="1">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_next.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="co-experience">
+				<a name="t3"></a>
+
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_03.png">
+				</div>
+				<div class="co-subtitle">
+					<h3>童真 是一种态度</h3>
+
+					<p>在孩子的世界里，没有到不了的王国，他们可以肆无忌惮的欢笑、天马行空的想象</p>
+
+					<p>葡萄携手千万父母构建儿童科技王国，全方位培养孩子八大智能！</p>
+				</div>
+				<div class="pic-sel">
+					<div class="sel-nav">
+						<div class="sel-item selected" data-index="0">
+							<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_logo_tutu.png">
+						</div>
+						<div class="sel-item" data-index="1">
+							<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_logo_hello.png">
+						</div>
+						<div class="sel-item" data-index="2">
+							<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_logo_maisis.png">
+						</div>
+						<div class="sel-item" data-index="3">
+							<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_logo_hani.png">
+						</div>
+					</div>
+					<div class="experience-cont" data-index="0">
+						<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_experience_tutu.jpg">
+						<!--<div class="n-b-btn-b" data-sw="2">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper2">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_taotao.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="2">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+					<div class="experience-cont" data-index="1" style="display: none">
+						<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_experience_hello.jpg">
+						<!--<div class="n-b-btn-b" data-sw="4">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper4">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_bandrais.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="4">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+					<div class="experience-cont" data-index="2" style="display: none">
+						<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_experience_maisis.jpg">
+						<!--<div class="n-b-btn-b" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper5">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_cube.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+					<div class="experience-cont" data-index="3" style="display: none">
+						<img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_experience_hani.jpg">
+						<!--<div class="n-b-btn-b" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper5">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_cube.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="co-media">
+				<a name="t4"></a>
+
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_04.png">
+				</div>
+				<div class="media-box">
+					<dd class="media-list">
+						<dl class="media-item">
+							<a href="http://v.youku.com/v_show/id_XMTQ1NTc1MjQxMg==.html?x&amp;from=singlemessage&amp;isappinstalled=0" target="_blank"><span class="icon_video_s" name="play_btn"></span>
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_01.jpg"></a>
+
+							<div class="vit">
+								<span class="ht">优酷视频：</span>
+								<span class="tc">2016葡萄科技Q1新品发布会暨嘉年华盛大开幕</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/135" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_02.jpg"></a>
+
+							<div class="vit">
+								<span class="ht">新闻晨报：</span>
+								<span class="tc">边学边玩｜葡萄科技发布4款儿童虚拟科技产品</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://m.v.qq.com/play/play.html?coverid=&amp;vid=c0182sbvxef" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_03.jpg"></a>
+
+							<div class="vit">
+								<span class="ht">腾讯</span>
+								<span class="tc">葡萄科技在沪发布儿童AR新品</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/137" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_04.jpg"></a>
+							<div class="vit">
+								<span class="ht">TechWeb：</span>
+								<span class="tc">增加临场感，看葡萄科技如何做到？</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/138" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_06.jpg"></a>
+							<div class="vit">
+								<span class="ht">搜狐</span>
+								<span class="tc">葡萄科技发布四款虚拟现实产品 构建儿童科技王国</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/139" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference2016q1/pohot_report_05.jpg"></a>
+							<div class="vit">
+								<span class="ht">解放网</span>
+								<span class="tc">AR技术应用于儿童玩具 葡萄科技又出新品</span>
+							</div>
+						</dl>
+					</dd>
+				</div>
+			</div>
+			<div class="co-tidbits">
+				<a name="t5"></a>
+
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_05.png">
+				</div>
+				<div class="tidbits-cont">
+					<div class="n-b-btn-b" data-sw="3">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_back.jpg">
+					</div>
+					<div class="swiper-container" id="swiper3">
+						<div class="swiper-wrapper" style="width: 21760px; height: 600px;">
+							<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h1.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h2.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h3.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h4.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h5.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h6.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h7.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h8.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h9.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h10.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h11.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h12.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h13.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h14.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h15.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h16.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h17.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h18.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h19.jpg">
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/h20.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="n-b-btn-n" data-sw="3">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_next.jpg">
+					</div>
+					<div class="swiper-page"><span id="c_i">1</span> / <span id="c_a">20</span></div>
+				</div>
+			</div>
+			<div class="co-end">
+				<div class="co-title">
+					<a href="page_carnival?name=2015&description=1" target="_blank"><img src="http://static.putaocdn.com/store/front/images/conference2016q1/img_title_06.jpg"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="videoModal" class="modal modal-video fade " data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="iconfont icon-close">&#xe619;</i></button>
+		<h4 class="modal-title" id="myModalLabel">2016 Q2葡萄科技新品发布会</h4>
+	</div>
+	<div class="modal-bd">
+		<div id="youkuplayer" style="width:862px;height:524px;display: block">
+			<!--<!--                    </div>-->
+		</div>
+
+	</div>
+</div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
+<script src="http://static.putaocdn.com/store/front/js/lib/bootstrap.min.js"></script>
+<script src="http://static.putaocdn.com/store/front/js/conference.js"></script>
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+<script type="text/javascript">
+	//显示下拉图片效果
+	var num;
+	$('.nav-list li[id]').hover(function() {
+		var Obj = $(this).attr('id');
+		num = Obj.substring(3, Obj.length);
+		$('#box-' + num).slideDown();
+	}, function() {
+		$('#box-' + num).hide();
+	});
+	$('.menus').hover(function() {
+		$(this).show();
+	}, function() {
+		$(this).slideUp(200);
+	});
+</script>
+
+<script>
+	$('.icon_video_l').click(function() {
+		$('#videoModal').modal('show');
+		var player = new YKU.Player('youkuplayer', {
+            styleid: '0',
+            client_id: '5c30db50b42ae8c4',
+            vid: 'XMTQ3ODk2MDI2NA==',
+            show_related: false
+        })
+	});
+</script>
+<% include ./footer.ejs %>

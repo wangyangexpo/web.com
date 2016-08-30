@@ -15,7 +15,7 @@ lib_fn.prototype = {
 	getData:function(data,key,isChild,api){
 		var _this = this;
 		return new Promise(function(resolve,reject){
-			var cacheNameKey = 'cache_'+data.id;
+			var cacheNameKey = 'cache_'+data.tag;
 			cache.get(cacheNameKey,function(err,cacheName){
 				if(!err&&cacheName){
 					data.cache = cacheName;
@@ -50,6 +50,7 @@ lib_fn.prototype = {
 				}else{
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
+						console.log(cacheData)
 						if(!err&&cacheData){
 							var content_data = JSON.parse(cacheData);
 							_this.content[key] = content_data;
@@ -79,6 +80,10 @@ lib_fn.prototype = {
 		}
 	},
 	getAllContent:function(){
+		if(!this.content.banner || this.content.banner.length === 0){
+			this.content.banner = [{}];
+		}
+		this.content.title = '葡萄科技官网 - 科技陪伴成长';
 		return this.content;
 	}
 }

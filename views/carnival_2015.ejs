@@ -1,0 +1,528 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
+<link rel="stylesheet" href="http://static.putaocdn.com/store/front/css/bootstrap.css"/>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/carnival.css')%>">
+<!--<link rel="stylesheet" href="/css/carnival.css">-->
+<link rel="stylesheet" href="http://static.putaocdn.com/store/front/css/conference.css" />
+
+<style>
+a:hover{
+		text-decoration: none;
+	}
+	.modal-body {
+        padding: 0;
+    }
+    .modal-title {
+        border-bottom: 0;
+    }
+    .modal-lg {
+        width: 862px;
+    }
+    .modal.fade.in {
+        top: 50%
+    }
+    .modal.fade {
+        -webkit-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -moz-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -ms-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        -o-transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        transition: opacity .4s linear 0s, top 0.4s ease-out 0s;
+        top: 25%;
+    }
+    .modal-hide {
+        display: none;
+    }
+    .modal {
+        position: fixed !important;
+        top: 50%;
+        left: 50%;
+        z-index: 1050;
+        width: 660px;
+        margin-left: -330px;
+        margin-top: -300px;
+        background-color: #FFF;
+        outline: medium none;
+    }
+    .modal-video {
+        width: 862px;
+        height: 577px;
+        margin-top: -298px;
+        margin-left: -440px;
+        -webkit-box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+        -moz-box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+        box-shadow: 0px 18px 30px rgba(0, 0, 0, .18);
+    }
+    .fade {
+        opacity: 0;
+        transition: opacity 0.15s linear 0s;
+    }
+    .modal-header, .modal-hd {
+        position: relative;
+        /*height: 32px;*/
+        padding: 14px 20px;
+        /*background-color: #F5F5F5;*/
+    }
+    .modal-video .modal-bd {
+        max-height: 536px;
+        padding: 0px;
+    }
+    .modal-video .modal-bd {
+        position: relative;
+    }
+    .modal-hd h3, .modal-hd .title {
+        margin: 0px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        color: #424242;
+    }
+    .modal .modal-title {
+        padding-bottom: 0;
+    }
+    .modal-open .modal {
+        overflow-y: hidden;
+    }
+    .modal .close {
+        position: absolute;
+        top: 14px;
+        right: 0px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        /*color: #757575;*/
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+        z-index: 10;
+        border-radius: 15px;
+    }
+</style>
+<div class="content-main">
+	<div class="main-banner">
+	</div>
+	<div class="anchor-nav">
+		<div class="anchor-nav-inner">
+			<div class="nav-item active">
+				<a href="#t1">
+					<span class="nav-item-txt">
+                        <div class="btn_play"></div>
+                        发布会视频
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t2">
+					<span class="nav-item-txt">
+                        <div class="icon_tangram"></div>
+                        七巧板大赛
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t3">
+					<span class="nav-item-txt">
+                        <div class="icon_explore"></div>
+                        产品体验
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t4">
+					<span class="nav-item-txt">
+                        <div class="icon_news"></div>
+                        媒体报道
+                    </span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#t5">
+					<span class="nav-item-txt">
+                        <div class="icon_camera"></div>
+                        花絮内容
+                    </span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="co-cont">
+		<div class="co-cont-inner">
+			<div class="co-videos">
+				<div class="co-title">
+					<a name="t1"></a>
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_01.png">
+				</div>
+				<div class="video-cont">
+					<img src="http://static.putaocdn.com/store/front/images/conference/pohot_video_01.jpg">
+					<div class="icon_video_l" name="play_btn"></div>
+				</div>
+				<div class="timeline">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_timeline.png">
+				</div>
+			</div>
+			<div class="co-game">
+				<a name="t2"></a>
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_02.png">
+				</div>
+				<div class="co-subtitle">
+					<h3>七巧板偶遇“高科技”——传统与创新的结合</h3>
+					<p>11月1日，一场智慧与创新的七巧板决赛在上海国际会议中心精彩上演</p>
+				</div>
+				<div class="game-cont">
+					<div class="n-b-btn-b" data-sw="1">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_back.jpg">
+					</div>
+					<div class="swiper-container" id="swiper1">
+						<div class="swiper-wrapper" style="width: 15232px; height: 600px;">
+							<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/01.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">1</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">大奖送给你，快乐带回家</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/02.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">2</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">发布会现场座无虚席</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/03.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">3</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">拿大奖好开心啊</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/04.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">4</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">七巧板决赛颁奖现场</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/05.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">5</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">七巧板决赛颁奖现场</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/06.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">6</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">七巧板决赛颁奖现场</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/07.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">7</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">人手一台葡萄探索号</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/08.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">8</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">特等奖获得者欧洲童话王国深度游</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/09.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">9</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">特等奖获得者欧洲童话王国深度游</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/10.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">10</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">特等奖获得者欧洲童话王国深度游</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/11.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">11</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">特等奖获得者欧洲童话王国深度游</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/12.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">12</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">特等奖获得者欧洲童话王国深度游</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/13.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span name="game-ci">13</span> / <span name="game-ca">14</span>
+									</div>
+									<div class="txt">小朋友们都好棒啊</div>
+								</div>
+							</div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;">
+								<img src="http://static.putaocdn.com/store/front/images/conference/14.jpg">
+								<div class="game-txt">
+									<div class="game-num">
+										<span id="game-ci">14</span> / <span id="game-ca">14</span>
+									</div>
+									<div class="txt">iPad人手一台好羡慕</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="n-b-btn-n" data-sw="1">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_next.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="co-experience">
+				<a name="t3"></a>
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_03.png">
+				</div>
+				<div class="co-subtitle">
+					<h3>探索无止境，在路上</h3>
+					<p>发现是一次偶然，探索是一种精神，体验是一种过程，超越是能量与智慧的碰撞，</p>
+					<p>葡萄科技带您和孩子走进科幻的世界，探索无限精彩。</p>
+				</div>
+				<div class="pic-sel">
+					<div class="sel-nav">
+						<div class="sel-item selected" data-index="0">
+							<img src="http://static.putaocdn.com/store/front/images/conference/img_logo_taotao.png">
+						</div>
+						<div class="sel-item" data-index="1">
+							<img src="http://static.putaocdn.com/store/front/images/conference/img_logo_bandrais.png">
+						</div>
+						<div class="sel-item" data-index="2">
+							<img src="http://static.putaocdn.com/store/front/images/conference/img_logo_cube.png">
+						</div>
+					</div>
+					<div class="experience-cont" data-index="0">
+						<img src="http://static.putaocdn.com/store/front/images/conference/img_experience_taotao.jpg">
+						<!--<div class="n-b-btn-b" data-sw="2">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper2">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_taotao.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="2">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+					<div class="experience-cont" data-index="1" style="display: none">
+						<img src="http://static.putaocdn.com/store/front/images/conference/img_experience_bandrais.jpg">
+						<!--<div class="n-b-btn-b" data-sw="4">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper4">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_bandrais.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="4">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+					<div class="experience-cont" data-index="2" style="display: none">
+						<img src="http://static.putaocdn.com/store/front/images/conference/img_experience_cube.jpg">
+						<!--<div class="n-b-btn-b" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_back.jpg">-->
+						<!--</div>-->
+						<!--<div class="swiper-container" id="swiper5">-->
+						<!--<div class="swiper-wrapper">-->
+						<!--<div class="swiper-slide"><img src="../static/images/conference/img_experience_cube.jpg"></div>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div class="n-b-btn-n" data-sw="5">-->
+						<!--<img src="../static/images/conference/btn_next.jpg">-->
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="co-media">
+				<a name="t4"></a>
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_04.png">
+				</div>
+				<div class="media-box">
+					<dd class="media-list">
+						<dl class="media-item">
+							<a href="http://www.letv.com/ptv/vplay/23913407.html" target="_blank"><span class="icon_video_s" name="play_btn"></span>
+								<img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_01.jpg"></a>
+							<div class="vit">
+								<span class="ht">乐视：</span>
+								<span class="tc">葡萄科技未来探索号启航带孩子玩出未来梦想</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/59" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_02.jpg"></a>
+							<div class="vit">
+								<span class="ht">文汇报：</span>
+								<span class="tc">让儿童玩具实现虚拟+现实互动</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/66" target="_blank">
+								<img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_03.jpg">
+							</a>
+							<div class="vit">
+								<span class="ht">腾讯网：</span>
+								<span class="tc">葡萄科技探索号启航 带孩子玩出未来梦想</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://bbs.putao.com/thread/62" target="_blank"><img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_04.jpg"></a>
+							<div class="vit">
+								<span class="ht">上海热线：</span>
+								<span class="tc">葡萄科技新品首发 沪上小朋友体验高科技玩具魅力</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://sh.xinhuanet.com/2015-11/03/c_134778367.htm" target="_blank"><img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_05.jpg"></a>
+							<div class="vit">
+								<span class="ht">新华网：</span>
+								<span class="tc">业界专家：别让传统玩具淡出孩子的世界</span>
+							</div>
+						</dl>
+						<dl class="media-item">
+							<a href="http://zj.sina.com.cn/finance/xfgz/2015-11-03/detail_finance-ifxkhqea2999315.shtml?qq-pf-to=pcqq.c2c" target="_blank"><img src="http://static.putaocdn.com/store/front/images/conference/pohot_report_06.jpg"></a>
+							<div class="vit">
+								<span class="ht">新浪网：</span>
+								<span class="tc">葡萄科技新品首发 或开辟儿童玩具新战场</span>
+							</div>
+						</dl>
+					</dd>
+				</div>
+			</div>
+			<div class="co-tidbits">
+				<a name="t5"></a>
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_05.png">
+				</div>
+				<div class="tidbits-cont">
+					<div class="n-b-btn-b" data-sw="3">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_back.jpg">
+					</div>
+					<div class="swiper-container" id="swiper3">
+						<div class="swiper-wrapper" style="width: 25024px; height: 600px;">
+							<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h1.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h2.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h3.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h4.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h5.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h6.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h7.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h8.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h9.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h10.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h11.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h12.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h13.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h14.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h15.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h16.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h17.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h18.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h19.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h20.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h21.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h22.jpg"></div>
+							<div class="swiper-slide" style="width: 1088px; height: 600px;"><img src="http://static.putaocdn.com/store/front/images/conference/h23.jpg"></div>
+						</div>
+					</div>
+					<div class="n-b-btn-n" data-sw="3">
+						<img src="http://static.putaocdn.com/store/front/images/conference/btn_next.jpg">
+					</div>
+					<div class="swiper-page"><span id="c_i">1</span> / <span id="c_a">23</span></div>
+				</div>
+			</div>
+			<div class="co-end">
+				<div class="co-title">
+					<img src="http://static.putaocdn.com/store/front/images/conference/img_title_06.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="videoModal" class="modal modal-video fade " data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                class="iconfont icon-close">&#xe619;</i></button>
+        <h4 class="modal-title" id="myModalLabel">2015葡萄科技发布会</h4>
+    </div>
+    <div class="modal-bd">
+        <div id="youkuplayer" style="width:862px;height:524px;display: block">
+            <!--<!--                    </div>-->
+        </div>
+    </div>
+</div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
+<script src="http://static.putaocdn.com/store/front/js/lib/bootstrap.min.js"></script>
+<script src="http://static.putaocdn.com/store/front/js/conference.js"></script>
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+<script type="text/javascript">
+	//显示下拉图片效果
+	var num;
+	$('.nav-list li[id]').hover(function() {
+		var Obj = $(this).attr('id');
+		num = Obj.substring(3, Obj.length);
+		$('#box-' + num).slideDown();
+	}, function() {
+		$('#box-' + num).hide();
+	});
+	$('.menus').hover(function() {
+		$(this).show();
+	}, function() {
+		$(this).slideUp(200);
+	});
+</script>
+
+<script>
+	$('.icon_video_l').click(function () {
+        $('#videoModal').modal('show');
+        var player = new YKU.Player('youkuplayer', {
+            styleid: '0',
+            client_id: '5c30db50b42ae8c4',
+            vid: 'XMTM4NDY5Mzg2MA==',
+            show_related: false
+        })
+    });
+</script>
+<% include ./footer.ejs %>

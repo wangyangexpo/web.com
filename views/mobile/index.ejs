@@ -1,0 +1,129 @@
+<% include ./header %>
+    <div class="container">
+        <% if(mobile_banner) { %>
+        		<% if(mobile_banner.length > 1) { %>
+        			<div class="swiper">
+	                <div class="swiper-wrapper">
+	                    <% mobile_banner.forEach(function(item) { %>
+	                        <div class="swiper-slide">
+	                            <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+	                        </div>
+	                    <% }) %>
+	                </div>
+	            </div>
+        		<% } else { %>
+        			<div class="single-banner">
+        				<% mobile_banner.forEach(function(item) { %>
+                        <div class="slide">
+                            <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+                        </div>
+                    <% }) %>
+        			</div>
+        		<% } %>
+        <% } %>
+        <div class="content">
+            <% if(mobile_menu) { %>
+                <% mobile_menu.forEach(function(item, $index) { %>
+                    <% if(item.basic_url.substr(item.basic_url.indexOf('#')+1) != ''  && item.basic_url.indexOf('all') == -1) { %>
+                    		<section>
+                    			<div class="banner" id="<%= item.basic_url.substr(item.basic_url.indexOf('#')+1) %>"><p><%= item.name %></p></div>
+	                        <% if(item['children']) { %>
+	                            <div class="cells">
+	                                <% item['children'].forEach(function(citem) { %>
+	                                    <div class="cell-item">
+	                                        <a href="<%= citem.basic_url %>">
+	                                            <div class="cell-left">
+	                                                <img src="<%=helpers.drawImage(citem.basic_image_1)%>">
+	                                            </div>
+	                                            <div class="cell-right">
+	                                                <div class="item">
+	                                                    <div class="title"><%= citem.name %></div>
+	                                                    <div class="desc">
+	                                                        <p><%= citem.description %></p>
+	                                                    </div>
+	                                                    <div class="price"> ￥<%= citem.sub_title ? parseFloat(citem.sub_title).toFixed(2) : '0.00' %></div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                    </div>
+	                                <% }) %>
+	                            </div>
+	                        <% } else { %>
+	                            <p class="iscoming">敬请期待</p>
+	                        <% } %>
+                    		</section>
+                    <% } else if(item.basic_url.indexOf('all') > -1) { %>
+                        <div class="banner" style="height: 1px;" id="<%= item.basic_url.slice(1) %>"></div>
+                        <div class="btn-area">
+                            <a href="<%=helpers.devurl_m('/product/product/list')%>" class="btn"><%= item.name %></a>
+                        </div>
+                    <% } %>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+    <script type="text/javascript">
+    		$(function() {
+    			$('.desc p').on('each', function() {
+    				if($(this).text() > 72) {
+    					$(this).text(cutString($(this).text(), 72));
+    				}
+    			});
+//  			if(getLen($('.desc p').text()) > 72) {
+//	        		$('.desc p').text(cutString($('.desc p').text(), 72));
+//	        }
+    			$('.navbar ul li a').on('click', function (e) {
+	        		var uri = $(this).data('href');
+	            location.href = uri;
+	            if (uri.substr(uri.indexOf('#') + 1) != '' && uri.indexOf('all') == -1 && (uri.indexOf('#') > -1)) {
+	                var tag = uri.substr(uri.indexOf('#'));
+	                if(window.scrollY == parseInt($(tag).offset().top)) {
+						window.scrollBy(0, -$(tag).height());
+	                }
+	            }
+	            else if(uri.indexOf('all') > -1) {
+	            		location.href = '<%=helpers.devurl_m('/page')%>';
+	            }
+	            $('.navbar').addClass('hide');
+	        });
+	        
+	        var uri = window.location.href;
+	        if(uri.indexOf('act') > -1) {
+	        		var tag = uri.substr(uri.indexOf('#'), uri.indexOf('?') - uri.indexOf('#'));
+	        		window.scrollBy(0, $(tag).offset().top-$(tag).height());
+	        }
+    			function getLen(str) {
+		    		var realLength = 0, len = str.length, charCode = -1;
+		        for (var i = 0; i < len; i++) {
+		            charCode = str.charCodeAt(i);
+		            if (charCode >= 0 && charCode <= 128) realLength += 1;
+		            else realLength += 2;
+		        }
+		        return realLength;
+		    }
+		    function cutString(str, len) {
+		    		var str_length = 0;
+		        var str_len = 0;
+		        str_cut = new String();
+		        str_len = str.length;
+		        for (var i = 0; i < str_len; i++) {
+		            a = str.charAt(i);
+		            str_length++;
+		            if (escape(a).length > 4) {
+		                //中文字符的长度经编码之后大于4  
+		                str_length++;
+		            }
+		            str_cut = str_cut.concat(a);
+		            if (str_length >= len) {
+		                str_cut = str_cut.concat("……");
+		                return str_cut;
+		            }
+		        }
+		        //如果给定字符串小于指定长度，则返回源字符串；  
+		        if (str_length < len) {
+		            return str;
+		        }
+		    }
+    		})
+    </script>
+<% include ./footer %>

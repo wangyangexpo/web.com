@@ -9,6 +9,7 @@ var about = function(req,res){
 	commeData(req,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
+		content.title = '关于葡萄 - ' + content.title;
 		res.render('about',content);
 	})
 }

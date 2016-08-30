@@ -1,53 +1,95 @@
-
 <% include ./header.ejs %>
-
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
+<!--<link rel="stylesheet" href="css/index.css">-->
 <div class="wrapper">
-  <div class="banner">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <% banner.forEach(function(item){ %>
-          <div class="swiper-slide" style="background:url('<%=helpers.drawImage(item.basic_image_1)%>') center center no-repeat; ">
-            <a target="_blank" href="<%=item.basic_url%>"></a>
-          </div>
-        <% }) %>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-  <div class="type_choose">
-    <table class="type_choose_inner" cellspacing="0" cellpadding="0" border="0">
-      <tr>
-        <% index_content.forEach(function(item,index){ %>
-        <td>
-          <div class="choose_item <%=index==0?'select':''%>" data-flag="<%=index+1%>">
-            <img src="<%=helpers.drawImage(item.basic_image_1)%>">
-          </div>
-        </td>
-        <% }) %>
-      </tr>
-    </table>
-  </div>
-  <div class="choose_details" style="display: block;" data-flag="1">
-    <div class="choose_details_inner">
-      <% techToy.forEach(function(item){ %>
-      <div class="plate">
-        <div class="plate_title">
-          <span><%=item.title%></span>
-          <span><%=item.sub_title%></span>
-        </div>
-        <div class="plate_items">
-          <% item['children'].forEach(function(childItem,index){ %>
-          <div class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
-            <img class="bg" src="<%=helpers.drawImage(childItem.basic_image_1)%>">
-            <img class="scale" src="<%=helpers.drawImage(childItem.basic_image_2)%>">
-          </div>
-          <% }) %>
-        </div>
-      </div>
-      <% }) %>
-    </div>
-  </div>
+	
+	<!-- banner -->
+	<div class="swiper-box">
+		<div class="swiper-container js-swiper-container">
+			<div class="swiper-wrapper" id="swiperwrapper">
+				<%if(banner&&banner.length > 0){%>
+				<%banner.forEach(function(v){%>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+					<%if(v.description){%>
+						<a target="_blank" href="<%=v.basic_url%>">
+							
+						</a>
+					<%}%>
+				</div>
+				<%})%>
+				<%}%>
+			</div>
+		</div>
+		<div class="pagination js-pagination"></div>
+	</div>
+	<!-- /banner -->
+	
+	<div class="type_choose">
+		<table class="type_choose_inner" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<% if(index_content) { %>
+					<% index_content.forEach(function(item,index){ %>
+					<td>
+						<div class="choose_item <%=index==0?'select':''%>" data-flag="<%=index+1%>">
+							<img src="<%=helpers.drawImage(item.basic_image_1)%>">
+						</div>
+					</td>
+					<% }) %>
+				<% } %>
+			</tr>
+		</table>
+	</div>
+	<div class="choose_details" style="display: block;" data-flag="1">
+		<div class="choose_details_inner">
+			<% if(techToy) { %>
+				<% techToy.forEach(function(item){ %>
+				<div class="plate">
+					<div class="plate_title">
+						<span><%=item.title%></span>
+						<span><%=item.sub_title%></span>
+					</div>
+					<div class="plate_items">
+						<% if(item['children']) { %>
+							<% item['children'].forEach(function(childItem,index){ %>
+							<a target="_blank" href="<%=childItem.basic_url%>" class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
+								<img class="bg" src="<%=helpers.drawImage(childItem.basic_image_1)%>">
+								<img class="scale" src="<%=helpers.drawImage(childItem.basic_image_2)%>">
+							</a>
+							<% }) %>
+						<% } %>
+					</div>
+				</div>
+				<% }) %>
+			<% } %>
+		</div>
+	</div>
+	<div class="choose_details" style="display: none;" data-flag="2">
+		<div class="choose_details_inner">
+			<% if(acc) { %>
+				<% acc.forEach(function(item){ %>
+				<div class="plate">
+					<div class="plate_title">
+						<span><%=item.title%></span>
+						<span><%=item.sub_title%></span>
+					</div>
+					<div class="plate_items">
+						<% if(item['children']) { %>
+							<% item['children'].forEach(function(childItem,index){ %>
+							<a target="_blank" href="<%=childItem.basic_url%>" class="plate_item <%= (item['children'].length % 2!=0&&index+1 == item['children'].length)?'single_item':'' %>">
+								<img class="bg" src="<%=helpers.drawImage(childItem.basic_image_1)%>">
+								<img class="scale" src="<%=helpers.drawImage(childItem.basic_image_2)%>">
+							</a>
+							<% }) %>
+						<% } %>
+					</div>
+				</div>
+				<% }) %>
+			<% } %>
+		</div>
+	</div>
 </div>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/index.js')%>"></script>
+<!--<script src="/js/index.js"></script>-->
 <% include ./footer.ejs %>

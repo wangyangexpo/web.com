@@ -1,13 +1,15 @@
 
   	<% include ./header.ejs %>
   	<link rel="stylesheet" href="<%=helpers.staticurl('/css/dizuo.css')%>" />
+  	<div class="page_dizuo">
+  	
     <!-- top -->
     <div class="top pr">
       <!--<div class="light wow bounceIn"></div>
       <div class="light1 wow bounceIn"></div>-->
       <div class="w pr h">
 
-        <div class="ipad wow bounceInUp">
+        <div class="yzl_ipad wow bounceInUp">
 
         </div>
 
@@ -115,7 +117,7 @@
     <!-- 产品 -->
     <div class="parts">
 		<div class="w h pr">
-			<a href=""></a>
+			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/tansuohaofeichuan')%>"></a>
 		</div>
     </div>
     <!-- /产品 -->
@@ -128,9 +130,9 @@
       <a href="/page_mofang"></a>
     </div>
     <!-- /相关科技产品 -->
-    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/jquery.min.js')%>"></script>
-    <script type="text/javascript" src="<%=helpers.staticurl('js/lib/wow.min.js')%>"></script>
-    <script type="text/javascript" src="<%=helpers.staticurl('js/dizuo.js')%>"></script>
-  </body>
-
-</html>
+    
+    </div>
+    <script type="text/javascript" src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('/js/lib/wow.min.js')%>"></script>
+    <script type="text/javascript" src="<%=helpers.staticurl('/js/dizuo.js')%>"></script>
+<% include ./footer.ejs %>

@@ -13,7 +13,7 @@
 			<div>
 				<span></span>
 				<span></span>
-				<a href="javascript:;">价植观<br />&目标</a>
+				<a href="javascript:;">价值观<br />&目标</a>
 			</div>
 			<div>
 				<span></span>
@@ -42,7 +42,7 @@
 			</p>
 		</div>
 	</div>
-	<a href="/join">我要加入葡萄之家></a>
+	<a href="brandShow?tag=OiKrar&name=<%=helpers.encodeURIComponent('我要加入葡萄之家')%>">我要加入葡萄之家></a>
 </div>
 <!-- /什么是葡萄之家 -->
 
@@ -52,19 +52,21 @@
 		<h2>葡萄之家会员权益</h2>
 	</div>
 	<ul id="memberInterests">
-		<% member_ship.forEach(function(item,index){ %>
-		<li class="memberInterests_li">
-			<div>
-				<h3 class="mem_title"><%=item.title%></h3>
-				<p class="mem_sub_title">
-					<%=item.sub_title%>
-				</p>
-			</div>
-			<div>
-				<%-item.basic_content%>
-			</div>
-		</li>
-		<% }) %>
+		<%if(member_ship){%>
+			<% member_ship.forEach(function(item,index){ %>
+			<li class="memberInterests_li">
+				<div>
+					<h3 class="mem_title"><%=item.title%></h3>
+					<p class="mem_sub_title">
+						<%=item.sub_title%>
+					</p>
+				</div>
+				<div>
+					<%-item.basic_content%>
+				</div>
+			</li>
+			<% }) %>
+		<%}%>
 	</ul>
 </div>
 <!-- /葡萄之家会员权益 -->
@@ -75,18 +77,24 @@
 		<h2>热门活动</h2>
 	</div>
 	<div class="list" id="activity_list">
-		<% hot_acts.forEach(function(item,index){ %>
-		<dl>
-			<dt>
-				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
-				<p><%=item.name%></p>
-			</dt>
-			<dd>
-				<%-item.basic_content%>
-				<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=热门活动&tag=<%=item.tag%>">查看全文</a>
-			</dd>
-		</dl>
-		<% }) %>
+		<div>
+		<%if(hot_acts){%>
+			<% hot_acts.forEach(function(item,index){ %>
+			<dl>
+				<dt>
+					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
+					<p><%=item.name%></p>
+				</dt>
+				<dd>
+					<div>
+						<%-item.basic_content%>
+					</div>
+					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>">查看全文</a>
+				</dd>
+			</dl>
+			<% }) %>
+		<%}%>
+		</div>
 	</div>
 	<%if(hot_acts.length > 2){%>
 	<!-- 查看更多 -->
@@ -108,53 +116,62 @@
 			<br /> 他们是“蒲公英”，因为他们愿意分享传播自己积累的亲子方式
 		</p>
 	</div>
-	<ul id="fans_list">
-		<% pf_stories.forEach(function(item,index){ %>
-		<li>
-			<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
-			<dl>
-				<dt><%=item.name%></dt>
-				<dd>
-					<%=item.title%>
-				</dd>
-				<dd>
-					<a href="/brandShow?banner=<%=show_banner[0].basic_image_1%>&name=葡粉故事&tag=<%=item.tag%>">查看全文</a>
-				</dd>
-			</dl>
-		</li>
-		<% }) %>
+	<div id="fans_list">
+		<div>
+			<ul id="fans_list">
+		<%if(pf_stories){%>
+			<% pf_stories.forEach(function(item,index){ %>
+			<li>
+				<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
+				<dl>
+					<dt><%=item.name%></dt>
+					<dd>
+						<%=item.title%>
+					</dd>
+					<dd>
+						<a href="/brandShow?name=<%=helpers.encodeURIComponent('葡粉故事')%>&tag=<%=item.tag%>">查看全文</a>
+					</dd>
+				</dl>
+			</li>
+			<% }) %>
+		<%}%>
 	</ul>
+		</div>
+	</div>
+	
 	<%if(pf_stories.length > 2){%>
 	<!-- 查看更多 -->
 	<div class="more">
 		<a href="javascript:;" id="fans_btn"></a>
 	</div>
 	<!-- /查看更多 -->
+	<%}else{%>
+		<div style="height: 50px;"></div>
 	<%}%>
 
 </div>
 <!-- /葡粉故事 -->
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/pt_home.js')%>"></script>
+<!--<script src="/js/pt_home.js"></script>-->
 <script>
-	var activity_btn = document.querySelector('#activity_btn'),
-		activity_list = document.querySelector('#activity_list'),
-		fans_btn = document.querySelector('#fans_btn'),
-		fans_list = document.querySelector('#fans_list');
+	var $activity_list = $('#activity_list'),
+		$fans_list = $('#fans_list');
 	try {
-		activity_btn.addEventListener('click', function() {
-			activity_list.style.height = '2200px';
-			this.style.display = 'none';
+		$('#activity_btn').on('click', function() {
+			$activity_list.animate({height:$activity_list.find('div').eq(0).height()+20});
+			$(this).hide();
 		})
 	} catch(e) {
-	
+
 	}
 	try {
-		fans_btn.addEventListener('click', function() {
-			fans_list.style.height = '950px';
-			this.style.display = 'none';
+		$('#fans_btn').on('click', function() {
+			$fans_list.animate({height:$fans_list.find('div').eq(0).height()+20});
+			$(this).hide();
 		})
 	} catch(e) {
-	
+
 	}
 </script>
 <% include ./footer.ejs %>

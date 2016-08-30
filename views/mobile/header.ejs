@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="description" content="葡萄科技官网针对3-12岁的孩子提供：智能,玩具,智能玩具,智能硬件,儿童科技智能玩具等,儿童智能软件免费下载.">
+    <meta name="keywords" content="葡萄,玩具,智能,多元智能,智能玩具,科技玩具,智能硬件,儿童智能,儿童智能硬件,儿童科技玩具">
+    <title>葡萄科技-儿童智能硬件</title>
+    <link rel="stylesheet" href="<%=helpers.staticurl_m('/css/index_v3.0.css')%>">
+	<script src="<%=helpers.staticurl_m('/js/lib/view-port.js')%>"></script>
+    <script src="<%=helpers.staticurl_m('/js/lib/zepto.min.js')%>"></script>
+</head>
+<body>
+    <header>
+        <div class="nav"><div class="menu"></div></div>
+        <% if(mobile_menu) { %>
+            <div class="navbar nav-list hide">
+                <ul>
+                    <% mobile_menu.forEach(function(item) { %>
+                        <li>
+                            <a data-href="<%= item.basic_url %>"><%= item.name %><i class="iconfont icon-right"></i></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% } %>
+        <div class="logo"></div>
+        <div class="user"><div class="iuser"></div></div>
+        <% if(shopcart) { %>
+            <div class="userbar nav-list hide">
+                <ul>
+                    <li>
+                        <a href="<%=helpers.devurl_m('/user/info')%>">个人中心<i class="iconfont icon-right"></i></a>
+                    </li>
+                    <li>
+                        <a href="/user/logout">退出<i class="iconfont icon-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="cart"><i class="iconfont icon-cart"></i></div>
+            <b class="tag"><%= shopcart ? shopcart.num : 0 %></b>-->
+        <% } else {%>
+	        	<div class="userbar nav-list hide">
+	            <ul>
+	                <li>
+	                    <a href="/user/login">登录<i class="iconfont icon-right"></i></a>
+	                </li>
+	                <li>
+	                    <a href="/user/register">注册<i class="iconfont icon-right"></i></a>
+	                </li>
+	            </ul>
+            </div>
+        <% } %>
+    </header>

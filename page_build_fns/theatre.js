@@ -30,6 +30,7 @@ var theatre = function(req,res){
 		.then(function(){
 			commeData(req,lib_o,function(count){
 				var content = lib_o.getAllContent();
+				content.title = '葡星剧场 - ' + content.title;
 				content.shopcart = count;
 				//console.log('dddd '+JSON.stringify(content));
 				res.render('theatre',content);
