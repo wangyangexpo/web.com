@@ -15,7 +15,7 @@ lib_fn.prototype = {
 	getData:function(data,key,isChild,api){
 		var _this = this;
 		return new Promise(function(resolve,reject){
-			var cacheNameKey = 'cache_'+data.id;
+			var cacheNameKey = 'cache_'+data.tag;
 			cache.get(cacheNameKey,function(err,cacheName){
 				if(!err&&cacheName){
 					data.cache = cacheName;
@@ -48,20 +48,13 @@ lib_fn.prototype = {
 					});
 
 				}else{
-					cache.get(cacheName,function(err,cacheData){
-						console.log('get from cache!');
-						console.log(cacheData)
-						if(!err&&cacheData){
-							var content_data = JSON.parse(cacheData);
-							_this.content[key] = content_data;
-							_this.mixChildData(content_data,key,isChild,_this);
-							resolve();
-						}
-
-					});
+					_this.getCacheData(cacheName,key,isChild,_this);
 				}
-			}else{
-				reject(result.code)
+			}else if(result.code == 'timeout'){
+				var result = _this.getCacheData(cacheNameKey,key,isChild,_this);
+				if(result === false) {
+					reject(result.code)
+				};
 			}
 		},api)
 	},
@@ -85,6 +78,21 @@ lib_fn.prototype = {
 		}
 		this.content.title = '葡萄科技官网 - 科技陪伴成长';
 		return this.content;
+	},
+	getCacheData:function(cacheName,key,isChild,_this){
+		cache.get(cacheName,function(err,cacheData){
+			console.log('get from cache!');
+			console.log(cacheData)
+			if(!err&&cacheData){
+				var content_data = JSON.parse(cacheData);
+				_this.content[key] = content_data;
+				_this.mixChildData(content_data,key,isChild);
+				resolve();
+			}else{
+				return false;
+			}
+
+		});
 	}
 }
 
