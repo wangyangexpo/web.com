@@ -10,7 +10,7 @@ var app = function(req, res, tag) {
 	var _tag = req.query.tag;
 	lib_o.getData({
 			tag: _tag
-		}, 'data', false, '/detail')
+		}, 'app_info_data', false, '/detail')
 		.then(function() {
 			commeData(req, res,lib_o, function(count) {
 				var content = lib_o.getAllContent(),
