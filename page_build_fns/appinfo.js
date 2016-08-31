@@ -4,17 +4,15 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
-var app = function(req, res, tag) {
+var app_info = function(req, res, tag) {
 	var lib_o = new lib();
 	var _name = req.query.name;
 	var _tag = req.query.tag;
 	lib_o.getData({
 			tag: _tag
-		}, 'app_info_data', false, '/detail')
+		}, 'data', false, '/detail')
 		.then(function() {
-			res.render('appinfo', {});
-			return;
-			commeData(req, res,lib_o, function(count) {
+			commeData(req,res, lib_o, function(count) {
 				var content = lib_o.getAllContent(),
 					banner = [{}],
 					data = content.data;
@@ -53,4 +51,4 @@ var app = function(req, res, tag) {
 		})
 }
 
-module.exports = app
+module.exports = app_info
