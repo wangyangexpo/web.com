@@ -32,6 +32,7 @@ lib_fn.prototype = {
 			if(result.code == 200){
 				var updateCache = result.updateCache,
 					cacheName = result.cache;
+				console.log(updateCache);
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
