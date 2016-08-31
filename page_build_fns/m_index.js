@@ -38,20 +38,20 @@ var m_index = function(req, res) {
 		console.log('发生错误！', + error);
 		throw new Error('发生错误！', + error);
 	})
-    // 动漫周边
-    .then(function() {
-        return lib_o.getData({tag: 'mobile_carton'}, 'mobile_carton', true)
-    }).catch(function(error) {
-        console.log('发生错误！', + error);
-        throw new Error('发生错误！', + error);
-    })
-    // 葡萄APP
-    .then(function() {
-        return lib_o.getData({tag: 'putao_app'}, 'putao_app', true)
-    }).catch(function(error) {
-        console.log('发生错误！', + error);
-        throw new Error('发生错误！', + error);
-    })
+    //// 动漫周边
+    //.then(function() {
+    //    return lib_o.getData({tag: 'mobile_carton'}, 'mobile_carton', true)
+    //}).catch(function(error) {
+    //    console.log('发生错误！', + error);
+    //    throw new Error('发生错误！', + error);
+    //})
+    //// 葡萄APP
+    //.then(function() {
+    //    return lib_o.getData({tag: 'putao_app'}, 'putao_app', true)
+    //}).catch(function(error) {
+    //    console.log('发生错误！', + error);
+    //    throw new Error('发生错误！', + error);
+    //})
     // 全部产品
 	.then(function() {
 		return lib_o.getData({tag: 'mobile_all'}, 'mobile_all')
@@ -60,8 +60,18 @@ var m_index = function(req, res) {
 		throw new Error('发生错误！', + error);
 	})
 	.then(function() {
-		res.render('mobile/index', {shopcart:123});
-		//return lib_o.getData({tag: 'mobile'}, 'mobile_menu')
+		return lib_o.getData({tag: 'mobile'}, 'mobile_menu')
+	}).catch(function(error) {
+		console.log('发生错误！', + error);
+		throw new Error('发生错误！', + error);
+	})
+	.then(function() {
+		commeData(req,res,lib_o,function(count){
+			var content = lib_o.getAllContent();
+			content.shopcart = count;
+			// console.log('mobile: '  + JSON.stringify(content));
+			res.render('mobile/index', content);
+		})
 	})
 }
 
