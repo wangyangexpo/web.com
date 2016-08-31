@@ -1,5 +1,5 @@
 <% include ./header %>
-    <div class="container">
+    <div class="container del-h">
         <% if(mobile_banner) { %>
         		<% if(mobile_banner.length > 1) { %>
         			<div class="swiper">
@@ -82,7 +82,7 @@
 	                }
 	            }
 	            else if(uri.indexOf('all') > -1) {
-	            		location.href = '<%=helpers.devurl_m('/page')%>';
+	            		location.href = '<%=helpers.devurl_m('/product/product/list')%>';
 	            }
 	            $('.navbar').addClass('hide');
 	        });
