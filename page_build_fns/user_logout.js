@@ -11,7 +11,7 @@ var user_logout = function(req,res){
 	//res.cookie('token','0',{domain:configs.passport_domain});
 	//var url = global.currenturl;
 	res.clearCookie('uid');
-	res.clearCookie('nickname');
+	//res.clearCookie('nickname');
 	var url ='';
 	if(req.host.indexOf(configs.m_host_key) != -1){
 		//url = 'http://m.putao.com';
