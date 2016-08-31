@@ -3,15 +3,15 @@
         <% if(mobile_banner) { %>
         		<% if(mobile_banner.length > 1) { %>
         			<div class="swiper">
-						<div class="swiper-wrapper">
-							<% mobile_banner.forEach(function(item) { %>
-								<div class="swiper-slide">
-									<a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
-								</div>
-							<% }) %>
-						</div>
-						<div class="swiper-pagination"></div>
-	            	</div>
+                    <div class="swiper-wrapper">
+                        <% mobile_banner.forEach(function(item) { %>
+                            <div class="swiper-slide">
+                                <a href="<%= item.basic_url %>"><img src="<%=helpers.drawImage(item.basic_image_1)%>"></a>
+                            </div>
+                        <% }) %>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
         		<% } else { %>
         			<div class="single-banner">
         				<% mobile_banner.forEach(function(item) { %>
@@ -69,7 +69,7 @@
     				if($(this).text() > 72) {
     					$(this).text(cutString($(this).text(), 72));
     				}
-    			});
+    			})
 //  			if(getLen($('.desc p').text()) > 72) {
 //	        		$('.desc p').text(cutString($('.desc p').text(), 72));
 //	        }

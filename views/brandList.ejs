@@ -28,7 +28,7 @@
 			<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
 			<%}else{%>
-				<a href="brandShow?name=<%=sub_name%>&tag=<%=v.tag%>">
+				<a href="brandShow?name=<%=helpers.encodeURIComponent(sub_name)%>&tag=<%=v.tag%>">
 			<%}%>
 			<img src="<%=helpers.drawImage(v.basic_image_3)%>" />
 			<dl>

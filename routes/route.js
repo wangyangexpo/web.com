@@ -192,5 +192,16 @@ router.get('/system/cms/show',(req,res)=>{
 	res.redirect('/help?parent_tag=cms_service&id=653')
 })
 
+router.get('/privacy',(req,res)=>{
+	res.redirect('/help?parent_tag=cms_service&id=653')
+})
+
+router.get('/toys/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/toys/'+req.params.id)
+})
+
+router.get('/ad/:id',(req,res)=>{
+	res.redirect('http://store.putao.com/ad/'+req.params.id)
+})
 
 module .exports = router;
