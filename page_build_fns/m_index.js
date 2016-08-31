@@ -1,6 +1,5 @@
 var lib = require('./lib');
 var commeData = require('./commeData');
-var m_config = require('./m_config');
 var m_index = function(req, res) {
 	var lib_o = new lib();
     lib_o.getData({tag: 'mobile_login'}, 'mobile_login')
