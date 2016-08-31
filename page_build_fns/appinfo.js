@@ -12,35 +12,30 @@ var app = function(req, res, tag) {
 			tag: _tag
 		}, 'data', false, '/detail')
 		.then(function() {
-			commeData(req,res,lib_o, function(count) {
-				try {
-					var content = lib_o.getAllContent(),
-						banner = [{}],
-						data = content.data;
-					var pic_map = [],
-						text_map = [],
-						body_map;
-					if (data && data.length > 0) {
-						data.forEach(function (item) {
-							var content_type = item.content_type;
+			commeData(req, res,lib_o, function(count) {
+				var content = lib_o.getAllContent(),
+					banner = [{}],
+					data = content.data;
+				var pic_map = [],
+					text_map = [],
+					body_map;
+				if(data && data.length > 0) {
+					data.forEach(function(item) {
+						var content_type = item.content_type;
 
-							switch (content_type) {
-								case 'pic':
-									pic_map.push(item);
-									break;
-								case 'text':
-									text_map.push(item);
-									break;
-								case 'body':
-									banner[0] = item;
-									body_map = item;
-									break
-							}
-							;
-						});
-					}
-				}catch (e){
-					throw new Error('appinfo 发生错误！',+ error);
+						switch(content_type) {
+							case 'pic':
+								pic_map.push(item);
+								break;
+							case 'text':
+								text_map.push(item);
+								break;
+							case 'body':
+								banner[0] = item;
+								body_map = item;
+								break
+						};
+					});
 				}
 				var result = {
 					pic_map: pic_map,
