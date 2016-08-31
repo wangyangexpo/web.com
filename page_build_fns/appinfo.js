@@ -8,11 +8,14 @@ var app_info = function(req, res, tag) {
 	var lib_o = new lib();
 	var _name = req.query.name;
 	var _tag = req.query.tag;
+	console.log('yzl-tag:'+_tag);
 	lib_o.getData({
 			tag: _tag
 		}, 'data', false, '/detail')
 		.then(function() {
+			console.log('yzl-tag:then');
 			commeData(req,res, lib_o, function(count) {
+				console.log('yzl-tag:commeData完成');
 				var content = lib_o.getAllContent(),
 					banner = [{}],
 					data = content.data;

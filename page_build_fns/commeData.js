@@ -3,6 +3,7 @@
  */
 var getStore = require('../lib/getStore')
 var commeData = function(req,res,lib_o,callback){
+	console.log('yzl-tag:commeData进入');
 	lib_o.getData({tag:'cms_order'},'cms_order',true)
 		.then(function(){return lib_o.getData({tag:'cms_service'},'cms_service',true)}).catch(function(error) {
 			console.log('发生错误！',+ error);
@@ -21,7 +22,9 @@ var commeData = function(req,res,lib_o,callback){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
+			console.log('yzl-tag:commeData接口返回完毕');
 			getStore(req,res,function(text,sessid){
+				console.log('yzl-tag:getStore完毕');
 				if(text) {
 					var result = JSON.parse(text);
 					if (result.status == 200) {
