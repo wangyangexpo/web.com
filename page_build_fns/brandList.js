@@ -14,7 +14,7 @@ var theatreList = function(req,res){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
-			commeData(req,lib_o,function(count){
+			commeData(req,res,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
 				content.sub_name = _name;

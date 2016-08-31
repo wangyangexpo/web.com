@@ -2,7 +2,7 @@
  * Created by admin on 16/8/1.
  */
 var getStore = require('../lib/getStore')
-var commeData = function(req,lib_o,callback){
+var commeData = function(req,res,lib_o,callback){
 	lib_o.getData({tag:'cms_order'},'cms_order',true)
 		.then(function(){return lib_o.getData({tag:'cms_service'},'cms_service',true)}).catch(function(error) {
 			console.log('发生错误！',+ error);
@@ -21,7 +21,7 @@ var commeData = function(req,lib_o,callback){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
-			getStore(req,function(text,sessid){
+			getStore(req,res,function(text,sessid){
 				if(text) {
 					var result = JSON.parse(text);
 					if (result.status == 200) {

@@ -6,7 +6,7 @@ var commeData = require('./commeData');
 
 var page_hellobc = function(req,res){
 	var lib_o = new lib();
-	commeData(req,lib_o,function(count){
+	commeData(req,res,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.banner = [{description:1}];
 		content.shopcart = count;

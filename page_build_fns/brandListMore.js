@@ -13,7 +13,7 @@ var theatreListMore = function(req, res) {
 			tag: _tag
 		}, 'list')
 		.then(function() {
-			commeData(req, lib_o, function(count) {
+			commeData(req,res,lib_o, function(count) {
 				var content = lib_o.getAllContent();
 				content.list = content.list || [];
 				res.json({

@@ -12,7 +12,7 @@ var app = function(req, res, tag) {
 			tag: _tag
 		}, 'data', false, '/detail')
 		.then(function() {
-			commeData(req, lib_o, function(count) {
+			commeData(req,res,lib_o, function(count) {
 				var content = lib_o.getAllContent(),
 					banner = [{}],
 					data = content.data;

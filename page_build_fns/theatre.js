@@ -28,7 +28,7 @@ var theatre = function(req,res){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
-			commeData(req,lib_o,function(count){
+			commeData(req,res,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.title = '葡星剧场 - ' + content.title;
 				content.shopcart = count;

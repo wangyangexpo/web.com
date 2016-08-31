@@ -26,7 +26,7 @@ var help = function(req,res){
 			throw new Error('发生错误！',+ error);
 		})
 		.then(function(){
-			commeData(req,lib_o,function(count) {
+			commeData(req,res,lib_o,function(count) {
 				var content = lib_o.getAllContent();
 				if (!parent_tag) {
 					content.mainText = '暂时内容'
