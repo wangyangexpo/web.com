@@ -66,12 +66,13 @@ var m_index = function(req, res) {
 		throw new Error('发生错误！', + error);
 	})
 	.then(function() {
-		commeData(req,res,lib_o,function(count){
-			var content = lib_o.getAllContent();
-			content.shopcart = count;
-			// console.log('mobile: '  + JSON.stringify(content));
-			res.render('mobile/index', content);
-		})
+		res.render('mobile/index', {shopcart:123});
+		//commeData(req,res,lib_o,function(count){
+		//	var content = lib_o.getAllContent();
+		//	content.shopcart = count;
+		//	// console.log('mobile: '  + JSON.stringify(content));
+		//	res.render('mobile/index', content);
+		//})
 	})
 }
 
