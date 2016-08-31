@@ -12,6 +12,8 @@ var app = function(req, res, tag) {
 			tag: _tag
 		}, 'app_info_data', false, '/detail')
 		.then(function() {
+			res.render('appinfo', {});
+			return;
 			commeData(req, res,lib_o, function(count) {
 				var content = lib_o.getAllContent(),
 					banner = [{}],
