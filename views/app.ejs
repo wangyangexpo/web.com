@@ -27,7 +27,7 @@
       <%if(game&&game.length >0){%>
         <% game.forEach(function(item,index){ %>
         <div class="list-item bc<%=index+1%>">
-          <div class="list-item-inner" data-href="/appinfo?tag=<%=item.tag||''%>&name=<%=helpers.encodeURIComponent(item.name)%>">
+          <div class="list-item-inner" data-href="/appinfo?tag=<%=item.tag||''%>">
             <div class="list-header">
               <div class="app-icon">
                 <a href="/appinfo?tag=<%=item.tag||''%>&name=<%=item.name%>"><img src="<%=helpers.drawImage(item.basic_image_1||'')%>"></a>
@@ -64,7 +64,7 @@
       <%if(app&&app.length >0){%>
         <% app.forEach(function(item,index){ %>
         <div class="list-item bc<%=index+1%>">
-          <div class="list-item-inner" data-href="/appinfo?tag=<%=item.tag||''%>&name=<%=helpers.encodeURIComponent(item.name)%>">
+          <div class="list-item-inner" data-href="/appinfo?tag=<%=item.tag||''%>">
             <div class="list-header">
               <div class="app-icon">
                 <a href="/appinfo?tag=<%=item.tag||''%>&name=<%=item.name%>"><img src="<%=helpers.drawImage(item.basic_image_1||'')%>"></a>
