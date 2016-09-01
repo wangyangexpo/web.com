@@ -34,6 +34,9 @@ lib_fn.prototype = {
 					cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
 				//console.log('cacheName: '+cacheName);
 				console.log('updateCache: '+ updateCache);
+				if(key == 'app_app'){
+					console.log(result.data);
+				}
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
@@ -53,6 +56,7 @@ lib_fn.prototype = {
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						if(!err&&cacheData){
+							console.log(cacheData);
 							var content_data = JSON.parse(cacheData);
 							_this.content[key] = content_data;
 							_this.mixChildData(content_data,key,isChild,_this);
