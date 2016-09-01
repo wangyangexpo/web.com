@@ -128,35 +128,67 @@ router.get('/page/hellobiancheng',(req,res)=>{
 })
 // 魔方
 router.get('/page/mofang',(req,res)=>{
-	require('../page_build_fns/page_mofang')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_mofang')(req, res);
+	}
 })
 // 涂涂世界
 router.get('/page/tutushijie',(req,res)=>{
-	require('../page_build_fns/page_tutushijie')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_tutushijie')(req, res);
+	}
 })
 // 麦斯丝
 router.get('/page/maisisi',(req,res)=>{
-	require('../page_build_fns/page_maisisi')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_maisisi')(req, res);
+	}
 })
 // 淘淘向右走
 router.get('/page/taotaoxiangyouzou',(req,res)=>{
-	require('../page_build_fns/page_taotaoxiangyouzou')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_taotaoxiangyouzou')(req, res);
+	}
 })
 // 奇妙发现
 router.get('/page_qimiaofaxian',(req,res)=>{
-	require('../page_build_fns/page_qimiaofaxian')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_qimiaofaxian')(req, res);
+	}
 })
 // 奇妙电路
 router.get('/page/qimiaodianlu',(req,res)=>{
-	require('../page_build_fns/page_qimiaodianlu')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_qimiaodianlu')(req, res);
+	}
 })
 // 哈泥海洋
 router.get('/page/hanihaiyang',(req,res)=>{
-	require('../page_build_fns/page_hanihaiyang')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_hanihaiyang')(req, res);
+	}
 })
 // 底座
 router.get('/page/tansuohaofeichuan',(req,res)=>{
-	require('../page_build_fns/dizuo')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/dizuo')(req, res);
+	}
 })
 
 // 手机端
@@ -165,7 +197,11 @@ router.get('/m_index',(req,res)=>{
 });
 // 手机端详情
 router.get('/page/:name', (req, res) => {
-	require('../page_build_fns/m_detail')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		require('../page_build_fns/m_detail')(req, res);
+	}
 });
 // 手机端注册
 router.get('/user/register',(req,res)=>{
