@@ -31,10 +31,12 @@ lib_fn.prototype = {
 			var result = JSON.parse(text);
 			if(result.code == 200){
 				var updateCache = result.updateCache,
-					cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
+					//cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
+				cacheName = result.cache;
 				//console.log('cacheName: '+cacheName);
 				console.log('updateCache: '+ updateCache);
 				if(key == 'app'){
+					console.log('result data')
 					console.log(result.data);
 				}
 				if(updateCache){
@@ -57,6 +59,7 @@ lib_fn.prototype = {
 						console.log('get from cache!');
 						if(!err&&cacheData){
 							if(key == 'app'){
+								console.log('cache data')
 								console.log(cacheData);
 							}
 							var content_data = JSON.parse(cacheData);
