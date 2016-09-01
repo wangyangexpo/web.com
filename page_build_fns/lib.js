@@ -32,6 +32,7 @@ lib_fn.prototype = {
 			if(result.code == 200){
 				var updateCache = result.updateCache,
 					cacheName = result.cache;
+				console.log('cacheName: '+cacheName);
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
@@ -56,6 +57,12 @@ lib_fn.prototype = {
 							_this.content[key] = content_data;
 							_this.mixChildData(content_data,key,isChild,_this);
 							resolve();
+						}else{
+							var result = {
+								code:10000,
+								msg:'no cache & service data'
+							}
+							reject(result.code)
 						}
 
 					});

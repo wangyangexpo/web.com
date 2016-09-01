@@ -48,7 +48,10 @@ var app_info = function(req, res, tag) {
 				}
 				res.render('appinfo', result);
 			})
-		})
+		}).catch(function(error) {
+		console.log('发生错误！',+ error);
+		throw new Error('发生错误！',+ error);
+	})
 }
 
 module.exports = app_info
