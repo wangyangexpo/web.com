@@ -46,6 +46,9 @@ lib_fn.prototype = {
 						//if (resultData || (resultData.length && resultData.length > 0)){
 						console.log('has setted cacheNameKey ');
 						cache.set(cacheName,JSON.stringify(resultData),function(){
+							if(key == 'app'){
+								console.log('app data get from service!');
+							}
 							console.log('get from service!');
 							_this.content_data = result.data;
 							_this.content[key] = _this.content_data;
