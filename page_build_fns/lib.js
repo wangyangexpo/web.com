@@ -56,7 +56,9 @@ lib_fn.prototype = {
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						if(!err&&cacheData){
-							console.log(cacheData);
+							if(key == 'app_app'){
+								console.log(cacheData);
+							}
 							var content_data = JSON.parse(cacheData);
 							_this.content[key] = content_data;
 							_this.mixChildData(content_data,key,isChild,_this);
