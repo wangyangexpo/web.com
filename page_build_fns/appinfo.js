@@ -7,7 +7,7 @@ var commeData = require('./commeData');
 var app_info = function(req, res, tag) {
 	var lib_o = new lib();
 	var _name = req.query.name;
-	var _tag = req.query.tag;
+	var _tag = decodeURIComponent(req.query.tag);
 	lib_o.getData({
 			tag: _tag
 		}, 'data', false, '/detail')
