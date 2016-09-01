@@ -26,7 +26,7 @@ lib_fn.prototype = {
 	},
 	getPageData:function(data,key,isChild,cacheNameKey,resolve,reject,api){
 		var _this = this;
-		console.log(data);
+		console.log('ddddaaata:'+data);
 		getContent(data,function(text){
 			var result = JSON.parse(text);
 			if(result.code == 200){
