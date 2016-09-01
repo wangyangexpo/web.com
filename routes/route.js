@@ -120,11 +120,14 @@ router.get('/pt_home',(req,res)=>{
 })
 
 // 编程
-router.get('/page/hellobiancheng',(req,res)=>{
+router.get('/page/hellobiancheng',(req,res,next)=>{
 
-
-
-	require('../page_build_fns/page_hellobc')(req,res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(!agentID) {
+		require('../page_build_fns/page_hellobc')(req, res);
+	}
+	next();
 })
 // 魔方
 router.get('/page/mofang',(req,res,next)=>{
