@@ -120,23 +120,26 @@ router.get('/pt_home',(req,res)=>{
 })
 
 // 编程
-router.get('/page_hellobc',(req,res)=>{
+router.get('/page/hellobiancheng',(req,res)=>{
+
+
+
 	require('../page_build_fns/page_hellobc')(req,res);
 })
 // 魔方
-router.get('/page_mofang',(req,res)=>{
+router.get('/page/mofang',(req,res)=>{
 	require('../page_build_fns/page_mofang')(req,res);
 })
 // 涂涂世界
-router.get('/page_tutushijie',(req,res)=>{
+router.get('/page/tutushijie',(req,res)=>{
 	require('../page_build_fns/page_tutushijie')(req,res);
 })
 // 麦斯丝
-router.get('/page_maisisi',(req,res)=>{
+router.get('/page/maisisi',(req,res)=>{
 	require('../page_build_fns/page_maisisi')(req,res);
 })
 // 淘淘向右走
-router.get('/page_taotaoxiangyouzou',(req,res)=>{
+router.get('/page/taotaoxiangyouzou',(req,res)=>{
 	require('../page_build_fns/page_taotaoxiangyouzou')(req,res);
 })
 // 奇妙发现
@@ -144,15 +147,15 @@ router.get('/page_qimiaofaxian',(req,res)=>{
 	require('../page_build_fns/page_qimiaofaxian')(req,res);
 })
 // 奇妙电路
-router.get('/page_qimiaodianlu',(req,res)=>{
+router.get('/page/qimiaodianlu',(req,res)=>{
 	require('../page_build_fns/page_qimiaodianlu')(req,res);
 })
 // 哈泥海洋
-router.get('/page_hanihaiyang',(req,res)=>{
+router.get('/page/hanihaiyang',(req,res)=>{
 	require('../page_build_fns/page_hanihaiyang')(req,res);
 })
 // 底座
-router.get('/page_dizuo',(req,res)=>{
+router.get('/page/tansuohaofeichuan',(req,res)=>{
 	require('../page_build_fns/dizuo')(req,res);
 })
 
