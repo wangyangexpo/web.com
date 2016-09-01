@@ -6,8 +6,9 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var app_info = function(req, res, tag) {
 	var lib_o = new lib();
-	var _name = req.query.name;
+	var _name = decodeURIComponent(req.query.name);
 	var _tag = req.query.tag;
+	console.log('tagfromurl '+_tag)
 	lib_o.getData({
 			tag: _tag
 		}, 'data', false, '/detail')
@@ -48,7 +49,10 @@ var app_info = function(req, res, tag) {
 				}
 				res.render('appinfo', result);
 			})
-		})
+		}).catch(function(error) {
+		console.log('发生错误！',+ error);
+		throw new Error('发生错误！',+ error);
+	})
 }
 
 module.exports = app_info
