@@ -49,6 +49,11 @@ lib_fn.prototype = {
 					});
 
 				}else{
+					cache.get(cacheNameKey,function(err,cacheData){
+						if(!err&&cacheData){
+							console.log('cache_key的cahceName:'+cacheData);
+						}
+					})
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						console.log(cacheData)
