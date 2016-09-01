@@ -33,6 +33,7 @@ lib_fn.prototype = {
 				var updateCache = result.updateCache,
 					cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
 				//console.log('cacheName: '+cacheName);
+				console.log('updateCache: '+ updateCache);
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
