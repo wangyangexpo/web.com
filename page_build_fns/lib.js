@@ -34,7 +34,7 @@ lib_fn.prototype = {
 					cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
 				//console.log('cacheName: '+cacheName);
 				console.log('updateCache: '+ updateCache);
-				if(key == 'app_app'){
+				if(key == 'app'){
 					console.log(result.data);
 				}
 				if(updateCache){
@@ -56,7 +56,7 @@ lib_fn.prototype = {
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						if(!err&&cacheData){
-							if(key == 'app_app'){
+							if(key == 'app'){
 								console.log(cacheData);
 							}
 							var content_data = JSON.parse(cacheData);
