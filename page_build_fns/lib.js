@@ -31,7 +31,7 @@ lib_fn.prototype = {
 			var result = JSON.parse(text);
 			if(result.code == 200){
 				var updateCache = result.updateCache,
-					cacheName = result.cache;
+					cacheName = result.cache?result.cache:cacheNameKey;
 				console.log('cacheName: '+cacheName);
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
