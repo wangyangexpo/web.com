@@ -44,6 +44,7 @@ lib_fn.prototype = {
 						var resultData = result.data;
 						//console.log('resultdata '+resultData)
 						//if (resultData || (resultData.length && resultData.length > 0)){
+						console.log('has setted cacheNameKey ');
 						cache.set(cacheName,JSON.stringify(resultData),function(){
 							console.log('get from service!');
 							_this.content_data = result.data;
