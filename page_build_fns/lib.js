@@ -26,13 +26,13 @@ lib_fn.prototype = {
 	},
 	getPageData:function(data,key,isChild,cacheNameKey,resolve,reject,api){
 		var _this = this;
-		console.log('ddddaaata:'+data);
+		//console.log('ddddaaata:'+data);
 		getContent(data,function(text){
 			var result = JSON.parse(text);
 			if(result.code == 200){
 				var updateCache = result.updateCache,
 					cacheName = result.cache?result.cache:cacheNameKey;
-				console.log('cacheName: '+cacheName);
+				//console.log('cacheName: '+cacheName);
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
@@ -49,14 +49,14 @@ lib_fn.prototype = {
 					});
 
 				}else{
-					//cache.get(cacheNameKey,function(err,cacheData){
-					//	if(!err&&cacheData){
-					//		console.log('cache_key的cahceName:'+cacheData);
-					//	}else{
-					//		console.log(err+':'+cacheData);
-					//	}
-					//})
-					console.log(cache);
+					cache.get(cacheNameKey,function(err,cacheData){
+						if(!err&&cacheData){
+							console.log('cache_key的cahceName:'+cacheData);
+						}else{
+							console.log(err+':'+cacheData);
+						}
+					})
+					//console.log(cache);
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						console.log(cacheData)
