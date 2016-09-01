@@ -38,21 +38,21 @@ var m_index = function(req, res) {
 		console.log('发生错误！', + error);
 		throw new Error('发生错误！', + error);
 	})
-    //// 动漫周边
-    //.then(function() {
-    //    return lib_o.getData({tag: 'mobile_carton'}, 'mobile_carton', true)
-    //}).catch(function(error) {
-    //    console.log('发生错误！', + error);
-    //    throw new Error('发生错误！', + error);
-    //})
-    //// 葡萄APP
-    //.then(function() {
-    //    return lib_o.getData({tag: 'putao_app'}, 'putao_app', true)
-    //}).catch(function(error) {
-    //    console.log('发生错误！', + error);
-    //    throw new Error('发生错误！', + error);
-    //})
-    //// 全部产品
+	  // 动漫周边
+	  .then(function() {
+	      return lib_o.getData({tag: 'mobile_carton'}, 'mobile_carton', true)
+	  }).catch(function(error) {
+	      console.log('发生错误！', + error);
+	      throw new Error('发生错误！', + error);
+	  })
+	  // 葡萄APP
+	  .then(function() {
+	      return lib_o.getData({tag: 'putao_app'}, 'putao_app', true)
+	  }).catch(function(error) {
+	      console.log('发生错误！', + error);
+	      throw new Error('发生错误！', + error);
+	  })
+      // 全部产品
 	.then(function() {
 		return lib_o.getData({tag: 'mobile_all'}, 'mobile_all')
 	}).catch(function(error) {
