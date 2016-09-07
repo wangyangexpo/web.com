@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 <% brand_banners.forEach(function(item, $index) { %>
                 <div class="swiper-slide">
-                    <a href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
+                    <div style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></div>
                 </div>
                 <% }) %>
             </div>
@@ -17,7 +17,7 @@
         <div class="single-banner">
             <% brand_banners.forEach(function(item) { %>
             <div class="slide">
-                <a href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
+                <div style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></div>
             </div>
             <% }) %>
         </div>
