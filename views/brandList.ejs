@@ -3,20 +3,36 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <!--<link rel="stylesheet" href="css/brandList.css" />-->
 <div class="brandList-page">
-	<!-- banner -->
+	<%if(banner&&banner.length > 0){%>
+	<%if(banner.length == 1){%>
+	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
+		<%if(banner[0].basic_url){%>
+		<a href="<%=banner[0].basic_url%>">
+
+		</a>
+		<%}%>
+	</div>
+	<%}else{%>
 	<div class="swiper-box">
-		<div class="swiper-container">
+		<div class="swiper-container js-swiper-container">
 			<div class="swiper-wrapper" id="swiperwrapper">
 				<%if(banner&&banner.length > 0){%>
 				<%banner.forEach(function(v){%>
-				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;"></div>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+					<%if(v.basic_url){%>
+					<a target="_blank" href="<%=v.basic_url%>">
+
+					</a>
+					<%}%>
+				</div>
 				<%})%>
 				<%}%>
 			</div>
 		</div>
-		<div class="pagination"></div>
+		<div class="pagination js-pagination"></div>
 	</div>
-	<!-- /banner -->
+	<%}%>
+	<%}%>
 
 	<div class="sub_name">
 		<%=sub_name%>
