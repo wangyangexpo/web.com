@@ -31,18 +31,24 @@ lib_fn.prototype = {
 			var result = JSON.parse(text);
 			if(result.code == 200){
 				var updateCache = result.updateCache,
-					cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
+					//cacheName = result.cache?result.cache:cacheNameKey; //注意下,是否后续有问题
+				cacheName = result.cache;
 				//console.log('cacheName: '+cacheName);
-				console.log('updateCache: '+ updateCache);
-				if(key == 'app_app'){
-					console.log(result.data);
-				}
+				//console.log('updateCache: '+ updateCache);
+				//if(key == 'app'){
+				//	console.log('result data')
+				//	console.log(result.data);
+				//}
 				if(updateCache){
 					cache.set(cacheNameKey,cacheName,function(){
 						var resultData = result.data;
 						//console.log('resultdata '+resultData)
 						//if (resultData || (resultData.length && resultData.length > 0)){
+						//console.log('has setted cacheNameKey ');
 						cache.set(cacheName,JSON.stringify(resultData),function(){
+							//if(key == 'app'){
+							//	console.log('app data get from service!');
+							//}
 							console.log('get from service!');
 							_this.content_data = result.data;
 							_this.content[key] = _this.content_data;
@@ -56,9 +62,10 @@ lib_fn.prototype = {
 					cache.get(cacheName,function(err,cacheData){
 						console.log('get from cache!');
 						if(!err&&cacheData){
-							if(key == 'app_app'){
-								console.log(cacheData);
-							}
+							//if(key == 'app'){
+							//	console.log('cache data')
+							//	console.log(cacheData);
+							//}
 							var content_data = JSON.parse(cacheData);
 							_this.content[key] = content_data;
 							_this.mixChildData(content_data,key,isChild,_this);
