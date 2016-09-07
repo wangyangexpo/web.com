@@ -168,5 +168,24 @@
         <img style="width: 100%;margin: .8rem 0;" src="<%=helpers.drawImage(brand_story[0].basic_image_2)%>">
     <% } %>
 </div>
+<script type="text/javascript">
+    $(function() {
+        $('.navbar ul li a').on('click', function (e) {
+            var uri = $(this).data('href');
+            if(uri.substr(uri.length-1) != '#') {
+                if(uri.indexOf('all') > -1) {
+                    location.href = '<%=helpers.devurl_m('/product/product/list')%>';
+                }
+                else {
+                    location.href = uri + '?act=other';
+                }
+            }
+            else {
+                location.href = uri;
+            }
+            $('.navbar').addClass('hide');
+        });
+    })
+</script>
 <script src="<%=helpers.staticurl_m('/js/brand_v3.0.js')%>"></script>
 <% include ./footer %>
