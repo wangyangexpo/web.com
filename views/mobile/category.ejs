@@ -60,11 +60,12 @@
 
     </div>
     <div class="get-more">
-        <button  id="more">加载更多</button>
+        <button id="more"><%= brand_list.length <= 8 ? '没有更多数据了' : '加载更多'%></button>
     </div>
 </div>
 <script>
     var js_tag = "<%= _tag %>";
+    var js_title = "<%=helpers.encodeURIComponent(_title)%>";
 </script>
 <script src="<%=helpers.staticurl_m('/js/get_more_v3.0.js')%>"></script>
 <% include ./footer %>
