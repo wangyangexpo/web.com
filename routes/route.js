@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
 var configs = require('../lib/configs')
 
 var app = express();
