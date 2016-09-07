@@ -1,4 +1,5 @@
 <% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/animate.css')%>" />
 <link rel="stylesheet" type="text/css" href="http://player.youku.com/h5player/play.css?ver=2016/06/21151259">
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/hellobc.css')%>" />
 
@@ -130,13 +131,14 @@
 
 <!-- 相关科技产品 -->
 <div class="relevant">
-	<a href="/page_hanihaiyang"></a>
-	<a href="/page_tutushijie"></a>
-	<a href="/page_maisisi"></a>
-	<a href="/page_taotaoxiangyouzou"></a>
+	<a href="/page/hanihaiyang"></a>
+	<a href="/page/tutushijie"></a>
+	<a href="/page/maisisi"></a>
+	<a href="/page/taotaoxiangyouzou"></a>
 </div>
 
 </div>
+<script type="text/javascript" src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script type="text/javascript" src="<%=helpers.staticurl('/js/lib/wow.min.js')%>"></script>
 <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
 <script type="text/javascript" src="<%=helpers.staticurl('/js/hellobc.js')%>"></script>
