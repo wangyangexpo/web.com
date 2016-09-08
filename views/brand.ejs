@@ -61,7 +61,7 @@
 				<%=brand_ppsj_top[0].extension_1%>
 			</dd>
 			<dd class="cont">
-				<%-brand_ppsj_top[0].basic_content%>
+				<%=brand_ppsj_top[0].basic_content.replace(/<[^>]+>/g,"")%>
 			</dd>
 		</dl>
 	</a>
@@ -77,7 +77,7 @@
 					<%=brand_ppsj_top[1].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[1].basic_content%>
+					<%=brand_ppsj_top[1].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -89,7 +89,7 @@
 			<%=brand_ppsj_top[2].name%>
 		</dt>
 				<dd class="cont c">
-					<%-brand_ppsj_top[2].basic_content%>
+					<%=brand_ppsj_top[2].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -106,7 +106,7 @@
 					<%=brand_ppsj_top[4].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[4].basic_content%>
+					<%=brand_ppsj_top[4].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -118,10 +118,10 @@
 			<%=brand_ppsj_top[3].name%>
 		</dt>
 				<dd class="time">
-					<%-brand_ppsj_top[3].extension_1%>
+					<%=brand_ppsj_top[3].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[3].basic_content%>
+					<%=brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
