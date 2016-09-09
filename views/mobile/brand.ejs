@@ -78,11 +78,11 @@
                 <% if(brand_ppsj_top[3] || brand_ppsj_top[2]) { %>
                     <div class="cell-item del-pr">
                         <a style="display: initial;" href="/m_brand/brand_ppsj_top/<%=brand_ppsj_top[3].tag%>?name=<%=helpers.encodeURIComponent('品牌事件')%>">
-                            <div style="width: 50%;float: left;padding-right: .1rem;">
+                            <div style="width: 50%;float: left;">
                                 <div style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[3].extension_5)%>) no-repeat; background-size: 100% 100%;">
                                     <p style="padding-top: .9rem; margin-left: .3rem;color: #fff;"><%= brand_ppsj_top[3].name %></p>
                                     <p style="margin-left: .3rem; font-size: .2rem;color: #fff;"><%= brand_ppsj_top[3].extension_1 %></p>
-                                    <p style="height: 5.5em;padding-top: .2rem;margin: 0 .2rem .1rem .3rem; font-size: .2rem;color: #fff;;line-height: 1.2;text-align: justify;border-top: 1px solid #fff;overflow: hidden;"><%= brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                    <p style="height: 5.5em;padding-top: .2rem;margin: 0 .3rem .1rem .3rem; font-size: .2rem;color: #fff;;line-height: 1.2;text-align: justify;border-top: 1px solid #fff;overflow: hidden;"><%= brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"") %></p>
                                 </div>
                             </div>
                         </a>
