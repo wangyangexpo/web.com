@@ -4,15 +4,18 @@
 <!--<link rel="stylesheet" href="/css/brand.css">-->
 
 <div class="brand-page">
-	
+
 	<%if(banner&&banner.length > 0){%>
 	<%if(banner.length == 1){%>
 	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
 		<%if(banner[0].basic_url){%>
-		<a href="<%=banner[0].basic_url%>">
-
-		</a>
-		<%}%>
+		<%if(banner[0].basic_url == 1){%>
+		<a href="brandShow?name=<%=helpers.encodeURIComponent(banner[0].name || '品牌动态')%>&tag=<%=banner[0].tag%>">
+			<%}else{%>
+			<a target="_blank" href="<%=banner[0].basic_url%>">
+				<%}%>
+			</a>
+			<%}%>
 	</div>
 	<%}else{%>
 	<div class="swiper-box">
@@ -22,10 +25,13 @@
 				<%banner.forEach(function(v){%>
 				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
 					<%if(v.basic_url){%>
-					<a target="_blank" href="<%=v.basic_url%>">
-
-					</a>
-					<%}%>
+					<%if(v.basic_url == 1){%>
+					<a href="brandShow?name=<%=helpers.encodeURIComponent(v.name || '品牌动态')%>&tag=<%=v.tag%>">
+						<%}else{%>
+						<a target="_blank" href="<%=v.basic_url%>">
+							<%}%>
+						</a>
+						<%}%>
 				</div>
 				<%})%>
 				<%}%>
@@ -61,7 +67,7 @@
 				<%=brand_ppsj_top[0].extension_1%>
 			</dd>
 			<dd class="cont">
-				<%-brand_ppsj_top[0].basic_content%>
+				<%=brand_ppsj_top[0].basic_content.replace(/<[^>]+>/g,"")%>
 			</dd>
 		</dl>
 	</a>
@@ -77,7 +83,7 @@
 					<%=brand_ppsj_top[1].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[1].basic_content%>
+					<%=brand_ppsj_top[1].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -89,7 +95,7 @@
 			<%=brand_ppsj_top[2].name%>
 		</dt>
 				<dd class="cont c">
-					<%-brand_ppsj_top[2].basic_content%>
+					<%=brand_ppsj_top[2].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -106,7 +112,7 @@
 					<%=brand_ppsj_top[4].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[4].basic_content%>
+					<%=brand_ppsj_top[4].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
@@ -118,10 +124,10 @@
 			<%=brand_ppsj_top[3].name%>
 		</dt>
 				<dd class="time">
-					<%-brand_ppsj_top[3].extension_1%>
+					<%=brand_ppsj_top[3].extension_1%>
 				</dd>
 				<dd class="cont">
-					<%-brand_ppsj_top[3].basic_content%>
+					<%=brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"")%>
 				</dd>
 			</dl>
 		</a>
