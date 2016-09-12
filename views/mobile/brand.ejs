@@ -35,20 +35,15 @@
     <!-- banner下三张大图 -->
     <% if(banners_down_imgs && banners_down_imgs.length > 0) { %>
         <% banners_down_imgs.forEach(function(item, $index) { %>
-            <% if($index == 0) { %>
-                <div class="slide m-t">
-            <% } else { %>
-                <div class="slide">
-            <% } %>
-                    <%if(item.basic_url){%>
-                    <%if(item.basic_url == 1){%>
+
+                <div class="slide <% $index == 0 ? 'm-t':''%>">
+                    <%if(!item.basic_url){%>
                     <a href="/m_brand/brand_banner1/<%=item.tag%>?name=<%=helpers.encodeURIComponent('品牌动态')%>">
                         <%}else{%>
                         <a target="_blank" href="<%=item.basic_url%>">
                             <%}%>
                         <img style="width: 100%;" src="<%=helpers.drawImage(item.basic_image_2)%>">
                     </a>
-                    <%}%>
                 </div>
         <% }) %>
     <% } %>
