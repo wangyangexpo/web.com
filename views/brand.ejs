@@ -45,7 +45,11 @@
 	<div class="pic_list">
 		<%if(banners_down_imgs&&banners_down_imgs.length>0){%>
 		<%banners_down_imgs.forEach(function(v){%>
-		<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=v.tag%>">
+			<%if(v.basic_url){%>
+				<a target="_blank" href="<%=v.basic_url%>">
+			<%}else{%>
+				<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=v.tag%>">
+			<%}%>
 			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 		</a>
 		<%})%>
@@ -140,7 +144,11 @@
 	</div>
 
 	<%if(brand_banner1&&brand_banner1.length > 0){%>
-	<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+		<%if(brand_banner1[0].basic_url){%>
+			<a target="_blank" href="<%=brand_banner1[0].basic_url%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+		<%}else{%>
+			<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+		<%}%>
 	</a>
 	<%}%>
 	<div class="title" style="padding-bottom: 5px;">
