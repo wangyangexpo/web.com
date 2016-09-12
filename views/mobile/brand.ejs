@@ -37,7 +37,7 @@
         <% banners_down_imgs.forEach(function(item, $index) { %>
 
                 <div class="slide <% $index == 0 ? 'm-t':''%>">
-                    <%if(!item.basic_url){%>
+                    <%if(!item.basic_url || item.base_url == ''){%>
                     <a href="/m_brand/brand_banner1/<%=item.tag%>?name=<%=helpers.encodeURIComponent('品牌动态')%>">
                         <%}else{%>
                         <a target="_blank" href="<%=item.basic_url%>">
@@ -114,7 +114,11 @@
     <% } %>
     <!-- 品牌动态 -->
     <% if(brand_banner1 && brand_banner1.length > 0) { %>
-        <a href="/m_brand/brand_banner1/<%=brand_banner1[0].tag%>?name=<%=helpers.encodeURIComponent('品牌动态')%>">
+        <%if(!brand_banner1[0].basic_url || brand_banner1[0].basic_url == ''){%>
+            <a href="/m_brand/brand_banner1/<%=brand_banner1[0].tag%>?name=<%=helpers.encodeURIComponent('品牌动态')%>">
+        <%} else {%>
+                <a target="_blank" href="<%=brand_banner1[0].basic_url%>">
+        <%}%>
             <img style="width: 100%;" src="<%=helpers.drawImage(brand_banner1[0].basic_image_2)%>">
         </a>
     <% } %>
