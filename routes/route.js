@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser')
 var configs = require('../lib/configs')
 
 var app = express();
@@ -33,9 +33,18 @@ if(agentID){
 router.get('/theatre',(req,res)=>{
     require('../page_build_fns/theatre')(req,res);
 });
-router.get('/brand',(req,res)=>{
-    require('../page_build_fns/brand')(req,res);
-});
+// znyaiw 20160913  统一PC和m站路径
+router.get('/brand',(req,res,next)=>{
+    var deviceAgent = req.headers['user-agent'].toLowerCase();
+    var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+    if(!agentID) {
+        require('../page_build_fns/brand')(req, res);
+    }
+    next();
+})
+// router.get('/brand',(req,res)=>{
+//     require('../page_build_fns/brand')(req,res);
+// });
 router.get('/brandList',(req,res)=>{
     require('../page_build_fns/brandList')(req,res);
 });
@@ -215,11 +224,11 @@ if(agentID) {
 }
 });
 // 手机端品牌动态
-router.get('/m_brand', (req, res) => {
+router.get('/brand', (req, res) => {
     require('../page_build_fns/m_brand')(req,res);
 });
 // 手机端品牌动态分类
-router.get('/m_brand/:category', (req, res) => {
+router.get('/brand/:category', (req, res) => {
     require('../page_build_fns/m_category')(req,res);
 });
 // 手机端品牌动态分类分页
@@ -227,7 +236,7 @@ router.get('/m_more', (req, res) => {
     require('../page_build_fns/m_more')(req,res);
 });
 // 手机端品牌动态详情
-router.get('/m_brand/:category/:tag', (req, res) => {
+router.get('/brand/:category/:tag', (req, res) => {
     require('../page_build_fns/m_show')(req,res);
 });
 // 手机端注册
