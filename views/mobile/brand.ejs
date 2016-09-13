@@ -26,15 +26,11 @@
     <!-- banner下三张大图 -->
     <% if(banners_down_imgs && banners_down_imgs.length > 0) { %>
         <% banners_down_imgs.forEach(function(item, $index) { %>
-            <% if($index == 0) { %>
-                <div class="slide m-t">
-            <% } else { %>
-                <div class="slide">
-            <% } %>
-                    <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
-                        <img style="width: 100%;" src="<%=helpers.drawImage(item.basic_image_2)%>">
-                    </a>
-                </div>
+            <div class="slide">
+                <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
+                    <img style="width: 100%;" src="<%=helpers.drawImage(item.basic_image_2)%>">
+                </a>
+            </div>
         <% }) %>
     <% } %>
     <!-- 品牌事件 -->
