@@ -2,8 +2,9 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var m_show = function(req, res) {
     var lib_o = new lib();
-    var _tag = req.params.category;
-    var _subtag = req.params.tag;
+    // var _tag = req.params.category;
+    // var _subtag = req.params.tag;
+    var _subtag = req.query.tag;
     var _title = req.query.name;
     lib_o.getData({tag: 'mobile_login'}, 'mobile_login')
         .then(function() {
@@ -22,7 +23,7 @@ var m_show = function(req, res) {
             commeData(req,res,lib_o,function(count){
                 var content = lib_o.getAllContent();
                 content.shopcart = count;
-                content._tag = _tag;
+                // content._tag = _tag;
                 content._subtag = _subtag;
                 content._title = _title;
                 content.title = _title + ' - ' + content.title;

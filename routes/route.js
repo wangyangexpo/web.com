@@ -34,7 +34,7 @@ router.get('/theatre',(req,res)=>{
     require('../page_build_fns/theatre')(req,res);
 });
 // znyaiw 20160913  统一PC和m站路径
-router.get('/brand',(req,res,next)=>{
+router.get('/pc_brand',(req,res,next)=>{
     var deviceAgent = req.headers['user-agent'].toLowerCase();
     var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
     if(!agentID) {
@@ -236,7 +236,10 @@ router.get('/m_more', (req, res) => {
     require('../page_build_fns/m_more')(req,res);
 });
 // 手机端品牌动态详情
-router.get('/brand/:category/:tag', (req, res) => {
+// router.get('/brand/:category/:tag', (req, res) => {
+//     require('../page_build_fns/m_show')(req,res);
+// });
+router.get('/brandShow', (req, res) => {
     require('../page_build_fns/m_show')(req,res);
 });
 // 手机端注册
