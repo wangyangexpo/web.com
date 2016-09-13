@@ -17,7 +17,7 @@
         <div class="single-banner">
             <% brand_banners.forEach(function(item) { %>
             <div class="slide">
-                <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_2)%>') center no-repeat;background-size: cover; display: block;"></a>
+                <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_2)%>') center no-repeat;background-size: cover; display: block;"></a>
             </div>
             <% }) %>
         </div>
@@ -31,7 +31,7 @@
             <% } else { %>
                 <div class="slide">
             <% } %>
-                    <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
+                    <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
                         <img style="width: 100%;" src="<%=helpers.drawImage(item.basic_image_2)%>">
                     </a>
                 </div>
@@ -43,54 +43,54 @@
             <div class="banner"><p class="xs-mt">品牌事件</p></div>
             <div class="cells">
                 <% if(brand_ppsj_top[0]) { %>
-                    <div class="cell-item del-pr" style="width: 100%;background: url(<%=helpers.drawImage(brand_ppsj_top[0].extension_5)%>) no-repeat; background-size: 100% 100%;">
-                        <a target="<%= brand_ppsj_top[0].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[0].basic_url %>">
+                    <div class="cell-item del-pr" style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[0].extension_5)%>) no-repeat; background-size: 100% 100%;">
+                        <a target="<% brand_ppsj_top[0].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[0].basic_url %>">
                             <div class="cont" style="width: 3.5rem; float: right;text-align: justify;">
                                 <p style="margin-top: .7rem;color: #333;"><%= brand_ppsj_top[0].name %></p>
-                                <p style="margin-left: .1rem; font-size: .1rem;color: #959595;"><%= brand_ppsj_top[0].extension_1 %></p>
-                                <p style="height: 4.5em;margin: .12rem .2rem .1rem .1rem; font-size: .1rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[0].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                <p style="margin-left: .1rem; font-size: .2rem;color: #959595;"><%= brand_ppsj_top[0].extension_1 %></p>
+                                <p style="height: 5.5em;margin: .12rem .2rem .1rem .1rem; font-size: .2rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[0].basic_content.replace(/<[^>]+>/g,"") %></p>
                             </div>
                         </a>
                     </div>
                 <% } %>
                 <% if(brand_ppsj_top[1]) {%>
-                    <div class="cell-item del-pr" style="width: 100%;background: url(<%=helpers.drawImage(brand_ppsj_top[1].extension_5)%>) no-repeat; background-size: 100% 100%;">
-                        <a target="<%= brand_ppsj_top[1].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[1].basic_url %>">
+                    <div class="cell-item del-pr" style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[1].extension_5)%>) no-repeat; background-size: 100% 100%;">
+                        <a target="<% brand_ppsj_top[1].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[1].basic_url %>">
                             <div class="cont" style="width: 3.6rem;text-align: justify;">
-                                <p style="margin-top: .8rem; margin-left: .3rem;color: #333;"><%= brand_ppsj_top[1].name %></p>
-                                <p style="margin-left: .3rem; font-size: .1rem;color: #959595;"><%= brand_ppsj_top[1].extension_1 %></p>
-                                <p style="height: 4.5em;margin: .12rem .1rem .1rem .3rem; font-size: .1rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[1].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                <p style="margin-top: .8rem; margin-left: .2rem;color: #333;"><%= brand_ppsj_top[1].name %></p>
+                                <p style="margin-left: .2rem; font-size: .2rem;color: #959595;"><%= brand_ppsj_top[1].extension_1 %></p>
+                                <p style="height: 5.5em;margin: .12rem .1rem .1rem .2rem; font-size: .2rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[1].basic_content.replace(/<[^>]+>/g,"") %></p>
                             </div>
                         </a>
                     </div>
                 <% } %>
                 <% if(brand_ppsj_top[4]) { %>
-                    <div class="cell-item del-pr" style="width: 100%;background: url(<%=helpers.drawImage(brand_ppsj_top[4].extension_5)%>) no-repeat; background-size: 100% 100%;">
-                        <a target="<%= brand_ppsj_top[4].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[4].basic_url %>">
-                            <div class="cont" style="width: 3.5rem; float: right;text-align: justify;">
+                    <div class="cell-item del-pr" style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[4].extension_5)%>) no-repeat; background-size: 100% 100%;">
+                        <a target="<% brand_ppsj_top[4].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[4].basic_url %>">
+                            <div class="cont" style="width: 3.4rem; float: right;text-align: justify;">
                                 <p style="margin-top: .7rem;color: #333;"><%= brand_ppsj_top[4].name %></p>
-                                <p style="margin-left: .1rem; font-size: .1rem;color: #959595;"><%= brand_ppsj_top[4].extension_1 %></p>
-                                <p style="height: 4.5em;margin: .12rem .2rem .1rem .1rem; font-size: .1rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[4].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                <p style="font-size: .2rem;color: #959595;"><%= brand_ppsj_top[4].extension_1 %></p>
+                                <p style="height: 5.5em;margin: .12rem .2rem .1rem 0; font-size: .2rem;color: #959595;line-height: 1.2;overflow: hidden;"><%= brand_ppsj_top[4].basic_content.replace(/<[^>]+>/g,"") %></p>
                             </div>
                         </a>
                     </div>
                 <% } %>
                 <% if(brand_ppsj_top[3] || brand_ppsj_top[2]) { %>
                     <div class="cell-item del-pr">
-                        <a style="display: initial;" target="<%= brand_ppsj_top[3].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[3].basic_url %>">
-                            <div style="width: 50%;float: left;padding-right: .1rem;">
+                        <a style="display: initial;" target="<% brand_ppsj_top[3].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[3].basic_url %>">
+                            <div style="width: 50%;float: left;">
                                 <div style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[3].extension_5)%>) no-repeat; background-size: 100% 100%;">
-                                    <p style="padding-top: .9rem; margin-left: .2rem;color: #fff;"><%= brand_ppsj_top[3].name %></p>
-                                    <p style="margin-left: .2rem; font-size: .1rem;color: #fff;"><%= brand_ppsj_top[3].extension_1 %></p>
-                                    <p style="width: 68%;height: 5.5em;padding-top: .2rem;margin: 0 .1rem .1rem .2rem; font-size: .1rem;color: #fff;;line-height: 1.2;text-align: justify;border-top: 1px solid #fff;overflow: hidden;"><%= brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                    <p style="padding-top: .9rem; margin-left: .3rem;color: #fff;"><%= brand_ppsj_top[3].name %></p>
+                                    <p style="margin-left: .3rem; font-size: .2rem;color: #fff;"><%= brand_ppsj_top[3].extension_1 %></p>
+                                    <p style="height: 5.5em;padding-top: .2rem;margin: 0 .3rem .1rem .3rem; font-size: .2rem;color: #fff;;line-height: 1.2;text-align: justify;border-top: 1px solid #fff;overflow: hidden;"><%= brand_ppsj_top[3].basic_content.replace(/<[^>]+>/g,"") %></p>
                                 </div>
                             </div>
                         </a>
-                        <a style="display: initial;" target="<%= brand_ppsj_top[2].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[2].basic_url %>">
+                        <a style="display: initial;" target="<% brand_ppsj_top[2].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_ppsj_top[2].basic_url %>">
                             <div style="width: 50%;float: left;">
-                                <div style="width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[2].extension_5)%>) no-repeat; background-size: 100% 100%;">
+                                <div style="position: relative;width: 100%;height: 3rem;background: url(<%=helpers.drawImage(brand_ppsj_top[2].extension_5)%>) no-repeat; background-size: 100% 100%;">
                                     <p style="padding-top: 1.4rem;padding-bottom: .1rem;margin-left: .3rem;color: #fff; line-height: 1;"><%= brand_ppsj_top[2].name %></p>
-                                    <p style="height: 5.5em;padding: .12rem .2rem 0 .3rem; font-size: .1rem;color: #fff;line-height: 1.2;text-align: justify;overflow: hidden;background-color: rgba(0,0,0,.45);"><%= brand_ppsj_top[2].basic_content.replace(/<[^>]+>/g,"") %></p>
+                                    <p style="position:absolute; bottom: 0;height: 5.5em;padding: .12rem .2rem 0 .3rem; font-size: .2rem;color: #fff;line-height: 1.2;text-align: justify;overflow: hidden;background-color: rgba(0,0,0,.45);"><%= brand_ppsj_top[2].basic_content.replace(/<[^>]+>/g,"") %></p>
                                 </div>
                             </div>
                         </a>
@@ -104,7 +104,7 @@
     <% } %>
     <!-- 品牌动态 -->
     <% if(brand_banner1 && brand_banner1.length > 0) { %>
-        <a target="<%= brand_banner1[0].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_banner1[0].basic_url %>">
+        <a target="<% brand_banner1[0].basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= brand_banner1[0].basic_url %>">
             <img style="width: 100%;" src="<%=helpers.drawImage(brand_banner1[0].basic_image_2)%>">
         </a>
     <% } %>
@@ -119,7 +119,7 @@
                         <div class="row">
                     <% } %>
                     <div class="item">
-                        <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
+                        <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
                             <div class="image">
                                 <img src="<%=helpers.drawImage(item.basic_image_1)%>">
                                 <div class="note">
@@ -146,7 +146,7 @@
                 <span></span>
                 <p>品牌合作</p>
             </div>
-            <img style="width: 100%;" src="<%=helpers.drawImage(brand_cooperation[0].basic_image_2)%>">
+            <img style="width: 100%;margin-bottom: .2rem;" src="<%=helpers.drawImage(brand_cooperation[0].basic_image_2)%>">
         </section>
     <% } %>
     <!-- 内容合作商 -->
@@ -161,7 +161,8 @@
     <% } %>
     <!-- 品牌故事 -->
     <% if(brand_story && brand_story.length > 0) { %>
-        <img style="width: 100%;margin-top: .2rem;" src="<%=helpers.drawImage(brand_story[0].basic_image_2)%>">
+        <img style="width: 100%;margin: .8rem 0;" src="<%=helpers.drawImage(brand_story[0].basic_image_2)%>">
     <% } %>
 </div>
+<script src="<%=helpers.staticurl_m('/js/brand_v3.0.js')%>"></script>
 <% include ./footer %>

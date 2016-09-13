@@ -1,22 +1,3 @@
 <% include ./header %>
 <%- include(detail) %>
-<script type="text/javascript">
-	$(function() {
-		$('.navbar ul li a').on('click', function (e) {
-        		var uri = $(this).data('href');
-        		if(uri.substr(uri.length-1) != '#') {
-        			if(uri.indexOf('all') > -1) {
-        				location.href = '<%=helpers.devurl_m('/product/product/list')%>';
-        			}
-        			else {
-        				location.href = uri + '?act=other';	
-        			}	
-        		}
-        		else {
-        			location.href = uri;
-        		}
-            $('.navbar').addClass('hide');
-        });
-	})
-</script>
 <% include ./footer %>
