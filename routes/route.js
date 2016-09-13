@@ -33,6 +33,7 @@ if(agentID){
 router.get('/theatre',(req,res)=>{
     require('../page_build_fns/theatre')(req,res);
 });
+
 // znyaiw 20160913  统一PC和m站路径
 router.get('/brand',(req,res,next)=>{
     var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -45,6 +46,7 @@ router.get('/brand',(req,res,next)=>{
 // router.get('/brand',(req,res)=>{
 //     require('../page_build_fns/brand')(req,res);
 // });
+
 router.get('/brandList',(req,res)=>{
     require('../page_build_fns/brandList')(req,res);
 });
@@ -86,6 +88,7 @@ router.get('/user/logout',(req,res)=>{
 router.get('/brandShow',(req,res)=>{
     require('../page_build_fns/brandShow')(req,res);
 });
+
 // 联系
 router.get('/contact',(req,res)=>{
     require('../page_build_fns/contact')(req,res);
