@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 <% brand_banners.forEach(function(item, $index) { %>
                 <div class="swiper-slide">
-                    <a href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
+                    <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_2)%>') center no-repeat;background-size: cover; display: block;"></a>
                 </div>
                 <% }) %>
             </div>
@@ -17,7 +17,7 @@
         <div class="single-banner">
             <% brand_banners.forEach(function(item) { %>
             <div class="slide">
-                <a href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
+                <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
             </div>
             <% }) %>
         </div>
@@ -33,11 +33,7 @@
                 <div class="row">
                 <% } %>
                 <div class="item">
-                    <% if(item.basic_url) { %>
-                        <a target="_blank" href="<%= item.basic_url %>">
-                    <% } else { %>
-                        <a href="<%= _tag %>/<%= item.tag %>?name=<%=helpers.encodeURIComponent(_title)%>">
-                    <% } %>
+                    <a target="<% item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
                         <div class="image">
                             <img src="<%=helpers.drawImage(item.basic_image_3)%>">
                         </div>
