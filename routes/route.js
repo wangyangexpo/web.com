@@ -236,6 +236,11 @@ router.get('/page/:name', (req, res) => {
 router.get('/brand', (req, res) => {
 	require('../page_build_fns/m_brand')(req, res);
 });
+router.get('/m_brand', (req, res) => {
+
+	require('../page_build_fns/m_brand')(req, res);
+
+});
 // 手机端品牌动态分类
 router.get('/brand/:category', (req, res) => {
 	require('../page_build_fns/m_category')(req, res);
