@@ -9,32 +9,22 @@
 	<%if(banner.length == 1){%>
 	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
 		<%if(banner[0].basic_url){%>
-		<%if(banner[0].basic_url == 1){%>
-		<a href="brandShow?name=<%=helpers.encodeURIComponent(banner[0].name || '品牌动态')%>&tag=<%=banner[0].tag%>">
-			<%}else{%>
-			<a target="_blank" href="<%=banner[0].basic_url%>">
-				<%}%>
-			</a>
-			<%}%>
+			<a target="<%=banner[0].basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=banner[0].basic_url%>"></a>
+		<%}%>
 	</div>
 	<%}else{%>
 	<div class="swiper-box">
 		<div class="swiper-container js-swiper-container">
 			<div class="swiper-wrapper" id="swiperwrapper">
-				<%if(banner&&banner.length > 0){%>
+				
 				<%banner.forEach(function(v){%>
 				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
 					<%if(v.basic_url){%>
-					<%if(v.basic_url == 1){%>
-					<a href="brandShow?name=<%=helpers.encodeURIComponent(v.name || '品牌动态')%>&tag=<%=v.tag%>">
-						<%}else{%>
-						<a target="_blank" href="<%=v.basic_url%>">
-							<%}%>
-						</a>
-						<%}%>
+						<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>"></a>
+					<%}%>
 				</div>
 				<%})%>
-				<%}%>
+				
 			</div>
 		</div>
 		<div class="pagination js-pagination"></div>
@@ -46,9 +36,9 @@
 		<%if(banners_down_imgs&&banners_down_imgs.length>0){%>
 		<%banners_down_imgs.forEach(function(v){%>
 			<%if(v.basic_url){%>
-				<a target="_blank" href="<%=v.basic_url%>">
+				<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>">
 			<%}else{%>
-				<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=v.tag%>">
+				<a href="<%=v.basic_url%>">
 			<%}%>
 			<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 		</a>
@@ -145,9 +135,9 @@
 
 	<%if(brand_banner1&&brand_banner1.length > 0){%>
 		<%if(brand_banner1[0].basic_url){%>
-			<a target="_blank" href="<%=brand_banner1[0].basic_url%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+			<a target="<%=brand_banner1[0].basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=brand_banner1[0].basic_url%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
 		<%}else{%>
-			<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌动态')%>&tag=<%=brand_banner1[0].tag%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
+			<a href="<%=brand_banner1[0].basic_url%>" class="banner1" style="background: url(<%=helpers.drawImage(brand_banner1[0].basic_image_1)%>) no-repeat top center;">
 		<%}%>
 	</a>
 	<%}%>

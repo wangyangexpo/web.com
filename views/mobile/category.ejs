@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 <% brand_banners.forEach(function(item, $index) { %>
                 <div class="swiper-slide">
-                    <div style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></div>
+                    <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_2)%>') center no-repeat;background-size: cover; display: block;"></a>
                 </div>
                 <% }) %>
             </div>
@@ -17,7 +17,7 @@
         <div class="single-banner">
             <% brand_banners.forEach(function(item) { %>
             <div class="slide">
-                <div style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></div>
+                <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>" style="height: 5.8597rem;background: url('<%=helpers.drawImage(item.basic_image_1)%>') center no-repeat;background-size: cover; display: block;"></a>
             </div>
             <% }) %>
         </div>
@@ -33,11 +33,7 @@
                 <div class="row">
                 <% } %>
                 <div class="item">
-                    <% if(item.basic_url) { %>
-                        <a target="_blank" href="<%= item.basic_url %>">
-                    <% } else { %>
-                        <a href="<%= _tag %>/<%= item.tag %>?name=<%=helpers.encodeURIComponent(_title)%>">
-                    <% } %>
+                    <a target="<%= item.basic_url.indexOf('http') > -1 ? '_blank' : '_self' %>" href="<%= item.basic_url %>">
                         <div class="image">
                             <img src="<%=helpers.drawImage(item.basic_image_3)%>">
                         </div>
@@ -63,25 +59,6 @@
         <button id="more"><%= brand_list.length <= 8 ? '没有更多数据了' : '加载更多'%></button>
     </div>
 </div>
-<script type="text/javascript">
-    $(function() {
-        $('.navbar ul li a').on('click', function (e) {
-            var uri = $(this).data('href');
-            if(uri.substr(uri.length-1) != '#') {
-                if(uri.indexOf('all') > -1) {
-                    location.href = '<%=helpers.devurl_m('/product/product/list')%>';
-                }
-                else {
-                    location.href = uri + '?act=other';
-                }
-            }
-            else {
-                location.href = uri;
-            }
-            $('.navbar').addClass('hide');
-        });
-    })
-</script>
 <script>
     var js_tag = "<%= _tag %>";
     var js_title = "<%=helpers.encodeURIComponent(_title)%>";

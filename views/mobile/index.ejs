@@ -70,22 +70,6 @@
     					$(this).text(cutString($(this).text(), 72));
     				}
     			})
-//  			if(getLen($('.desc p').text()) > 72) {
-//	        		$('.desc p').text(cutString($('.desc p').text(), 72));
-//	        }
-    			$('.navbar ul li a').on('click', function (e) {
-	        		var uri = $(this).data('href');
-	            location.href = uri;
-	            if (uri.substr(uri.indexOf('#') + 1) != '' && uri.indexOf('all') == -1 && (uri.indexOf('#') > -1)) {
-	                var tag = uri.substr(uri.indexOf('#'));
-	                if(window.scrollY == parseInt($(tag).offset().top)) {
-						window.scrollBy(0, -$(tag).height());
-	                }
-	            }
-	            else if(uri.indexOf('all') > -1) {
-	            		location.href = '<%=helpers.devurl_m('/product/product/list')%>';
-	            }
-	            $('.navbar').addClass('hide');
 	        });
 	        
 	        var uri = window.location.href;
