@@ -227,7 +227,7 @@ router.get('/m_more', (req, res) => {
     require('../page_build_fns/m_more')(req,res);
 });
 // 手机端品牌动态详情
-router.get('/m_brand/:category/:tag', (req, res) => {
+router.get('/m_brand/show/:tag', (req, res) => {
     require('../page_build_fns/m_show')(req,res);
 });
 // 手机端注册
