@@ -4,29 +4,29 @@
 			<img width="113" src="<%=helpers.staticurl('/images/logo-bottom.png')%>" alt="">
 		</a>
 		<% if(cms) { %>
-			<% cms.forEach(function(item){ %>
-			<ul>
-				<li>
-					<h3><%=item.name%></h3></li>
-				<%if(item['children']){%>
-					<% item['children'].forEach(function(item_li){ %>
-						<%if(item_li.basic_url){%>
-						<li>
-							<a rel="nofollow" href="/<%=item_li.basic_url%>">
-								<%=item_li.name%>
-							</a>
-						</li>
-						<%}else{%>
-						<li>
-							<a rel="nofollow" href="/help?parent_tag=<%=item_li.parent_tag%>&id=<%=item_li.id%>">
-								<%=item_li.name%>
-							</a>
-						</li>
-						<%}%>
-					<% }) %>
-				<%}%>
-			</ul>
+		<% cms.forEach(function(item){ %>
+		<ul>
+			<li>
+				<h3><%=item.name%></h3></li>
+			<%if(item['children']){%>
+			<% item['children'].forEach(function(item_li){ %>
+			<%if(item_li.basic_url){%>
+			<li>
+				<a rel="nofollow" href="/<%=item_li.basic_url%>">
+					<%=item_li.name%>
+				</a>
+			</li>
+			<%}else{%>
+			<li>
+				<a rel="nofollow" href="/help?parent_tag=<%=item_li.parent_tag%>&id=<%=item_li.id%>">
+					<%=item_li.name%>
+				</a>
+			</li>
+			<%}%>
 			<% }) %>
+			<%}%>
+		</ul>
+		<% }) %>
 		<% } %>
 		<ul>
 			<li>
@@ -64,20 +64,33 @@
 <!--返回顶部-->
 <div class="footer_functions">
 	<a href="http://vipwebchat.sh.tq.cn/pageinfo.jsp?version=vip&admiuin=9730189&ltype=0&iscallback=0&is_message_sms=0&is_send_mail=0&action=acd&acd=1&type_code=1001" target="_blank">
-		
+
 	</a>
 	<a href="#returnTop">
-		
+
 	</a>
 </div>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?9e6c6312b8b64e7e38b0b84c12642b96";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?9e6c6312b8b64e7e38b0b84c12642b96";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script>
+	var _gaq  = _gaq || [];  
+	_gaq.push(['_setAccount', 'UA-⁠74498287-⁠1']);  
+	_gaq.push(['_trackPageview']);
+	(function(){    
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;    
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga,s);
+	})();
 </script>
 </body>
 
