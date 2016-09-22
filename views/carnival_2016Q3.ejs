@@ -1,0 +1,327 @@
+<% include ./new_header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/brand.css')%>">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/carnival_2016Q3.css')%>">
+<!--<link rel="stylesheet" href="/css/brand.css">-->
+<!--<link rel="stylesheet" href="/css/carnival_2016Q3.css">-->
+
+<div class="brand-page">
+	<%if(banner&&banner.length > 0){%>
+	<%if(banner.length == 1){%>
+	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
+
+		<%if(banner[0].basic_url){%>
+		<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>"></a>
+		<%}%>
+
+	</div>
+	<%}else{%>
+	<div class="swiper-box">
+		<div class="swiper-container js-swiper-container">
+			<div class="swiper-wrapper" id="swiperwrapper">
+				<%if(banner&&banner.length > 0){%>
+				<%banner.forEach(function(v){%>
+				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+					<%if(v.basic_url){%>
+					<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>"></a>
+					<%}%>
+				</div>
+				<%})%>
+				<%}%>
+			</div>
+		</div>
+		<div class="pagination js-pagination"></div>
+	</div>
+	<%}%>
+	<%}%>
+
+	<div class="yzl_2016Q3_video" id="page_video">
+		<div class="title">
+			2016葡萄科技Q3新品发布会
+		</div>
+		<div>
+			<%if(carnival_2016Q3_video&&carnival_2016Q3_video.length>0){%>
+			<a id="yzl_2016Q3_videoBtn" data-id="<%=carnival_2016Q3_video[0].basic_url%>" href="javascript:;">
+				<img width="960px" height="550px" src="<%=helpers.drawImage(carnival_2016Q3_video[0].basic_image_1)%>" />
+			</a>
+			<%}%>
+		</div>
+	</div>
+
+	<div class="yzl_2016Q3_bt" id="page_paiband">
+		<h2>Paiband<br>看得见成长</h2>
+		<p>我们的PaiBand，通过对运动、睡眠、饮食及交友的监测，实时以数据的方式，通过葡萄纬度推送给父母知晓。<br> 让父母看见孩子日常的成长数据，掌握孩子成长的每一步。
+		</p>
+	</div>
+
+	<div class="yzl_2016Q3_pai" id="pai">
+		<!-- 2.5 -->
+		<ul style="left:50%;">
+
+			<%carnival_2016Q3_paiband.forEach(function(v,i){%>
+			<%if(i >= 3){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>"  data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%}%>
+			<%})%>
+
+			<%carnival_2016Q3_paiband.forEach(function(v){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>" data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%})%>
+
+			<%carnival_2016Q3_paiband.forEach(function(v,i){%>
+			<%if(i < 3){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>" data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%}%>
+			<%})%>
+
+		</ul>
+		<p class="maskcommon"></p>
+		<p class="maskcommon mask_right"></p>
+		<a href="javascript:;" class="btncommon"></a>
+		<a href="javascript:;" class="btncommon btn_right"></a>
+	</div>
+
+	<div class="yzl_2016Q3_bt" id="page_paibot">
+		<h2>Paipot<br>生来智能</h2>
+		<p>我们的PaiBand，通过对运动、睡眠、饮食及交友的监测，实时以数据的方式，通过葡萄纬度推送给父母知晓。<br> 让父母看见孩子日常的成长数据，掌握孩子成长的每一步。
+		</p>
+	</div>
+
+	<div class="yzl_2016Q3_pai" id="pai1">
+		<!-- 2.5 -->
+		<ul style="left:50%;">
+
+			<%carnival_2016Q3_paibot.forEach(function(v,i){%>
+			<%if(i >= 3){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>" data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%}%>
+			<%})%>
+
+			<%carnival_2016Q3_paibot.forEach(function(v){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>" data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%})%>
+
+			<%carnival_2016Q3_paibot.forEach(function(v,i){%>
+			<%if(i < 3){%>
+			<li>
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<%if(v.description){%>
+				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<%}else{%>
+				<a data-basicurl="<%=v.basic_url%>" data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
+				<%}%>
+			</li>
+			<%}%>
+			<%})%>
+
+		</ul>
+		<p class="maskcommon"></p>
+		<p class="maskcommon mask_right"></p>
+		<a href="javascript:;" class="btncommon"></a>
+		<a href="javascript:;" class="btncommon btn_right"></a>
+	</div>
+
+	<div class="title" id="page_zj">
+		直击现场
+	</div>
+	<div class="yzl_2016Q3_zj" id="yzl_2016Q3_zj">
+		<%if(carnival_2016Q3_zj&&carnival_2016Q3_zj.length>0){%>
+		<div class="menu">
+			<div>
+				<%carnival_2016Q3_zj.forEach(function(v,i){%>
+				<a data-index="<%=i%>" class="<%= !i ? 'on' : '' %>" href="javascript:;">
+					<%=v.name%>
+				</a>
+				<%})%>
+			</div>
+		</div>
+		<div class="imgBox">
+			<%carnival_2016Q3_zj.forEach(function(v,i){%>
+			<div style="display: <%=!i?'block':'none'%>;">
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1200px" height="630px" />
+			</div>
+			<%})%>
+		</div>
+		<%}%>
+	</div>
+
+	<div class="title" id="page_media">
+		媒体报道
+	</div>
+
+	<div class="yzl_2016Q3_mt">
+		<ul>
+			<%if(carnival_2016Q3_mt&&carnival_2016Q3_mt.length>0){%>
+			<%carnival_2016Q3_mt.forEach(function(v,i){%>
+			<%if(i%3){%>
+			<li>
+				<%}else{%>
+				<li style="margin-left: 0;">
+					<%}%>
+					<a target="_blank" class="imgBox" href="<%=v.basic_url%>">
+						<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
+					</a>
+					<dl>
+						<dt><a target="_blank" href="<%=v.basic_url%>"><%=v.name%></a></dt>
+						<dd>
+							<%=v.sub_title%>
+						</dd>
+						<dd>
+							<%=v.description%>
+						</dd>
+					</dl>
+				</li>
+				<%})%>
+				<%}%>
+		</ul>
+	</div>
+
+	<div class="title">
+		新品发布会
+	</div>
+
+	<%if(banners_newRelease&&banners_newRelease.length>0){%>
+	<div class="newReleaseMenu" id="newReleaseMenu">
+		<div></div>
+		<ul>
+			<%banners_newRelease.forEach(function(v,i){%>
+			<%if(!i){%>
+			<li class="on">
+				<span><em></em></span>
+				<p>
+					<%=v.name%>
+				</p>
+			</li>
+			<%}else{%>
+			<li>
+				<span><em></em></span>
+				<p>
+					<%=v.name%>
+				</p>
+			</li>
+			<%}%>
+
+			<%})%>
+		</ul>
+	</div>
+	<div style="margin-top: 40px;" class="newRelease" id="imagesSwitch">
+		<ul>
+			<%banners_newRelease.forEach(function(v){%>
+			<li style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+				<%if(v.basic_url){%>
+				<a href="page_carnival?name=<%=v.basic_url%>&description=<%=v.description%>">
+
+				</a>
+				<%}%>
+
+			</li>
+			<%})%>
+		</ul>
+	</div>
+	<%}%>
+
+	<!-- 品牌故事 -->
+	<%if(brand_story&&brand_story.length>0){%>
+	<div class="brandStory" style="background: url(<%=helpers.drawImage(brand_story[0].basic_image_1)%>) no-repeat center center;">
+	</div>
+	<%}%>
+
+	<!-- 时间轴 -->
+	<div class="yzl_timeaxis_menu" id="yzl_timeaxis_menu">
+		<ul>
+			<li data-pageid="#page_video" class="on">
+				<a href="javascript:;">
+					<span></span>
+					<span>发布会</span>
+				</a>
+			</li>
+			<li data-pageid="#page_paiband">
+				<p></p>
+				<a href="javascript:;">
+					<span></span>
+					<span>Paiband</span>
+				</a>
+			</li>
+			<li data-pageid="#page_paibot">
+				<p></p>
+				<a href="javascript:;">
+					<span></span>
+					<span>Paibot</span>
+				</a>
+			</li>
+			<li data-pageid="#page_zj">
+				<p></p>
+				<a href="javascript:;">
+					<span></span>
+					<span>直击现场</span>
+				</a>
+			</li>
+			<li data-pageid="#page_media">
+				<p></p>
+				<a href="javascript:;">
+					<span></span>
+					<span>媒体报道</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+<div class="yzl_2016Q3_pop" id="yzl_2016Q3_pop" hidden="hidden">
+	<div class="mn" id="youkuplayer">
+
+	</div>
+	<a href="javascript:;" class="close">
+
+	</a>
+	<a target="_blank" href="" class="more" hidden="hidden">
+		查看详情 >
+	</a>
+</div>
+
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+<!--<script src="<%=helpers.staticurl('/js/lib/jquery.movingboxes.js')%>"></script>-->
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/brand.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/carnival_2016Q3.js')%>"></script>
+<!--<script src="/js/carnival_2016Q3.js"></script>-->
+
+<!--<script src="/js/brand.js"></script>-->
+<% include ./footer.ejs %>

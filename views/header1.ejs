@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%=title%></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <link rel="shortcut icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon"/>
+  <link rel="icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon">
+</head>
+<body id="returnTop">
+	<%if(banner[0].description == 1){%>
+		<div class="main_header main_header_f" id="main_header">
+	<%}else{%>
+		<div class="main_header" id="main_header">
+	<%}%>
+  
+    <div class="header_inner">
+      <a href="/" class="logo">
+        
+      </a>
+      <ul class="header_nav">
+        <li><a href="/">首页</a></li>
+        <li><a href="/brand">品牌动态</a></li>
+        <li><a href="/theatre">葡星剧场</a></li>
+        <li><a href="/pt_home">葡萄之家</a></li>
+        <li><a href="/app">应用下载</a></li>
+      </ul>
+      <div class="login_info">
+        <%if(!shopcart){%>
+        <div class="header-account-wrapper header-account-wrapper1">
+          <div class="header-account-panel header-accout-noWgb">
+            <a href="/user/login" rel="nofollow"></a>
+            <!--<a href="#" rel="nofollow"></a>-->
+          </div>
+        </div>
+        <%}else{%>
+        <div class="header-account-wrapper header-account-wrapper1">
+          <div class="header-account-panel">
+            <span class="user">
+              <a class="user-name" href="http://store.putao.com/user/myOrder">
+                <span class="name user-name-color"><%=shopcart.sessid%></span>
+                <i class="iconfont">&#xe609</i>
+              </a>
+              <ul class="user-menu" style="display: none; height: 0px; padding: 0px;">
+                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/service/customer/list')%>" data-stat-id="281a83d86f7b24f9">售后服务</a></li>
+                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/user/account/address')%>" data-stat-id="281a83d86f7b24f9">收货地址</a>
+                </li>
+                <li>
+               </li><li><a target="_blank" href="https://account.putao.com/account/user" target="_blank" data-stat-id="">账户资料</a></li>
+                <li><a href="/user/logout" data-stat-id="">退出登录</a></li>
+              </ul>
+            </span>
+          </div>
+        </div>
+        <%}%>
+        <!--<a href="http://web-store-test.ptdev.cn/page" class="shop_mall">-->
+        	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/page/')%>" class="shop_mall"></a>
+
+          <!--<span class="shop_bag"><%=shopcart?shopcart.num:0%></span>
+          <span class="shop_mall_text">商城</span>-->
+        </a>
+      </div>
+    </div>
+  </div>
