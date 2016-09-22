@@ -9,3 +9,4 @@ tml/
 .project
 .zip
 logs
+npm-debug.log
