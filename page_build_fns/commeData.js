@@ -20,6 +20,10 @@ var commeData = function(req,res,lib_o,callback){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
+		.then(function(){return lib_o.getData({tag:'nav_list'},'nav_list')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
 		.then(function(){
 			getStore(req,res,function(text,sessid){
 				console.log('yzl-tag:getStore完毕');
