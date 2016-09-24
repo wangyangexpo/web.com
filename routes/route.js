@@ -303,9 +303,21 @@ router.get('/ad/:id', (req, res) => {
 })
 // 预售
 router.get('/paibot_presale',(req,res)=>{
-	res.render('paibot_presale');
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		res.render('mobile/paibot_presale');
+	}else{
+		res.render('paibot_presale');
+	};
 });
 router.get('/paiband_presale',(req,res)=>{
-	res.render('paiband_presale');
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		res.render('mobile/paiband_presale');
+	}else{
+		res.render('paiband_presale');
+	};
 });
 module.exports = router;
