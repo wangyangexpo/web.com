@@ -83,11 +83,12 @@
 	                }
 	            }
 	            else if(uri.indexOf('all') > -1) {
-	            		window.location = '<%=helpers.devurl_m('/product/product/list')%>';
+	            		//location.href = '<%=helpers.devurl_m('/product/product/list')%>';
+					location.href = 'http://m-store.putao.com/product/product/list';
 	            }
 	            $('.navbar').addClass('hide');
 	        });
-	        
+
 	        var uri = window.location.href;
 	        if(uri.indexOf('act') > -1) {
 	        		var tag = uri.substr(uri.indexOf('#'), uri.indexOf('?') - uri.indexOf('#'));
@@ -111,7 +112,7 @@
 		            a = str.charAt(i);
 		            str_length++;
 		            if (escape(a).length > 4) {
-		                //中文字符的长度经编码之后大于4  
+		                //中文字符的长度经编码之后大于4
 		                str_length++;
 		            }
 		            str_cut = str_cut.concat(a);
@@ -120,7 +121,7 @@
 		                return str_cut;
 		            }
 		        }
-		        //如果给定字符串小于指定长度，则返回源字符串；  
+		        //如果给定字符串小于指定长度，则返回源字符串；
 		        if (str_length < len) {
 		            return str;
 		        }
