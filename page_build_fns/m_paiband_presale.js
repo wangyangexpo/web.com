@@ -3,7 +3,7 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
-var paiband_presale = function(req, res) {
+var m_paiband_presale = function(req, res) {
 	var lib_o = new lib();
 	var link = req.params.name;
 	lib_o.getData({tag: 'mobile_login'}, 'mobile_login')
@@ -24,4 +24,4 @@ var paiband_presale = function(req, res) {
 		})
 }
 
-module.exports = paiband_presale;
+module.exports = m_paiband_presale;
