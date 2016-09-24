@@ -83,8 +83,8 @@
 	                }
 	            }
 	            else if(uri.indexOf('all') > -1) {
-	            		//location.href = '<%=helpers.devurl_m('/product/product/list')%>';
-					location.href = 'http://m-store.putao.com/product/product/list';
+					var url = '<%=helpers.devurl_m('/product/product/list')%>';
+	            		location.href = url.replace(/\s/g, "")
 	            }
 	            $('.navbar').addClass('hide');
 	        });
