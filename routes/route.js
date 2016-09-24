@@ -305,4 +305,7 @@ router.get('/ad/:id', (req, res) => {
 router.get('/paibot_presale',(req,res)=>{
 	res.render('paibot_presale');
 });
+router.get('/paiband_presale',(req,res)=>{
+	res.render('paiband_presale');
+});
 module.exports = router;
