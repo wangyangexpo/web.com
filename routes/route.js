@@ -302,4 +302,9 @@ router.get('/ad/:id', (req, res) => {
 	res.redirect('http://store.putao.com/ad/' + req.params.id)
 })
 
+// 预售
+router.get('/paibot_presale',(req,res)=>{
+	res.render('paibot_presale');
+});
+
 module.exports = router;
