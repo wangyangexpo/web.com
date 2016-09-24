@@ -18,7 +18,6 @@ var m_paiband_presale = function(req, res) {
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
 				content.detail = './' + link;
-//			console.log('mobile: '  + JSON.stringify(content));
 				res.render('mobile/paiband_presale', content);
 			})
 		})
