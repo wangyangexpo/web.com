@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <link rel="shortcut icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon"/>
   <link rel="icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon">
-  <link rel="stylesheet" href="css/presale.css" />
+	<link rel="stylesheet" href="<%=helpers.staticurl('/css/presale.css')%>">
 </head>
 <body>
 	<div class="presale-page">
 		<div class="bg1"></div>
 		<div class="bg2">
-			<a target="_blank" href="http://web-store-dev.ptdev.cn/v1/pay/card?id=12"></a>
+			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=12')%>"></a>
 		</div>
 		<div class="bg3"></div>
 		<div class="mask">
 			<div>
 				<a href="">查看详情</a>
-				<a target="_blank" href="http://web-store-dev.ptdev.cn/v1/pay/card?id=12">限时抢</a>
+				<a target="_blank" href="<%=helpers.getShoppingMallUrl('v1/pay/card?id=12')%>">限时抢</a>
 			</div>
 		</div>
 	</div>
