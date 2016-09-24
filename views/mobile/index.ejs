@@ -83,8 +83,7 @@
 	                }
 	            }
 	            else if(uri.indexOf('all') > -1) {
-					var url = '<%=helpers.devurl_m('/product/product/list')%>';
-	            		location.href = url.replace(/\s/g, "")
+	            		location.href = '<%=helpers.devurl_m('/product/product/list')%>';
 	            }
 	            $('.navbar').addClass('hide');
 	        });
