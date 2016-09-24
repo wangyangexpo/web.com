@@ -30,6 +30,11 @@ router.get('/', (req, res) => {
 		}
 	}
 });
+
+router.get('/new_index', (req, res) => {
+	require('../page_build_fns/new_index')(req, res);
+});
+
 router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
