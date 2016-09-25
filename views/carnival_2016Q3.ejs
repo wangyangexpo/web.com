@@ -63,7 +63,7 @@
 			<li>
 				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
 				<%if(v.description){%>
-				<a class="video" data-imgurl="<%=v.description%>" href="javascript:;"></a>
+				<a class="video"  data-basicurl="<%=v.basic_url%>" href="javascript:;"></a>
 				<%}else{%>
 				<a data-basicurl="<%=v.basic_url%>"  data-imgurl="<%=helpers.drawImage(v.basic_image_2)%>" href="javascript:;"></a>
 				<%}%>
