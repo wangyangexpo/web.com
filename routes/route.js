@@ -310,7 +310,8 @@ router.get('/paibot_presale',(req,res)=>{
 		require('../page_build_fns/m_paibot_presale')(req,res);
 		//res.render('mobile/paibot_presale');
 	}else{
-		res.render('paibot_presale');
+		require('../page_build_fns/paibot_presale')(req,res);
+//		res.render('paibot_presale');
 	};
 });
 router.get('/paiband_presale',(req,res)=>{
@@ -319,7 +320,8 @@ router.get('/paiband_presale',(req,res)=>{
 	if(agentID) {
 		require('../page_build_fns/m_paiband_presale')(req,res);
 	}else{
-		res.render('paiband_presale');
+		require('../page_build_fns/paiband_presale')(req,res);
+		//res.render('paiband_presale');
 	};
 });
 
