@@ -65,7 +65,7 @@
 					<%if(nav_list&&nav_list.length>0){%>
 					<%nav_list.slice(0,9).forEach(function(v,i){%>
 					<li>
-						<a class="<%= !i ? 'on' : '' %>" href="">
+						<a class="<%= !i ? 'on' : '' %>" href="<%=v.basic_url%>">
 							<%=v.name%>
 						</a>
 					</li>
