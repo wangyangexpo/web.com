@@ -9,7 +9,7 @@ var paibot_presale = function(req,res){
 	commeData(req,res,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
-		content.title = 'paibot预售 - ' + content.title;
+		content.title = 'PaiBot预售 - ' + content.title;
 		res.render('paibot_presale',content);
 	})
 }

@@ -9,7 +9,7 @@ var paiband_presale = function(req,res){
 	commeData(req,res,lib_o,function(count){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
-		content.title = 'paiband预售 - ' + content.title;
+		content.title = 'PaiBand预售 - ' + content.title;
 		res.render('paiband_presale',content);
 	})
 }
