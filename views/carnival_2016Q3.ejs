@@ -61,7 +61,7 @@
 			<%carnival_2016Q3_paiband.forEach(function(v,i){%>
 			<%if(i >= 3){%>
 			<li>
-				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
+				<img data-description='<%=v.description%>'  src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025" height="660" />
 				<%if(v.description){%>
 				<a class="video"  data-basicurl="<%=v.basic_url%>" href="javascript:;"></a>
 				<%}else{%>
