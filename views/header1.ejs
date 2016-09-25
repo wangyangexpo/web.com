@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title><%=title%></title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="shortcut icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon"/>
-  <link rel="icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon">
-</head>
-<body id="returnTop">
-	<%if(banner[0].description == 1){%>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			<%=title%>
+		</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="shortcut icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon" />
+		<link rel="icon" href="<%=helpers.staticurl('/images/favicon.ico')%>" type="image/x-icon">
+	</head>
+
+	<body id="returnTop">
+<%if(banner[0].description == 1){%>
 		<div class="main_header main_header_f" id="main_header">
 	<%}else{%>
 		<div class="main_header" id="main_header">

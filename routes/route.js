@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 		if(req.hostname.indexOf(configs.m_host_key) != -1) {
 			res.redirect(configs.localurl)
 		} else {
-			require('../page_build_fns/index')(req, res)
+			require('../page_build_fns/new_index')(req, res)
 		}
 	}
 });
@@ -301,6 +301,7 @@ router.get('/toys/:id', (req, res) => {
 router.get('/ad/:id', (req, res) => {
 	res.redirect('http://store.putao.com/ad/' + req.params.id)
 })
+
 // 预售
 router.get('/paibot_presale',(req,res)=>{
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -309,7 +310,8 @@ router.get('/paibot_presale',(req,res)=>{
 		require('../page_build_fns/m_paibot_presale')(req,res);
 		//res.render('mobile/paibot_presale');
 	}else{
-		res.render('paibot_presale');
+		require('../page_build_fns/paibot_presale')(req,res);
+//		res.render('paibot_presale');
 	};
 });
 router.get('/paiband_presale',(req,res)=>{
@@ -318,7 +320,9 @@ router.get('/paiband_presale',(req,res)=>{
 	if(agentID) {
 		require('../page_build_fns/m_paiband_presale')(req,res);
 	}else{
-		res.render('paiband_presale');
+		require('../page_build_fns/paiband_presale')(req,res);
+		//res.render('paiband_presale');
 	};
 });
+
 module.exports = router;

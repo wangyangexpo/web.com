@@ -184,32 +184,32 @@
 		媒体报道
 	</div>
 
-	<div class="yzl_2016Q3_mt">
-		<ul>
-			<%if(carnival_2016Q3_mt&&carnival_2016Q3_mt.length>0){%>
-			<%carnival_2016Q3_mt.forEach(function(v,i){%>
-			<%if(i%3){%>
-			<li>
+	<%if(carnival_2016Q3_mt&&carnival_2016Q3_mt.length > 0){%>
+		<div class="mediacoverageList carnival_2016Q3_mediacoverageList">
+			<ul>
+				<%carnival_2016Q3_mt.forEach(function(v,i){%>
+				<%if(!(i%3)){%>
+					<li style="margin-left: 0;">
 				<%}else{%>
-				<li style="margin-left: 0;">
-					<%}%>
-					<a target="_blank" class="imgBox" href="<%=v.basic_url%>">
+					<li>
+				<%}%>
+					<a target="_blank" href="<%=v.basic_url%>">
 						<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 					</a>
 					<dl>
-						<dt><a target="_blank" href="<%=v.basic_url%>"><%=v.name%></a></dt>
+						<dt>
+							<a target="_blank" href="<%=v.basic_url%>">
+								<%=v.name%>
+							</a>
+						</dt>
 						<dd>
 							<%=v.sub_title%>
 						</dd>
-						<dd>
-							<%=v.description%>
-						</dd>
 					</dl>
-				</li>
 				<%})%>
-				<%}%>
-		</ul>
-	</div>
+			</ul>
+		</div>
+		<%}%>
 
 	<div class="title">
 		新品发布会
