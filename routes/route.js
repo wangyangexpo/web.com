@@ -301,10 +301,33 @@ router.get('/toys/:id', (req, res) => {
 router.get('/ad/:id', (req, res) => {
 	res.redirect('http://store.putao.com/ad/' + req.params.id)
 })
+<<<<<<< HEAD
 
 // 预售
 router.get('/paibot_presale',(req,res)=>{
 	res.render('paibot_presale');
 });
 
+=======
+// 预售
+router.get('/paibot_presale',(req,res)=>{
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		require('../page_build_fns/m_paibot_presale')(req,res);
+		//res.render('mobile/paibot_presale');
+	}else{
+		res.render('paibot_presale');
+	};
+});
+router.get('/paiband_presale',(req,res)=>{
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		require('../page_build_fns/m_paiband_presale')(req,res);
+	}else{
+		res.render('paiband_presale');
+	};
+});
+>>>>>>> fa8286cab7e97231187d5c9b9d367a60bccabb40
 module.exports = router;
