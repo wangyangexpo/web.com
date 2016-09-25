@@ -1,19 +1,49 @@
 <% include ./header.ejs %>
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
-	<link rel="stylesheet" href="<%=helpers.staticurl('/css/presale.css')%>">
-	<div class="presale-page">
-		<div class="paiband_bg_top"></div>
-		<div class="bg1"></div>
-		<div class="bg2">
-			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=13')%>"></a>
-		</div>
-		<div class="bg3"></div>
-		<div class="mask">
-			<div>
-				<a target="_blank" href="http://store.putao.com/page/paiband">查看详情</a>
-				<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=13')%>">限时抢</a>
-			</div>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/presale.css')%>">
+<style>
+	.presale-page .bg_top {
+		position: relative;
+	}
+	
+	.presale-page .bg_top a {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 135px;
+		width: 263px;
+		height: 35px;
+		margin-left: -200px;
+	}
+</style>
+<div class="presale-page">
+	<div class="paiband_bg_top">
+		<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=13')%>"></a>
+	</div>
+	<div class="bg1"></div>
+	<div class="bg2">
+		<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=13')%>"></a>
+	</div>
+	<div class="bg3"></div>
+	<div class="mask" id="mask" style="display: none;">
+		<div>
+			<a target="_blank" href="http://store.putao.com/page/paiband">查看详情</a>
+			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/v1/pay/card?id=13')%>">限时抢</a>
 		</div>
 	</div>
-
+</div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script>
+	(function() {
+		var $mask = $('#mask');
+		window.onscroll = function() {
+			var scrollTop = $(document).scrollTop();
+			if(scrollTop > 180) {
+				$mask.show()
+			} else {
+				$mask.hide()
+			}
+		}
+	})();
+</script>
 <% include ./footer.ejs %>
