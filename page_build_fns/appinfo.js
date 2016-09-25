@@ -45,7 +45,8 @@ var app_info = function(req, res, tag) {
 					cms: content.cms,
 					banner: banner,
 					title: _name + ' - ' + '应用下载 - ' + content.title,
-					shopcart: count
+					shopcart: count,
+					nav_list: content.nav_list
 				}
 				res.render('appinfo', result);
 			})
