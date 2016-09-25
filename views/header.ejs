@@ -12,57 +12,66 @@
 	</head>
 
 	<body id="returnTop">
-<%if(banner[0].description == 1){%>
-		<div class="main_header main_header_f" id="main_header">
-	<%}else{%>
-		<div class="main_header" id="main_header">
-	<%}%>
-  
-    <div class="header_inner">
-      <a href="/" class="logo">
-        
-      </a>
-      <ul class="header_nav">
-        <li><a href="/">首页</a></li>
-        <li><a href="/brand">品牌动态</a></li>
-        <li><a href="/theatre">葡星剧场</a></li>
-        <li><a href="/pt_home">葡萄之家</a></li>
-        <li><a href="/app">应用下载</a></li>
-      </ul>
-      <div class="login_info">
-        <%if(!shopcart){%>
-        <div class="header-account-wrapper header-account-wrapper1">
-          <div class="header-account-panel header-accout-noWgb">
-            <a href="/user/login" rel="nofollow"></a>
-            <!--<a href="#" rel="nofollow"></a>-->
-          </div>
-        </div>
-        <%}else{%>
-        <div class="header-account-wrapper header-account-wrapper1">
-          <div class="header-account-panel">
-            <span class="user">
-              <a class="user-name" href="http://store.putao.com/user/myOrder">
-                <span class="name user-name-color"><%=shopcart.sessid%></span>
-                <i class="iconfont">&#xe609</i>
-              </a>
-              <ul class="user-menu" style="display: none; height: 0px; padding: 0px;">
-                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/service/customer/list')%>" data-stat-id="281a83d86f7b24f9">售后服务</a></li>
-                <li><a target="_blank" href="<%=helpers.getShoppingMallUrl('/user/account/address')%>" data-stat-id="281a83d86f7b24f9">收货地址</a>
-                </li>
-                <li>
-               </li><li><a target="_blank" href="https://account.putao.com/account/user" target="_blank" data-stat-id="">账户资料</a></li>
-                <li><a href="/user/logout" data-stat-id="">退出登录</a></li>
-              </ul>
-            </span>
-          </div>
-        </div>
-        <%}%>
-        <!--<a href="http://web-store-test.ptdev.cn/page" class="shop_mall">-->
-        	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/page/')%>" class="shop_mall"></a>
+		<div class="yzl_header">
+			<div class="yzl_header_top">
+				<div class="yzl_header_top_w">
+					<ul class="menu">
+						<li>
+							<a target="_blank" href="/">葡萄官网</a>
+						</li>
+						<li>
+							<a target="_blank" href="/brand">品牌动态</a>
+						</li>
+						<li>
+							<a target="_blank" href="/theatre">葡星剧场</a>
+						</li>
+						<li>
+							<a target="_blank" href="/pt_home">葡萄之家</a>
+						</li>
+						<li>
+							<a target="_blank" href="/app">应用下载</a>
+						</li>
+					</ul>
 
-          <!--<span class="shop_bag"><%=shopcart?shopcart.num:0%></span>
-          <span class="shop_mall_text">商城</span>-->
-        </a>
-      </div>
-    </div>
-  </div>
+					<a target="_blank" href="<%=helpers.getShoppingMallUrl('/page/')%>" class="shopCart">
+
+					</a>
+
+					<%if(!shopcart){%>
+					<div class="loginReg">
+						<a href="">登录</a>
+						|
+						<a href="">注册</a>
+					</div>
+					<%}else{%>
+					<div class="user">
+						<p>
+							<%=shopcart.sessid%>
+						</p>
+						<div>
+							<a target="_blank" href="<%=helpers.getShoppingMallUrl('/service/customer/list')%>" data-stat-id="281a83d86f7b24f9">售后服务</a>
+							<a target="_blank" href="<%=helpers.getShoppingMallUrl('/user/account/address')%>" data-stat-id="281a83d86f7b24f9">收货地址</a>
+							<a href="https://account.putao.com/account/user" target="_blank" data-stat-id="">帐户资料</a>
+							<a href="/user/logout" data-stat-id="">退出登录</a>
+						</div>
+					</div>
+					<%}%>
+
+				</div>
+			</div>
+			<div class="yzl_header_menu">
+				<h1></h1>
+				<ul>
+					<%if(nav_list&&nav_list.length>0){%>
+					<%nav_list.slice(0,9).forEach(function(v,i){%>
+					<li>
+						<a class="<%= !i ? 'on' : '' %>" href="">
+							<%=v.name%>
+						</a>
+					</li>
+					<%})%>
+					<%}%>
+
+				</ul>
+			</div>
+		</div>

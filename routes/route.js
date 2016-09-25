@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 		if(req.hostname.indexOf(configs.m_host_key) != -1) {
 			res.redirect(configs.localurl)
 		} else {
-			require('../page_build_fns/index')(req, res)
+			require('../page_build_fns/new_index')(req, res)
 		}
 	}
 });
@@ -301,14 +301,7 @@ router.get('/toys/:id', (req, res) => {
 router.get('/ad/:id', (req, res) => {
 	res.redirect('http://store.putao.com/ad/' + req.params.id)
 })
-<<<<<<< HEAD
 
-// 预售
-router.get('/paibot_presale',(req,res)=>{
-	res.render('paibot_presale');
-});
-
-=======
 // 预售
 router.get('/paibot_presale',(req,res)=>{
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -329,5 +322,5 @@ router.get('/paiband_presale',(req,res)=>{
 		res.render('paiband_presale');
 	};
 });
->>>>>>> fa8286cab7e97231187d5c9b9d367a60bccabb40
+
 module.exports = router;
