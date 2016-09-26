@@ -56,7 +56,7 @@ var carnival = function(req, res) {
 	var lib_o = new lib();
 	if(_name === '2016Q3') {
 		ajax(req,res,function(content) {
-			content.title = '2016葡萄科技Q3战略产品发布会' + ' - 嘉年华 - ' + content.title;
+			content.title = '2016葡萄科技Q3战略产品发布会' + ' - ' + content.title;
 			content.banner[0].description = _description;
 			res.render('carnival_' + _name, content);
 		})
