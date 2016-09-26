@@ -173,7 +173,7 @@
 		<div class="imgBox">
 			<%carnival_2016Q3_zj.forEach(function(v,i){%>
 			<div style="display: <%=!i?'block':'none'%>;">
-				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1200px" height="630px" />
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025px" height="537px" />
 			</div>
 			<%})%>
 		</div>
@@ -204,6 +204,9 @@
 						</dt>
 						<dd>
 							<%=v.sub_title%>
+						</dd>
+						<dd>
+							<%=v.description%>
 						</dd>
 					</dl>
 				<%})%>
@@ -304,6 +307,9 @@
 </div>
 
 <div class="yzl_2016Q3_pop" id="yzl_2016Q3_pop" hidden="hidden">
+	<div class="mask">
+		
+	</div>
 	<div class="mn" id="youkuplayer">
 
 	</div>
