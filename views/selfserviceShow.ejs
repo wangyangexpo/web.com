@@ -1,0 +1,43 @@
+<% include ./new_header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/selfservice.css')%>" />
+<div class="selfserviceShow-page">
+	<div class="currentLocation">
+		首页><%=name%>><%=name1%>
+	</div>
+	<%if(list&&list.length>0){%>
+	<div class="contact_bg" style="background: url(<%=helpers.drawImage(list[0].basic_image_1)%>) no-repeat center;">
+
+	</div>
+	<%}%>
+	<div class="width">
+		<ul class="tabs_menu">
+		<%list.forEach(function(v,i){%>
+			<li class="<%= !i? 'on' : '' %>">
+				<a href="javascript:;"><%=v.name%></a>
+				<span></span>
+			</li>
+		<%})%>
+		</ul>
+		<div class="tabs_mn">
+			<%list.forEach(function(v,i){%>
+			<div style="display: <%=!i ? 'block' : 'none'%>;">
+				<%-v.basic_content%>
+			</div>
+			<%})%>
+		</div>
+	</div>
+</div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script>
+	$(function(){
+		var $tabs_menu = $('.tabs_menu');
+		var $tabs_mn_s = $('.tabs_mn').children('div');
+		$tabs_menu.on('click','li',function(){
+			$(this).siblings().removeClass('on');
+			$(this).addClass('on');
+			$tabs_mn_s.hide();
+			$tabs_mn_s.eq($(this).index()).show();
+		})
+	});
+</script>
+<% include ./footer.ejs %>
