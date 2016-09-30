@@ -15,13 +15,23 @@
 		height: 35px;
 		margin-left: -250px;
 	}
+	.presale_after_topbg{
+		background-image: url('http://static.putaocdn.com/site/pc/images/presale_after_paibandbanner.jpg');
+	}
+	.presale_after_bg1{
+		background-image: url('http://static.putaocdn.com/site/pc/images/3.jpg');
+	}
+	.presale_after_bg2{
+		background-image: url('http://static.putaocdn.com/site/pc/images/4.jpg');
+	}
 </style>
 <div class="presale-page" style="padding-top: 0;">
-	<div class="paiband_bg_top">
-		<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paiband')%>"></a>
-	</div>
-	<div class="paiband_bg1"></div>
-	<div class="paiband_bg2">
+	<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paiband')%>">
+		<div class="paiband_bg_top presale_after_topbg">
+		</div>
+	</a>
+	<div class="paiband_bg1 presale_after_bg1"></div>
+	<div class="paiband_bg2 presale_after_bg2">
 		<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paiband')%>"></a>
 	</div>
 	<div class="paiband_bg3"></div>
