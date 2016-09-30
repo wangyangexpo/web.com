@@ -5,7 +5,7 @@
 <!--<link rel="stylesheet" href="/css/brand.css">-->
 <!--<link rel="stylesheet" href="/css/carnival_2016Q3.css">-->
 
-<div class="brand-page">
+<div class="brand-page carnival_2016Q3_page">
 	<%if(banner&&banner.length > 0){%>
 	<%if(banner.length == 1){%>
 	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
@@ -37,20 +37,20 @@
 
 	<div class="yzl_2016Q3_video" id="page_video">
 		<div class="title">
-			2016葡萄科技Q3新品发布会
+			2016葡萄科技战略产品发布会
 		</div>
 		<div>
 			<%if(carnival_2016Q3_video&&carnival_2016Q3_video.length>0){%>
 			<a id="yzl_2016Q3_videoBtn" data-id="<%=carnival_2016Q3_video[0].basic_url%>" href="javascript:;">
-				<img width="960px" height="550px" src="<%=helpers.drawImage(carnival_2016Q3_video[0].basic_image_1)%>" />
+				<img width="1025px" height="660px" src="<%=helpers.drawImage(carnival_2016Q3_video[0].basic_image_1)%>" />
 			</a>
 			<%}%>
 		</div>
 	</div>
 
 	<div class="yzl_2016Q3_bt" id="page_paiband">
-		<h2>Paiband<br>看得见成长</h2>
-		<p>我们的PaiBand，通过对运动、睡眠、饮食及交友的监测，实时以数据的方式，通过葡萄纬度推送给父母知晓。<br> 让父母看见孩子日常的成长数据，掌握孩子成长的每一步。
+		<h2>PaiBand<br>儿童成长手环</h2>
+		<p>PaiBand，通过对运动、睡眠、饮食及交友的监测，实时以数据的方式，通过葡萄纬度推送给父母知晓。<br> 让父母看见孩子日常的成长数据，掌握孩子成长的每一步。
 		</p>
 	</div>
 
@@ -103,8 +103,8 @@
 	</div>
 
 	<div class="yzl_2016Q3_bt" id="page_paibot">
-		<h2>Paipot<br>生来智能</h2>
-		<p>我们的PaiBand，通过对运动、睡眠、饮食及交友的监测，实时以数据的方式，通过葡萄纬度推送给父母知晓。<br> 让父母看见孩子日常的成长数据，掌握孩子成长的每一步。
+		<h2>PaiBot<br>儿童机器人电脑</h2>
+		<p>PaiBot，搭载智慧小pai语音功能，是孩子生活成长的伙伴，学习的助手，更有多种安全护眼功能，<br> 精选海内外优质app、儿童安全浏览器等，家长也可通过葡萄纬度端，远程管理孩子生活作息。
 		</p>
 	</div>
 
@@ -173,7 +173,7 @@
 		<div class="imgBox">
 			<%carnival_2016Q3_zj.forEach(function(v,i){%>
 			<div style="display: <%=!i?'block':'none'%>;">
-				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1200px" height="630px" />
+				<img src="<%=helpers.drawImage(v.basic_image_1)%>" width="1025px" height="537px" />
 			</div>
 			<%})%>
 		</div>
@@ -204,6 +204,9 @@
 						</dt>
 						<dd>
 							<%=v.sub_title%>
+						</dd>
+						<dd>
+							<%=v.description%>
 						</dd>
 					</dl>
 				<%})%>
@@ -304,6 +307,9 @@
 </div>
 
 <div class="yzl_2016Q3_pop" id="yzl_2016Q3_pop" hidden="hidden">
+	<div class="mask">
+		
+	</div>
 	<div class="mn" id="youkuplayer">
 
 	</div>

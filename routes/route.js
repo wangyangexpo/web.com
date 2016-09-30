@@ -39,6 +39,14 @@ router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
 
+// 自助服务
+router.get('/selfservice',(req,res)=>{
+	require('../page_build_fns/selfservice')(req,res);
+});
+router.get('/selfservice/:id',(req,res)=>{
+	require('../page_build_fns/selfserviceShow')(req,res);
+});
+
 // znyaiw 20160913  统一PC和m站路径
 router.get('/brand', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
