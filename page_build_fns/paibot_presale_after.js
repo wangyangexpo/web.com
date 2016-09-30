@@ -10,7 +10,7 @@ var paibot_presale_after = function(req,res){
 		var content = lib_o.getAllContent();
 		content.shopcart = count;
 		content.title = 'PaiBot预售 - ' + content.title;
-		res.render('paibot_presale',content);
+		res.render('paibot_presale_after',content);
 	})
 }
 
