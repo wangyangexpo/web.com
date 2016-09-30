@@ -325,4 +325,27 @@ router.get('/paiband_presale',(req,res)=>{
 	};
 });
 
+// 预售支付尾款
+router.get('/paibot_presale_after',(req,res)=>{
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		require('../page_build_fns/m_paibot_presale_after')(req,res);
+		//res.render('mobile/paibot_presale');
+	}else{
+		require('../page_build_fns/paibot_presale_after')(req,res);
+//		res.render('paibot_presale');
+	};
+});
+router.get('/paiband_presale_after',(req,res)=>{
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) {
+		require('../page_build_fns/m_paiband_presale_after')(req,res);
+	}else{
+		require('../page_build_fns/paiband_presale_after')(req,res);
+		//res.render('paiband_presale');
+	};
+});
+
 module.exports = router;
