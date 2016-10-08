@@ -1,0 +1,61 @@
+<% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/index.css')%>">
+	<link rel="stylesheet" href="<%=helpers.staticurl('/css/presale.css')%>">
+	<style>
+	.bg_top {
+		position: relative;
+	}
+	
+	.bg_top a {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 70px;
+		width: 263px;
+		height: 35px;
+		margin-left: -500px;
+	}
+	.presale-page .presale_after_topbg{
+		background-image: url('http://static.putaocdn.com/site/pc/images/presale_after/presale_after_paibotbanner.jpg');
+	}
+	.presale-page .presale_after_bg1{
+		background-image: url('http://static.putaocdn.com/site/pc/images/presale_after/1.png');
+	}
+	.presale-page .presale_after_bg2{
+		background-image: url('http://static.putaocdn.com/site/pc/images/presale_after/2.png');
+	}
+</style>
+	<div class="presale-page" style="padding-top: 0;">
+		<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paibot')%>">
+			<div class="bg_top presale_after_topbg">
+
+			</div>
+		</a>
+		<div class="bg1 presale_after_bg1"></div>
+		<div class="bg2 presale_after_bg2">
+			<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paibot')%>"></a>
+		</div>
+		<div class="bg3"></div>
+		<div class="mask" id="mask" style="display: none;">
+			<div>
+				<a target="_blank" href="http://store.putao.com/page/paibot">查看详情</a>
+				<a target="_blank" href="<%=helpers.getShoppingMallUrl('/choose/paibot')%>">支付尾款</a>
+			</div>
+		</div>
+		<div class="bg_bottom"></div>
+	</div>
+	<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script>
+	(function() {
+		var $mask = $('#mask');
+		window.onscroll = function() {
+			var scrollTop = $(document).scrollTop();
+			if(scrollTop > 180) {
+				$mask.show()
+			} else {
+				$mask.hide()
+			}
+		}
+	})();
+</script>
+<% include ./footer.ejs %>
