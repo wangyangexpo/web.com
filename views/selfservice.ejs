@@ -23,9 +23,9 @@
 					<li>
 				<%}%>
 					<%if(v.basic_url){%>
-						<a href="<%=v.basic_url%>"></a>
+						<a href="<%=v.basic_url%>">
 					<%}else{%>
-						<a href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('自助服务')%>&name1=<%=helpers.encodeURIComponent(v.name)%>"></a>
+						<a href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('自助服务')%>&name1=<%=helpers.encodeURIComponent(v.name)%>">
 					<%}%>
 						<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 						<span>
@@ -40,7 +40,7 @@
 			<h2>常见问题</h2>
 			<a href="#"></a>
 		</div>
-		<ul class="list1">
+				<ul class="list1">
 					<%if(selfservice_list1&&selfservice_list1.length>0){%>
 				<%selfservice_list1.forEach(function(v,i){%>
 				<%if(!((i+1)%5)){%>
@@ -49,16 +49,16 @@
 					<li>
 				<%}%>
 					<%if(v.basic_url){%>
-						<a class="img" href="<%=v.basic_url%>"></a>
+						<a class="img" href="<%=v.basic_url%>" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat center;"></a>
 					<%}else{%>
-						<a class="img" href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('常见问题')%>&name1=<%=helpers.encodeURIComponent(v.name)%>"></a>
+						<a style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat center;" class="img" href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('常见问题')%>&name1=<%=helpers.encodeURIComponent(v.name)%>"></a>
 					<%}%>
 					<dl>
 						<dt>
 							<%if(v.basic_url){%>
-						<a class="img" href="<%=v.basic_url%>"><%=v.name%></a>
+						<a href="<%=v.basic_url%>"><%=v.name%></a>
 					<%}else{%>
-						<a class="img" href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('常见问题')%>&name1=<%=helpers.encodeURIComponent(v.name)%>"><%=v.name%></a>
+						<a href="selfservice/<%=v.tag%>?name=<%=helpers.encodeURIComponent('常见问题')%>&name1=<%=helpers.encodeURIComponent(v.name)%>"><%=v.name%></a>
 					<%}%>
 						</dt>
 						<dd>
