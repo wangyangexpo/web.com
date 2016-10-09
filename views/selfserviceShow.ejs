@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/selfservice.css')%>" />
 <div class="selfserviceShow-page">
 	<div class="currentLocation">
-		首页><%=name%>><%=name1%>
+		<a href="/">首页</a> > <a href="/selfservice"><%=name%></a> > <%=name1%>
 	</div>
 	<%if(list&&list.length>0){%>
 	<div class="contact_bg" style="background: url(<%=helpers.drawImage(list[0].basic_image_1)%>) no-repeat center;">

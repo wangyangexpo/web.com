@@ -37,7 +37,7 @@
 
 	<%if(bannerList_list){%>
 	<div class="mediacoverageList" id="list">
-		<%bannerList_list.forEach(function(v){%>
+		<%bannerList_list.slice(0,9).forEach(function(v){%>
 			<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
 			<%}else{%>

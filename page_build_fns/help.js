@@ -48,8 +48,7 @@ var help = function(req,res){
 					content.dl.forEach(function (v) {
 						if (v.tag === parent_tag) {
 							_address1 = v.name + ' - ' + _address + ' - ';
-							_address = v.name + '>' + _address;
-							
+							_address = v.name + ' > ' + _address;
 							return false;
 						}
 					})

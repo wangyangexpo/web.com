@@ -19,7 +19,7 @@ var theatreListMore = function(req, res) {
 				res.json({
 					http_code: 200,
 					base_url: config.fileurl,
-					data: content.list.slice(_start_index, _len)
+					data: content.list.slice(_start_index, _start_index+_len)
 				});
 			})
 		})
