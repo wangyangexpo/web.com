@@ -3,32 +3,35 @@
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <!--<link rel="stylesheet" href="css/brandList.css" />-->
 <div class="brandList-page">
-	
-	<%if(banner&&banner.length > 0){%>
-	<%if(banner.length == 1){%>
-	<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
-		<%if(banner[0].basic_url){%>
-			<a target="<%=banner[0].basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=banner[0].basic_url%>"></a>
-		<%}%>
-	</div>
+	<%if(js_tag === 'pthome_fans' || js_tag === 'pthome_hot'){%>
+		<div class="pt_home_banner" style="background: url('<%=helpers.drawImage(pthome_banner[0].basic_image_1)%>') no-repeat 50% 0"></div>
 	<%}else{%>
-	<div class="swiper-box">
-		<div class="swiper-container js-swiper-container">
-			<div class="swiper-wrapper" id="swiperwrapper">
-				
-				<%banner.forEach(function(v){%>
-				<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
-					<%if(v.basic_url){%>
-						<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>"></a>
-					<%}%>
-				</div>
-				<%})%>
-				
-			</div>
+		<%if(banner&&banner.length > 0){%>
+		<%if(banner.length == 1){%>
+		<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
+			<%if(banner[0].basic_url){%>
+				<a target="<%=banner[0].basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=banner[0].basic_url%>"></a>
+			<%}%>
 		</div>
-		<div class="pagination js-pagination"></div>
-	</div>
-	<%}%>
+		<%}else{%>
+		<div class="swiper-box">
+			<div class="swiper-container js-swiper-container">
+				<div class="swiper-wrapper" id="swiperwrapper">
+
+					<%banner.forEach(function(v){%>
+					<div data-description="<%=v.description%>" class="swiper-slide" style="background: url(<%=helpers.drawImage(v.basic_image_1)%>) no-repeat top center;">
+						<%if(v.basic_url){%>
+							<a target="<%=v.basic_url.indexOf('http') >= 0 ? '_blank' : '_self'%>" href="<%=v.basic_url%>"></a>
+						<%}%>
+					</div>
+					<%})%>
+
+				</div>
+			</div>
+			<div class="pagination js-pagination"></div>
+		</div>
+		<%}%>
+		<%}%>
 	<%}%>
 
 	<div class="sub_name">

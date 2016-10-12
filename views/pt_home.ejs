@@ -79,7 +79,7 @@
 	<div class="list" id="activity_list">
 		<div>
 		<%if(hot_acts){%>
-			<% hot_acts.forEach(function(item,index){ %>
+			<% hot_acts.slice(0,2).forEach(function(item,index){ %>
 			<dl>
 				<dt>
 					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
@@ -96,13 +96,9 @@
 		<%}%>
 		</div>
 	</div>
-	<%if(hot_acts.length > 2){%>
-	<!-- 查看更多 -->
 	<div class="more">
-		<a href="javascript:;" id="activity_btn"></a>
+		<a href="brandList?tag=pthome_hot&name=<%=helpers.encodeURIComponent('热门活动')%>">更多活动</a>
 	</div>
-	<!-- /查看更多 -->
-	<%}%>
 </div>
 <!-- /热门活动 -->
 
@@ -120,7 +116,7 @@
 		<div>
 			<ul id="fans_list">
 		<%if(pf_stories){%>
-			<% pf_stories.forEach(function(item,index){ %>
+			<% pf_stories.slice(0,2).forEach(function(item,index){ %>
 			<li>
 				<img src="<%=helpers.drawImage(item.basic_image_1)%>" />
 				<dl>
@@ -138,40 +134,15 @@
 	</ul>
 		</div>
 	</div>
-	
-	<%if(pf_stories.length > 2){%>
-	<!-- 查看更多 -->
 	<div class="more">
-		<a href="javascript:;" id="fans_btn"></a>
+		<a href="brandList?tag=pthome_fans&name=<%=helpers.encodeURIComponent('葡萄故事')%>">更多故事</a>
 	</div>
-	<!-- /查看更多 -->
-	<%}else{%>
-		<div style="height: 50px;"></div>
-	<%}%>
+	<div style="height:50px">
 
+	</div>
 </div>
 <!-- /葡粉故事 -->
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/pt_home.js')%>"></script>
 <!--<script src="/js/pt_home.js"></script>-->
-<script>
-	var $activity_list = $('#activity_list'),
-		$fans_list = $('#fans_list');
-	try {
-		$('#activity_btn').on('click', function() {
-			$activity_list.animate({height:$activity_list.find('div').eq(0).height()+20});
-			$(this).hide();
-		})
-	} catch(e) {
-
-	}
-	try {
-		$('#fans_btn').on('click', function() {
-			$fans_list.animate({height:$fans_list.find('div').eq(0).height()+20});
-			$(this).hide();
-		})
-	} catch(e) {
-
-	}
-</script>
 <% include ./footer.ejs %>

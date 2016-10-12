@@ -13,6 +13,10 @@ var theatreList = function(req,res){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
+		.then(function(){return lib_o.getData({tag:'pthome_banner'},'pthome_banner')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
 		.then(function(){
 			commeData(req,res,lib_o,function(count){
 				var content = lib_o.getAllContent();
