@@ -12,7 +12,7 @@
 				<% if(cms_order) { %>
 					<% for(var i = 0,len = cms_order.length; i<len; i++){%>
 						<dd>
-							<a href="/help?parent_tag=<%=cms_order[i].parent_tag%>&id=<%=cms_order[i].id%>"><%=cms_order[i].name%></a>
+							<a href="/help/<%=cms_order[i].id%>?parent_tag=<%=cms_order[i].parent_tag%>"><%=cms_order[i].name%></a>
 						</dd>
 					<%}%>
 				<% } %>
@@ -22,7 +22,7 @@
 				<% if(cms_service) { %>
 					<% for(var i = 0,len = cms_service.length; i<len; i++){%>
 						<dd>
-							<a href="/help?parent_tag=<%=cms_service[i].parent_tag%>&id=<%=cms_service[i].id%>"><%=cms_service[i].name%></a>
+							<a href="/help/<%=cms_service[i].id%>?parent_tag=<%=cms_service[i].parent_tag%>"><%=cms_service[i].name%></a>
 						</dd>
 					<%}%>
 				<% } %>
@@ -37,10 +37,10 @@
 						</dd>
 						<%}else{%>
 						<dd>
-							<a href="/help?parent_tag=<%=cms_bd[i].parent_tag%>&id=<%=cms_bd[i].id%>"><%=cms_bd[i].name%></a>
+							<a href="/help/<%=cms_bd[i].id%>?parent_tag=<%=cms_bd[i].parent_tag%>"><%=cms_bd[i].name%></a>
 						</dd>
 						<%}%>
-						
+
 					<%}%>
 				<% } %>
 			</dl>
@@ -54,7 +54,7 @@
 						</dd>
 						<%}else{%>
 						<dd>
-							<a href="/help?parent_tag=<%=cms_about[i].parent_tag%>&id=<%=cms_about[i].id%>"><%=cms_about[i].name%></a>
+							<a href="/help/<%=cms_about[i].id%>?parent_tag=<%=cms_about[i].parent_tag%>"><%=cms_about[i].name%></a>
 						</dd>
 						<%}%>
 					<%}%>

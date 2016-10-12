@@ -7,7 +7,7 @@ var commeData = require('./commeData');
 var help = function(req,res){
 	var lib_o = new lib();
 	var parent_tag = req.query.parent_tag;
-	var id = req.query.id;
+	var id = req.params.id;
 	lib_o.getData({tag:'cms'},'dl')
 		.then(function(){return lib_o.getData({tag:'cms_order'},'cms_order')}).catch(function(error) {
 			console.log('发生错误！',+ error);

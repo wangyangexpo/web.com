@@ -138,9 +138,15 @@ router.get('/attractInvestment', (req, res) => {
 	require('../page_build_fns/attractInvestment')(req, res);
 });
 
-// help
-router.get('/help', (req, res) => {
-	require('../page_build_fns/help')(req, res);
+// help 适配
+router.get('/help',(req,res)=>{
+	var url = '/help/' + req.query.id + '?parent_tag=' + req.query.parent_tag;
+	res.redirect(url);
+});
+
+// new help
+router.get('/help/:id',(req,res)=>{
+	require('../page_build_fns/help')(req,res);
 });
 
 router.get('/appinfo', (req, res) => {
