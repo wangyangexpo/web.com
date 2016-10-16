@@ -103,7 +103,7 @@
 							$p.html('请先登录');
 						} else if(http_code == 200) {
 							var code_activity_id = _data.data.code_activity_id;
-							window.location.href = "/ptcode/caption?type="+code_activity_id+"";
+							window.location.href = "/m_ptcode/caption?type="+code_activity_id+"";
 						} else {
 							$ipt.addClass('err');
 							$p.html(_data.msg);
