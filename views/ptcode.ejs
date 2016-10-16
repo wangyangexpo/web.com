@@ -1,0 +1,117 @@
+<% include ./header.ejs %>
+ <link rel="stylesheet" href="<%=helpers.staticurl('/css/join.css')%>" /> 
+<!--<link rel="stylesheet" href="/css/join.css" />-->
+<style>
+	.page-ptcode {
+		width: 520px;
+		padding-top: 160px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.page-ptcode input {
+		display: block;
+		width: 100%;
+		height: 68px;
+		line-height: 68px;
+		border: solid 1px #dfdfdf;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 24px;
+		color: #333;
+	}
+	
+	.page-ptcode input.err {
+		border: solid 1px #F00;
+	}
+	
+	.page-ptcode a {
+		display: block;
+		width: 100%;
+		height: 68px;
+		line-height: 68px;
+		margin-top: 60px;
+		border-radius: 5px;
+		background: #999;
+		text-align: center;
+		font-size: 26px;
+		color: #FFF;
+	}
+	
+	.page-ptcode a.on {
+		background: #985ec9;
+	}
+	
+	.page-ptcode p {
+		height: 50px;
+		line-height: 50px;
+		color: #999;
+	}
+</style>
+<div class="page-ptcode">
+	<input id="ipt" type="text" name="name" value="" placeholder="请输入您的PT码">
+	<p id="ts"></p>
+	<a id="btn" class="on" href="javascript:;">验证PT码</a>
+</div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script>
+	var uid = "<%=uid%>";
+	var token = "<%=token%>";
+	var sign = "<%=sign%>";
+	$(function() {
+		var $btn = $('#btn');
+		var $ipt = $('#ipt');
+		var $p = $('#ts');
+		var isClick = false;
+		
+		$btn.click(function() {
+			if(isClick) {
+				return;
+			}
+			var value = $ipt.val();
+			if(!value) {
+				$ipt.addClass('err');
+				$p.html('PT码不能为空');
+			} else {
+				$btn.removeClass('on');
+				$btn.html('正在验证您的PT码...');
+				isClick = true;
+				$.ajax({
+					type: "post",
+					url: "http://web-store-test.ptdev.cn/code/pt",
+					data: {
+						code: value,
+						uid: uid,
+						token: token,
+						sign: sign
+					},
+					success: function(data) {
+						var _data = JSON.parse(data);
+						var http_code = _data.http_code;
+						if(http_code == '40012') {
+							$ipt.addClass('err');
+							$p.html('请先登录');
+							window.location.href = '/user/login'
+						} else if(http_code == 200) {
+							var code_activity_id = _data.data.code_activity_id;
+							window.location.href = "/ptcode/caption?type="+code_activity_id+"";
+						} else {
+							$ipt.addClass('err');
+							$p.html(_data.msg);
+						}
+						$btn.addClass('on');
+						$btn.html('验证PT码');
+						isClick = false;
+					},
+					error: function() {
+						$p.html('验证失败,请稍候在试');
+						$ipt.addClass('err');
+						$btn.addClass('on');
+						$btn.html('验证PT码');
+						isClick = false;
+					}
+				});
+			}
+		})
+	});
+</script>

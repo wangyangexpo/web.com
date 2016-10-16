@@ -39,6 +39,26 @@ router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
 
+/*验证PT码相关路由*/
+router.get('/ptcode',(req,res)=>{
+	require('../page_build_fns/ptcode')(req,res);
+});
+router.get('/ptcode/caption',(req,res)=>{
+	require('../page_build_fns/ptcodecaption')(req,res);
+});
+router.get('/ptcode/caption/:id',(req,res)=>{
+	require('../page_build_fns/ptcodecaptionId')(req,res);
+});
+router.get('/m_ptcode',(req,res)=>{
+	require('../page_build_fns/m_ptcode')(req,res);
+});
+router.get('/m_ptcode/caption',(req,res)=>{
+	require('../page_build_fns/m_ptcodecaption')(req,res);
+});
+router.get('/m_ptcode/caption/:id',(req,res)=>{
+	require('../page_build_fns/m_ptcodecaptionId')(req,res);
+});
+
 // 自助服务
 router.get('/selfservice',(req,res)=>{
 	require('../page_build_fns/selfservice')(req,res);

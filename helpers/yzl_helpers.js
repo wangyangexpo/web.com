@@ -7,6 +7,9 @@ var helpers = {
 	getShoppingMallUrl: function(v){
 		return configs.storeurl + v;
 	},
+	getShoppingMallUrl_m: function(v){
+		return configs.devurl_m + v;
+	},
 	// 对汉字进行编码
 	// 原因：在IE中链接中存在汉字会乱码
 	encodeURIComponent: function(v){
