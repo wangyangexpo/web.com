@@ -4,7 +4,7 @@
 var lib = require('./lib');
 var commeData = require('./commeData');
 var arr = {
-	3: {
+	4: {
 		title: 'PaiBot',
 		k: 'paibot'
 	},
