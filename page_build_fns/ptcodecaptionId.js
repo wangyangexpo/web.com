@@ -3,6 +3,8 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
+var request = require('request');
+var config = require('./../lib/configs');
 var arr = {
 	4: {
 		title: 'PaiBot',

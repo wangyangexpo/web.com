@@ -3,6 +3,8 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
+var request = require('request');
+var config = require('./../lib/configs');
 
 var about = function(req, res) {
 	var lib_o = new lib();
