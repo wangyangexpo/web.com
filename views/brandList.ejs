@@ -5,7 +5,9 @@
 <div class="brandList-page">
 	<%if(js_tag === 'pthome_fans' || js_tag === 'pthome_hot'){%>
 		<div class="pt_home_banner" style="background: url('<%=helpers.drawImage(pthome_banner[0].basic_image_1)%>') no-repeat 50% 0"></div>
-	<%}else{%>
+	<%}else if(js_tag === 'yy_wz1'){%>
+			<div class="pt_home_banner" style="background: url('<%=helpers.drawImage(yy_wzbanner[0].basic_image_1)%>') no-repeat 50% 0"></div>
+		<%}else{%>
 		<%if(banner&&banner.length > 0){%>
 		<%if(banner.length == 1){%>
 		<div class="swiper-box1" style="background: url(<%=helpers.drawImage(banner[0].basic_image_1)%>) no-repeat top center;">
