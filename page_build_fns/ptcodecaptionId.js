@@ -45,11 +45,12 @@ var about = function(req, res) {
 					if(http_code == '40012') {
 						res.redirect('/user/login');
 					} else if(http_code == 200) { // 已绑定过，渲染页面
-						content.k = arr[tag].k;
-						content.title = arr[tag].title + ' - ' + content.title;
+						var _tag = tag || data.data.code_activity_id;
+						content.k = arr[_tag].k;
+						content.title = arr[_tag].title + ' - ' + content.title;
 						res.render('ptcodecaptionId', content);
 					} else {
-						res.redirect('/user/ptcode');
+						res.redirect('/ptcode');
 					}
 				} else {
 					console.log('发生错误！', +error);

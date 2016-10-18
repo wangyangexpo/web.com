@@ -2,6 +2,14 @@
  <link rel="stylesheet" href="<%=helpers.staticurl('/css/ptcodecaption.css')%>" /> 
 <!--<link rel="stylesheet" href="/css/ptcodecaption.css" />-->
 <div class="page-ptcodecaption">
+	<div class="bg1">
+		<p>
+			<%=t%><br />
+			6.5折优惠
+		</p>
+		<p>恭喜您获得优惠特权</p>
+	</div>
+<div class="<%= k === 'paibot' ? 'paibot' : 'paiband'%>">
   <div class="bg2">
     <h2>使用说明</h2>
     <h3>点击“查看详情”后，选择想要购买的款式，并点击立即“立即购买”。</h3>
@@ -16,5 +24,6 @@
     </div>
     <a class="btn" href="/ptcode/caption/<%=pageType%>">查看详情</a>
   </div>
+</div>
 </div>
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>

@@ -5,6 +5,16 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var request = require('request');
 var config = require('./../lib/configs');
+var arr = {
+	4: {
+		title: 'PaiBot',
+		k: 'paibot'
+	},
+	2: {
+		title: 'PaiBand',
+		k: 'paiband'
+	}
+};
 
 var about = function(req, res) {
 	var lib_o = new lib();
@@ -34,11 +44,14 @@ var about = function(req, res) {
 					if(http_code == '40012') {
 						res.redirect('/user/login');
 					} else if(http_code == 200) { // 已绑定过，渲染页面
-						content.pageType = type;
+						var _type = type || data.data.code_activity_id;
+						content.pageType = _type;
+						content.k = arr[_type].k;
+						content.t = arr[_type].title;
 						content.title = 'PT码使用说明 - ' + content.title;
 						res.render('ptcodecaption', content);
 					} else {
-						res.redirect('/user/ptcode');
+						res.redirect('/ptcode');
 					}
 				} else {
 					console.log('发生错误！', +error);
