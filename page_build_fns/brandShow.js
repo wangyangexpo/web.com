@@ -31,7 +31,7 @@ var page_brandShow = function(req, res) {
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
 				content.name = name;
-				if(content.show && content.show.length > 0) {
+				if(content.show && content.show.length > 0) { // 取到的详情数据
 					var _date = new Date(Number(content.show[0].created_at) * 1000);
 					content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDay() + ' ' + _date.getHours() + ':' + _date.getMinutes();
 					if(content._banner && content._banner.length > 0) {

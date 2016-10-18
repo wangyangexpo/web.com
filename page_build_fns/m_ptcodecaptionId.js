@@ -15,6 +15,12 @@ var arr = {
 		k: 'paiband'
 	}
 };
+var userLogin = function(){
+	var url = configs.m_host;
+	var from = 'mall',
+		callback = encodeURIComponent(url + '/logg_check?redirect=' + url + '/m_ptcode');
+	res.redirect(configs.loginurl + '?from=' + from + '&callback=' + callback);
+};
 
 var about = function(req, res) {
     var lib_o = new lib();
@@ -42,9 +48,9 @@ var about = function(req, res) {
 					var data = JSON.parse(body);
 					var http_code = data.http_code;
 					if(http_code == '40012') {
-						res.redirect('/user/login');
+						userLogin();
 					} else if(http_code == 200) { // 已绑定过，渲染页面
-						var _tag = tag || data.data.code_activity_id;
+						var _tag = data.data.code_activity_id || tag;
 						content.k = arr[_tag].k;
 						content.title = arr[_tag].title + ' - ' + content.title;
 						res.render('mobile/ptcodecaptionId', content);
@@ -57,7 +63,7 @@ var about = function(req, res) {
 				}
 			})
 		} else {
-			res.redirect('/user/login');
+			userLogin();
 		}
     })
 }

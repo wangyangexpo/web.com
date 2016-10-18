@@ -6,6 +6,13 @@ var commeData = require('./commeData');
 var request = require('request');
 var config = require('./../lib/configs');
 
+var userLogin = function(){
+	var url = configs.localurl;
+	var from = 'mall',
+		callback = encodeURIComponent(url + '/logg_check?redirect=' + url + '/ptcode');
+	res.redirect(configs.loginurl + '?from=' + from + '&callback=' + callback);
+};
+
 var about = function(req, res) {
 	var lib_o = new lib();
 //	console.log(config.storeurl);
@@ -32,7 +39,7 @@ var about = function(req, res) {
 					var data = JSON.parse(body);
 					var http_code = data.http_code;
 					if(http_code == '40012'){
-						res.redirect('/user/login');
+						userLogin();
 					}else if(http_code == 200){
 						var code_activity_id = data.data.code_activity_id;
 						res.redirect('/ptcode/caption?type=' + code_activity_id);
@@ -49,7 +56,7 @@ var about = function(req, res) {
 				}
 			})
 		} else {
-			res.redirect('/user/login');
+			userLogin();
 		}
 	})
 }

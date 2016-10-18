@@ -8,7 +8,7 @@ var userCheck = function(req,res){
 	res.cookie('nickname',nickname);
 	//global.nickname = nickname;
 	var redirect = req.query.redirect;
-	console.log('nickname:'+nickname+'redirect:'+redirect);
+	//console.log('nickname:'+nickname+'redirect:'+redirect);
 	res.redirect(redirect);
 }
 
