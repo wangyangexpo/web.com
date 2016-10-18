@@ -5,11 +5,11 @@ var lib = require('./lib');
 var commeData = require('./commeData');
 var request = require('request');
 var config = require('./../lib/configs');
-var userLogin = function(){
-	var url = configs.m_host;
+var userLogin = function(res){
+	var url = config.m_host;
 	var from = 'mall',
 		callback = encodeURIComponent(url + '/logg_check?redirect=' + url + '/m_ptcode');
-	res.redirect(configs.loginurl + '?from=' + from + '&callback=' + callback);
+	res.redirect(config.loginurl + '?from=' + from + '&callback=' + callback);
 };
 
 var about = function(req, res) {
@@ -39,7 +39,7 @@ var about = function(req, res) {
 					var data = JSON.parse(body);
 					var http_code = data.http_code;
 					if(http_code == '40012'){
-						userLogin();
+						userLogin(res);
 					}else if(http_code == 200){
 						var code_activity_id = data.data.code_activity_id;
 						res.redirect('/m_ptcode/caption?type=' + code_activity_id);
@@ -55,7 +55,7 @@ var about = function(req, res) {
 				}
 			})
 		} else {
-			userLogin();
+			userLogin(res);
 		}
 	})
 }
