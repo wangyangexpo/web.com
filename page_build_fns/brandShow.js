@@ -3,10 +3,12 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
+var msgmap = require('./../lib/msgMap');
 
 var page_brandShow = function(req, res) {
 	var lib_o = new lib();
 	var name = req.query.name;
+	var _msg = req.query.msg;
 	lib_o.getData({
 			tag: req.query.tag
 		}, 'show')
@@ -29,8 +31,9 @@ var page_brandShow = function(req, res) {
 		.then(function() {
 			commeData(req,res,lib_o, function(count) {
 				var content = lib_o.getAllContent();
+				var msgstr = _msg ? msgmap[_msg] : (name || '');
 				content.shopcart = count;
-				content.name = name;
+				content.name = msgstr;
 				if(content.show && content.show.length > 0) { // 取到的详情数据
 					var _date = new Date(Number(content.show[0].created_at) * 1000);
 					content.show[0].created_at = _date.getFullYear() + '-' + (_date.getMonth() + 1) + '-' + _date.getDay() + ' ' + _date.getHours() + ':' + _date.getMinutes();

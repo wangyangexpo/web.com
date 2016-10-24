@@ -4,9 +4,11 @@
  */
 var lib = require('./lib');
 var commeData = require('./commeData');
+var msgmap = require('./../lib/msgMap');
 var theatreList = function(req,res){
 	var _tag = req.query.tag;
 	var _name = req.query.name;
+	var _msg = req.query.msg;
 	var lib_o = new lib();
 	lib_o.getData({tag:'brand_banners'},'banner')
 		.then(function(){return lib_o.getData({tag:_tag},'bannerList_list')}).catch(function(error) {
@@ -24,10 +26,12 @@ var theatreList = function(req,res){
 		.then(function(){
 			commeData(req,res,lib_o,function(count){
 				var content = lib_o.getAllContent();
+				var msgstr = _msg ? msgmap[_msg] : (_name || '');
 				content.shopcart = count;
-				content.sub_name = _name;
+				content.sub_name = msgstr;
 				content.js_tag = _tag;
-				content.title = _name + ' - ' + content.title;
+				content.js_showtag = _msg;
+				content.title = msgstr + ' - ' + content.title;
 				//console.log('dddd '+JSON.stringify(content));
 				res.render('brandList',content);
 			})

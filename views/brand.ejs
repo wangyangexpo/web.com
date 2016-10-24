@@ -52,7 +52,7 @@
 
 	<%if(brand_ppsj_top){%>
 	<%if(brand_ppsj_top[0]){%>
-	<a href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[0].tag%>" class="event" style="background: url(<%=helpers.drawImage(brand_ppsj_top[0].basic_image_1)%>);">
+	<a href="brandShow?msg=1&tag=<%=brand_ppsj_top[0].tag%>" class="event" style="background: url(<%=helpers.drawImage(brand_ppsj_top[0].basic_image_1)%>);">
 		<dl>
 			<dt>
 			<%=brand_ppsj_top[0].name%>
@@ -68,7 +68,7 @@
 	<%}%>
 	<div class="event1">
 		<%if(brand_ppsj_top[1]){%>
-		<a class="fl" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[1].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[1].basic_image_1)%>);">
+		<a class="fl" href="brandShow?msg=1&tag=<%=brand_ppsj_top[1].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[1].basic_image_1)%>);">
 			<dl style="margin-left: 420px;">
 				<dt>
 			<%=brand_ppsj_top[1].name%>
@@ -83,7 +83,7 @@
 		</a>
 		<%}%>
 		<%if(brand_ppsj_top[2]){%>
-		<a class="fr" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[2].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[2].basic_image_1)%>);">
+		<a class="fr" href="brandShow?msg=1&tag=<%=brand_ppsj_top[2].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[2].basic_image_1)%>);">
 			<dl style="margin-left: 35px;margin-top: 220px;">
 				<dt class="c">
 			<%=brand_ppsj_top[2].name%>
@@ -97,7 +97,7 @@
 	</div>
 	<div class="event1">
 		<%if(brand_ppsj_top[4]){%>
-		<a class="fr" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[4].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[4].basic_image_1)%>);">
+		<a class="fr" href="brandShow?msg=1&tag=<%=brand_ppsj_top[4].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[4].basic_image_1)%>);">
 			<dl style="margin-left: 420px;">
 				<dt>
 			<%=brand_ppsj_top[4].name%>
@@ -112,7 +112,7 @@
 		</a>
 		<%}%>
 		<%if(brand_ppsj_top[3]){%>
-		<a class="fl" href="brandShow?name=<%=helpers.encodeURIComponent('品牌事件')%>&tag=<%=brand_ppsj_top[3].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[3].basic_image_1)%>);">
+		<a class="fl" href="brandShow?msg=1&tag=<%=brand_ppsj_top[3].tag%>" style="background: url(<%=helpers.drawImage(brand_ppsj_top[3].basic_image_1)%>);">
 			<dl style="margin-left: 35px">
 				<dt>
 			<%=brand_ppsj_top[3].name%>
@@ -130,7 +130,7 @@
 	<%}%>
 
 	<div class="more">
-		<a href="brandList?tag=brand_ppsj_top&name=<%=helpers.encodeURIComponent('品牌事件')%>">更多事件</a>
+		<a href="brandList?tag=brand_ppsj_top&msg=1">更多事件</a>
 	</div>
 
 	<%if(brand_banner1&&brand_banner1.length > 0){%>
@@ -157,7 +157,7 @@
 				<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
 					<%}else{%>
-					<a href="brandShow?name=<%=helpers.encodeURIComponent('媒体报道')%>&tag=<%=v.tag%>">
+					<a href="brandShow?msg=2&tag=<%=v.tag%>">
 						<%}%>
 						<img src="<%=helpers.drawImage(v.basic_image_1)%>" />
 					</a>
@@ -166,7 +166,7 @@
 							<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
 					<%}else{%>
-					<a href="brandShow?name=<%=helpers.encodeURIComponent('媒体报道')%>&tag=<%=v.tag%>">
+					<a href="brandShow?msg=2&tag=<%=v.tag%>">
 						<%}%>
 					<%=v.name%>
 					</a>
@@ -182,7 +182,7 @@
 	<%}%>
 
 	<div class="more">
-		<a href="brandList?tag=brand_mediacoverage&name=<%=helpers.encodeURIComponent('媒体报道')%>">更多报道</a>
+		<a href="brandList?tag=brand_mediacoverage&msg=2">更多报道</a>
 	</div>
 
 	<div class="title1">

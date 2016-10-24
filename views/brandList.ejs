@@ -46,7 +46,7 @@
 			<%if(v.basic_url){%>
 				<a target="_blank" href="<%=v.basic_url%>">
 			<%}else{%>
-				<a href="brandShow?name=<%=helpers.encodeURIComponent(sub_name)%>&tag=<%=v.tag%>">
+				<a href="brandShow?msg=<%=js_msgtag%>&tag=<%=v.tag%>">
 			<%}%>
 			<img src="<%=helpers.drawImage(v.basic_image_3)%>" />
 			<dl>
@@ -79,6 +79,7 @@
 <script>
 	var js_tag = "<%=js_tag%>";
 	var js_name = "<%=sub_name%>";
+	var js_showtag = "<%=js_showtag%>";
 </script>
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>

@@ -43,7 +43,7 @@
 			</p>
 		</div>
 	</div>
-	<a href="brandShow?tag=OiKrar&name=<%=helpers.encodeURIComponent('我要加入葡萄之家')%>">我要加入葡萄之家></a>
+	<a href="brandShow?tag=OiKrar&msg=5">我要加入葡萄之家></a>
 </div>
 <!-- /什么是葡萄之家 -->
 
@@ -83,14 +83,14 @@
 			<% hot_acts.slice(0,2).forEach(function(item,index){ %>
 			<dl>
 				<dt>
-					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
+					<a href="/brandShow?msg=3&tag=<%=item.tag%>"><img src="<%=helpers.drawImage(item.basic_image_1)%>" /></a>
 					<p><%=item.name%></p>
 				</dt>
 				<dd>
 					<div>
 						<%-item.basic_content%>
 					</div>
-					<a href="/brandShow?name=<%=helpers.encodeURIComponent('热门活动')%>&tag=<%=item.tag%>">查看全文</a>
+					<a href="/brandShow?msg=3&tag=<%=item.tag%>">查看全文</a>
 				</dd>
 			</dl>
 			<% }) %>
@@ -98,7 +98,7 @@
 		</div>
 	</div>
 	<div class="more">
-		<a href="brandList?tag=pthome_hot&name=<%=helpers.encodeURIComponent('热门活动')%>">更多活动</a>
+		<a href="brandList?tag=pthome_hot&msg=3">更多活动</a>
 	</div>
 </div>
 <!-- /热门活动 -->
@@ -126,7 +126,7 @@
 						<%=item.title%>
 					</dd>
 					<dd>
-						<a href="/brandShow?name=<%=helpers.encodeURIComponent('葡粉故事')%>&tag=<%=item.tag%>">查看全文</a>
+						<a href="/brandShow?msg=4&tag=<%=item.tag%>">查看全文</a>
 					</dd>
 				</dl>
 			</li>
@@ -136,7 +136,7 @@
 		</div>
 	</div>
 	<div class="more">
-		<a href="brandList?tag=pthome_fans&name=<%=helpers.encodeURIComponent('葡萄故事')%>">更多故事</a>
+		<a href="brandList?tag=pthome_fans&msg=4">更多故事</a>
 	</div>
 	<div style="height:50px">
 
