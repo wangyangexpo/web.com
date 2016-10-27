@@ -26,7 +26,7 @@ var commeData = function(req,res,lib_o,callback){
 		})
 		.then(function(){
 			getStore(req,res,function(text,sessid){
-				console.log('yzl-tag:getStore完毕');
+				//console.log('yzl-tag:getStore完毕');
 				if(text) {
 					var result = JSON.parse(text);
 					if (result.status == 200) {
