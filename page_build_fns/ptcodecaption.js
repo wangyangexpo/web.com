@@ -6,11 +6,11 @@ var commeData = require('./commeData');
 var request = require('request');
 var config = require('./../lib/configs');
 var arr = {
-	4: {
+	5: {
 		title: 'PaiBot',
 		k: 'paibot'
 	},
-	2: {
+	6: {
 		title: 'PaiBand',
 		k: 'paiband'
 	}
