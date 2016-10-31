@@ -61,4 +61,26 @@
 	<div class="bg9"></div>
 	<div class="qr"></div>
 </div>
+<script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
+<script>
+	(function(){
+		var $page_2016s11_qr = $('#page-2016s11_qr');
+		var timestr = 0;
+		if($('body').width() > 1490){
+			$(window).on('scroll',function(){
+			var curtimestr = +(new Date),
+				scrollTop = 0;
+			if((curtimestr - timestr) >= 50){
+				scrollTop = $(document).scrollTop();
+				if(scrollTop > 500){
+					$page_2016s11_qr.show()
+				}else{
+					$page_2016s11_qr.hide()
+				}
+				timestr = curtimestr;
+			}
+			})
+		}
+	})();
+</script>
 <% include ./footer.ejs %>
