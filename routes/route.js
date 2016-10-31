@@ -39,6 +39,11 @@ router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
 
+//2016s11
+router.get('/2016s11',(req,res)=>{
+	require('../page_build_fns/2016s11')(req,res);
+});
+
 /*验证PT码相关路由*/
 router.get('/ptcode',(req,res)=>{
 	require('../page_build_fns/ptcode')(req,res);
