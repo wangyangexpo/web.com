@@ -37,6 +37,7 @@
 		background: url(<%=helpers.staticurl('/images/2016s11/2016s11_08.jpg')%>) no-repeat center top;
 	}
 	.page-2016s11 .qr {
+		display: none;
 		z-index: 1;
 		position: fixed;
 		left: 50%;
@@ -59,7 +60,7 @@
 	<div class="bg7"></div>
 	<div class="bg8"></div>
 	<div class="bg9"></div>
-	<div class="qr"></div>
+	<div id="page-2016s11_qr" class="qr"></div>
 </div>
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script>
