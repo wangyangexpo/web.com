@@ -3,8 +3,8 @@
 <!--<link rel="stylesheet" href="/css/join.css" />-->
 <style>
 	.page-ptcode {
-		width: 520px;
-		padding-top: 160px;
+		width: 600px;
+		padding-top: 90px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -16,6 +16,7 @@
 		line-height: 68px;
 		border: solid 1px #dfdfdf;
 		border-radius: 5px;
+		margin-top: 55px;
 		text-align: center;
 		font-size: 24px;
 		color: #333;
@@ -30,7 +31,6 @@
 		width: 100%;
 		height: 68px;
 		line-height: 68px;
-		margin-top: 60px;
 		border-radius: 5px;
 		background: #999;
 		text-align: center;
@@ -47,11 +47,44 @@
 		line-height: 50px;
 		color: #999;
 	}
+	
+	.page-ptcode .pt {
+		height:246px;
+		background: url(<%=helpers.drawImage('/images/ptcode/pt.png')%>) no-repeat center top;
+	}
+	.page-ptcode .explain {
+		line-height: 24px;
+		margin-top: 60px;
+		padding-bottom: 50px;
+		color: #555;
+	}
+	.page-ptcode .explain h2 {
+		font-size: 16px;
+		color: #555;
+	}
 </style>
 <div class="page-ptcode">
+	<div class="pt"></div>
 	<input id="ipt" type="text" name="name" value="" placeholder="请输入您的PT码">
 	<p id="ts"></p>
 	<a id="btn" class="on" href="javascript:;">验证PT码</a>
+		<div class="explain">
+		<h2>为了充分保障您的权益，请在使用PT码前了解以下内容：</h2><br />
+		1.   如果遇到PT码无法识别的情况，请及时联系
+     客服：400-651-6161；<br /><br />
+2.  凭PT码购买商品，需要根据PT码的使用规则   
+     一次性付款完成整个流程，不可与非PT<br/>&nbsp;&nbsp;&nbsp;&nbsp;码的  
+     优惠券同时使用;<br /><br />
+3.  PT码不可重复使用，支付完成后，该码立即
+    失效；<br /><br />
+4.  凭PT码购买时，取消订单或退货时，将退还 
+    您实际支付的金额；<br /><br />
+5.  PT码在您登录葡萄账号并验证成功后，就与
+    您的账号进行绑定，直到付款成功或过<br/>&nbsp;&nbsp;&nbsp;&nbsp;使用
+    时效；<br /><br />
+6.  PT码非实名认证，请妥善保管，我们对人为
+    原因造成的损失不承担任何责任。
+	</div>
 </div>
 <script src="<%=helpers.staticurl('/js/lib/jquery.min.js')%>"></script>
 <script>
