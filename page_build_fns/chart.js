@@ -14,7 +14,7 @@ var about = function(req,res){
 		content.shopcart = count;
 		switch(id){
 			case 'ttsj':
-			title = '涂涂世界';
+			title = '淘淘与魔豆';
 			view = 'chart_ttsj';
 			break;
 		}
