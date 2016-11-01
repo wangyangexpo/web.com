@@ -39,6 +39,11 @@ router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
 
+//识别图
+router.get('/chart/:id',(req,res)=>{
+	require('../page_build_fns/chart')(req,res);
+});
+
 //2016s11
 router.get('/2016s11',(req,res)=>{
 	require('../page_build_fns/2016s11')(req,res);
