@@ -7,14 +7,14 @@
 			PT码验证
 		</title>
     <style>
-       *{
+           *{
       margin: 0;
       padding: 0;
     }
       body {
         background: #EEE;
       }
-      .page-mptcode input {
+      .page-mptcode input.ipt {
         display: block;
         width: 90%;
         height: 46px;
@@ -28,9 +28,38 @@
         border: solid 1px #B297C9;
         text-indent: 10px;
       }
-      .page-mptcode input.err {
-      	border: solid 1px #f00;
+      
+      .page-mptcode .vcode {
+      	width: 90%;
+      	margin: 1rem auto 0 auto;
+      	overflow: hidden;
       }
+      
+      .page-mptcode .vcode input {
+      	display: block;
+      	float: left;
+      	width: 70%;
+      	height: 46px;
+      	line-height: 46px;
+        font-size: 20px;
+      	 border-radius: 5px;
+        border: solid 1px #B297C9;
+        text-indent: 10px;
+      }
+      
+      .page-mptcode .vcode a {
+      	display: block;
+      	float: right;
+      	width: 25%;
+      	height: 46px;
+      }
+      
+      .page-mptcode .vcode img {
+      	display: block;
+      	width: 100%;
+      	height: 100%;
+      }
+
       .page-mptcode a.btn {
         display: block;
         width: 90%;
@@ -61,6 +90,7 @@
       	color: #999;
       	height: 40px;
       	line-height: 40px;
+      	color: #F00;
       }
       .page-mptcode .explain {
       	width: 90%;
@@ -85,6 +115,12 @@
   <div class="page-mptcode">
     <a class="logo" href="/"></a>
     <input id="ipt" placeholder="请输入PT码"/>
+    <div class="vcode">
+		<input id="vcode" type="text" placeholder="请输入验证码"/>
+		<a href="javascript:;" id="vcode_reset">
+			<img src="http://m-store.putao.com/code/pt/verify?uid=<%=uid%>&token=<%=token%>&sign=<%=sign%>" />
+		</a>
+	</div>
     <p class="ts" id="ts"></p>
     <a id="btn" class="btn" href="javascript:;">验证</a>
        <div class="explain">
@@ -128,17 +164,23 @@
 	$(function() {
 		var $btn = $('#btn');
 		var $ipt = $('#ipt');
+		var $vcode_reset = $('#vcode_reset');
+		var $vcode = $('#vcode');
 		var $p = $('#ts');
 		var isClick = false;
-		
+		$vcode_reset.click(function(){
+			$(this).html('<img src="http://m-store.putao.com/code/pt/verify?uid=<%=uid%>&token=<%=token%>&sign=<%=sign%>"/>')	
+		})
 		$btn.click(function() {
 			if(isClick) {
 				return;
 			}
 			var value = $ipt.val();
+			var value1 = $vcode.val();
 			if(!value) {
-				$ipt.addClass('err');
 				$p.html('PT码不能为空');
+			}else if(!value1){
+				$p.html('验证码不能为空');
 			} else {
 				$btn.removeClass('on');
 				$btn.html('正在验证您的PT码...');
@@ -149,6 +191,7 @@
 					url: 'http://m-store.putao.com/code/pt',
 					data: {
 						code: value,
+						verify_code: value1,
 						uid: uid,
 						token: token,
 						sign: sign
@@ -157,14 +200,13 @@
 						var _data = JSON.parse(data);
 						var http_code = _data.http_code;
 						if(http_code == '40012') {
-							$ipt.addClass('err');
 							$p.html('请先登录');
 						} else if(http_code == 200) {
 							var code_activity_id = _data.data.code_activity_id;
 							window.location.href = "/m_ptcode/caption?type="+code_activity_id+"";
 						} else {
-							$ipt.addClass('err');
 							$p.html(_data.msg);
+							$vcode_reset.trigger('click');
 						}
 						$btn.addClass('on');
 						$btn.html('验证PT码');
@@ -172,7 +214,6 @@
 					},
 					error: function() {
 						$p.html('验证失败,请稍候在试');
-						$ipt.addClass('err');
 						$btn.addClass('on');
 						$btn.html('验证PT码');
 						isClick = false;
