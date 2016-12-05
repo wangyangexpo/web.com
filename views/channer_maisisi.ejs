@@ -1,8 +1,18 @@
 <% include ./header.ejs %>
 <style>
 	.channer-page div:first-child {
+		position: relative;
 		background: url(<%=helpers.staticurl('/images/channer/maisisi/01.jpg')%>) no-repeat center;
 		height: 867px;
+	}
+	.channer-page div:first-child a{
+		position: absolute;
+		top: 400px;
+		left: 50%;
+		margin-left: -550px;
+		display: block;
+		width: 193px;
+		height: 50px;
 	}
 	.channer-page div:nth-child(2) {
 		background: url(<%=helpers.staticurl('/images/channer/maisisi/02.jpg')%>) no-repeat center;
@@ -39,13 +49,13 @@
 
 </style>
 <div class="channer-page">
-	<div></div>
+	<div><a target="_blank" onclick="_hmt.push(['_trackEvent', 'signcouper', 'kown', '1'])" href="http://store.putao.com/page/maisisi?utm_source=signsite&utm_medium=know&utm_campaign=signcouper"></a></div>
 	<div></div>
 	<div></div>
 	<div></div>
 	<div>
-		<a target="_blank" href="http://store.putao.com/choose/maisisi"></a>
-		<a target="_blank" href="http://store.putao.com/choose/tansuohaofeichuan"></a>
+		<a onclick="_hmt.push(['_trackEvent', 'signcouper', 'buymss', '2'])" target="_blank" href="http://store.putao.com/choose/maisisi?utm_source=signsite&utm_medium=know&utm_campaign=signcouper"></a>
+		<a target="_blank" onclick="_hmt.push(['_trackEvent', 'signcouper', 'buydown', '3'])" href="http://store.putao.com/page/tansuohaofeichuan?utm_source=signsite&utm_medium=buydown&utm_campaign=signcouper"></a>
 	</div>
 </div>
 
