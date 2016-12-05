@@ -29,15 +29,15 @@ var userCheck = function(req, res) {
 	}, function(err, httpResponse, body) {
 		try {
 			if(!err && httpResponse.statusCode == 200) {
-				res.redirect(redirect + '&isReg=1');
+				res.redirect('http://www.putao.com?isReg=1');
 			} else {
-				res.redirect(redirect);
+				res.redirect('http://www.putao.com');
 //				if(httpResponse) {
 //					return console.log("error" + err + ' || ' + httpResponse ? httpResponse.statusCode : '');
 //				}
 			}
 		} catch(e) {
-			res.redirect(redirect);
+			res.redirect('http://www.putao.com');
 		}
 	})
 }
