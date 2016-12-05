@@ -26,6 +26,7 @@ var index = function(req,res){
 			commeData(req,res,lib_o,function(count){
 				var content = lib_o.getAllContent();
 				content.shopcart = count;
+				content.isReg = req.query.isReg;
 //				console.log(JSON.stringify(content))
 				res.render('new_index',content);
 			})

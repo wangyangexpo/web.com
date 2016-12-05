@@ -39,6 +39,11 @@ router.get('/theatre', (req, res) => {
 	require('../page_build_fns/theatre')(req, res);
 });
 
+// 渠道
+router.get('/channel/:id',(req,res)=>{
+	require('../page_build_fns/channel')(req,res);
+});
+
 //识别图
 router.get('/chart/:id',(req,res)=>{
 	require('../page_build_fns/chart')(req,res);
@@ -99,6 +104,28 @@ router.get('/brandListMore', (req, res) => {
 });
 router.get('/app', (req, res) => {
 	require('../page_build_fns/app')(req, res);
+});
+
+router.get('/logg_reg_check', (req, res) => {
+	require('../page_build_fns/user_reg_check')(req, res);
+});
+
+// 注册
+router.get('/user/register', (req, res) => {
+	//var url = global.currenturl;
+	var url = '';
+	if(req.hostname.indexOf(configs.m_host_key) != -1) {
+		//url = 'http://m.putao.com';
+		url = configs.m_host;
+	} else {
+		//url = 'http://putao.com/';
+		url = configs.localurl;
+	}
+	//var url = 'http://m.putao.com';
+	var from = 'mall',
+		//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
+		callback = encodeURIComponent(url + '/logg_reg_check?redirect=' + url);
+	res.redirect(configs.regurl + '?from=' + from + '&callback=' + callback);
 });
 
 router.get('/logg_check', (req, res) => {
@@ -299,29 +326,6 @@ router.get('/m_more', (req, res) => {
 // 手机端品牌动态详情
 router.get('/m_brand/show/:tag', (req, res) => {
     require('../page_build_fns/m_show')(req,res);
-});
-// router.get('/brand/:category/:tag', (req, res) => {
-//     require('../page_build_fns/m_show')(req,res);
-// });
-//router.get('/brandShow', (req, res) => {
-//	require('../page_build_fns/m_show')(req, res);
-//});
-// 手机端注册
-router.get('/user/register', (req, res) => {
-	//var url = global.currenturl;
-	var url = '';
-	if(req.hostname.indexOf(configs.m_host_key) != -1) {
-		//url = 'http://m.putao.com';
-		url = configs.m_host;
-	} else {
-		//url = 'http://putao.com/';
-		url = configs.localurl;
-	}
-	//var url = 'http://m.putao.com';
-	var from = 'mall',
-		//callback = encodeURIComponent(configs.localurl+'/user/check?redirect='+configs.localurl+url);
-		callback = encodeURIComponent(url + '/logg_check?redirect=' + url);
-	res.redirect(configs.regurl + '?from=' + from + '&callback=' + callback);
 });
 
 // 嘉年华

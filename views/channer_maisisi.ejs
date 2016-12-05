@@ -1,0 +1,52 @@
+<% include ./header.ejs %>
+<style>
+	.channer-page div:first-child {
+		background: url(<%=helpers.staticurl('/images/channer/maisisi/01.jpg')%>) no-repeat center;
+		height: 867px;
+	}
+	.channer-page div:nth-child(2) {
+		background: url(<%=helpers.staticurl('/images/channer/maisisi/02.jpg')%>) no-repeat center;
+		height: 620px;
+	}
+	.channer-page div:nth-child(3) {
+		background: url(<%=helpers.staticurl('/images/channer/maisisi/03.jpg')%>) no-repeat center;
+		height: 706px;
+	}
+	.channer-page div:nth-child(4) {
+		background: url(<%=helpers.staticurl('/images/channer/maisisi/04.jpg')%>) no-repeat center;
+		height: 364px;
+	}
+	.channer-page div:nth-child(5) {
+		position: relative;
+		background: url(<%=helpers.staticurl('/images/channer/maisisi/05.jpg')%>) no-repeat center;
+		height: 892px;
+	}
+	.channer-page div:nth-child(5) a {
+		display: block;
+		position: absolute;
+		width: 193px;
+		height: 48px;
+		left: 50%;
+	}
+	.channer-page div:nth-child(5) a:first-child {
+		bottom: 190px;
+		margin-left: -310px;
+	}
+	.channer-page div:nth-child(5) a:last-child {
+		bottom: 190px;
+		margin-left: 280px;
+	}
+
+</style>
+<div class="channer-page">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div>
+		<a target="_blank" href="http://store.putao.com/choose/maisisi"></a>
+		<a target="_blank" href="http://store.putao.com/choose/tansuohaofeichuan"></a>
+	</div>
+</div>
+
+<% include ./footer.ejs %>
