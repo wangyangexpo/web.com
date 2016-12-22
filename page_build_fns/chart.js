@@ -17,8 +17,18 @@ var about = function(req,res){
 			title = '淘淘与魔豆';
 			view = 'chart_ttsj';
 			break;
+			
+			case 'ttmd':
+			title = '评测-淘淘之童话之旅-葡萄科技';
+			view = 'chart_ttmd';
+			break;
+			
+			case 'ttmd_1':
+			title = '导读-淘淘之童话之旅-葡萄科技';
+			view = 'chart_ttmd_1';
+			break;
 		}
-		content.title = ''+title+' - ' + content.title;
+		content.title = title;
 		res.render(view,content);
 	})
 }
