@@ -1,4 +1,5 @@
 <% include ./header.ejs %>
+<link rel="stylesheet" href="<%=helpers.staticurl('/css/idangerous.swiper.css')%>">
 <link rel="stylesheet" href="<%=helpers.staticurl('/css/theatre.css')%>">
 <!--<div class="theater_bg theater_bg_one" style="background:url('<%=helpers.drawImage(banner[0].basic_image_1)%>') no-repeat scroll 50% center;"></div>-->
 <div class="theater_bg theater_bg_one"></div>
@@ -185,5 +186,6 @@
 	var pages = pages_json.split(',');
 </script>
 <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+<script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/theatre.js')%>"></script>
 <% include ./footer.ejs %>

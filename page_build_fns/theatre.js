@@ -15,11 +15,11 @@ var theatre = function(req,res){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
-		.then(function(){return lib_o.getData({tag:'theatre_hellopxwjj'},'hellopx')}).catch(function(error) {
+		.then(function(){return lib_o.getData({tag:'yv0DY4'},'hellopx')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
-		.then(function(){return lib_o.getData({tag:'theatre_hellopxyg'},'hellopxyg')}).catch(function(error) {
+		.then(function(){return lib_o.getData({tag:'TJmwph'},'hellopxyg')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
