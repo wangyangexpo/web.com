@@ -19,6 +19,10 @@ var theatre = function(req,res){
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
 		})
+		.then(function(){return lib_o.getData({tag:'theatre_hellopxyg'},'hellopxyg')}).catch(function(error) {
+			console.log('发生错误！',+ error);
+			throw new Error('发生错误！',+ error);
+		})
 		.then(function(){return lib_o.getData({tag:'theatre_pxr'},'hlpxr')}).catch(function(error) {
 			console.log('发生错误！',+ error);
 			throw new Error('发生错误！',+ error);
