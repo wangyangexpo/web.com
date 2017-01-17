@@ -156,7 +156,55 @@
 	<a onclick="this.parentNode.hidden=true;_hmt.push(['_trackEvent', 'signcouper', 'register', '4'])" class="close" href="javascript:;"></a>
 </div>
 <%}%>
+
+<section id="SpringFestival" style="display: none;">
+		<div class="pb-overlay"></div>
+		<div class="pb-modal">
+			<div class="pb-wrapper">
+				<div id="ny-gif">
+					<object width="1200px" height="600px">
+							<param name="quality" value="high">
+							<param name="allowscriptaccess" value="always">
+							<param name="wmode" value="transparent">
+							<embed src="<%=helpers.staticurl('/images/sfc.swf')%>" width="1200px" height="600px" autostart=true loop=false align="middle" allowscriptaccess="always" wmode="transparent" type="application/x-shockwave-flash">
+						</object>
+				</div>
+				<div class="canvas">
+				</div>
+			</div>
+		</div>
+</section>
+
 <script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/index.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/lib/jquery1.42.min.js')%>"></script>
+<script src="<%=helpers.staticurl('/js/fireworks.js')%>"></script>
+<script>
+	$(function() {
+		function init() {
+			var fworks = new Fireworks();
+			var swf = document.getElementById("ny-gif");
+			swf.style.position = 'absolute';
+			swf.style.top = (window.innerHeight - 600) / 2 + "px";
+			$(window).resize(function() {
+				swf.style.position = 'absolute';
+				swf.style.top = (window.innerHeight - 600) / 2 + "px";
+			});
+			$("#SpringFestival").show();
+			window.sessionStorage.setItem("SpringFestival", "show");
+			var time = window.setTimeout(function() {
+				$("#SpringFestival").hide();
+				window.sessionStorage.setItem("SpringFestival", "hide");
+				clearTimeout(time);
+			}, 5000);
+		}
+
+		if(window.sessionStorage.getItem("SpringFestival") == "hide") {
+			return;
+		} else {
+			init();
+		}
+
+	});
+</script>
 <% include ./footer.ejs %>
