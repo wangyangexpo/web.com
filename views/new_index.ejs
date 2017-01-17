@@ -166,7 +166,7 @@
 			</div>
 		</div>
 </section>
-<audio autoplay hidden>
+<audio id="ny-audio" hidden>
         <source src="<%=helpers.staticurl('/images/newYear.mp3')%>" type="audio/mp3"> 
         <source src="<%=helpers.staticurl('/images/newYear.ogg')%>" type="audio/ogg"> 
         <!-- If no support at all. -->
@@ -180,6 +180,8 @@
 	$(function() {
 		function init() {
 			var fworks = new Fireworks();
+			var audioEle = document.getElementById("ny-audio");
+        			audioEle.play();
 			$("#SpringFestival").show();
 			window.sessionStorage.setItem("SpringFestival", "show");
 			var time = window.setTimeout(function() {
