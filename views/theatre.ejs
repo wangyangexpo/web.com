@@ -71,20 +71,36 @@
 		<div id="j-px">
 			<div class="episode">
 				<%if(hellopx&&hellopx.length){%>
-				<%hellopx.forEach(function(item,i){%>
-				<a data-vid="<%=item.description%>" data-index="<%=i%>" class="<%=!i ? 'act' : '' %>">
-					<%=item.name%>
-				</a>
-				<%})%>
+				<div class="list">
+					<%hellopx.forEach(function(item,i){%>
+					<a data-t="<%=item.name%>" data-vid="<%=item.description%>" data-index="<%=i%>" class="<%=!i ? 'act' : '' %>">
+						<%=item.name%>
+					</a>
+					<%})%>
+				</div>
+				<%if(hellopx.length > 14){%>
+				<div class="page">
+					<a href="javascript:;" data-pagetype="0" data-type="0">上一页</a>
+					<a class="act" href="javascript:;" data-pagetype="0" data-type="1">下一页</a>
+				</div>
+				<%}%>
 				<%}%>
 			</div>
 			<div class="episode" style="display: none;">
 				<%if(hellopxyg&&hellopxyg.length){%>
-				<%hellopxyg.forEach(function(item,i){%>
-				<a data-vid="<%=item.description%>" data-index="<%=i%>" class="<%=!i ? 'act' : '' %>">
-					<%=item.name%>
-				</a>
-				<%})%>
+				<div class="list">
+					<%hellopxyg.splice(0,14).forEach(function(item,i){%>
+					<a data-t="<%=item.name%>" data-vid="<%=item.description%>" data-index="<%=i%>" class="<%=!i ? 'act' : '' %>">
+						<%=item.name%>
+					</a>
+					<%})%>
+				</div>
+				<%if(hellopxyg.length > 0){%>
+				<div class="page">
+					<a href="javascript:;">上一页</a>
+					<a class="act" href="javascript:;">下一页</a>
+				</div>
+				<%}%>
 				<%}%>
 			</div>
 		</div>
@@ -170,7 +186,7 @@
 	</div>
 	<div class="video_con">
 		<div class="mn" style="width:860px;height:524px;display: block" id="youkuplayer1">
-			
+
 		</div>
 	</div>
 </div>
