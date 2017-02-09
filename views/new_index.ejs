@@ -157,46 +157,7 @@
 </div>
 <%}%>
 
-<section id="SpringFestival" style="display: none;">
-		<div class="pb-overlay"></div>
-		<div class="pb-modal">
-			<div class="pb-wrapper">
-				<div class="canvas">
-				</div>
-			</div>
-		</div>
-</section>
-<audio id="ny-audio" hidden>
-        <source src="<%=helpers.staticurl('/images/newYear.mp3')%>" type="audio/mp3"> 
-        <source src="<%=helpers.staticurl('/images/newYear.ogg')%>" type="audio/ogg"> 
-        <!-- If no support at all. -->
-        HTML5 audio not supported 
-</audio>
 <script src="<%=helpers.staticurl('/js/lib/swiper2.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/index.js')%>"></script>
 <script src="<%=helpers.staticurl('/js/lib/jquery1.42.min.js')%>"></script>
-<script src="<%=helpers.staticurl('/js/fireworks.js')%>"></script>
-<script>
-	$(function() {
-		function init() {
-			var fworks = new Fireworks();
-			var audioEle = document.getElementById("ny-audio");
-        			audioEle.play();
-			$("#SpringFestival").show();
-			window.sessionStorage.setItem("SpringFestival", "show");
-			var time = window.setTimeout(function() {
-				$("#SpringFestival").hide();
-				window.sessionStorage.setItem("SpringFestival", "hide");
-				clearTimeout(time);
-			}, 5000);
-		}
-
-		if(window.sessionStorage.getItem("SpringFestival") == "hide") {
-			return;
-		} else {
-			init();
-		}
-
-	});
-</script>
 <% include ./footer.ejs %>
