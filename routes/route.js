@@ -219,6 +219,7 @@ router.get('/page/hellobiancheng', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/hellobiancheng');
 			require('../page_build_fns/page_hellobc')(req, res);
 		}
 		next();
@@ -228,6 +229,7 @@ router.get('/page/mofang', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/mofang');
 			require('../page_build_fns/page_mofang')(req, res);
 		}
 		next();
@@ -246,6 +248,7 @@ router.get('/page/maisisi', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/maisisi');
 			require('../page_build_fns/page_maisisi')(req, res);
 		}
 		next();
@@ -264,6 +267,7 @@ router.get('/page_qimiaofaxian', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/tansuohao');
 			require('../page_build_fns/page_qimiaofaxian')(req, res);
 		}
 		next();
@@ -273,6 +277,7 @@ router.get('/page/qimiaodianlu', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/qimiaodianlu');
 			require('../page_build_fns/page_qimiaodianlu')(req, res);
 		}
 		next();
@@ -282,6 +287,7 @@ router.get('/page/hanihaiyang', (req, res, next) => {
 		var deviceAgent = req.headers['user-agent'].toLowerCase();
 		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 		if(!agentID) {
+			res.redirect('http://store.putao.com/page/hanihaiyang');
 			require('../page_build_fns/page_hanihaiyang')(req, res);
 		}
 		next();
@@ -291,6 +297,7 @@ router.get('/page/tansuohaofeichuan', (req, res, next) => {
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 	if(!agentID) {
+		res.redirect('http://store.putao.com/page/tansuohaofeichuan');
 		require('../page_build_fns/dizuo')(req, res);
 	}
 	next();
@@ -305,6 +312,7 @@ router.get('/page/:name', (req, res) => {
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 	if(agentID) {
+		res.redirect('http://store.putao.com/page/' + req.params.name);
 		require('../page_build_fns/m_detail')(req, res);
 	}
 });
