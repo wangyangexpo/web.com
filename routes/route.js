@@ -312,8 +312,9 @@ router.get('/page/:name', (req, res) => {
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
 	if(agentID) {
-		res.redirect('http://store.putao.com/page/' + req.params.name);
 		require('../page_build_fns/m_detail')(req, res);
+	}else{
+		res.redirect('http://store.putao.com/page/' + req.params.name);
 	}
 });
 
