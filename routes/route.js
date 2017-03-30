@@ -307,6 +307,7 @@ router.get('/page/tansuohaofeichuan', (req, res, next) => {
 router.get('/m_index', (req, res) => {
 	require('../page_build_fns/m_index')(req, res);
 });
+
 // 手机端详情
 router.get('/page/:name', (req, res) => {
 	var deviceAgent = req.headers['user-agent'].toLowerCase();
