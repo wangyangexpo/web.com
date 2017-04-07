@@ -406,4 +406,9 @@ router.get('/paiband_presale_after',(req,res)=>{
 	};
 });
 
+// 加盟简介
+router.get('/invest_invite', (req, res) => {
+	require('../page_build_fns/invest_invite')(req, res);
+});
+
 module.exports = router;
