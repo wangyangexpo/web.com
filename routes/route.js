@@ -411,4 +411,14 @@ router.get('/invest_invite', (req, res) => {
 	require('../page_build_fns/invest_invite')(req, res);
 });
 
+// 加盟申请
+router.get('/invest_apply', (req, res) => {
+	res.render('mobile/invite_apply',{});
+});
+
+// 加盟申请提交
+router.post('/invest_apply', (req, res) => {
+	require('../page_build_fns/invest_apply')(req,res);
+});
+
 module.exports = router;

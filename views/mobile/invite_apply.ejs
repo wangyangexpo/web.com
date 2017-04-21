@@ -1,0 +1,157 @@
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	width: 90vw;
+	padding: 2vh 5vw;
+}
+.head {
+	margin-bottom: 5vw;
+}
+
+.head span {
+	color: #999;
+	font-size: 1.8rem;
+	display: block;
+	margin-top: 1vw;
+}
+.head h2 {
+	width: 68vw;
+	color: #fff;
+	text-align: center;
+	font-size: 3.8rem;
+	border: 1px solid rgb(93,47,132);
+	border-radius: 4rem;
+	margin: 5vw auto;
+	background-color: rgb(93,47,132);
+}
+.head h3 {
+	font-size: 2.5rem;
+	color: rgb(93,47,132);
+	margin-bottom: 2.5vw;
+}
+
+.body {
+	width: 100%;
+}
+
+.text-input {
+	font-size: 3.2rem;
+	width: 100%;
+	height: 10vw;
+	border: 2px solid rgba(93,47,132, .6);
+	border-radius: 1.5rem;
+	padding: 0 3vw;
+	margin-bottom: 3vw;
+}
+
+.text-area {
+	font-size: 3.2rem;
+	width: 100%;
+	height: 40vw;
+	border: 2px solid rgba(93,47,132, .6);
+	border-radius: 1.5rem;
+	padding: 2vw 3vw;
+	margin-bottom: 3vw;
+}
+
+.body button {
+	font-size: 3.2rem;
+	border-radius: 1.5rem;
+	display: block;
+	width: 60vw;
+	height: 10vw;
+	color: #fff;
+	border: 1px solid rgba(93,47,132, .6);
+	background-color: rgba(93,47,132, .9);
+	margin: 2vw auto;
+}
+
+.foot {
+	color: #999;
+	font-size: 1.8rem;
+	display: block;
+	margin-top: 1vw;
+	text-align: center;
+}
+
+.gender {
+	color: #666;
+	display: inline-block;
+	font-size: 3.2rem;
+	margin: 0 5vw 3vw 0;
+}
+
+.gender input {
+	margin-left: 2vw;
+	width: 4vw;
+	height: 4vw;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */ 
+	color: #ccc; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+	color: #ccc; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+	color: #ccc; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+	color: #ccc; 
+} 
+
+</style>
+<div class="container">
+	<div class="head">
+		<h2>免费索取加盟手册</h2>
+		<h3>上海葡缇文化传播有限公司</h3>
+		<span>
+		公司地址：上海市闵行区田林路1016号科技绿洲三期10号楼
+		</span>
+		<span>
+		邮政编码：200233
+		</span>
+		<span>
+		加盟热线：400-920-6161
+		</span>
+	</div>
+	<div class="body">
+		<form id="form" action="/invest_apply" method="post">
+			<input class="text-input" type="text" name="name" placeholder="*姓名" autocomplete="off"/>
+			<label class="gender" for="male">
+			先生<input id="male" name="gender" type="radio" value="0" checked="checked"/>
+			</label>
+			<label class="gender" for="female">
+			女士<input id="female" name="gender" type="radio" value="1"/>
+			</label>
+			<input class="text-input" type="text" name="mobile" placeholder="*电话" autocomplete="off"/>
+			<input class="text-input" type="text" name="email" placeholder="QQ/Email" autocomplete="off"/>
+			<input class="text-input" type="text" name="place" placeholder="加盟地区" autocomplete="off"/>
+			<textarea class="text-area" name="advice" placeholder="留言" autocomplete="off"></textarea>
+			<button type="button" id="submitForm">立即加入</button>
+			<span class="foot">申请提交后24小时内我们将与你取得联系</span>
+		</form>
+	</div>
+
+</div>
+<script src="<%=helpers.staticurl_m('/js/lib/zepto.min.js')%>"></script>
+<script>
+	$(function(){
+		var _submit = $('#submitForm');
+		var _form = $('#form');
+		_submit.on('click', function() {
+			if($('[name="name"]').val().trim() === '') {
+				alert('姓名为必填项');
+				return;
+			} else if($('[name="mobile"]').val().trim() === '') {
+				alert('电话为必填项');
+				return;
+			}
+			_form.submit();
+		})
+	})
+</script>

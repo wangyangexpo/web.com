@@ -1,7 +1,16 @@
 <% include ./header %>
 <style>
 .container {
+	position: relative;
 	margin-top: 1.066rem;
+}
+.img_for_apply {
+	position: fixed;
+	width: 20vw;
+	height: 20vw;
+	right: 0;
+	top: 50vh;
+
 }
 </style>
 <div class="container">
@@ -13,5 +22,9 @@
 	<img class="img_dt" src="<%=helpers.staticurl_m('/images/jiamengjianjie/invite_06.jpg')%>" alt="">
 	<img class="img_dt" src="<%=helpers.staticurl_m('/images/jiamengjianjie/invite_07.jpg')%>" alt="">
 	<img class="img_dt" src="<%=helpers.staticurl_m('/images/jiamengjianjie/invite_08.jpg')%>" alt="">
+
+	<a href="/invest_apply">
+		<img class="img_for_apply" src="<%=helpers.staticurl_m('/images/jiamengjianjie/apply_icon.jpeg')%>" alt="">
+	</a>
 </div>
 <% include ./footer %>
