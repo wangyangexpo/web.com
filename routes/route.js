@@ -408,7 +408,13 @@ router.get('/paiband_presale_after',(req,res)=>{
 
 // 加盟简介
 router.get('/invest_invite', (req, res) => {
-	require('../page_build_fns/invest_invite')(req, res);
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) { 
+		require('../page_build_fns/invest_invite')(req, res);
+	}else{
+		res.redirect('/invest_apply');
+	};
 });
 
 // 加盟申请
