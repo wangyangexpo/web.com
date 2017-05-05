@@ -413,7 +413,13 @@ router.get('/invest_invite', (req, res) => {
 
 // 加盟申请
 router.get('/invest_apply', (req, res) => {
-	res.render('mobile/invite_apply',{});
+	var deviceAgent = req.headers['user-agent'].toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+	if(agentID) { 
+		res.render('mobile/invite_apply',{});
+	}else{
+		require('../page_build_fns/applyjoin')(req,res);
+	};
 });
 
 // 加盟申请提交
