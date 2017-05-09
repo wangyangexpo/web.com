@@ -11,7 +11,7 @@ var apply = function(req, res) {
     var sign = 'fc5bc34b1500b00763d4dc7fe954a60cfff97ca2';
     var timestramp = Math.round(new Date().getTime()/1000);
     var requestData = {
-    	"key":"chenhui@putao.com",
+    	"key":"chengliuling@putao.com",
     	"type":"shop-join",
     	"language":"zh_CN",
     	"content": [
