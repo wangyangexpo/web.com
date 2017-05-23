@@ -1,0 +1,74 @@
+/* ================================ banner区 css ================================= */
+
+#banner {
+	width: 100%;
+	height: 560px;
+	overflow: hidden;
+	position: relative;
+}
+
+.swiper-box {
+	width: 100%;
+}
+
+.swiper-box img{
+	width: 100%;
+	height: 560px;
+	transition: 1.2s;
+}
+
+.swiper-box .swiper-pagination-switch.swiper-active-switch {
+	background-color: red;
+}
+
+.swiper-box .swiper-pagination {
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	bottom: 40px;
+	z-index: 999;
+	text-align: center;
+	user-select: none;
+}
+
+.swiper-box .swiper-pagination-switch {
+	width: 80px;
+	height: 5px;
+	border-radius: 4px;
+	background-color: rgba(222, 222, 222, .6);
+	display: inline-block;
+	margin: 0 6px;
+}
+
+/* ================================ banner区 css ================================= */
+
+/* ================================ elite区 css ================================= */
+
+.elite {
+	width: 100%;
+	height: 800px;
+	display: flex;
+}
+
+.elite .left,.right {
+	width: 250px;
+	height: 100%;
+}
+
+.elite .middle {
+	flex: 1;
+	background: url('../images/bg-pro-index.png');
+}
+
+.elite .left {
+	background: url('../images/b-left.jpg') no-repeat;
+	background-size: cover;
+}
+
+.elite .right {
+	background: url('../images/b-right.jpg') no-repeat;
+	background-size: cover;
+}
+
+/* ================================ elite区 css ================================= */

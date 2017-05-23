@@ -1,0 +1,79 @@
+body,
+html {
+    width: 100%;
+    font-size: 12px;
+    font-family: Arial, tahoma, arial, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+}
+
+#main-body {
+    min-width: 960px;
+}
+
+
+/* =============================公共header css代码=========================== */
+
+#top-header {
+    background-color: #222222;
+    height: 52px;
+}
+
+.content {
+    width: 960px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#top-header .content .nav a {
+    font-size: 1rem;
+    font-family: '宋体';
+    color: #ccc;
+    line-height: 52px;
+}
+
+#top-header .content .nav li {
+    float: left;
+    margin-left: 16px;
+}
+
+#top-header .nav .icon-hot {
+    display: inline-block;
+    width: 19px;
+    height: 9px;
+    vertical-align: middle;
+    background: url('../images/icon-hot.png') no-repeat;
+    margin-left: 4px;
+    animation: bounce 1s .2s ease both infinite;
+}
+
+#top-header .tel {
+    float: right;
+    line-height: 52px;
+    color: #fff;
+    height: 52px;
+    background: url('../images/icon-tel3.png') 0 50% no-repeat;
+    padding-left: 24px;
+    margin-right: 20px;
+}
+
+#top-header .tel span {
+    font-size: 15px;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0)
+    }
+    40% {
+        transform: translateY(-4px)
+    }
+    60% {
+        transform: translateY(-2px)
+    }
+}
+
+
+/* =============================公共header css代码=========================== */

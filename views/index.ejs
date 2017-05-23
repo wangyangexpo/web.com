@@ -1,1 +1,45 @@
-hello world
+<% include ./header.ejs %>
+<link rel="stylesheet" href="css/swiper.css" />
+<link rel="stylesheet" href="css/index.css" />
+<div id="banner">
+	<div class="swiper-box">
+		<div class="swiper-container js-swiper-container">
+			<div class="swiper-wrapper" id="swiperwrapper">
+				<% for(var i = 0;i < banners.length; i++) { %>
+				<div class="swiper-slide">
+					<img src="<%=banners[i].basic_url%>" alt=""/>
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<div class="swiper-operator">
+		    <!-- <div class="swiper-button swiper-button-prev"></div>
+		    <div class="swiper-button swiper-button-next"></div> -->
+
+			<div class="swiper-pagination js-pagination"></div>
+		</div>
+	</div>
+</div>
+<div class="elite">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div>
+<script type="text/javascript" src="js/lib/swiper.js"></script>
+<script>
+	
+ 	var mySwiper = new Swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+
+	    // 自动播放以及手动之后是否暂停
+	    autoplay : 4000,
+	    autoplayDisableOnInteraction : false,
+	    
+	    // 分页器
+	    pagination: '.js-pagination',
+	    paginationClickable: true
+	 })
+	 
+</script>
+<% include ./footer.ejs %>
