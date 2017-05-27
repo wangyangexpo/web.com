@@ -51,7 +51,7 @@
 
 .elite {
     width: 100%;
-    height: 1000px;
+    /* height: 1000px; */
     background: url('../images/bg-pro-index.png');
     display: flex;
     position: relative;
@@ -68,6 +68,8 @@
 .elite .middle {
     flex: 1;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
 }
 
 .elite .left {
@@ -88,6 +90,7 @@
 .middle .desc {
     width: 100%;
     min-width: 960px;
+    height: 240px;
 }
 
 .middle .desc ul {
@@ -180,26 +183,65 @@ ul.part_2 li:hover {
 
 
 /* table区域 货架css */
-
 .table .content {
-    width: 1200px;
-    height: 180px;
+    position: relative;
+    width: 1120px;
+    height: 270px;
+    overflow: visible;
 }
 
-.table_1 .content {
+.table .content .card {
+    position: absolute;
+    width: 900px;
+    height: 220px;
+    left: 50%;
+    top: -200px;
+    transform: translateX(-50%);
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .item {
+    width: 280px;
+    background: #222;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.card .item .item-img {
+    height: 140px;
+    overflow: hidden;
+}
+
+.card .item img {
+    transition: .3s;
+}
+
+.card .item:hover img{
+    transform: scale(1.1);
+}
+
+.card .item .item-text {
+    height: 80px;
+    padding: 10px 20px;
+    color: #eee;
+    font-size: 1.6rem;
+    line-height: 60px;
+    text-align: center;
+}
+
+.table.table_1 .content {
+    margin-top: 220px;
     background: url('../images/tables-1.png') no-repeat;
-    background-position: center bottom;
     background-size: contain;
 }
 
-.table_2 .content {
-    height: 280px;
+.table.table_2 .content {
     background: url('../images/tables-2.png') no-repeat;
-    background-position: center bottom;
     background-size: contain;
 }
 
-.table_3 .content {
+.table.table_3 .content {
     width: 100%;
     height: 78px;
     background: url('../images/tables-3.png') no-repeat;
@@ -222,6 +264,7 @@ ul.part_2 li:hover {
     font-size: 4.8rem;
     color: #eee;
     font-style: italic;
+    user-select: none;
 }
 
 .top-recommend .title b{
@@ -229,7 +272,7 @@ ul.part_2 li:hover {
 }
 
 .culture {
-    height: 640px;
+    height: 800px;
     position: relative;
     background: rgb(246, 246, 246);
 }
@@ -242,6 +285,7 @@ ul.part_2 li:hover {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 9;
 }
 
 .culture .right {
@@ -251,7 +295,69 @@ ul.part_2 li:hover {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 9;
 }
+
+.culture .content {
+    width: 1040px;
+    height: 100%;
+    display: flex;
+}
+
+.culture .content .left-bar {
+    width: 300px;
+    padding: 80px 40px;
+    display: flex;
+    z-index: 10;
+}
+
+.culture .content .left-bar .bar-text {
+    text-align: center;
+    width: 80px;
+    font-size: 5.8rem;
+    line-height: 5.8rem;
+}
+
+.culture .content .left-bar .bar-text_2 {
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+}
+
+.culture .content .left-bar .bar-text_2 span {
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+.culture .content .left-bar .bar-text_2 span+span {
+    padding-top: 20px;
+    border-top: 1px solid #111;
+}
+
+.culture .content .right-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.culture .content .right-bar .top-bar {
+    height: 320px;
+    margin-top: 80px;
+    background: url('../images/video.jpg') no-repeat;
+}
+
+.culture .content .right-bar .bottom-bar {
+    flex: 1;
+    background: url('../images/news-bg.png') no-repeat;
+    background-position: center center;
+    background-size: contain;
+    z-index: 10;
+}
+
 /* ================================ elite区 css ================================= */
 /* confetti 字体动画区域 */
 body .particletext {
@@ -289,6 +395,6 @@ body .particletext.confetti > .particle.c2 {
     }
     100% {
         opacity: 0;
-        transform: translateY(2000%) rotate(1440deg);
+        transform: translateY(3000%) rotate(1440deg);
     }
 }

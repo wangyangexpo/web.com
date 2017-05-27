@@ -1,2 +1,1 @@
-[2017-05-27 10:54:50.289] [WARN] normal - 127.0.0.1 - - "GET /images/bg-sm-6.jpg HTTP/1.1" 304 - "http://localhost:8080/css/index.css" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
-[2017-05-27 10:54:50.289] [WARN] normal - 127.0.0.1 - - "GET /images/tables-3.png HTTP/1.1" 304 - "http://localhost:8080/css/index.css" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+[2017-05-27 16:52:50.489] [WARN] normal - 127.0.0.1 - - "GET /images/news-bg.png HTTP/1.1" 304 - "http://localhost:8080/css/index.css" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
