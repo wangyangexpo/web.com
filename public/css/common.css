@@ -1,5 +1,6 @@
 body,
 html {
+    box-sizing: border-box;
     width: 100%;
     font-size: 12px;
     font-family: Arial, tahoma, arial, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;

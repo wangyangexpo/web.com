@@ -1,74 +1,294 @@
 /* ================================ banner区 css ================================= */
 
 #banner {
-	width: 100%;
-	height: 560px;
-	overflow: hidden;
-	position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    position: relative;
 }
 
 .swiper-box {
-	width: 100%;
+    width: 100%;
 }
 
-.swiper-box img{
-	width: 100%;
-	height: 560px;
-	transition: 1.2s;
+.swiper-box img {
+    width: 100%;
+    height: 560px;
+    transition: 1.2s;
 }
 
 .swiper-box .swiper-pagination-switch.swiper-active-switch {
-	background-color: red;
+    background-color: red;
 }
 
 .swiper-box .swiper-pagination {
-	width: 100%;
-	height: 20px;
-	position: absolute;
-	left: 0;
-	bottom: 40px;
-	z-index: 999;
-	text-align: center;
-	user-select: none;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    z-index: 1000;
+    text-align: center;
+    user-select: none;
 }
 
 .swiper-box .swiper-pagination-switch {
-	width: 80px;
-	height: 5px;
-	border-radius: 4px;
-	background-color: rgba(222, 222, 222, .6);
-	display: inline-block;
-	margin: 0 6px;
+    width: 80px;
+    height: 5px;
+    border-radius: 4px;
+    background-color: rgba(222, 222, 222, .6);
+    display: inline-block;
+    margin: 0 6px;
+    transition: .6s;
+    cursor: pointer;
 }
 
+
 /* ================================ banner区 css ================================= */
+
 
 /* ================================ elite区 css ================================= */
 
 .elite {
-	width: 100%;
-	height: 800px;
-	display: flex;
+    width: 100%;
+    height: 1000px;
+    background: url('../images/bg-pro-index.png');
+    display: flex;
+    position: relative;
 }
 
-.elite .left,.right {
-	width: 250px;
-	height: 100%;
+.elite .left,
+.right {
+    width: 220px;
+    height: 700px;
+    position: absolute;
+    z-index: 9;
 }
 
 .elite .middle {
-	flex: 1;
-	background: url('../images/bg-pro-index.png');
+    flex: 1;
+    z-index: 10;
 }
 
 .elite .left {
-	background: url('../images/b-left.jpg') no-repeat;
-	background-size: cover;
+    top: 0;
+    left: 0;
+    background: url('../images/b-left.jpg') no-repeat;
+    background-size: cover;
 }
 
 .elite .right {
-	background: url('../images/b-right.jpg') no-repeat;
-	background-size: cover;
+    right: 0;
+    bottom: 0;
+    align-self: flex-end;
+    background: url('../images/b-right.jpg') no-repeat;
+    background-size: cover;
 }
 
+.middle .desc {
+    width: 100%;
+    min-width: 960px;
+}
+
+.middle .desc ul {
+    width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: -180px;
+    z-index: 999;
+}
+
+.middle .desc img {
+    display: block;
+}
+
+.middle .desc ul li {
+    margin-right: -3px;
+    display: inline-block;
+}
+
+.middle .desc ul.part_2 {
+    margin-top: 30px;
+    height: 66px;
+    background: linear-gradient(to bottom, rgba(245, 242, 233, 1.0), rgba(255, 255, 255, 1.0));
+}
+
+.middle .desc ul.part_2 li {
+    width: 240px;
+    height: 66px;
+    text-align: left;
+    margin-right: 0;
+    display: flex;
+    float: left;
+}
+
+.middle .desc ul.part_2 li+li {
+    width: 239px;
+    border-left: 1px solid #ddd;
+}
+
+ul.part_2 li div {
+    padding-top: 18px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+ul.part_2 li div p {
+    transform: scale(0.9);
+    color: #888;
+    margin-top: 4px;
+}
+
+ul.part_2 li i {
+    display: inline-block;
+    background: url('../images/icon-list-8.png') no-repeat;
+    width: 43px;
+    height: 43px;
+    margin: 11px 0 0 36px;
+}
+
+ul li.icon_1 i {
+    /* 顺丰包邮 */
+    background-position: -124px 0;
+}
+
+ul li.icon_2 i {
+    background-position: -310px 0;
+}
+
+ul li.icon_3 i {
+    background-position: -372px 0;
+}
+
+ul li.icon_4 i {
+    background-position: -434px 0;
+}
+
+ul.part_2 li:hover {
+    background: rgb(175, 155, 117);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(175, 155, 117, 1) 0%, rgba(237, 223, 196, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(175, 155, 117, 1) 0%, rgba(237, 223, 196, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(175, 155, 117, 1) 0%, rgba(237, 223, 196, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#af9b75', endColorstr='#eddfc4', GradientType=0);
+    /* IE6-9 */
+}
+
+
+/* table区域 货架css */
+
+.table .content {
+    width: 1200px;
+    height: 180px;
+}
+
+.table_1 .content {
+    background: url('../images/tables-1.png') no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+
+.table_2 .content {
+    height: 280px;
+    background: url('../images/tables-2.png') no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+
+.table_3 .content {
+    width: 100%;
+    height: 78px;
+    background: url('../images/tables-3.png') no-repeat;
+    background-size: 100% 140px;
+}
+
+
+/* table区域 货架css */
+
+.top-recommend {
+    height: 540px;
+    background: #222;
+}
+
+.top-recommend .title {
+    margin: 0 auto;
+    width: 567px;
+    font-family: '黑体';
+    text-align: center;
+    font-size: 4.8rem;
+    color: #eee;
+    font-style: italic;
+}
+
+.top-recommend .title b{
+    color: red;
+}
+
+.culture {
+    height: 640px;
+    position: relative;
+    background: rgb(246, 246, 246);
+}
+
+
+.culture .left {
+    width: 200px;
+    height: 400px;
+    background: url('../images/bg-sm-5.jpg') no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.culture .right {
+    width: 360px;
+    height: 160px;
+    background: url('../images/bg-sm-6.jpg') no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 /* ================================ elite区 css ================================= */
+/* confetti 字体动画区域 */
+body .particletext {
+    text-align: center;
+    position: relative;
+}
+
+body .particletext.confetti > .particle {
+    opacity: 0;
+    position: absolute;
+    animation: confetti 2s ease-in infinite;
+}
+
+body .particletext.confetti > .particle.c1 {
+    background-color: rgba(76, 195, 80, 0.5);
+}
+
+body .particletext.confetti > .particle.c2 {
+    background-color: rgba(176, 39, 176, 0.5);
+}
+
+@keyframes confetti {
+    0% {
+        opacity: 0;
+        transform: translateY(0%) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    35% {
+        transform: translateY(-800%) rotate(270deg);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(2000%) rotate(1440deg);
+    }
+}
