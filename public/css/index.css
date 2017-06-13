@@ -33,8 +33,8 @@
 }
 
 .swiper-box .swiper-pagination-switch {
-    width: 80px;
-    height: 5px;
+    width: 32px;
+    height: 3px;
     border-radius: 4px;
     background-color: rgba(222, 222, 222, .6);
     display: inline-block;
@@ -54,6 +54,7 @@
     /* height: 1000px; */
     background: url('../images/bg-pro-index.png');
     display: flex;
+    display: -webkit-flex;
     position: relative;
 }
 
@@ -69,6 +70,7 @@
     flex: 1;
     z-index: 10;
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
 }
 
@@ -111,6 +113,11 @@
     display: inline-block;
 }
 
+ul.part_1 li .head-img{
+    width: 320px;
+    height: 160px;
+}
+
 .middle .desc ul.part_2 {
     margin-top: 30px;
     height: 66px;
@@ -123,6 +130,7 @@
     text-align: left;
     margin-right: 0;
     display: flex;
+    display: -webkit-flex;
     float: left;
 }
 
@@ -183,6 +191,7 @@ ul.part_2 li:hover {
 
 
 /* table区域 货架css */
+
 .table .content {
     position: relative;
     width: 1120px;
@@ -199,13 +208,14 @@ ul.part_2 li:hover {
     transform: translateX(-50%);
     z-index: 11;
     display: flex;
+    display: -webkit-flex;
     justify-content: space-between;
 }
 
 .card .item {
     width: 280px;
     background: #222;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .card .item .item-img {
@@ -217,7 +227,7 @@ ul.part_2 li:hover {
     transition: .3s;
 }
 
-.card .item:hover img{
+.card .item:hover img {
     transform: scale(1.1);
 }
 
@@ -267,7 +277,7 @@ ul.part_2 li:hover {
     user-select: none;
 }
 
-.top-recommend .title b{
+.top-recommend .title b {
     color: red;
 }
 
@@ -276,7 +286,6 @@ ul.part_2 li:hover {
     position: relative;
     background: rgb(246, 246, 246);
 }
-
 
 .culture .left {
     width: 200px;
@@ -302,12 +311,14 @@ ul.part_2 li:hover {
     width: 1040px;
     height: 100%;
     display: flex;
+    display: -webkit-flex;
 }
 
 .culture .content .left-bar {
     width: 300px;
     padding: 80px 40px;
     display: flex;
+    display: -webkit-flex;
     z-index: 10;
 }
 
@@ -325,6 +336,7 @@ ul.part_2 li:hover {
     font-size: 1.2rem;
     color: #666;
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
 }
 
@@ -341,6 +353,7 @@ ul.part_2 li:hover {
 .culture .content .right-bar {
     flex: 1;
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
 }
 
@@ -348,6 +361,7 @@ ul.part_2 li:hover {
     height: 320px;
     margin-top: 80px;
     background: url('../images/video.jpg') no-repeat;
+    position: relative;
 }
 
 .culture .content .right-bar .bottom-bar {
@@ -358,8 +372,43 @@ ul.part_2 li:hover {
     z-index: 10;
 }
 
+.culture .right-bar .video {
+    padding: 20px 0 0 20px;
+    float: left;
+    width: 355px;
+    height: 260px;
+}
+
+.culture .right-bar .video video {
+    margin-top: -30px;
+}
+
+.culture .right-bar .text {
+    float: right;
+    width: 240px;
+    height: 200px;
+    margin: 60px 20px 0 0;
+}
+
+.culture .top-bar .text .tit {
+    font-size: 20px;
+    font-family: mingliu;
+    color: #fff;
+    text-align: center;
+}
+
+.culture .top-bar .text .cont {
+    font-family: mingliu;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px;
+    text-indent: 2em;
+}
 /* ================================ elite区 css ================================= */
+
+
 /* confetti 字体动画区域 */
+
 body .particletext {
     text-align: center;
     position: relative;

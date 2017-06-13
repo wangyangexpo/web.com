@@ -26,8 +26,8 @@
 		<div class="desc">
 			<ul class="part_1">
 				<li><img src="images/z-img1.png" alt=""/></li>
-				<li><img src="images/z-img2.jpg" alt=""/></li>
-				<li><img src="images/z-img3.jpg" alt=""/></li>
+				<li><div class="head-img"><img src="images/z-img2.jpg" alt=""/></div></li>
+				<li><div class="head-img"><img src="images/z-img3.jpg" alt=""/></div></li>
 			</ul>
 			<ul class="part_2">
 				<li class="icon_1"><i></i><div><span>顺丰免费包邮</span><p>sf-express Free</p></div></li>
@@ -41,15 +41,15 @@
 			<div class="content">
 				<div class="card">
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-1.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_7.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-2.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_2.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-3.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_4.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 				</div>
@@ -59,15 +59,15 @@
 			<div class="content">
 				<div class="card">
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-1.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_5.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-2.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_12.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 					<div class="item">
-						<div class="item-img"><img src="images/Ticket-3.jpg" alt=""></div>
+						<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_8.jpg" alt=""></div>
 						<div class="item-text">豪华型:1988</div>
 					</div>
 				</div>
@@ -81,15 +81,15 @@
 	<div class="content">
 		<div class="card">
 			<div class="item">
-				<div class="item-img"><img src="images/Ticket-1.jpg" alt=""></div>
+				<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_11.jpg" alt=""></div>
 				<div class="item-text">豪华型:1988</div>
 			</div>
 			<div class="item">
-				<div class="item-img"><img src="images/Ticket-2.jpg" alt=""></div>
+				<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_9.jpg" alt=""></div>
 				<div class="item-text">豪华型:1988</div>
 			</div>
 			<div class="item">
-				<div class="item-img"><img src="images/Ticket-3.jpg" alt=""></div>
+				<div class="item-img"><img src="http://omw0i6l1a.bkt.clouddn.com/show_10.jpg" alt=""></div>
 				<div class="item-text">豪华型:1988</div>
 			</div>
 		</div>
@@ -106,7 +106,7 @@
 	<div class="content">
 		<div class="left-bar">
 			<div class="bar-text">
-				蟹<b>·</b>文化
+				龙帆<b>·</b>简介
 			</div>
 			<div class="bar-text_2">
 				<span>大闸蟹历史</span>
@@ -115,7 +115,15 @@
 			</div>
 		</div>
 		<div class="right-bar">
-			<div class="top-bar"></div>
+			<div class="top-bar">
+				<div class="video">
+					<video width="355" height="295" controls="true" preload="true" src="http://omj014i4r.bkt.clouddn.com/longfan_video.mp4" poster="http://omj014i4r.bkt.clouddn.com/longfan_video.mp4?vframe/jpg/offset/26"></video>
+				</div>
+				<div class="text">
+					<div class="tit">龙帆蟹业有限公司</div>
+					<p class="cont">龙帆蟹业有限公司是以天然，绿色的生态养殖为根本。为客户提供正宗，优质的阳澄湖大闸蟹为宗旨。公司有20多年的养殖大闸蟹经验，有专业的养殖水平和验蟹师。保证到客户手里的每一只大闸蟹都是优质，足量，正宗。</p>
+				</div>
+			</div>
 			<div class="bottom-bar"></div>
 		</div>
 	</div>
@@ -150,7 +158,7 @@
         $.each($(".particletext.confetti"), function() {
             var confetticount = ($(this).find(".text").width() / 50) * 10;
             for (var i = 0; i <= confetticount; i++) {
-                $(this).append('<span class="particle c' + $.rnd(1, 2) + '" style="top:' + $.rnd(10, 50) + '%; left:' + $.rnd(0, 100) + '%;width:' + $.rnd(6, 8) + 'px; height:' + $.rnd(3, 4) + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;"></span>');
+                $(this).append('<span class="particle c' + $.rnd(1, 2) + '" style="top:' + $.rnd(10, 50) + '%; left:' + $.rnd(0, 100) + '%;width:' + $.rnd(6, 8) + 'px; height:' + $.rnd(3, 4) + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;background-color:rgba(' + $.rnd(0, 255) + ', ' + $.rnd(0, 255) + ', ' + $.rnd(0, 255) + ', 0.5);"></span>');
             }
         });
     }
