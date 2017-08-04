@@ -5,9 +5,9 @@ var index = function(req, res) {
     var content = {};
     content.banners = [
     	
-        {
-            basic_url: 'http://omw0i6l1a.bkt.clouddn.com/psLogo111.jpg'
-        },
+        // {
+        //     basic_url: 'http://omw0i6l1a.bkt.clouddn.com/timg_1.jpg'
+        // },
         {
             basic_url: 'http://omw0i6l1a.bkt.clouddn.com/timg.jpeg'
         },
