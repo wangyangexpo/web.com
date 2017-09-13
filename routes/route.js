@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 	if(agentID) {
 		//指到手机、pad的网页
 		if(req.hostname.indexOf(configs.m_host_key) != -1) {
-			require('../page_build_fns/m_index')(req, res);
+			require('../page_build_fns/index')(req, res);
 		} else {
 			res.redirect(configs.m_host)
 		}

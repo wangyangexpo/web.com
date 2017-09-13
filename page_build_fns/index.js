@@ -13,6 +13,12 @@ var index = function(req, res) {
         },
         {
             basic_url: 'http://omw0i6l1a.bkt.clouddn.com/timg%20%289%29.jpeg'
+        },
+        {
+            basic_url: 'http://omw0i6l1a.bkt.clouddn.com/huodong.jpeg'
+        },
+        {
+            basic_url: 'http://omw0i6l1a.bkt.clouddn.com/finial.jpg'
         }
     ];
     content.title = '首页';

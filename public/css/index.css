@@ -14,7 +14,7 @@
 .swiper-box img {
     width: 100%;
     height: 560px;
-    transition: 1.2s;
+    /* transition: 1.2s; */
 }
 
 .swiper-box .swiper-pagination-switch.swiper-active-switch {
@@ -219,20 +219,22 @@ ul.part_2 li:hover {
     top: -200px;
     transform: translateX(-50%);
     z-index: 11;
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .card .item {
     width: 280px;
     background: #222;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    float: left;
+    margin: 0 10px;
 }
 
 .card .item .item-img {
@@ -249,9 +251,9 @@ ul.part_2 li:hover {
 }
 
 .card .item .item-text {
-    height: 80px;
+    /* height: 80px; */
     padding: 10px 20px;
-    color: #eee;
+    color: #ccc;
     font-size: 1.6rem;
     line-height: 60px;
     text-align: center;
@@ -279,13 +281,14 @@ ul.part_2 li:hover {
 /* table区域 货架css */
 
 .top-recommend {
-    height: 540px;
+    height: 480px;
     background: #222;
 }
 
 .top-recommend .title {
-    margin: 0 auto;
+    margin: 0px auto;
     width: 567px;
+    padding-top: 32px;
     font-family: '黑体';
     text-align: center;
     font-size: 4.8rem;
@@ -521,5 +524,37 @@ body .particletext.confetti > .particle.c2 {
     100% {
         opacity: 0;
         transform: translateY(3000%) rotate(1440deg);
+    }
+}
+
+@media only screen and (max-width:1700px) {
+
+    #banner {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .swiper-box img {
+        width: 100%;
+        height: 520px;
+        /* transition: 1.2s; */
+    }
+}
+
+@media only screen and (max-width:1400px) {
+
+    #banner {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .swiper-box img {
+        width: 100%;
+        height: 480px;
+        /* transition: 1.2s; */
     }
 }
